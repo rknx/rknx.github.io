@@ -1074,19 +1074,19 @@ textarea.form-control {
 }
 
 @media only screen and (min-width:993px) {
-    .copyright .m {
-    display:block;
-}
-    .copyright .d {
+    .m {
     display:none;
+}
+    .d {
+    display:block;
 }
 }
 
 @media only screen and (max-width:992px) {
-    .copyright .d{
+    .d{
         display:none;
     }
-    .copyright .m {
+    .m {
         display:block;
     }
 }
