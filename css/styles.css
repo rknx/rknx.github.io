@@ -85,7 +85,7 @@
 
 body {
   color: white;
-  font-family: "Open-Sans";
+  font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
   overflow: hidden;
 }
