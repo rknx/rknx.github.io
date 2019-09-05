@@ -4,6 +4,8 @@
 			body{
 				overflow:hidden;
 				margin:0 20px;
+				cursor:pointer;
+				user-select:none;
 			}
 			div {
 				overflow:auto;
@@ -27,8 +29,10 @@
 			.show div span:hover {
 				background: #444;
 			}
-			.show div span:active {
-				background: #222;
+			#namelist span:focus {
+				outline: 0px white;
+				display: inline-block;
+				box-shadow: 0 0 0 4px #f70;
 			}
 			h2{
 				margin-bottom:0;
@@ -48,258 +52,149 @@
 	</head>
 	<body>
 		<div class="show">
-			<h2>Select a student</h2>
-			<div id="namelist">
-				<span class="1" onmousedown="disp(this,'name')">1</span>
-				<span class="2" onmousedown="disp(this,'name')">2</span>
-				<span class="3" onmousedown="disp(this,'name')">3</span>
-				<span class="4" onmousedown="disp(this,'name')">4</span>
-				<span class="5" onmousedown="disp(this,'name')">5</span>
-				<span class="6" onmousedown="disp(this,'name')">6</span>
-				<span class="7" onmousedown="disp(this,'name')">7</span>
-				<span class="8" onmousedown="disp(this,'name')">8</span>
-				<span class="9" onmousedown="disp(this,'name')">9</span>
-				<span class="10" onmousedown="disp(this,'name')">10</span>
-				<span class="11" onmousedown="disp(this,'name')">11</span>
-				<span class="12" onmousedown="disp(this,'name')">12</span>
-				<span class="13" onmousedown="disp(this,'name')">13</span>
-				<span class="14" onmousedown="disp(this,'name')">14</span>
-				<span class="15" onmousedown="disp(this,'name')">15</span>
-				<span class="16" onmousedown="disp(this,'name')">16</span>
-				<span class="17" onmousedown="disp(this,'name')">17</span>
-				<span class="18" onmousedown="disp(this,'name')">18</span>
-				<span class="19" onmousedown="disp(this,'name')">19</span>
-				<span class="20" onmousedown="disp(this,'name')">20</span>
-				<span class="21" onmousedown="disp(this,'name')">21</span>
-				<span class="22" onmousedown="disp(this,'name')">22</span>
-				<span class="23" onmousedown="disp(this,'name')">23</span>
-				<span class="24" onmousedown="disp(this,'name')">24</span>
-				<span class="25" onmousedown="disp(this,'name')">25</span>
-				<span class="26" onmousedown="disp(this,'name')">26</span>
-				<span class="27" onmousedown="disp(this,'name')">27</span>
-				<span class="28" onmousedown="disp(this,'name')">28</span>
-				<span class="29" onmousedown="disp(this,'name')">29</span>
-				<span class="30" onmousedown="disp(this,'name')">30</span>
-				<span class="31" onmousedown="disp(this,'name')">31</span>
-				<span class="32" onmousedown="disp(this,'name')">32</span>
-				<span class="33" onmousedown="disp(this,'name')">33</span>
-				<span class="34" onmousedown="disp(this,'name')">34</span>
-				<span class="35" onmousedown="disp(this,'name')">35</span>
-				<span class="36" onmousedown="disp(this,'name')">36</span>
-				<span class="37" onmousedown="disp(this,'name')">37</span>
-				<span class="38" onmousedown="disp(this,'name')">38</span>
-				<span class="39" onmousedown="disp(this,'name')">39</span>
-				<span class="40" onmousedown="disp(this,'name')">40</span>
-				<span class="41" onmousedown="disp(this,'name')">41</span>
-				<span class="42" onmousedown="disp(this,'name')">42</span>
-				<span class="43" onmousedown="disp(this,'name')">43</span>
-				<span class="44" onmousedown="disp(this,'name')">44</span>
-				<span class="45" onmousedown="disp(this,'name')">45</span>
-				<span class="46" onmousedown="disp(this,'name')">46</span>
-				<span class="47" onmousedown="disp(this,'name')">47</span>
-				<span class="48" onmousedown="disp(this,'name')">48</span>
-				<span class="49" onmousedown="disp(this,'name')">49</span>
-				<span class="50" onmousedown="disp(this,'name')">50</span>
-				<span class="51" onmousedown="disp(this,'name')">51</span>
-				<span class="52" onmousedown="disp(this,'name')">52</span>
-				<span class="53" onmousedown="disp(this,'name')">53</span>
-				<span class="54" onmousedown="disp(this,'name')">54</span>
-				<span class="55" onmousedown="disp(this,'name')">55</span>
-				<span class="56" onmousedown="disp(this,'name')">56</span>
-				<span class="57" onmousedown="disp(this,'name')">57</span>
-				<span class="58" onmousedown="disp(this,'name')">58</span>
-				<span class="59" onmousedown="disp(this,'name')">59</span>
-				<span class="60" onmousedown="disp(this,'name')">60</span>
-				<span class="61" onmousedown="disp(this,'name')">61</span>
-				<span class="62" onmousedown="disp(this,'name')">62</span>
-				<span class="63" onmousedown="disp(this,'name')">63</span>
-			</div>
+			<h2>Select a student:</h2>
+			<div id="namelist"></div>
 		</div>
 		<div class="show">
-			<h2>Select a question</h2>
-			<div id="queslist">
-				<span class="1" onmousedown="disp(this,'ques')">1</span>
-				<span class="2" onmousedown="disp(this,'ques')">2</span>
-				<span class="3" onmousedown="disp(this,'ques')">3</span>
-				<span class="4" onmousedown="disp(this,'ques')">4</span>
-				<span class="5" onmousedown="disp(this,'ques')">5</span>
-				<span class="6" onmousedown="disp(this,'ques')">6</span>
-				<span class="7" onmousedown="disp(this,'ques')">7</span>
-				<span class="8" onmousedown="disp(this,'ques')">8</span>
-				<span class="9" onmousedown="disp(this,'ques')">9</span>
-				<span class="10" onmousedown="disp(this,'ques')">10</span>
-				<span class="11" onmousedown="disp(this,'ques')">11</span>
-				<span class="12" onmousedown="disp(this,'ques')">12</span>
-				<span class="13" onmousedown="disp(this,'ques')">13</span>
-				<span class="14" onmousedown="disp(this,'ques')">14</span>
-				<span class="15" onmousedown="disp(this,'ques')">15</span>
-				<span class="16" onmousedown="disp(this,'ques')">16</span>
-				<span class="17" onmousedown="disp(this,'ques')">17</span>
-				<span class="18" onmousedown="disp(this,'ques')">18</span>
-				<span class="19" onmousedown="disp(this,'ques')">19</span>
-				<span class="20" onmousedown="disp(this,'ques')">20</span>
-				<span class="21" onmousedown="disp(this,'ques')">21</span>
-				<span class="22" onmousedown="disp(this,'ques')">22</span>
-				<span class="23" onmousedown="disp(this,'ques')">23</span>
-				<span class="24" onmousedown="disp(this,'ques')">24</span>
-				<span class="25" onmousedown="disp(this,'ques')">25</span>
-				<span class="26" onmousedown="disp(this,'ques')">26</span>
-				<span class="27" onmousedown="disp(this,'ques')">27</span>
-				<span class="28" onmousedown="disp(this,'ques')">28</span>
-				<span class="29" onmousedown="disp(this,'ques')">29</span>
-				<span class="30" onmousedown="disp(this,'ques')">30</span>
-				<span class="31" onmousedown="disp(this,'ques')">31</span>
-				<span class="32" onmousedown="disp(this,'ques')">32</span>
-				<span class="33" onmousedown="disp(this,'ques')">33</span>
-				<span class="34" onmousedown="disp(this,'ques')">34</span>
-				<span class="35" onmousedown="disp(this,'ques')">35</span>
-				<span class="36" onmousedown="disp(this,'ques')">36</span>
-				<span class="37" onmousedown="disp(this,'ques')">37</span>
-				<span class="38" onmousedown="disp(this,'ques')">38</span>
-				<span class="39" onmousedown="disp(this,'ques')">39</span>
-				<span class="40" onmousedown="disp(this,'ques')">40</span>
-			</div>
+			<h2>Select a question:</h2>
+			<div id="queslist"></div>
 		</div>
 		<br><hr size="5" color="#000">
 		<div class="hide">
 			<h2>Name:</h2>
-			<div id="name">
-				<span class="1">Ashish Adhikari</span>
-				<span class="2">Vicken Aknadibossian</span>
-				<span class="3">Zunaira Afzal</span>
-				<span class="4">Ricardo Alcala</span>
-				<span class="5">Kelsey Andersen</span>
-				<span class="6">Kamaldeep Bansal</span>
-				<span class="7">Nichole Barber</span>
-				<span class="8">Deanna Bayo</span>
-				<span class="9">Shaheen Bibi</span>
-				<span class="10">Mayara Bolognesi de Morais</span>
-				<span class="11">Kellee Britt</span>
-				<span class="12">Matthew Burger</span>
-				<span class="13">Marcos Caiafa</span>
-				<span class="14">Daniela Cardenas</span>
-				<span class="15">Erica Carter</span>
-				<span class="16">Renato Carvalho</span>
-				<span class="17">Manoj Choudhary</span>
-				<span class="18">Crystal Conner</span>
-				<span class="19">Matthew Cullen</span>
-				<span class="20">Wanita Dantes</span>
-				<span class="21">Minh Dao</span>
-				<span class="22">Max Duncan</span>
-				<span class="23">James Fulton</span>
-				<span class="24">Andre Gama</span>
-				<span class="25">Andy Gitto</span>
-				<span class="26">Yi Huang</span>
-				<span class="27">Yixiao Huang</span>
-				<span class="28">Melissa Irizarry</span>
-				<span class="29">Fernanda Iruegas</span>
-				<span class="30">Elena Karlsen-Ayala</span>
-				<span class="31">Maryam Khalilzadeh</span>
-				<span class="32">Jeannie Klein-Gordon</span>
-				<span class="33">Joshua Konkol</span>
-				<span class="34">Nattapol Kraisitudomsook</span>
-				<span class="35">Tirtha Lamichhane</span>
-				<span class="36">Brett Lane</span>
-				<span class="37">Benjamin Lemmond</span>
-				<span class="38">Ying-Yu Liao</span>
-				<span class="39">Marcus Marin</span>
-				<span class="40">Eva Mulandesa</span>
-				<span class="41">Rodrigo Onofre</span>
-				<span class="42">James Orrock</span>
-				<span class="43">Egem Ozbudak</span>
-				<span class="44">Claudia Paez</span>
-				<span class="45">Paulo Pinto de Mello</span>
-				<span class="46">Nicole Reynolds</span>
-				<span class="47">Santosh Sanjel</span>
-				<span class="48">Anuj Sharma</span>
-				<span class="49">Sadikshya Sharma</span>
-				<span class="50">Andrew Shirley</span>
-				<span class="51">Patricia Soria</span>
-				<span class="52">Michelle Oliveira Souza</span>
-				<span class="53">Carolina Suguinoshita</span>
-				<span class="54">Jessica Torres</span>
-				<span class="55">Maria Velez-Climent</span>
-				<span class="56">Wenting Wang</span>
-				<span class="57">Stacy Welker</span>
-				<span class="58">Jin Xu</span>
-				<span class="59">Zhuxuan Xu</span>
-				<span class="60">Salih Yilmaz</span>
-				<span class="61">Pei-Ling Yu</span>
-				<span class="62">Peiqi Zhang</span>
-				<span class="63">Adrian Zuñiga</span>
+			<div id="names">
+				Santosh Sanjel
+				Kellee Britt
+				Zhuxuan Xu
+				Wenting Wang
+				Nichole Barber
+				Jin Xu
+				Ricardo Alcala
+				Michelle Oliveira Souza
+				Yixiao Huang
+				Marcos Caiafa
+				Andy Gitto
+				Benjamin Lemmond
+				Jeannie Klein-Gordon
+				Yi Huang
+				Adrian Zuñiga
+				Eva Mulandesa
+				Tirtha Lamichhane
+				Stacy Welker
+				Maria Velez-Climent
+				Deanna Bayo
+				Carolina Suguinoshita
+				Paulo Pinto de Mello
+				Kamaldeep Bansal
+				Joshua Konkol
+				Vicken Aknadibossian
+				Nattapol Kraisitudomsook
+				Marcus Marin
+				Fernanda Iruegas
+				James Fulton
+				Crystal Conner
+				Egem Ozbudak
+				Ying-Yu Liao
+				Matthew Cullen
+				Manoj Choudhary
+				Patricia Soria
+				Maryam Khalilzadeh
+				Sadikshya Sharma
+				Elena Karlsen-Ayala
+				Minh Dao
+				Daniela Cardenas
+				Brett Lane
+				Mayara Bolognesi de Morais
+				Nicole Reynolds
+				Max Duncan
+				Wanita Dantes
+				Kelsey Andersen
+				Renato Carvalho
+				Rodrigo Onofre
+				Ashish Adhikari
+				Zunaira Afzal
+				Erica Carter
+				Andrew Shirley
+				Peiqi Zhang
+				Jessica Torres
+				James Orrock
+				Anuj Sharma
+				Melissa Irizarry
+				Salih Yilmaz
+				Pei-Ling Yu
+				Matthew Burger
+				Shaheen Bibi
+				Andre Gama
+				Claudia Paez
 			</div>
 		</div>
 		<div class="hide">
 			<h2>Question:</h2>
 			<div id="ques">
-				<span class="1">If you could choose one hobby and be an expert on it, what would you take up?</span>
-				<span class="2">If you could go on a vacation right now for 3 days, where would it be?</span>
-				<span class="3">Can you play any musical instruments? If so, which one?</span>
-				<span class="4">What is your favorite Disney fairytale?</span>
-				<span class="5">What is your favorite beverage/drink?</span>
-				<span class="6">What is your favorite Disney fairytale?</span>
-				<span class="7">Are you an introvert or an extrovert or neither?</span>
-				<span class="8">If you could live anywhere in the world with unlimited money, where would it be?</span>
-				<span class="9">What is your favorite genre/type of music?</span>
-				<span class="10">Do you prefer a beach or a mountain? Why?</span>
-				<span class="11">What is your patronus/spirit animal?</span>
-				<span class="12">What color describes you best?</span>
-				<span class="13">If you could live anywhere in the world with unlimited money, where would it be?</span>
-				<span class="14">If you were stranded on an island by yourself, what three items would you want to have with you?</span>
-				<span class="15">If you could have one superhero-power, what would it be?</span>
-				<span class="16">What is your favorite season? And why?</span>
-				<span class="17">Do you prefer a beach or a mountain? Why?</span>
-				<span class="18">If you were stranded on an island by yourself, what three items would you want to have with you?</span>
-				<span class="19">If you could have one superhero-power, what would it be?</span>
-				<span class="20">What is your favorite beverage/drink?</span>
-				<span class="21">Can you play any musical instruments? If so, which one?</span>
-				<span class="22">Are you an early bird or a night owl (morning or night person)?</span>
-				<span class="23">If you could choose one hobby and be an expert on it, what would you take up?</span>
-				<span class="24">What is your favorite fungus/mushroom?</span>
-				<span class="25">If you could be in a movie of your choice, what movie would it be?</span>
-				<span class="26">If you could go on a vacation right now for 3 days, where would it be?</span>
-				<span class="27">Are you an early bird or a night owl (morning or night person)?</span>
-				<span class="28">What is your favorite fungus/mushroom?</span>
-				<span class="29">What is your patronus/spirit animal?</span>
-				<span class="30">Did you play any sports growing up? If so, which one?</span>
-				<span class="31">How many languages do you speak? What are they?</span>
-				<span class="32">Did you play any sports growing up? If so, which one?</span>
-				<span class="33">If you could be in a movie of your choice, what movie would it be?</span>
-				<span class="34">If you could meet any living person to have dinner with, who would you pick and why?</span>
-				<span class="35">What is your favorite season? And why?</span>
-				<span class="36">Are you an introvert or an extrovert or neither?</span>
-				<span class="37">What is your favorite genre/type of music?</span>
-				<span class="38">If you could meet any living person to have dinner with, who would you pick and why?</span>
-				<span class="39">What color describes you best?</span>
-				<span class="40">How many languages do you speak? What are they?</span>
+				If you could choose one hobby and be an expert on it, what would you take up?
+				If you could go on a vacation right now for 3 days, where would it be?
+				Can you play any musical instruments? If so, which one?
+				What is your favorite Disney fairytale?
+				What is your favorite beverage/drink?
+				What is your favorite Disney fairytale?
+				Are you an introvert or an extrovert or neither?
+				If you could live anywhere in the world with unlimited money, where would it be?
+				What is your favorite genre/type of music?
+				Do you prefer a beach or a mountain? Why?
+				What is your patronus/spirit animal?
+				What color describes you best?
+				If you could live anywhere in the world with unlimited money, where would it be?
+				If you were stranded on an island by yourself, what three items would you want to have with you?
+				If you could have one superhero-power, what would it be?
+				What is your favorite season? And why?
+				Do you prefer a beach or a mountain? Why?
+				If you were stranded on an island by yourself, what three items would you want to have with you?
+				If you could have one superhero-power, what would it be?
+				What is your favorite beverage/drink?
+				Can you play any musical instruments? If so, which one?
+				Are you an early bird or a night owl (morning or night person)?
+				If you could choose one hobby and be an expert on it, what would you take up?
+				What is your favorite fungus/mushroom?
+				If you could be in a movie of your choice, what movie would it be?
+				If you could go on a vacation right now for 3 days, where would it be?
+				Are you an early bird or a night owl (morning or night person)?
+				What is your favorite fungus/mushroom?
+				What is your patronus/spirit animal?
+				Did you play any sports growing up? If so, which one?
+				How many languages do you speak? What are they?
+				Did you play any sports growing up? If so, which one?
+				If you could be in a movie of your choice, what movie would it be?
+				If you could meet any living person to have dinner with, who would you pick and why?
+				What is your favorite season? And why?
+				Are you an introvert or an extrovert or neither?
+				What is your favorite genre/type of music?
+				If you could meet any living person to have dinner with, who would you pick and why?
+				What color describes you best?
+				How many languages do you speak? What are they?
 			</div>
 		</div>
 		<script>
+			for(i of ["names","ques"]) i.innerHTML='<span>'+i.innerHTML.replace('\t','').split(/\n/).slice(1,-1).join("</span><span>")+'</span>';
+			function idspan(id) { return document.getElementById(id).getElementsByTagName('span'); };
+			function invalidate(node) {node.style.background='#ccc';node.onmousedown=function(){alert('Already selected')};}
+			for(i=0;i<idspan('names').length;i++) namelist.innerHTML+='<span onclick="disp(this,\'names\')" tabindex="0">'+(i+1)+'</span>'
+			for(i=0;i<idspan('ques').length;i++) queslist.innerHTML+='<span onclick="disp(this,\'ques\')">'+(i+1)+'</span>'
 			var ex = new URLSearchParams(window.location.search)
-			names=ex.getAll('N')
-			quess=ex.getAll('Q')
-			for (var i=0; i<names.length; i++) { invalidate (document.getElementById('namelist').getElementsByClassName(names[i])[0] ); };
-			for (var i=0; i<quess.length; i++) { invalidate (document.getElementById('queslist').getElementsByClassName(quess[i])[0] ); }
-			var n=0, q=0, name2=""
+			for (var i=0; i<ex.getAll('N').length; i++) { invalidate (idspan('namelist')[ex.getAll('N')[i]-1] ); };
+			for (var i=0; i<ex.getAll('Q').length; i++) { invalidate (idspan('queslist')[ex.getAll('Q')[i]-1] ); }
+			var n=0, q=0, exnode=""
 			function disp(node,type){
-				if (type=='name') {n=1; name2=node;}
+				if (type=='names') {n=1; exnode=node;}
 				if (n==0) { alert('Select name first'); return };
 				if (type=='ques') q=1
-				nodes=document.getElementById(type).getElementsByTagName('span')
-				for(var i=0; i<nodes.length; i++) { nodes[i].style.display='none'; }
-				document.getElementById(type).getElementsByClassName(node.innerHTML)[0].style.display='flex';
-				if(n==1 && q==0) document.getElementById('ques').style.display='none';
+				for(var i=0; i<idspan(type).length; i++) { idspan(type)[i].style.display='none'; }
+				idspan(type)[node.innerHTML-1].style.display='flex';
+				if(n==1 && q==0) ques.style.display='none';
 				if (n==1 && q==1) {
-					n=0;q=0;invalidate(node);invalidate(name2);
-					document.getElementById('ques').style.display='flex';
-					ex.append('N',name2.innerHTML);
-					ex.append('Q',node.innerHTML);
+					n=0;q=0;invalidate(node);invalidate(exnode);ques.style.display='flex';
+					ex.append('N',exnode.innerHTML);ex.append('Q',node.innerHTML);
 					history.replaceState('', 'QAgames', '?'+ex.toString());
 				}
-			}
-			function invalidate(node) {
-				node.style.background='#ccc';
-				node.onmousedown=function(){alert('Already selected')};
 			}
 		</script>
 	</body>
