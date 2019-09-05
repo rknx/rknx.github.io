@@ -174,7 +174,8 @@
 			</div>
 		</div>
 		<script>
-			for(i of ["names","ques"]) i.innerHTML='<span>'+i.innerHTML.replace('\t','').split(/\n/).slice(1,-1).join("</span><span>")+'</span>';
+			names.innerHTML='<span>'+ names.innerHTML.replace('\t','').split(/\n/).slice(1,-1).join("</span><span>")+'</span>';
+			ques.innerHTML='<span>'+ ques.innerHTML.replace('\t','').split(/\n/).slice(1,-1).join("</span><span>")+'</span>';
 			function idspan(id) { return document.getElementById(id).getElementsByTagName('span'); };
 			function invalidate(node) {node.style.background='#ccc';node.onmousedown=function(){alert('Already selected')};}
 			for(i=0;i<idspan('names').length;i++) namelist.innerHTML+='<span onclick="disp(this,\'names\')" tabindex="0">'+(i+1)+'</span>'
