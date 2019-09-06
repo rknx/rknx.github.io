@@ -5,12 +5,12 @@
 		<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD5UlEQVR4AbXXA3AkTRTA8Y6dz7Zt27Zt27Zt2zbOtu3Y5iJO+v5zeVP17mpnstFW/Vb9erp7WtPG7xW8e1tXHHbBbfgNy9GIDtGI5ZJ2O3aVPMbR2xeZtnELjsVB+BB5aIftQbvEfiR5Y3tTEd3qTfEyKmD7qBKvYFMYRF34AZgAO0Am4kDfSgQkEcdgBewAWy7XpqxtPFt/gBS+CA/hwQiewe+ohcUPeEDHyO+H8TqmqLGzAgciYuGbqNv+S0gGoocEXIBq+TQ+1sOH6ILFJHdM6ArE4WUVlIN7kSLpu+BaXIk9YEJ3bxsv024ETlTXOUViL8D6MNgdlbDowquI060/0A1QlmEDiblNZZ6CdWDwMixek7hkjFbT8VH5f30shhVVOBgk0hJ8CKtJhvXlAnfAihxsAoPnYfGKqsA4WPGu/L8uFsAqHyPevb15PVTgLGnZCNyDBBi8A12BRLwmsX/hCDW+smCVAuzq3t52/wpsE4dErCpYbIxZugLO9HJiJDZOxZ6DcIQV83YjA8n6VYA1IgNbB4GdcAr+RAf0HYghbiOJ3QZ74kafdeUPIwuEFV6D8GqUohDlaIYVehAm4RcUowg16IT1kOVkavRYw19Hulz4WIz06Kq5uEjiEvAQlsFGIWjUbdT+19up2A01sNCulXTtYdgodHlVYC4uw8XKAwjAQvtY0rUfYaPQ6dUFXcL2Umcv8wX9BmEQ/+A1vCmtmokOlOBbvIRX8YMa6bX4Fa/gZUmr9BuEv0dIaMIdSEIKMpGAvZGFM+T/HbBdoDvtCjTiikD3gpQeguQ7S+2e2l9OBW6PMLpnIAMHYxzm4GzshbFYFwcgH8U4DbdgAlJwCqZjJi5CPIZGWIjudJfifFjlNxg8p+7IfCl8GbZBGi7Fe/gTBfgtdPcWRrpGD1KDz72W4nh8BKv83MiyKmvBNBwsTsRC/IXTsRkSsDYexw81d++pd0nHJzD4zGszchyEKljxa8vd2zn/v4h8PIJ9A3dvl8znGEzFMhTiZ2yMvfEZFY9xd0nxHgy+hBXVOBirPZC8oqbQZKRiH3yOb3EYNsT/2BrnYTqGYwscgHFYF/tJiz+XfCkYr6b4a4hf85FsU0yERQh3Yh0kIVla+by0+gSsh/Xlc1O8g2Y8KxVNEuviPoRV4zbzei48UM3nZszBCIzEEjVbajAbozAaS1VaOxZKnhGYhxZYZOEgeJ2GthvMx/IsHOeUE0BPR7IDVXcMhEk4qLeno83wqlpGew1VeA2bgZb3/nwYi4PxMfJ7cTjNlzyHBGRb97ztvTie74o78AdWIIgudCKILPwhMbtRYFTH85UjxZzPIGXAJQAAAABJRU5ErkJggg==">
 		<style>
 			body{overflow:hidden;margin:20px;cursor:context-menu;user-select:none;}
-			.preload {position:fixed;width:100%;height:100%;background:#015595;display:flex;
-				align-items:center;justify-content:center;flex-direction:column;margin:-20px}
+			.preload {position:fixed;width:100%;height:100%;background:#015595;display:flex;margin:-20px;
+				align-items:center;justify-content:center;flex-direction:column;transition:1s;}
 			.preload div {display:flex;align-items:center;margin-bottom:50px;}
-			.preload div img {width:240px;height:240px;margin-right:50px;}
+			.preload div img {width:200px;height:200px;margin-right:50px;}
 			.preload div h1 {color:#fff;font-size:5em;display:inline-flex;line-height:240px;}
-			.preload h2 {color:#fff;font-size:2em;cursor:pointer;border:1px #fff;border-radius:5px;}
+			.preload h2 {color:#fff;font-size:2em;cursor:pointer;border:1px #fff solid;border-radius:5px;padding:10px 20px;}
 			.show div{display:flex;flex-wrap:wrap;}
 			.show div e {width:50px;height:50px;margin:3px;background:#666;border-radius:5px;
 				text-align:center;line-height:50px;color:#fff;font-size:1.6em;cursor:pointer;}
@@ -22,7 +22,10 @@
 		</style>
 	</head>
 	<body>
-		<div class="preload" onclick="this.style.display='none'"><div><img src="https://uflorida-my.sharepoint.com/personal/anujsharma_ufl_edu/Documents/APS%20poster/logo.png"><h1>ICEBREAKER</h1></div><h2>PROCEED TO THE GAME 🡆</h2></div>
+		<div class="preload">
+			<div><img src="https://uflorida-my.sharepoint.com/personal/anujsharma_ufl_edu/Documents/APS%20poster/logo.png"><h1>ICEBREAKER</h1></div>
+			<h2 onclick="this.parentNode.style.transform = 'translateY(-100%)'">PROCEED TO THE GAME 🡆</h2>
+		</div>
 		<div class="show"><h2>Select a student:</h2><div id="namelist"></div></div>
 		<div class="show"><h2>Select a question:</h2><div id="queslist"></div></div>
 		<br><hr size="5" color="#000">
