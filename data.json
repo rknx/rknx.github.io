@@ -171,25 +171,25 @@
               "icon":"",
               "text":"Cufflinks"
             },
-            "samtools":{
-              "icon":"",
-              "text":"Samtools"
+            "biopython":{
+              "icon":"/img/logos/biopython.png",
+              "text":"BioPython"
             },
             "gatk":{
               "icon":"/img/logos/gatk.png",
               "text":"GATK"
             },
-            "biopython":{
-              "icon":"/img/logos/biopython.png",
-              "text":"BioPython"
-            },
-            "igv":{
-              "icon":"/img/logos/igv.png",
-              "text":"IGV"
+            "samtools":{
+              "icon":"",
+              "text":"Samtools"
             },
             "jbrowse":{
               "icon":"/img/logos/jbrowse.png",
               "text":"JBrowse"
+            },
+            "igv":{
+              "icon":"/img/logos/igv.png",
+              "text":"IGV"
             },
             "mega":{
               "icon":"/img/logos/mega.png",
@@ -201,10 +201,6 @@
           "prettyName": "Programming languages",
           "icon": "",
           "list":{
-            "python":{
-              "icon":"/img/logos/python.png",
-              "text":"Python"
-            },
             "r":{
               "icon":"/img/logos/r.png",
               "text":"R"
@@ -212,6 +208,10 @@
             "tidyr/ggplot":{
               "icon":"/img/logos/tidyr-ggplot.png",
               "text":"TidyR/Ggplot"
+            },
+            "python":{
+              "icon":"/img/logos/python.png",
+              "text":"Python"
             },
             "shell":{
               "icon":"/img/logos/bash.png",
@@ -255,13 +255,13 @@
               "icon":"/img/logos/office.png",
               "text":"Ms Office"
             },
-            "teams":{
-              "icon":"/img/logos/teams.png",
-              "text":"Teams"
-            },
             "trello":{
               "icon":"/img/logos/trello.png",
               "text":"Trello"
+            },
+            "teams":{
+              "icon":"/img/logos/teams.png",
+              "text":"Teams"
             },
             "photoshop":{
               "icon":"/img/logos/photoshop.png",
@@ -271,10 +271,6 @@
               "icon":"/img/logos/inkscape.png",
               "text":"Inkscape"
             },
-            "vscode":{
-              "icon":"/img/logos/vscode.png",
-              "text":"VS Code"
-            },
             "github":{
               "icon":"/img/logos/github.png",
               "text":"Git/Github"
@@ -283,9 +279,9 @@
               "icon":"/img/logos/netlify.png",
               "text":"Netlify"
             },
-            "arcgis":{
-              "icon":"/img/logos/arcgis.png",
-              "text":"ArcGIS"
+            "vscode":{
+              "icon":"/img/logos/vscode.png",
+              "text":"VS Code"
             },
             "snapgene":{
               "icon":"/img/logos/snapgene.png",
@@ -294,6 +290,10 @@
             "fusion360":{
               "icon":"/img/logos/fusion360.png",
               "text":"Fusion360"
+            },
+            "arcgis":{
+              "icon":"/img/logos/arcgis.png",
+              "text":"ArcGIS"
             }
           }
         }

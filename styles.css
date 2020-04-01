@@ -47,6 +47,7 @@
         --invertfilter: invert(100%);
     }
 }
+
   
 /*--------------CSS main------------*/
 * {
@@ -208,58 +209,91 @@ a, a:hover, a:visited {
 
 /*--------------Side menu------------*/
 
-.side-menu-open {
+.menu-open {
+    width: 10em;
+    height: 10em;
+    top: -5em;
+    left: -5em;
+    display: block;
+    cursor: pointer;
     position: fixed;
-    left: 0;
-    width: 10px;
-    height: 100%;
-    z-index: 777;
-    display:flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    border-radius: 50%;
+    z-index: 900;
+}
+
+.menu-open:hover {
+    background: rgba(255,255,255, 0.45);
+}
+
+.menu-open svg {
+    height: 3em;
+    width: 3em;
+    margin: calc(50% + 5px) 0 0 calc(50% + 5px);
+    --length: 24;
+    --offset: -38;
+    fill: none;
+    stroke: var(--fontwhite);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.menu-open svg path {
+    stroke-dasharray: var(--length) var(--total-length);
+    stroke-dashoffset: var(--offset);
+    transition: all .8s cubic-bezier(.645, .045, .355, 1)
+}
+
+.menu-open svg path.line-1,
+.menu-open svg path.line-3 {
+    --total-length: 126.64183044433594;
+}
+
+.menu-open svg path.line-2 {
+    --total-length: 70
+}
+
+input:checked~.menu-open svg path.line-1,
+input:checked~.menu-open svg path.line-3 {
+    --length: 22.627416998;
+    --offset: -94.1149185097
+}
+
+input:checked~.menu-open svg path.line-2 {
+    --length: 0;
+    --offset: -50
+}
+
+input:checked~.side-menu {
+    clip-path: circle(75%);
 }
 
 @media only screen and (min-width:1280px){
-    .side-menu-open {
+    .menu-open {
         display:none;
     }
-}
-
-.side-menu-button {
-    height: 3em;
-    background: rgba(var(--navback),var(--transparency));
-    border-radius: 0 5px 5px 0;
-    opacity: .9;
-    cursor: pointer;
-    display:flex;
-    align-items: center;
-    font-size: 1.2em;
-    padding: 1em;
-}
-
-.side-menu-button > svg {
-    width: 1.2em;
-    height: 1.2em;
-    fill: var(--fontwhite)
 }
 
 .side-menu {
     position: fixed;
     top: 0;
-    left: -250px;
-    width: 250px;
+    left: 0;
     height: 100%;
-    background: rgba(var(--navback),var(--transparency));
-    padding: 50px 25px;
+    width: 250px;
+    overflow:hidden;
+    clip-path: circle(5em at 0 0px);
+    transition: all 0.5s ease-in-out;
+    background-color: rgba(var(--navback),var(--transparency));
+    padding-top: 5em;
+    padding: 5em 25px 50px;
     z-index: 888;
+    backdrop-filter: var(--backdrop);
+    overflow-y:auto;
+    scrollbar-width: none;
     display:flex;
     align-items: stretch;
     justify-content: flex-start;
     flex-direction: column;
-    transition: left 500ms ease-in-out;
-    backdrop-filter: var(--backdrop);
-    overflow-y:auto;
-    scrollbar-width: none;
 }
 
 .side-menu::-webkit-scrollbar {
@@ -410,6 +444,7 @@ a, a:hover, a:visited {
     width:100%;
     position: absolute;
     filter: var(--invertfilter);
+    pointer-events: none;
 }
 
 @media only screen and (min-width:480px){
@@ -463,7 +498,7 @@ a, a:hover, a:visited {
     align-items: center;
 }
 
-.header > .buttons > a > span {
+.header > .buttons > .btn > span {
     width: 0;
     overflow: hidden;
     transition: all .3s ease-in-out;
@@ -472,12 +507,13 @@ a, a:hover, a:visited {
     font-size: 0.8em;
 }
 
-.header > .buttons > a:hover > span {
+.header > .buttons > .btn:hover > span,
+.header > .buttons > .btn:active > span {
     width: 150px;
     padding-left: 6px;
 }
 
-.header > .buttons > a > svg {
+.header > .buttons > .btn > svg {
     width: 0.8em;
     height: 0.8em;
     fill: var(--fontwhite)
@@ -879,6 +915,7 @@ a, a:hover, a:visited {
     height: 1em;
     margin-right: 5px;
     border-radius: 2px;
+    filter: drop-shadow(0px 0px 3px rgba(255,255,255, 0.5));
 }
 
 #skills span:nth-child(4n+1) {
@@ -901,17 +938,34 @@ a, a:hover, a:visited {
 
 #projects .tl-entry > div {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media  only screen and (min-width:480px) {
+    #projects .tl-entry > div {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
 }
 
 #projects .tl-entry > div > img {
-    width:150px;
     border-radius: 3px;
     box-shadow: 0 0px 3.2px 0 rgba(0,0,0,.5), 0 0px 1px 0 rgba(0,0,0,.3);
-    margin-right:10px;
     margin-top: 5px;
+    width:240px;
+    margin-bottom: 10px;
+}
+
+@media  only screen and (min-width:480px) {
+    #projects .tl-entry > div > img {
+        width:150px;
+        margin-right: 10px;
+        margin-bottom: 0px;
+    }
 }
 
 #projects .tl-entry > div > img:hover {

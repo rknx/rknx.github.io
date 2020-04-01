@@ -6,7 +6,11 @@
 $(document).ready(function(){
   
   //Background Height fix for vertical progress on window resize
-  $(window).resize(function(){$('.side-menu').css({left:(window.innerWidth>=1280)?'0px':'-250px'});});
+  $(window).resize(function(){
+    if (window.innerWidth>=1280) $("#menu").prop("checked", false);
+    $(".menu-open").css({"display":(window.innerWidth>=1280)?'none':'flex'});
+    $('.side-menu').css({"clip-path":(window.innerWidth>=1280)?'circle(75%)':'circle(5em at 0 0px);'});
+  });
 
   //Populate values from json data
   $.getJSON("data.json", function(data){

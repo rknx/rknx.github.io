@@ -12,74 +12,67 @@
 
 <body class="body">
 
-<!-- Page Loader -->
-<div class="loader noprint" id="page-loader"> 
-  <div class="spinner"></div>
-  <div class="strName">Loading...</div>
-  <span class="strJob"><span>
-</div>
-
-<!-- Side menu open-->
-<div class="side-menu-open noprint">
-  <span class="side-menu-button" onmouseenter="$('.side-menu').css({left:'0px'});preventDefault();">
-    <svg><use xlink:href='/img/icons.svg#bars' /></svg>
-  </span>
-</div>
-
-<!-- Side Menu container -->
-<div class="side-menu noprint" onmouseleave="($(window).width()<1280) ? $('.side-menu').css({left:'-250px'}) : '';preventDefault();">
-  
-  <!-- Close button -->
-  <span id="close" onclick="$('.side-menu').css({left:'-250px'});preventDefault();">
-    <svg><use xlink:href='/img/icons.svg#times' /></svg>
-  </span>
-  
-  <!-- Menu header -->
-  <div class="side-menu-name strName"></div>
-  <span class="side-menu-job strJob"></span>
-  
-  <!-- Main Navigation -->
-  <nav id="side-menu" class="side-menu-este">
-    <ul class="nav side-menu-nav"></ul>
-  </nav>
-
-  <!-- Other Buttons -->
-  <div class="buttons side-menu-buttons"></div>
-</div>
-
-<!-- CONTENT -->
-
-<div class="header">
-  <div class="top-cols noprint"></div>
-  <div class="buttons noprint"></div>
-  <div class="intro">
-    <div class="avatar">
-      <img src="img/avatar.JPG">
+  <!-- Page Loader -->
+  <div class="loader noprint" id="page-loader">
+    <div class="spinner"></div>
+    <div class="strName">Loading...</div>
+    <span class="strJob"><span>
   </div>
-  <div class="bio">
-      <h1 class="strName"></h1>
-      <h3 class="strJob"></h3>
+
+  <!-- Side menu open-->
+  <input type="checkbox" id="menu" style="display:none;">
+  <label class="menu-open noprint" for="menu">
+    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg">
+      <path class="line-1" d="M0 40h62c13 0 6 28-4 18L35 35"></path>
+      <path class="line-2" d="M0 50h70"></path>
+      <path class="line-3" d="M0 60h62c13 0 6-28-4-18L35 65"></path>
+    </svg>
+  </label>
+
+  <!-- Side Menu container -->
+  <div class="side-menu noprint">
+    <div class="side-menu-name strName"></div>
+    <span class="side-menu-job strJob"></span>
+    <nav id="side-menu" class="side-menu-este">
+      <ul class="nav side-menu-nav"></ul>
+    </nav>
+    <div class="buttons side-menu-buttons"></div>
   </div>
-  </div>
+
+  <!-- Intro header -->
+  <div class="header">
+    <div class="top-cols noprint"></div>
+    <div class="buttons noprint"></div>
+    <div class="intro">
+      <div class="avatar">
+        <img src="img/avatar.JPG">
+      </div>
+      <div class="bio">
+        <h1 class="strName"></h1>
+        <h3 class="strJob"></h3>
+      </div>
+    </div>
     <h2 class="onlyPrint">Email: anujsharma@ufl.edu</h2>
-</div>
-<section class="timeline noprint" id="thank-you">
-  <div class="entry">
-    <div class="tl-icon"><div>
-      <svg><use xlink:href='/img/icons.svg#smile'/></svg>
-    </div></div>
-    <h2 class="tl-title">Thank you for visiting!</h2>
   </div>
-</section>
-<div class="quote noprint"><svg><use xlink:href='/img/icons.svg#quote-left' /></svg></div>
 
+  <!-- Thank you and quote -->
+  <section class="timeline noprint" id="thank-you">
+    <div class="entry">
+      <div class="tl-icon">
+        <div>
+          <svg>
+            <use xlink:href='/img/icons.svg#smile' /></svg>
+        </div>
+      </div>
+      <h2 class="tl-title">Thank you for visiting!</h2>
+    </div>
+  </section>
+  <div class="quote noprint"><svg><use xlink:href='/img/icons.svg#quote-left' /></svg></div>
 
-<!-- COPYRIGHT -->
-<!-- <div class="copyright"><p class="copyright-text">©2019 Anuj Sharma | All Rights Reserved</p></div> -->
-
-<!-- Javascript Files -->
-<script src="js/jquery.min.js"></script>
-<script src="js/tlfunctions.js"></script>
-<script src="js/main.js"></script>
+  <!-- Javascript Files -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tlfunctions.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
