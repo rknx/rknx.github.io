@@ -7,9 +7,30 @@
     "theme_color": "#00838F", 
     "orientation": "portrait-primary",
     "icons": [
-        {
-          "src": "img/logo.svg",
-          "sizes": "any"
-        }
+      {
+        "src": "img/logo16.svg",
+        "sizes": "16x16"
+      },
+      {
+        "src": "img/logo32x.svg",
+        "sizes": "32x32"
+      },
+      {
+        "src": "img/logo48.svg",
+        "sizes": "48x48"
+      },
+      {
+        "src": "img/logo96.svg",
+        "sizes": "96x96"
+      },
+      {
+        "src": "img/logo.svg",
+        "sizes": "150x150",
+        "purpose": "any"
+      },
+      {
+        "src": "img/logo256.svg",
+        "sizes": "256x256"
+      }
       ]
   }
