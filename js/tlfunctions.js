@@ -23,7 +23,7 @@ var tlFunc = {
   buttons: function({entries}) {
     for (const {url,icon,text} of Object.values(entries)) {
       $('.buttons').append(
-        `<a role='button' href='${url}' class='btn'>
+        `<a role='button' aria-label='${text}' href='${url}' class='btn'>
           <svg><use xlink:href='/img/icons.svg#${icon}'></svg>
           <span>${text}</span>
         </a>`
