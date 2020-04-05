@@ -268,6 +268,7 @@ a:visited {
   min-width: 250px;
   overflow: hidden;
   clip-path: circle(5rem at 0 0px);
+  -webkit-clip-path: circle(5rem at 0 0px);
   transition: all 0.5s ease-in-out;
   background-color: rgba(var(--navback), var(--transparency));
   padding: 5rem 50px 50px;
@@ -283,6 +284,7 @@ a:visited {
 
 input#menu:checked ~ .side-menu {
   clip-path: circle(150% at 0 0px);
+  -webkit-clip-path: circle(150% at 0 0px);
   background-color: rgb(var(--navback));
 }
 
@@ -294,6 +296,7 @@ input#menu:checked ~ .side-menu {
 
 .side-menu:focus-within {
   clip-path: circle(150% at 0 0px);
+  -webkit-clip-path: circle(150% at 0 0px);
   background-color: rgb(var(--navback));
 }
 
