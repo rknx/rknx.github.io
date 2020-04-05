@@ -1,6 +1,6 @@
 var tlFunc = {
   initial: function(id, name, print) {
-    $('nav').append(`<a href='${id}'> <svg><use xlink:href='/img/icons.svg#angle-right'></svg>${name.split(/s/)[0]}</a>`);
+    $('nav').append(`<a href='${id}'> <svg><use xlink:href='/img/icons.svg#angle-right'></svg>${name.split(" ")[0]}</a>`);
     $('body').append(`<section class='timeline ${print}' id='${id}'>
       <div class='title'><div><div></div></div><h2 class='tl-title'>${name}</h2></div>
       </section>`);
