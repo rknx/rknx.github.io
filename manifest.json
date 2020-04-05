@@ -12,7 +12,7 @@
         "sizes": "16x16"
       },
       {
-        "src": "img/logo32x.svg",
+        "src": "img/logo32.svg",
         "sizes": "32x32"
       },
       {
@@ -28,14 +28,9 @@
         "sizes": "144x144"
       },
       {
-        "src": "img/logo.svg",
-        "sizes": "150x150",
-        "purpose": "any"
-      },
-      {
         "src": "img/logomask.svg",
-        "sizes": "150x150",
-        "purpose": "maskable"
+        "sizes": "400x400",
+        "purpose": "maskable any"
       },
       {
         "src": "img/logo192.svg",
