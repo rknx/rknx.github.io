@@ -28,11 +28,6 @@
         "sizes": "144x144"
       },
       {
-        "src": "img/logomask.svg",
-        "sizes": "400x400",
-        "purpose": "maskable any"
-      },
-      {
         "src": "img/logo192.svg",
         "sizes": "192x192"
       },
@@ -43,6 +38,11 @@
       {
         "src": "img/logo512.svg",
         "sizes": "512x512"
+      },
+      {
+        "src": "img/logomask.svg",
+        "sizes": "150x150",
+        "purpose": "maskable any"
       }
-      ]
+    ]
   }
