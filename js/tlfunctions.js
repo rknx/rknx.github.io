@@ -2,17 +2,17 @@ var tlFunc = {
   initial: function(id, name, print) {
     $('nav').append(`<a href='#${id}'> <svg><use xlink:href='/img/icons.svg#angle-right'></svg>${name.split(" ")[0]}</a>`);
     $('body').append(`<section class='timeline ${print}' id='${id}'>
-      <div class='title'><div><div></div></div><h2 class='tl-title'>${name}</h2></div>
+      <div class='title'><div><div></div></div><h3 class='tl-title'>${name}</h3></div>
       </section>`);
   },
 
   intro: function({image,firstname,lastname,profession,bio,email}) {
     $('body').append(
       `<section class='header'>
-        <div class='avatar'><object data='${image}' type='image/png' alt='${firstname} ${lastname}'></object></div>
+        <div class='avatar'><object data='${image}' type='image/png' alt='${firstname} ${lastname}'>${firstname} ${lastname}</object></div>
         <div class='bio'>
           <h1>${firstname} ${lastname}</h1>
-          <h3>${profession}</h3>
+          <h2>${profession}</h2>
           <p>${Object.values(bio).join( )} </p>
         </div>
         <h6 class='onlyPrint'>Email:${email}</h6>
@@ -23,7 +23,7 @@ var tlFunc = {
   buttons: function({entries}) {
     for (const {url,icon,text} of Object.values(entries)) {
       $('.buttons').append(
-        `<a href='${url}' class='btn'>
+        `<a role='button' href='${url}' class='btn'>
           <svg><use xlink:href='/img/icons.svg#${icon}'></svg>
           <span>${text}</span>
         </a>`
@@ -71,7 +71,7 @@ var tlFunc = {
     this.initial(key,prettyName,noPrint );
     for (const {prettyName,list} of Object.values(entries)){
       var htmltext="";
-      for (const {icon,text} of Object.values(list)) htmltext+=`<span><img src='${icon}' onerror='this.style.display="none"'>${text}</span>`;          
+      for (const {icon,text} of Object.values(list)) htmltext+=`<span><img src='${icon}' alt='' onerror='this.style.display="none"'>${text}</span>`;          
       $(`#${key}`).append(`
         <div>
           <div><div><svg><use xlink:href='/img/icons.svg#${logo}'/></svg></div></div>
@@ -135,7 +135,7 @@ var tlFunc = {
       $(`#${key}`).append(`
         <div>
           <div><div><svg><use xlink:href='/img/icons.svg#${logo}'/></svg></div></div>
-          <div><h4>${title}</h4><div><img src='${image}' onerror='this.style.display=none'><p>${text}</p></div></div>
+          <div><h4>${title}</h4><div><img src='${image}' alt='' onerror='this.style.display=none'><p>${text}</p></div></div>
         </div>`
       );
     };

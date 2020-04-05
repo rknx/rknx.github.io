@@ -65,7 +65,7 @@ body {
   min-width:360px;
   padding: 0px;
   margin:0;
-  background: var(--bggradient), url('img/bg.jpg') no-repeat fixed center ;
+  background: var(--bggradient), url('img/bg.webp') no-repeat fixed center ;
   background-size: cover;
   overflow-x: hidden;
 }
@@ -217,6 +217,14 @@ a, a:hover, a:visited {
     z-index: 900;
 }
 
+.menu-open:focus {
+    outline: none
+}
+
+.menu-open:focus + .side-menu {
+    display: inline-flex;
+}
+
 @media only screen and (min-width:1280px){
     .menu-open {
         display:none;
@@ -232,11 +240,6 @@ a, a:hover, a:visited {
     width: 3rem;
     margin: calc(50% + 5px) 0 0 calc(50% + 5px);
     position: absolute;
-}
-
-input:checked~.side-menu {
-    clip-path: circle(150% at 0 0px);
-    background-color: rgb(var(--navback));
 }
 
 @media only screen and (min-width:480px){
@@ -267,8 +270,14 @@ input:checked~.side-menu {
     flex-direction: column;
 }
 
+.side-menu:focus-within {
+    clip-path: circle(150% at 0 0px);
+    background-color: rgb(var(--navback));
+}
+
 @media only screen and (min-width:480px){
-    .side-menu {
+    .side-menu,
+    .side-menu:focus-within {
         width: 250px;
         background-color: rgba(var(--navback),var(--transparency));
         padding: 5rem 25px 50px;
@@ -417,6 +426,11 @@ section h1 {
 }
 
 section h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+section h3 {
     color: var(--color1);
     font-size: 2rem;
     padding: 10px;
@@ -425,15 +439,10 @@ section h2 {
 }
 
 @media  only screen and (min-width:780px) {
-    section h2 {
+    section h3 {
         font-size: 2.2rem;
         text-align: left;
     }
-}
-
-section h3 {
-    font-size: 1.5rem;
-    font-weight: 400;
 }
 
 section h4 {
@@ -621,22 +630,22 @@ section p a {
     font-weight: 200;
 }
 
-.header > .bio > h3:before {
+.header > .bio > h2:before {
     content: "I'm a "
 }
 
-.header > .bio > h3:after {
+.header > .bio > h2:after {
     content: "."
 }
 
-.header h1, .header h3, .header p {
+.header h1, .header h2, .header p {
     padding: 10px 0px;
     text-align: center;
     color: var(--fontblack);
 }
  
 @media only screen and (min-width:780px) {
-    .header h1, .header h3, .header p {
+    .header h1, .header h2, .header p {
         text-align: left;
     }
 }
@@ -740,7 +749,7 @@ section p a {
     border-radius: 25%;
 }
 
-.timeline > div:first-child > h2 {
+.timeline > div:first-child > h3 {
     flex: 0 0 100%;
 }
 
@@ -750,7 +759,7 @@ section p a {
 }
 
 @media  only screen and (min-width:780px) {
-    .timeline > div:first-child > h2 {
+    .timeline > div:first-child > h3 {
         flex: 0 0 76%;
         margin-left: -8%;
     }

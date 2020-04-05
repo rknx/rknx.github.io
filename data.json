@@ -469,12 +469,12 @@
         "mutation":{
           "title":"Mutation rate of TAL effectors",
           "text":"Contents are not disclosed yet.",
-          "image":"img/project/mutation.png"
+          "image":"img/project/mutation.jpg"
         },
         "dispersal": {
           "title":"Modeling dispersal of <i>Xanthomonas perforans</i>",
           "text":"Models were developed to predict the movement of <i>Xanthomons perforans</i> in the field and in green house based on weather condition and other factors. Of special interest was a type-3 effector gene <i>XopJ2</i> which seemed to provide fitness for dispersal. Effect of the gene was accessed in field studies and the mechanism of fitness is being studies in green house.",
-          "image":"img/project/dispersal.png"
+          "image":"img/project/dispersal.jpg"
         },
         "mapping" : {
           "title":"Mapping of resistance genes in pepper",
@@ -484,7 +484,7 @@
         "coffeerust" : {
           "title":"Rust management strategy in organix coffee",
           "text":"23 coffee varieties from previous year’s multi-season trial were scored for incidence and severity of coffee leaf rust. Three varieties 'Catimor', 'Ketisic' and 'San Roman' performed best against coffee rust. Increased shading, increased spacing and removal of crop debris reduced incidence. Triadimefon was effective as control agent whereas the effect of <i>Verticillium lecanii</i> was inconsistent.",
-          "image":"img/project/coffeerust.png"
+          "image":"img/project/coffeerust.jpg"
         },
         "tomatoblight":{
           "title":"Breeding tomato for late blight tolerance",
