@@ -33,11 +33,7 @@ $(window).on('load', function(){
   //Page loader
   $('#page-loader').fadeOut(500, function(){});
 
-  if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('/js/sw.js')
-      .then(reg => console.log('service worker registered'))
-      .catch(err => console.log('service worker not registered', err));
-  }
+  if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
 
 });
 
