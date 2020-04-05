@@ -24,13 +24,30 @@
         "sizes": "96x96"
       },
       {
+        "src": "img/logo144.svg",
+        "sizes": "144x144"
+      },
+      {
         "src": "img/logo.svg",
         "sizes": "150x150",
         "purpose": "any"
       },
       {
+        "src": "img/logomask.svg",
+        "sizes": "150x150",
+        "purpose": "maskable"
+      },
+      {
+        "src": "img/logo192.svg",
+        "sizes": "192x192"
+      },
+      {
         "src": "img/logo256.svg",
         "sizes": "256x256"
+      },
+      {
+        "src": "img/logo512.svg",
+        "sizes": "512x512"
       }
       ]
   }
