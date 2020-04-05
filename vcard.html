@@ -177,8 +177,15 @@
             text-transform: uppercase;
         }
         
-        img{
+        .vcard div:first-child div:first-child svg{
             height: 70px;
+            width: 312px;
+        }
+
+        .jlab{
+            --tomato1: #FFF;
+            --tomato2: #F26C4F;
+            --tomato3: #FFF;
         }
 
         svg {
@@ -217,7 +224,7 @@
 <body class="whiteTheme">
     <div class="vcard">
         <div>
-            <div><img src="img/jlab.svg"></svg></div>
+            <div><svg class="jlab"><use xlink:href='/img/icons-vcard.svg#jlab'/></svg></div>
             <div>
                 <h1>Anuj Sharma</h1>
                 <h2>PhD Candidate (Plant Pathology)</h2>

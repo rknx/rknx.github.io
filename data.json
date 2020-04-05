@@ -1,6 +1,7 @@
 {
-  "theme": {
-    "buttons": {
+  "buttons": {
+    "func":"buttons",
+    "entries":{
       "print": {
         "icon": "print",
         "text": "Print this page",
@@ -32,19 +33,22 @@
     "firstname":"Anuj",
     "lastname":"Sharma",
     "profession":"Plant Pathologist",
-    "image":"/images/avatar.png",
+    "image":"/img/avatar.jpg",
     "position":"PhD Candidate",
     "employer":"University of Florida",
     "employer-logo":"/images/gators.png",
-    "introstate":{
+    "email":"anujsharma@ufl.edu",
+    "bio":{
       "html1":"<strong>Currently, I am a PhD candidate at University of Florida. I work on Jones lab in plant pathology department.</strong>",
       "html2": "Among other things, I am working on mapping resistance gene against bacterial spot of pepper and tomato. I also develop models to study dispersal of bacteria, and the role of bacterial effector in its spread."
-    }
+    },
+    "func": "intro"
   },
   "timeline": {
     "education": {
       "prettyName": "Education",
       "logo": "user-graduate",
+      "func": "education",
       "entries": {
         "phd": {
           "degree": "PhD in Plant Pathology",
@@ -69,6 +73,7 @@
     "awards": {
       "prettyName": "Awards",
       "logo": "trophy",
+      "func": "awards",
       "entries": {
         "ppgsotravel": {
           "award": "PPGSO Travel Award",
@@ -100,6 +105,7 @@
       "noPrint": "noprint",
       "prettyName": "Skills",
       "logo":"star",
+      "func": "skills",
       "entries": {
         "molecular":{
           "prettyName": "Molecular",
@@ -302,6 +308,7 @@
     "research": {
       "prettyName": "Research experience",
       "logo":"vial",
+      "func": "research",
       "entries": {
         "florida":{
           "position":"Graduate Research Assistant",
@@ -353,6 +360,7 @@
     "teaching": {
       "prettyName": "Teaching experience",
       "logo":"chalkboard-teacher",
+      "func": "teaching",
       "entries": {
         "florida":{
           "organization":"University of Florida",
@@ -403,6 +411,7 @@
     "affiliation": {
       "prettyName": "Affiliations",
       "logo":"users",
+      "func": "affiliations",
       "entries": {
         "aps":{
           "organization":"American Phytopathological Society",
@@ -455,6 +464,7 @@
       "noPrint": "noprint",
       "prettyName": "Projects",
       "logo":"briefcase",
+      "func": "projects",
       "entries": {
         "mutation":{
           "title":"Mutation rate of TAL effectors",
@@ -491,13 +501,14 @@
     "publications": {
       "prettyName": "Publications",
       "logo":"book",
+      "func": "publications",
       "entries":{
         "journal":{
           "prettyName": "Research papers",
           "list":{
             "2017":{
               "prettyName":"2017",
-              "list":{
+              "items":{
                 "blast": {
                   "citationhtml": "Bhatta A, <b>Sharma A</b>, et al. 2017. Resistant and susceptible response of finger millet to seedling blast (<i>Pyricularia grisea</i> SACC.). The International Journal of Information Research and Review. 4(12):4804-4809.",
                   "url": ""
@@ -506,7 +517,7 @@
             },
             "unpublished":{
               "prettyName":"In preparation",
-              "list":{
+              "items":{
                 "nursery": {
                   "citationhtml": "Abrahamian P, <b>Sharma A</b>, Jones JB, and Vallad GE. Dynamics and spread of bacterial spot epidemics in tomato transplants produced for field production. Plant Disease. ",
                   "url": ""
@@ -524,7 +535,7 @@
           "list":{
             "2019":{
               "prettyName":"2019",
-              "list":{
+              "items":{
                 "review1": {
                   "citationhtml": "<b>Sharma A</b>, Jones JB and White FF. Recent advances in developing disease resistance in plants. F1000Research 2019, 8(F1000 Faculty Rev):1934.",
                   "url": "https://doi.org/10.12688/f1000research.20179.1"
@@ -538,7 +549,7 @@
           "list":{
             "unpublished":{
               "prettyName":"In preparation",
-              "list":{
+              "items":{
                 "lab-manual-idntification": {
                   "citationhtml": "<b>Sharma A</b>, Timilsina S and Jones JB. Initial identification of common bacterial genera. In <i>Laboratory Guide for Identification of Plant Pathogenic Bacteria, 4th Edition</i>. American Phytopathological Society (APS Press). ",
                   "url": ""
@@ -556,6 +567,7 @@
     "presentation": {
       "prettyName": "Conference presentations",
       "logo":"chart-bar",
+      "func": "presentation",
       "entries": {
         "aps19":{
           "conference": "Plant Health 2019",
@@ -570,15 +582,17 @@
       }
     },
     "posters": {
-      "display":"hidden",
+      "display": false,
       "prettyName": "Posters",
       "logo":"",
+      "func": "posters",
       "entries": {}
     },
     "references": {
       "noPrint": "noprint",
       "prettyName": "References",
       "logo":"user",
+      "func": "references",
       "entries": {
         "jeff":{
           "name":"Dr. Jeffrey B. Jones",
@@ -618,6 +632,7 @@
       "noPrint": "noprint",
       "prettyName": "Contact",
       "logo":"address-book",
+      "func": "contact",
       "entries": {
         "address": {
           "prettyName":"Address",
@@ -668,32 +683,32 @@
           "prettyName":"Find me on",
           "list":{
             "github":{
-              "prettyName":"Github",
-              "content":"",
+              "prettyName":"",
+              "content":"Github",
               "link":"https://github.com/rknx/",
               "icon":"github"
             },
             "linkedin":{
-              "prettyName":"LinkedIn",
-              "content":"",
+              "prettyName":"",
+              "content":"LinkedIn",
               "link":"https://www.linkedin.com/in/sharmaan/",
               "icon":"linkedin"
             },
             "orcid":{
-              "prettyName":"OrcID",
-              "content":"",
+              "prettyName":"",
+              "content":"OrcID",
               "link":"https://orcid.org/0000-0003-2915-3142",
               "icon":"orcid"
             },
             "deviantart":{
-              "prettyName":"DeviantArt",
-              "content":"",
+              "prettyName":"",
+              "content":"DeviantArt",
               "link":"https://www.deviantart.com/rknx",
               "icon":"deviantart"
             },
             "stackoverflow":{
-              "prettyName":"StackOverflow",
-              "content":"",
+              "prettyName":"",
+              "content":"StackOverflow",
               "link":"https://stackoverflow.com/users/5523665/anuj-sharma",
               "icon":"stack-overflow"
             }
@@ -702,8 +717,11 @@
       }
     }
   },
-    "quote": {
-      "text": "If someone offers you an amazing opportunity but you are not sure you can do it, say yes - then learn how to do it later.",
-      "speaker": "Richard Branson"
-    }
+  "quote": {
+    "noPrint": "noprint",
+    "text": "If someone offers you an amazing opportunity but you are not sure you can do it, say yes - then learn how to do it later.",
+    "speaker": "Richard Branson",
+    "logo": "quote-left",
+    "func": "quote"
+  }
 }

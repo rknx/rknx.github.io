@@ -8,6 +8,9 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link href="styles.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#00838F">
+  <link rel="apple-touch-icon" href="img/icon.svg">
 </head>
 
 <body class="body">
@@ -17,60 +20,27 @@
     <div class="spinner"></div>
     <div class="strName">Loading...</div>
     <span class="strJob"><span>
+    <noscript>Javascript has been disabled. This page needs javascript to load.</noscript>
   </div>
 
   <!-- Side menu open-->
   <input type="checkbox" id="menu" style="display:none;">
   <label class="menu-open noprint" for="menu">
-    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg">
-      <path class="line-1" d="M0 40h62c13 0 6 28-4 18L35 35"></path>
-      <path class="line-2" d="M0 50h70"></path>
-      <path class="line-3" d="M0 60h62c13 0 6-28-4-18L35 65"></path>
-    </svg>
+    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M0 40h62c13 0 6 28-4 18L35 35"></path></svg>
+    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M0 50h70"></path></svg>
+    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M0 60h62c13 0 6-28-4-18L35 65"></path></svg>
   </label>
 
   <!-- Side Menu container -->
   <div class="side-menu noprint">
-    <div class="side-menu-name strName"></div>
-    <span class="side-menu-job strJob"></span>
-    <nav id="side-menu" class="side-menu-este">
-      <ul class="nav side-menu-nav"></ul>
-    </nav>
+    <div class="strName"></div>
+    <span class="strJob"></span>
+    <nav></nav>
     <div class="buttons side-menu-buttons"></div>
   </div>
-
-  <!-- Intro header -->
-  <div class="header">
-    <div class="top-cols noprint"></div>
-    <div class="buttons noprint"></div>
-    <div class="intro">
-      <div class="avatar">
-        <img src="img/avatar.JPG">
-      </div>
-      <div class="bio">
-        <h1 class="strName"></h1>
-        <h3 class="strJob"></h3>
-      </div>
-    </div>
-    <h2 class="onlyPrint">Email: anujsharma@ufl.edu</h2>
-  </div>
-
-  <!-- Thank you and quote -->
-  <section class="timeline noprint" id="thank-you">
-    <div class="entry">
-      <div class="tl-icon">
-        <div>
-          <svg>
-            <use xlink:href='/img/icons.svg#smile' /></svg>
-        </div>
-      </div>
-      <h2 class="tl-title">Thank you for visiting!</h2>
-    </div>
-  </section>
-  <div class="quote noprint"><svg><use xlink:href='/img/icons.svg#quote-left' /></svg></div>
-
+  
   <!-- Javascript Files -->
-  <script src="js/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="js/tlfunctions.js"></script>
   <script src="js/main.js"></script>
 </body>

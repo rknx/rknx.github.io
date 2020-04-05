@@ -1,0 +1,15 @@
+{
+    "name": "Name Website",
+    "short_name": "Anuj's CV",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FAFAFA",
+    "theme_color": "#00838F", 
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+          "src": "img/logo.svg",
+          "sizes": "any"
+        }
+      ]
+  }
