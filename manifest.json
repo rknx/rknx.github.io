@@ -8,41 +8,41 @@
     "orientation": "portrait-primary",
     "icons": [
       {
-        "src": "img/logo16.svg",
+        "src": "img/logo16.png",
         "sizes": "16x16"
       },
       {
-        "src": "img/logo32.svg",
+        "src": "img/logo32.png",
         "sizes": "32x32"
       },
       {
-        "src": "img/logo48.svg",
+        "src": "img/logo48.png",
         "sizes": "48x48"
       },
       {
-        "src": "img/logo96.svg",
+        "src": "img/logo96.png",
         "sizes": "96x96"
       },
       {
-        "src": "img/logo144.svg",
+        "src": "img/logo144.png",
         "sizes": "144x144"
-      },
-      {
-        "src": "img/logo192.svg",
-        "sizes": "192x192"
-      },
-      {
-        "src": "img/logo256.svg",
-        "sizes": "256x256"
-      },
-      {
-        "src": "img/logo512.svg",
-        "sizes": "512x512"
       },
       {
         "src": "img/logomask.svg",
         "sizes": "150x150",
-        "purpose": "maskable any"
+        "purpose": "any maskable"
+      },
+      {
+        "src": "img/logo192.png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "img/logo256.png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "img/logo512.png",
+        "sizes": "512x512"
       }
     ]
   }
