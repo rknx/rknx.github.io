@@ -62,11 +62,10 @@ window.onload = () => {
   "serviceWorker" in navigator && navigator.serviceWorker.register("/sw.js");
 
   //Menu close on click
-  document
-    .querySelector("nav")
-    .addEventListener("click", (e) =>
-      document.querySelector("#menu").removeAttribute("checked")
-    );
+  document.querySelector("nav").addEventListener("click", (e) => {
+    console.log();
+    document.querySelector("#menu").removeAttribute("checked");
+  });
 
   //Menu close on click
   document.querySelectorAll("nav a").forEach((el) => {
