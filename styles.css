@@ -1,51 +1,57 @@
 /*--------------Fonts------------*/
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/Light.woff2) format('woff2');
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url(fonts/Light.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(fonts/Regular.woff2) format('woff2');
+  src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url(fonts/Regular.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(fonts/Bold.woff2) format('woff2');
+  src: local("Open Sans Bold"), local("OpenSans-Bold"),
+    url(fonts/Bold.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(fonts/Italic.woff2) format('woff2');
+  src: local("Open Sans Italic"), local("OpenSans-Italic"),
+    url(fonts/Italic.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: italic;
   font-weight: 200;
   font-display: swap;
-  src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'), url(fonts/LightItalic.woff2) format('woff2');
+  src: local("Open Sans Light Italic"), local("OpenSans-LightItalic"),
+    url(fonts/LightItalic.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(fonts/BoldItalic.woff2) format('woff2');
+  src: local("Open Sans Bold Italic"), local("OpenSans-BoldItalic"),
+    url(fonts/BoldItalic.woff2) format("woff2");
 }
 
 /*--------------Theme colors------------*/
@@ -80,7 +86,7 @@
   );
   --bggradient: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
   --invertfilter: none;
-  --rem:1rem;
+  --rem: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -129,6 +135,8 @@ body {
   background: var(--bggradient), url("img/bg.webp") no-repeat fixed center;
   background-size: cover;
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 @media only screen and (min-width: 480px) {
@@ -171,7 +179,7 @@ body {
 }
 
 body > svg {
-  display:none;
+  display: none;
 }
 
 /*--------------Text elements------------*/
@@ -460,7 +468,6 @@ input#menu:checked ~ .side-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
 }
 .hosts > a {
   flex: 0 0 48%;
@@ -498,6 +505,8 @@ section {
   flex: 0 0 100%;
   background-color: rgba(var(--tlback), var(--transparency));
   backdrop-filter: var(--backdrop);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 @media only screen and (min-width: 480px) {
@@ -674,7 +683,6 @@ section p a {
   flex: 0 0 32%;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
 }
 
 .avatar img {
@@ -845,6 +853,17 @@ section p a {
   border-radius: 50%;
 }
 
+.timeline > div:first-child > h3 {
+  flex: 0 0 100%;
+}
+
+@media only screen and (min-width: 780px) {
+  .timeline > div:first-child > h3 {
+    flex: 0 0 76%;
+    margin-left: -8%;
+  }
+}
+
 .timeline > div:not(:first-child) > div:first-child {
   flex-direction: column;
   align-self: normal;
@@ -880,21 +899,12 @@ section p a {
   border-radius: 25%;
 }
 
-.timeline > div:first-child > h3 {
-  flex: 0 0 100%;
-}
-
 .timeline > div:not(:first-child) > div:not(:first-child) {
   flex: 0 0 100%;
   padding: 10px;
 }
 
 @media only screen and (min-width: 780px) {
-  .timeline > div:first-child > h3 {
-    flex: 0 0 76%;
-    margin-left: -8%;
-  }
-
   .timeline > div:not(:first-child) > div:not(:first-child) {
     flex: 0 0 76%;
     padding: 10px 40px 10px 10px;
@@ -929,13 +939,12 @@ section p a {
 
 .skills svg {
   height: 1rem;
-  width:1rem;
+  width: 1rem;
   margin-right: 5px;
   border-radius: 2px;
   filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.5));
   display: flex;
 }
-
 
 #skills span:nth-child(4n + 1) {
   background-color: var(--color1);
@@ -1230,25 +1239,28 @@ input#menu:checked ~ .menu-open svg path:nth-child(2) {
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/Light.woff2) format('woff2');
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url(fonts/Light.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(fonts/Regular.woff2) format('woff2');
+  src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url(fonts/Regular.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(fonts/Bold.woff2) format('woff2');
+  src: local("Open Sans Bold"), local("OpenSans-Bold"),
+    url(fonts/Bold.woff2) format("woff2");
 }

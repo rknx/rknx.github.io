@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anuj Sharma | CV</title>
   <meta name="Description" content="Online Curriculum Vitae of Anuj Sharma, anujsharma@ufl.edu">
-  <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="stylesheet" rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
   <link rel="preload" href="js/tlfunctions.js" as="script">
   <link rel="preload" href="js/main.js" as="script">
   <link rel=" shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -15,6 +15,9 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#00838F">
   <link rel="apple-touch-icon" href="img/icon192.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name=”apple-mobile-web-app-capable” content=”yes”>
   <style>
     #page-loader {
       width: 100%;
@@ -114,6 +117,7 @@
       document.body.appendChild(srcdom)
     }
     document.body.innerHTML += `<svg><use href='img/icons.svg#angle-right'></svg><svg><use href='img/icons.svg#angle-right'></svg>`;
+    var start = new Date().getTime();
 
   </script>
 </body>
