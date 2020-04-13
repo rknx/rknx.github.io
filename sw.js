@@ -59,8 +59,10 @@ self.addEventListener("fetch", (evt) => {
     })
   );
 });
-//new serviceworker avaialbel
+//new serviceworker avaialbe
 navigator.serviceWorker.addEventListener("controllerchange", function () {
-  console.log("updating");
-  window.location.reload();
+  alert("New version available, please wait while refreshing.");
+  setTimeout(function () {
+    window.location.reload();
+  }, 500);
 });

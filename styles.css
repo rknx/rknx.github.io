@@ -202,6 +202,11 @@ a:visited {
   text-decoration: none;
 }
 
+a:focus {
+  outline: var(--color3 dotted 2px);
+  outline-offset: 0.05rem;
+}
+
 /*--------------Page elements-----------*/
 
 .btn {
