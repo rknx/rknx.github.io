@@ -6,12 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anuj Sharma | CV</title>
   <meta name="Description" content="Online Curriculum Vitae of Anuj Sharma, anujsharma@ufl.edu">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700&display=swap' rel='stylesheet' type='text/css'>
-  <link href="styles.css" rel="stylesheet">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="js/tlfunctions.js" as="script">
+  <link rel="preload" href="js/main.js" as="script">
+  <link rel=" shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="preload" href="fonts/Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="data.json" as="fetch" type="application/json" crossorigin>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#00838F">
   <link rel="apple-touch-icon" href="img/icon192.png">
+  <style>
+    #page-loader {
+      width: 100%;
+      height: 100%;
+      background: #1b3a69;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: opacity .5s ease-in-out
+    }
+
+    #page-loader>* {
+      margin: 5px
+    }
+
+    .spinner {
+      width: 30px;
+      height: 30px;
+      background-color: #fff;
+      animation: tp-rotateplane 1.2s infinite ease-in-out;
+      border-radius: 3px
+    }
+
+    @keyframes tp-rotateplane {
+      0% {
+        transform: perspective(120px) rotateX(0)
+      }
+
+      50% {
+        transform: perspective(120px) rotateX(-180.1deg)
+      }
+    }
+
+    .strName {
+      border: 2px solid #fff;
+      border-radius: 2px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      text-align: center
+    }
+
+    .strName>span {
+      font-weight: 700
+    }
+
+    .strJob {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      text-transform: uppercase;
+      text-align: center
+    }
+  </style>
 </head>
 
 <body class="body">
@@ -19,31 +81,41 @@
   <!-- Page Loader -->
   <div class="loader noprint" id="page-loader">
     <div class="spinner"></div>
-    <div class="strName">Loading...</div>
-    <span class="strJob"><span>
-    <noscript>Javascript has been disabled. This page needs javascript to load.</noscript>
+    <div class="strName">Anuj <span>Sharma</span></div>
+    <span class="strJob">Plant Pathologist<span>
+        <noscript>Javascript has been disabled. This page needs javascript to load.</noscript>
   </div>
 
   <!-- Side menu open-->
   <input id="menu" type="checkbox" style="display:none;">
   <label class="menu-open noprint" for="menu">
-    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M0 40h62c13 0 6 28-4 18L35 35"></path></svg>
-    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M0 50h70"></path></svg>
-    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M0 60h62c13 0 6-28-4-18L35 65"></path></svg>
+    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 40h62c13 0 6 28-4 18L35 35"></path>
+    </svg>
+    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 50h70"></path>
+    </svg>
+    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 60h62c13 0 6-28-4-18L35 65"></path>
+    </svg>
   </label>
 
   <!-- Side Menu container -->
   <div class="side-menu noprint">
-    <div class="strName"></div>
-    <span class="strJob"></span>
+    <div class="strName">Anuj <span>Sharma</span></div>
+    <span class="strJob">Plant Pathologist</span>
     <nav></nav>
     <div class="buttons side-menu-buttons"></div>
   </div>
-  
-  <!-- Javascript Files -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="js/tlfunctions.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    for (src of ['tlfunctions', 'main']) {
+      srcdom = document.createElement('script');
+      srcdom.src = `js/${src}.js`;
+      document.body.appendChild(srcdom)
+    }
+    document.body.innerHTML += `<svg><use href='img/icons.svg#angle-right'></svg><svg><use href='img/icons.svg#angle-right'></svg>`;
+
+  </script>
 </body>
 
 </html>

@@ -1,64 +1,62 @@
-//Strict Mode
-(function ($) {
-  "use strict";
+//Run on Document Ready
+var ready = (callback) => {
+  if (document.readyState != "loading") callback();
+  else document.addEventListener("DOMContentLoaded", callback);
+}
 
-  //Run on Document Ready
-  $(document).ready(function () {
-    //Populate values from json data
-    $.getJSON("data.json", function (data) {
-      $(".strName").html(
-        `${data.intro.firstname} <span>${data.intro.lastname}</span>`
-      );
-      $(".strJob").html(data.intro.profession);
+ready(() => {
+  //Populate values from json data
+  fetch("data.json")
+    .then(response => response.json())
+    .then(data => {
+      //Strings replace
+      document.querySelectorAll(".strName").forEach(el => { el.innerHTML = `${data.intro.firstname} <span>${data.intro.lastname}</span>` });
+      document.querySelectorAll(".strJob").forEach(el => { el.innerHTML = data.intro.profession });
+      document.querySelectorAll(".strEmail").forEach(el => { el.innerHTML = data.intro.email });
 
-      for (const val of Object.values(data.buttons)) {
-      }
-      if (typeof tlFunc[data.intro["func"]] === "function")
-        tlFunc[data.intro["func"]](data.intro);
-      for (const [key, val] of Object.entries(data.timeline))
-        if (
-          val["display"] !== false &&
-          typeof tlFunc[val["func"]] === "function"
-        )
-          tlFunc[val["func"]](key, val);
-      if (typeof tlFunc[data.buttons["func"]] === "function")
-        tlFunc[data.buttons["func"]](data.buttons);
-      if (typeof tlFunc[data.quote["func"]] === "function")
-        tlFunc[data.quote["func"]](data.quote);
-    });
+      //Intro section rendering
+      if (typeof tlFunc[data.intro["__tlFunc"]] === "function") tlFunc[data.intro["__tlFunc"]](data.intro);
+
+      //Timeline rendering
+      Object.entries(data.timeline).forEach(([key, val]) => typeof tlFunc[val["__tlFunc"]] === "function" && val["__display"] && tlFunc[val["__tlFunc"]](key, val));
+
+      //Navbar button rendering
+      typeof tlFunc[data.buttons["__tlFunc"]] === "function" && tlFunc[data.buttons["__tlFunc"]](data.buttons);
+
+      //Quote rendering
+      typeof tlFunc[data.quote["__tlFunc"]] === "function" && tlFunc[data.quote["__tlFunc"]](data.quote);
+
+      //Page loader
+      document.querySelector("#page-loader").style.opacity = 0;
+      setTimeout(function () { document.querySelector("#page-loader").style.display = 'none'; }, 500);
+    })
+    .catch(error => console.log(error));
+});
+
+//Run on Window Resize
+window.resize = () => {
+
+  //Changes to side-menu
+  window.innerWidth >= 1280 && document.querySelector("#menu").removeAttribute("checked");
+  document.querySelector(".menu-open").style.display = window.innerWidth >= 1280 ? "none" : "";
+  document.querySelector(".side-menu").style.clipPath = window.innerWidth >= 1280 ? "circle(150% at 0 0px)" : "";
+
+  //Other to be added
+};
+
+//Run on Window Load
+window.onload = () => {
+
+  //PWA Service worker
+  "serviceWorker" in navigator && navigator.serviceWorker.register("/sw.js");
+
+  //Menu close on click
+  document.querySelector("nav").addEventListener("click", (e) => {
+    document.querySelector("#menu").removeAttribute("checked");
+    setTimeout(() => history.replaceState({}, document.title, window.location.href.split("#")[0]), 50);
   });
 
-  //Run on Window Resize
-  $(window).on("resize", function () {
-    //Changes to side-menu
-    if (window.innerWidth >= 1280) $("#menu").prop("checked", false);
-    $(".menu-open").css({ display: window.innerWidth >= 1280 ? "none" : "" });
-    $(".side-menu").css({
-      "clip-path": window.innerWidth >= 1280 ? "circle(150% at 0 0px)" : "",
-    });
+  //Menu close on click
+  document.querySelectorAll("svg").forEach(el => { el.addEventListener("error", (e) => el.style.display = "none") });
+};
 
-    //Other to be added
-  });
-
-  //Run on Window Load
-  $(window).on("load", function () {
-    //Page loader
-    $("#page-loader").fadeOut(500, function () {});
-
-    //PWA Service worker
-    if ("serviceWorker" in navigator)
-      navigator.serviceWorker.register("/sw.js");
-
-    //Menu close on click
-    $("nav").click(function () {
-      $("#menu").prop("checked", false);
-      setTimeout(function () {
-        history.replaceState(
-          {},
-          document.title,
-          window.location.href.split("#")[0]
-        );
-      }, 50);
-    });
-  });
-})(jQuery);

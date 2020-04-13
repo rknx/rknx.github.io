@@ -1,7 +1,7 @@
 {
   "buttons": {
-    "func":"buttons",
-    "entries":{
+    "__tlFunc": "buttons",
+    "entries": {
       "print": {
         "icon": "print",
         "text": "Print this page",
@@ -30,25 +30,30 @@
     }
   },
   "intro": {
-    "firstname":"Anuj",
-    "lastname":"Sharma",
-    "profession":"Plant Pathologist",
-    "image":"/img/avatar.jpg",
-    "position":"PhD Candidate",
-    "employer":"University of Florida",
-    "employer-logo":"/images/gators.png",
-    "email":"anujsharma@ufl.edu",
-    "bio":{
-      "html1":"<strong>Currently, I am a PhD candidate at University of Florida. I work on Jones lab in plant pathology department.</strong>",
+    "firstname": "Anuj",
+    "lastname": "Sharma",
+    "profession": "Plant Pathologist",
+    "image": "/img/avatar.jpg",
+    "position": "PhD Candidate",
+    "employer": "University of Florida",
+    "employer-logo": "/images/gators.png",
+    "email": "anujsharma@ufl.edu",
+    "bio": {
+      "html1": "<strong>Currently, I am a PhD candidate at University of Florida. I work on Jones lab in plant pathology department.</strong>",
       "html2": "Among other things, I am working on mapping resistance gene against bacterial spot of pepper and tomato. I also develop models to study dispersal of bacteria, and the role of bacterial effector in its spread."
     },
-    "func": "intro"
+    "__tlFunc": "intro"
+  },
+  "__comment for timeline": {
+    "__noPrint": "options:'noprint','onlyprint',''. noprint: displayed but not printed by print() method, onlyprint: hidden, shown in print only, '': default, never hidden.",
+    "__display": "options:true, false, ''. true: displayed on page, false, '': hidden on page"
   },
   "timeline": {
     "education": {
       "prettyName": "Education",
       "logo": "user-graduate",
-      "func": "education",
+      "__tlFunc": "education",
+      "__display": "true",
       "entries": {
         "phd": {
           "degree": "PhD in Plant Pathology",
@@ -73,7 +78,8 @@
     "awards": {
       "prettyName": "Awards",
       "logo": "trophy",
-      "func": "awards",
+      "__tlFunc": "awards",
+      "__display": "true",
       "entries": {
         "ppgsotravel": {
           "award": "PPGSO Travel Award",
@@ -104,202 +110,207 @@
     "skills": {
       "noPrint": "noprint",
       "prettyName": "Skills",
-      "logo":"star",
-      "func": "skills",
+      "logo": "star",
+      "__tlFunc": "skills",
+      "__display": "true",
       "entries": {
-        "molecular":{
+        "molecular": {
           "prettyName": "Molecular",
           "icon": "",
-          "list":{
-            "marker":{
-              "icon":"",
-              "text":"Marker development"
+          "list": {
+            "marker": {
+              "icon": "",
+              "text": "Marker development"
             },
-            "hrm":{
-              "icon":"",
-              "text":"High Resolution Melting curve"
+            "hrm": {
+              "icon": "",
+              "text": "High Resolution Melting curve"
             },
-            "qpcr":{
-              "icon":"",
-              "text":"qPCR"
+            "qpcr": {
+              "icon": "",
+              "text": "qPCR"
             },
-            "topo":{
-              "icon":"",
-              "text":"Topo-cloning"
+            "topo": {
+              "icon": "",
+              "text": "Topo-cloning"
             },
-            "gateway":{
-              "icon":"",
-              "text":"Gateway cloning"
+            "gateway": {
+              "icon": "",
+              "text": "Gateway cloning"
             },
-            "fusion":{
-              "icon":"",
-              "text":"Protein fusions"
+            "fusion": {
+              "icon": "",
+              "text": "Protein fusions"
             },
-            "confocal":{
-              "icon":"",
-              "text":"Confocal microscopy"
+            "confocal": {
+              "icon": "",
+              "text": "Confocal microscopy"
             },
-            "rnai":{
-              "icon":"",
-              "text":"RNAi/Gene silencing"
+            "rnai": {
+              "icon": "",
+              "text": "RNAi/Gene silencing"
             },
-            "crispr":{
-              "icon":"",
-              "text":"CRISPR editing"
+            "crispr": {
+              "icon": "",
+              "text": "CRISPR editing"
+            },
+            "snapgene": {
+              "icon": "snapgene",
+              "text": "SnapGene"
+            },
+            "geneious": {
+              "icon": "geneious",
+              "text": "Geneious"
             }
           }
         },
-        "bioinformatics":{
+        "bioinformatics": {
           "prettyName": "Bioinformatics",
           "icon": "",
-          "list":{
-            "bowtie":{
-              "icon":"",
-              "text":"Bowtie2"
+          "list": {
+            "bowtie": {
+              "icon": "",
+              "text": "Bowtie2"
             },
-            "bwa":{
-              "icon":"",
-              "text":"BWA"
+            "bwa": {
+              "icon": "",
+              "text": "BWA"
             },
-            "spades":{
-              "icon":"/img/logos/spades.png",
-              "text":"SPAdes"
+            "spades": {
+              "icon": "spades",
+              "text": "SPAdes"
             },
-            "lastz":{
-              "icon":"",
-              "text":"LastZ"
+            "lastz": {
+              "icon": "",
+              "text": "LastZ"
             },
-            "tophat":{
-              "icon":"",
-              "text":"Tophat"
+            "tophat": {
+              "icon": "",
+              "text": "Tophat"
             },
-            "cuff":{
-              "icon":"",
-              "text":"Cufflinks"
+            "cuff": {
+              "icon": "",
+              "text": "Cufflinks"
             },
-            "biopython":{
-              "icon":"/img/logos/biopython.png",
-              "text":"BioPython"
+            "biopython": {
+              "icon": "biopython",
+              "text": "BioPython"
             },
-            "gatk":{
-              "icon":"/img/logos/gatk.png",
-              "text":"GATK"
+            "gatk": {
+              "icon": "gatk",
+              "text": "GATK"
             },
-            "samtools":{
-              "icon":"",
-              "text":"Samtools"
+            "samtools": {
+              "icon": "",
+              "text": "Samtools"
             },
-            "jbrowse":{
-              "icon":"/img/logos/jbrowse.png",
-              "text":"JBrowse"
+            "jbrowse": {
+              "icon": "",
+              "text": "JBrowse"
             },
-            "igv":{
-              "icon":"/img/logos/igv.png",
-              "text":"IGV"
+            "igv": {
+              "icon": "",
+              "text": "IGV"
             },
-            "mega":{
-              "icon":"/img/logos/mega.png",
-              "text":"MEGA X"
+            "mega": {
+              "icon": "mega",
+              "text": "MEGA X"
             }
           }
         },
-        "programming":{
+        "programming": {
           "prettyName": "Programming languages",
           "icon": "",
-          "list":{
-            "r":{
-              "icon":"/img/logos/r.png",
-              "text":"R"
+          "list": {
+            "r": {
+              "icon": "r",
+              "text": "R"
             },
-            "tidyr/ggplot":{
-              "icon":"/img/logos/tidyr-ggplot.png",
-              "text":"TidyR/Ggplot"
+            "tidyr/ggplot": {
+              "icon": "ggplot2",
+              "text": "TidyR/Ggplot"
             },
-            "python":{
-              "icon":"/img/logos/python.png",
-              "text":"Python"
+            "python": {
+              "icon": "python",
+              "text": "Python"
             },
-            "shell":{
-              "icon":"/img/logos/bash.png",
-              "text":"Shell/Bash"
+            "shell": {
+              "icon": "bash",
+              "text": "Shell/Bash"
             },
-            "powershell":{
-              "icon":"/img/logos/powershell.png",
-              "text":"Powershell"
+            "powershell": {
+              "icon": "powershell",
+              "text": "Powershell"
             },
-            "html":{
-              "icon":"/img/logos/html.png",
-              "text":"HTML"
+            "html": {
+              "icon": "html",
+              "text": "HTML"
             },
-            "css":{
-              "icon":"/img/logos/css.png",
-              "text":"CSS"
+            "css": {
+              "icon": "css",
+              "text": "CSS"
             },
-            "javascript":{
-              "icon":"/img/logos/javascript.png",
-              "text":"Javascript"
+            "javascript": {
+              "icon": "javascript",
+              "text": "Javascript"
             },
-            "php":{
-              "icon":"/img/logos/php.png",
-              "text":"PHP"
+            "php": {
+              "icon": "php",
+              "text": "PHP"
             },
-            "react":{
-              "icon":"/img/logos/react.png",
-              "text":"React"
+            "react": {
+              "icon": "react",
+              "text": "React"
             },
-            "autohotkey":{
-              "icon":"/img/logos/ahk.png",
-              "text":"AutoHotKey"
+            "autohotkey": {
+              "icon": "ahk",
+              "text": "AutoHotKey"
             }
           }
         },
-        "softwares":{
+        "softwares": {
           "prettyName": "Softwares",
           "icon": "",
-          "list":{
-            "office":{
-              "icon":"/img/logos/office.png",
-              "text":"Ms Office"
+          "list": {
+            "office": {
+              "icon": "office",
+              "text": "Ms Office"
             },
-            "trello":{
-              "icon":"/img/logos/trello.png",
-              "text":"Trello"
+            "trello": {
+              "icon": "trello",
+              "text": "Trello"
             },
-            "teams":{
-              "icon":"/img/logos/teams.png",
-              "text":"Teams"
+            "teams": {
+              "icon": "teams",
+              "text": "Teams"
             },
-            "photoshop":{
-              "icon":"/img/logos/photoshop.png",
-              "text":"Photoshop"
+            "photoshop": {
+              "icon": "photoshop",
+              "text": "Photoshop"
             },
-            "inkscape":{
-              "icon":"/img/logos/inkscape.png",
-              "text":"Inkscape"
+            "inkscape": {
+              "icon": "inkscape",
+              "text": "Inkscape"
             },
-            "github":{
-              "icon":"/img/logos/github.png",
-              "text":"Git/Github"
+            "github": {
+              "icon": "github",
+              "text": "Git/Github"
             },
-            "netlify":{
-              "icon":"/img/logos/netlify.png",
-              "text":"Netlify"
+            "netlify": {
+              "icon": "netlify",
+              "text": "Netlify"
             },
-            "vscode":{
-              "icon":"/img/logos/vscode.png",
-              "text":"VS Code"
+            "vscode": {
+              "icon": "vscode",
+              "text": "VS Code"
             },
-            "snapgene":{
-              "icon":"/img/logos/snapgene.png",
-              "text":"SnapGene"
+            "fusion360": {
+              "icon": "fusion360",
+              "text": "Fusion360"
             },
-            "fusion360":{
-              "icon":"/img/logos/fusion360.png",
-              "text":"Fusion360"
-            },
-            "arcgis":{
-              "icon":"/img/logos/arcgis.png",
-              "text":"ArcGIS"
+            "arcgis": {
+              "icon": "arcgis",
+              "text": "ArcGIS"
             }
           }
         }
@@ -307,102 +318,108 @@
     },
     "research": {
       "prettyName": "Research experience",
-      "logo":"vial",
-      "func": "research",
+      "logo": "vial",
+      "__tlFunc": "research",
+      "__display": "true",
       "entries": {
-        "florida":{
-          "position":"Graduate Research Assistant",
-          "institution":"University of Florida",
-          "subinstitution":"Department of Plant Pathology",
-          "pi-term":"Advisor",
+        "florida": {
+          "position": "Graduate Research Assistant",
+          "institution": "University of Florida",
+          "subinstitution": "Department of Plant Pathology",
+          "pi-term": "Advisor",
           "pi-name": "Dr. Jeffrey B. Jones",
-          "address":"Gainesville, FL 32611",
-          "start":"2017",
-          "end":"Present",
-          "projects":{
-            "mutation":"Study of mutation rate of <i>Xanthomonas</i> TAL effectors.",
-            "avrbst":"Modelling the dispersal of <i>Xanthomonas perforans</i> in field and greenhouse.",
-            "mapping":"Understanding the role effector <i>XopJ2</i> in spread of <i>Xanthomonas perforans</i>.",
-            "dispersal":"Mapping of novel bacterial spot resistance genes in pepper."
-            }
-        },
-        "narc":{
-          "position":"Research Intern",
-          "institution":"Nepal Agriculture Research Council",
-          "subinstitution":"Horticulture Research Station",
-          "pi-term":"Supervisor",
-          "pi-name": "Tirtha R. Pokharel",
-          "address":"Pokhara, Nepal",
-          "start":"2016",
-          "end":"2017",
-          "projects":{
-            "cvt":"National coordinated varietal trials of several vegetable crops.",
-            "coffeerust":"Evaluation of various coffee rust biocontrol strategies.",
-            "lateblight":"Resistance breeding against late blight resistance in tomato."
+          "address": "Gainesville, FL 32611",
+          "start": "2017",
+          "end": "Present",
+          "projects": {
+            "mutation": "Study of mutation rate of <i>Xanthomonas</i> TAL effectors.",
+            "avrbst": "Modelling the dispersal of <i>Xanthomonas perforans</i> in field and greenhouse.",
+            "mapping": "Understanding the role effector <i>XopJ2</i> in spread of <i>Xanthomonas perforans</i>.",
+            "dispersal": "Mapping of novel bacterial spot resistance genes in pepper."
           }
         },
-        "rampur":{
-          "position":"Undergrad Research Assistant",
-          "institution":"Tribhuvan University",
-          "subinstitution":"Plant Pathology Department",
-          "pi-term":"Advisor",
+        "narc": {
+          "position": "Research Intern",
+          "institution": "Nepal Agriculture Research Council",
+          "subinstitution": "Horticulture Research Station",
+          "pi-term": "Supervisor",
+          "pi-name": "Tirtha R. Pokharel",
+          "address": "Pokhara, Nepal",
+          "start": "2016",
+          "end": "2017",
+          "projects": {
+            "cvt": "National coordinated varietal trials of several vegetable crops.",
+            "coffeerust": "Evaluation of various coffee rust biocontrol strategies.",
+            "lateblight": "Resistance breeding against late blight resistance in tomato."
+          }
+        },
+        "rampur": {
+          "position": "Undergrad Research Assistant",
+          "institution": "Tribhuvan University",
+          "subinstitution": "Plant Pathology Department",
+          "pi-term": "Advisor",
           "pi-name": "Dr. Sundar M. Shrestha",
-          "address":"Chitwan, Nepal",
-          "start":"2015",
-          "end":"2016",
-          "projects":{
-            "blast":"Screening finger millet accessions for blast resistance.",
-            "clinic":"Disease diagnosis for plant diagnostic clinic."
+          "address": "Chitwan, Nepal",
+          "start": "2015",
+          "end": "2016",
+          "projects": {
+            "blast": "Screening finger millet accessions for blast resistance.",
+            "clinic": "Disease diagnosis for plant diagnostic clinic."
           }
         }
       }
     },
     "teaching": {
       "prettyName": "Teaching experience",
-      "logo":"chalkboard-teacher",
-      "func": "teaching",
+      "logo": "chalkboard-teacher",
+      "__tlFunc": "teaching",
+      "__display": "true",
       "entries": {
-        "florida":{
-          "organization":"University of Florida",
+        "florida": {
+          "organization": "University of Florida",
           "address": "Gainesville, FL",
-          "list":{
-            "lecturefungal":{
-              "position":"Guest Lecture",
-              "title":"Stramenopiles",
-              "course":"Fungal Plant Pathogens",
-              "date":"2020"
-            },"tafungal":{
-              "position":"Teaching Assistant",
-              "title":"",
-              "course":"Fungal Plant Pathogens",
-              "date":"2020"
-            },"lecturebacteria":{
-              "position":"Guest Lecture",
-              "title":"Identification of Bacteria",
-              "course":"Bacterial Plant Pathogens",
-              "date":"2020"
-            }, "tabacteria":{
-              "position":"Teaching Assistant",
-              "title":"",
-              "course":"Bacterial Plant Pathogens",
-              "date":"2020"
-            },"tageneral":{
-              "position":"Teaching Assistant",
-              "title":"",
-              "course":"General Plant Pathogen",
-              "date":"2019"
+          "list": {
+            "lecturefungal": {
+              "position": "Guest Lecture",
+              "title": "Stramenopiles",
+              "course": "Fungal Plant Pathogens",
+              "date": "2020"
+            },
+            "tafungal": {
+              "position": "Teaching Assistant",
+              "title": "",
+              "course": "Fungal Plant Pathogens",
+              "date": "2020"
+            },
+            "lecturebacteria": {
+              "position": "Guest Lecture",
+              "title": "Identification of Bacteria",
+              "course": "Bacterial Plant Pathogens",
+              "date": "2020"
+            },
+            "tabacteria": {
+              "position": "Teaching Assistant",
+              "title": "",
+              "course": "Bacterial Plant Pathogens",
+              "date": "2020"
+            },
+            "tageneral": {
+              "position": "Teaching Assistant",
+              "title": "",
+              "course": "General Plant Pathogen",
+              "date": "2019"
             }
           }
         },
-        "narc":{
-          "organization":"Nepal Agriculture Research Council",
+        "narc": {
+          "organization": "Nepal Agriculture Research Council",
           "address": "Pokhara, Nepal",
-          "list":{
-            "jta":{
-              "position":"Course supervisor",
-              "title":"",
-              "course":"JTA work experience program",
-              "date":"2017"
+          "list": {
+            "jta": {
+              "position": "Course supervisor",
+              "title": "",
+              "course": "JTA work experience program",
+              "date": "2017"
             }
           }
         }
@@ -410,51 +427,52 @@
     },
     "affiliation": {
       "prettyName": "Affiliations",
-      "logo":"users",
-      "func": "affiliations",
+      "logo": "users",
+      "__tlFunc": "affiliations",
+      "__display": "true",
       "entries": {
-        "aps":{
-          "organization":"American Phytopathological Society",
-          "position":{
-            "art":{
-              "role":"Designer, Graduate Student Arts committee",
-              "start":"2019",
-              "end":"2020"
+        "aps": {
+          "organization": "American Phytopathological Society",
+          "position": {
+            "art": {
+              "role": "Designer, Graduate Student Arts committee",
+              "start": "2019",
+              "end": "2020"
             },
-            "member":{
-              "role":"Member",
-              "start":"2017",
-              "end":"Present"
+            "member": {
+              "role": "Member",
+              "start": "2017",
+              "end": "Present"
             }
           }
         },
-        "ppgso":{
-          "organization":"UF Plant Pathology Graduate Student Organization",
-          "position":{
-            "treasurer":{
-              "role":"Treasurer",
-              "start":"2019",
-              "end":"2020"
+        "ppgso": {
+          "organization": "UF Plant Pathology Graduate Student Organization",
+          "position": {
+            "treasurer": {
+              "role": "Treasurer",
+              "start": "2019",
+              "end": "2020"
             },
-            "outreach":{
-              "role":"Member, Outreach committee",
-              "start":"2017",
-              "end":"Present"
+            "outreach": {
+              "role": "Member, Outreach committee",
+              "start": "2017",
+              "end": "Present"
             },
-            "member":{
-              "role":"Member",
-              "start":"2017",
-              "end":"Present"
+            "member": {
+              "role": "Member",
+              "start": "2017",
+              "end": "Present"
             }
           }
         },
-        "agri-youth":{
+        "agri-youth": {
           "organization": "Agri-Youth Nepal",
-          "position":{
-            "member":{
-              "role":"Founding Member",
-              "start":"2014",
-              "end":"2016"
+          "position": {
+            "member": {
+              "role": "Founding Member",
+              "start": "2014",
+              "end": "2016"
             }
           }
         }
@@ -463,61 +481,63 @@
     "projects": {
       "noPrint": "noprint",
       "prettyName": "Projects",
-      "logo":"briefcase",
-      "func": "projects",
+      "logo": "briefcase",
+      "__tlFunc": "projects",
+      "__display": "true",
       "entries": {
-        "mutation":{
-          "title":"Mutation rate of TAL effectors",
-          "text":"Contents are not disclosed yet.",
-          "image":"img/project/mutation.jpg"
+        "mutation": {
+          "title": "Mutation rate of TAL effectors",
+          "text": "Contents are not disclosed yet.",
+          "image": "img/project/mutation.jpg"
         },
         "dispersal": {
-          "title":"Modeling dispersal of <i>Xanthomonas perforans</i>",
-          "text":"Models were developed to predict the movement of <i>Xanthomons perforans</i> in the field and in green house based on weather condition and other factors. Of special interest was a type-3 effector gene <i>XopJ2</i> which seemed to provide fitness for dispersal. Effect of the gene was accessed in field studies and the mechanism of fitness is being studies in green house.",
-          "image":"img/project/dispersal.jpg"
+          "title": "Modeling dispersal of <i>Xanthomonas perforans</i>",
+          "text": "Models were developed to predict the movement of <i>Xanthomons perforans</i> in the field and in green house based on weather condition and other factors. Of special interest was a type-3 effector gene <i>XopJ2</i> which seemed to provide fitness for dispersal. Effect of the gene was accessed in field studies and the mechanism of fitness is being studies in green house.",
+          "image": "img/project/dispersal.jpg"
         },
-        "mapping" : {
-          "title":"Mapping of resistance genes in pepper",
-          "text":"Resistance genes against bacterial spot of pepper in PI163192 and UENF1381 were mapped. F2 population was developed by crossing with ECW variety. QTLs were mapped by bulked sequence analysis of whole genome sequences of resistance and susceptible bulks. HRM curve and CAPS marker were developed at target region and further fine-mapping was performed in backcross F2 populations.",
-          "image":"img/project/mapping.jpg"
+        "mapping": {
+          "title": "Mapping of resistance genes in pepper",
+          "text": "Resistance genes against bacterial spot of pepper in PI163192 and UENF1381 were mapped. F2 population was developed by crossing with ECW variety. QTLs were mapped by bulked sequence analysis of whole genome sequences of resistance and susceptible bulks. HRM curve and CAPS marker were developed at target region and further fine-mapping was performed in backcross F2 populations.",
+          "image": "img/project/mapping.jpg"
         },
-        "coffeerust" : {
-          "title":"Rust management strategy in organix coffee",
-          "text":"23 coffee varieties from previous year’s multi-season trial were scored for incidence and severity of coffee leaf rust. Three varieties 'Catimor', 'Ketisic' and 'San Roman' performed best against coffee rust. Increased shading, increased spacing and removal of crop debris reduced incidence. Triadimefon was effective as control agent whereas the effect of <i>Verticillium lecanii</i> was inconsistent.",
-          "image":"img/project/coffeerust.jpg"
+        "coffeerust": {
+          "title": "Rust management strategy in organix coffee",
+          "text": "23 coffee varieties from previous year’s multi-season trial were scored for incidence and severity of coffee leaf rust. Three varieties 'Catimor', 'Ketisic' and 'San Roman' performed best against coffee rust. Increased shading, increased spacing and removal of crop debris reduced incidence. Triadimefon was effective as control agent whereas the effect of <i>Verticillium lecanii</i> was inconsistent.",
+          "image": "img/project/coffeerust.jpg"
         },
-        "tomatoblight":{
-          "title":"Breeding tomato for late blight tolerance",
-          "text":"NARC HRD breeding lines 'HRD-7' and 'HRD-20', which showed tolerance to late blight, were crossed with other breeding lines to develop hybrid lines with late blight tolerance. The lines were evaluated in field trials against commercial variety 'Shrijana'. Three hybrids (HRA-14 X HRD-7, HRA-20 X HRD-1, HRA-20 X HRD-2) showed high tolerance and were recommended for multi-location CVT.",
-          "image":"img/project/lateblight.jpg"
+        "tomatoblight": {
+          "title": "Breeding tomato for late blight tolerance",
+          "text": "NARC HRD breeding lines 'HRD-7' and 'HRD-20', which showed tolerance to late blight, were crossed with other breeding lines to develop hybrid lines with late blight tolerance. The lines were evaluated in field trials against commercial variety 'Shrijana'. Three hybrids (HRA-14 X HRD-7, HRA-20 X HRD-1, HRA-20 X HRD-2) showed high tolerance and were recommended for multi-location CVT.",
+          "image": "img/project/lateblight.jpg"
         },
         "blast": {
-          "title":"Screening finger millet for blast resistance",
-          "text":"50 finger millet accession from National Agriculture Genetic Resources Center were screened for resistance against blast cause by <i>Magnaporthe grisea</i>. Plants were scored for disease severity and AUDPC and DMRT was used for accessing level of resistance. 5 accessions showed moderate quantitative resistance and were recommended for further screening.",
-          "image":"img/project/blast.jpg"
+          "title": "Screening finger millet for blast resistance",
+          "text": "50 finger millet accession from National Agriculture Genetic Resources Center were screened for resistance against blast cause by <i>Magnaporthe grisea</i>. Plants were scored for disease severity and AUDPC and DMRT was used for accessing level of resistance. 5 accessions showed moderate quantitative resistance and were recommended for further screening.",
+          "image": "img/project/blast.jpg"
         }
       }
     },
     "publications": {
       "prettyName": "Publications",
-      "logo":"book",
-      "func": "publications",
-      "entries":{
-        "journal":{
+      "logo": "book",
+      "__tlFunc": "publications",
+      "__display": "true",
+      "entries": {
+        "journal": {
           "prettyName": "Research papers",
-          "list":{
-            "2017":{
-              "prettyName":"2017",
-              "items":{
+          "list": {
+            "2017": {
+              "prettyName": "2017",
+              "items": {
                 "blast": {
                   "citationhtml": "Bhatta A, <b>Sharma A</b>, et al. 2017. Resistant and susceptible response of finger millet to seedling blast (<i>Pyricularia grisea</i> SACC.). The International Journal of Information Research and Review. 4(12):4804-4809.",
                   "url": ""
                 }
               }
             },
-            "unpublished":{
-              "prettyName":"In preparation",
-              "items":{
+            "unpublished": {
+              "prettyName": "In preparation",
+              "items": {
                 "nursery": {
                   "citationhtml": "Abrahamian P, <b>Sharma A</b>, Jones JB, and Vallad GE. Dynamics and spread of bacterial spot epidemics in tomato transplants produced for field production. Plant Disease. ",
                   "url": ""
@@ -530,12 +550,12 @@
             }
           }
         },
-        "review":{
+        "review": {
           "prettyName": "Review papers",
-          "list":{
-            "2019":{
-              "prettyName":"2019",
-              "items":{
+          "list": {
+            "2019": {
+              "prettyName": "2019",
+              "items": {
                 "review1": {
                   "citationhtml": "<b>Sharma A</b>, Jones JB and White FF. Recent advances in developing disease resistance in plants. F1000Research 2019, 8(F1000 Faculty Rev):1934.",
                   "url": "https://doi.org/10.12688/f1000research.20179.1"
@@ -546,10 +566,10 @@
         },
         "book-chapters": {
           "prettyName": "Book chapters",
-          "list":{
-            "unpublished":{
-              "prettyName":"In preparation",
-              "items":{
+          "list": {
+            "unpublished": {
+              "prettyName": "In preparation",
+              "items": {
                 "lab-manual-idntification": {
                   "citationhtml": "<b>Sharma A</b>, Timilsina S and Jones JB. Initial identification of common bacterial genera. In <i>Laboratory Guide for Identification of Plant Pathogenic Bacteria, 4th Edition</i>. American Phytopathological Society (APS Press). ",
                   "url": ""
@@ -566,15 +586,16 @@
     },
     "presentation": {
       "prettyName": "Conference presentations",
-      "logo":"chart-bar",
-      "func": "presentation",
+      "logo": "chart-bar",
+      "__tlFunc": "presentation",
+      "__display": "true",
       "entries": {
-        "aps19":{
+        "aps19": {
           "conference": "Plant Health 2019",
           "date": "2019",
           "titlehtml": "Role of <i>AvrBsT</i> in dispersal of <i>Xanthomonas perforans</i> and severity of bacterial spot of tomato"
         },
-        "fps19":{
+        "fps19": {
           "conference": "16th Biennial FPS Meeting",
           "date": "2019",
           "titlehtml": "Characterization of bacterial spot resistance gene against <i>Xanthomonas gardneri</i> in Hungarian pepper"
@@ -582,135 +603,137 @@
       }
     },
     "posters": {
-      "display": false,
+      "__display": false,
       "prettyName": "Posters",
-      "logo":"",
-      "func": "posters",
+      "logo": "",
+      "__tlFunc": "posters",
       "entries": {}
     },
     "references": {
       "noPrint": "noprint",
       "prettyName": "References",
-      "logo":"user",
-      "func": "references",
+      "logo": "user",
+      "__tlFunc": "references",
+      "__display": "true",
       "entries": {
-        "jeff":{
-          "name":"Dr. Jeffrey B. Jones",
-          "email":"jbjones@ufl.edu",
-          "phone":"(352) 273-4673",
-          "position":"Distinguished professor",
-          "institution":"Department of Plant Pathology, University of Florida",
-          "address":"2550 Hull Rd, Rm 2553 Fifield Hall, Gainesville, FL 32611"
+        "jeff": {
+          "name": "Dr. Jeffrey B. Jones",
+          "email": "jbjones@ufl.edu",
+          "phone": "(352) 273-4673",
+          "position": "Distinguished professor",
+          "institution": "Department of Plant Pathology, University of Florida",
+          "address": "2550 Hull Rd, Rm 2553 Fifield Hall, Gainesville, FL 32611"
         },
-        "sam":{
-          "name":"Dr. Samuel F. Hutton",
-          "email":"sfhutton@ufl.edu",
-          "phone":"(813) 419-6610",
-          "position":"Associate professor",
-          "institution":"Gulf Coast Research and Education Center, University of Florida",
-          "address":"14625 CR 672, Rm 171 GCREC, Wimauma, FL 33598"
+        "sam": {
+          "name": "Dr. Samuel F. Hutton",
+          "email": "sfhutton@ufl.edu",
+          "phone": "(813) 419-6610",
+          "position": "Associate professor",
+          "institution": "Gulf Coast Research and Education Center, University of Florida",
+          "address": "14625 CR 672, Rm 171 GCREC, Wimauma, FL 33598"
         },
-        "gary":{
-          "name":"Dr. Gary E. Vallad",
-          "email":"gvallad@ufl.edu",
-          "phone":"(813) 419-6577",
-          "position":"Associate professor",
-          "institution":"Gulf Coast Research and Education Center, University of Florida",
-          "address":"14625 CR 672, Rm 126 GCREC, Wimauma, FL 33598"
+        "gary": {
+          "name": "Dr. Gary E. Vallad",
+          "email": "gvallad@ufl.edu",
+          "phone": "(813) 419-6577",
+          "position": "Associate professor",
+          "institution": "Gulf Coast Research and Education Center, University of Florida",
+          "address": "14625 CR 672, Rm 126 GCREC, Wimauma, FL 33598"
         },
-        "erica":{
-          "name":"Dr. Erica M. Goss",
-          "email":"emgoss@ufl.edu",
-          "phone":"(352) 273-4650",
-          "position":"Assistant professor",
-          "institution":"Department of Plant Pathology, University of Florida",
-          "address":"2550 Hull Rd, Rm 2415 Fifield Hall, Gainesville, FL 32611"
+        "erica": {
+          "name": "Dr. Erica M. Goss",
+          "email": "emgoss@ufl.edu",
+          "phone": "(352) 273-4650",
+          "position": "Assistant professor",
+          "institution": "Department of Plant Pathology, University of Florida",
+          "address": "2550 Hull Rd, Rm 2415 Fifield Hall, Gainesville, FL 32611"
         }
       }
     },
     "contact": {
       "noPrint": "noprint",
       "prettyName": "Contact",
-      "logo":"address-book",
-      "func": "contact",
+      "logo": "address-book",
+      "__tlFunc": "contact",
+      "__display": "true",
       "entries": {
         "address": {
-          "prettyName":"Address",
-          "list":{
-            "work":{
-              "prettyName":"Work",
+          "prettyName": "Address",
+          "list": {
+            "work": {
+              "prettyName": "Work",
               "content": "2500 Hull Rd, Fifield Hall #2307, Gainesville, Fl 32611",
               "link": "",
-              "icon":""
+              "icon": ""
             }
           }
         },
         "phone": {
-          "prettyName":"Phone number",
-          "list":{
-            "work":{
-              "prettyName":"Office",
+          "prettyName": "Phone number",
+          "list": {
+            "work": {
+              "prettyName": "Office",
               "content": "(352) 273-4646",
               "link": "tel:+13522734646",
-              "icon":""
+              "icon": ""
             },
-            "personal":{
-              "prettyName":"Personal",
+            "personal": {
+              "prettyName": "Personal",
               "content": "(352) 213-7190",
               "link": "tel:+13522137190",
-              "icon":""
+              "icon": ""
             }
           }
         },
-        "email":{
-          "prettyName":"Email address",
-          "list":{
-            "work":{
-              "prettyName":"Office",
+        "email": {
+          "prettyName": "Email address",
+          "list": {
+            "work": {
+              "prettyName": "Office",
               "content": "anujsharma@ufl.edu",
               "link": "mailto:anujsharma@ufl.edu",
-              "icon":""
+              "icon": ""
             },
-            "personal":{
-              "prettyName":"Personal",
+            "personal": {
+              "prettyName": "Personal",
               "content": "rknx@outlook.com",
               "link": "mailto:rknx@outlook.com",
-              "icon":""
+              "icon": ""
             }
           }
         },
-        "social":{
-          "prettyName":"Find me on",
-          "list":{
-            "github":{
-              "prettyName":"",
-              "content":"Github",
-              "link":"https://github.com/rknx/",
-              "icon":"github"
+        "social": {
+          "prettyName": "Find me on",
+          "list": {
+            "github": {
+              "prettyName": "",
+              "content": "Github",
+              "link": "https://github.com/rknx/",
+              "icon": "github"
             },
-            "linkedin":{
-              "prettyName":"",
-              "content":"LinkedIn",
-              "link":"https://www.linkedin.com/in/sharmaan/",
-              "icon":"linkedin"
+            "linkedin": {
+              "prettyName": "",
+              "content": "LinkedIn",
+              "link": "https://www.linkedin.com/in/sharmaan/",
+              "icon": "linkedin"
             },
-            "orcid":{
-              "prettyName":"",
-              "content":"OrcID",
-              "link":"https://orcid.org/0000-0003-2915-3142",
-              "icon":"orcid"
+            "orcid": {
+              "prettyName": "",
+              "content": "OrcID",
+              "link": "https://orcid.org/0000-0003-2915-3142",
+              "icon": "orcid"
             },
-            "deviantart":{
-              "prettyName":"",
-              "content":"DeviantArt",
-              "link":"https://www.deviantart.com/rknx",
-              "icon":"deviantart"
+            "deviantart": {
+              "prettyName": "",
+              "content": "DeviantArt",
+              "link": "https://www.deviantart.com/rknx",
+              "icon": "deviantart"
             },
-            "stackoverflow":{
-              "prettyName":"",
-              "content":"StackOverflow",
-              "link":"https://stackoverflow.com/users/5523665/anuj-sharma",
-              "icon":"stack-overflow"
+            "stackoverflow": {
+              "prettyName": "",
+              "content": "StackOverflow",
+              "link": "https://stackoverflow.com/users/5523665/anuj-sharma",
+              "icon": "stack-overflow"
             }
           }
         }
@@ -722,6 +745,6 @@
     "text": "If someone offers you an amazing opportunity but you are not sure you can do it, say yes - then learn how to do it later.",
     "speaker": "Richard Branson",
     "logo": "quote-left",
-    "func": "quote"
+    "__tlFunc": "quote"
   }
 }

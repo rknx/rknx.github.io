@@ -1,3 +1,53 @@
+/*--------------Fonts------------*/
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/Light.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(fonts/Regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(fonts/Bold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(fonts/Italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'), url(fonts/LightItalic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(fonts/BoldItalic.woff2) format('woff2');
+}
+
 /*--------------Theme colors------------*/
 
 :root {
@@ -30,6 +80,7 @@
   );
   --bggradient: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
   --invertfilter: none;
+  --rem:1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -119,6 +170,10 @@ body {
   }
 }
 
+body > svg {
+  display:none;
+}
+
 /*--------------Text elements------------*/
 
 h1,
@@ -203,6 +258,7 @@ a:visited {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #page-loader > * {
@@ -257,6 +313,7 @@ a:visited {
   width: 3rem;
   margin: calc(50% + 5px) 0 0 calc(50% + 5px);
   position: absolute;
+  /*more rules at the button of the css*/
 }
 
 .side-menu {
@@ -397,6 +454,38 @@ input#menu:checked ~ .side-menu {
 
 .side-menu > .buttons > a > span {
   margin-left: 4px;
+}
+
+.hosts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.hosts > a {
+  flex: 0 0 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.6rem;
+  color: var(--fontwhite);
+  border: 1px solid var(--fontwhite);
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.hosts > a > svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: var(--fontwhite);
+  margin-right: 5px;
+}
+
+.hosts > a:hover {
+  filter: invert(1);
+  background-color: #222;
 }
 
 /*--------------Section------------*/
@@ -838,12 +927,15 @@ section p a {
   font-size: 1rem;
 }
 
-.skills img {
+.skills svg {
   height: 1rem;
+  width:1rem;
   margin-right: 5px;
   border-radius: 2px;
   filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.5));
+  display: flex;
 }
+
 
 #skills span:nth-child(4n + 1) {
   background-color: var(--color1);
@@ -1137,33 +1229,26 @@ input#menu:checked ~ .menu-open svg path:nth-child(2) {
   --offset: -50;
 }
 
-.hosts {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.hosts > a {
-  flex: 0 0 48%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  font-size: 0.6rem;
-  color: var(--fontwhite);
-  border: 1px solid var(--fontwhite);
-  border-radius: 5px;
-  padding: 2px;
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/Light.woff2) format('woff2');
 }
 
-.hosts > a > svg {
-  width: 1.2rem;
-  height: 1.2rem;
-  fill: var(--fontwhite);
-  margin-right: 5px;
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(fonts/Regular.woff2) format('woff2');
 }
 
-.hosts > a:hover {
-  filter: invert(1);
-  background-color: #222;
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(fonts/Bold.woff2) format('woff2');
 }
