@@ -59,3 +59,8 @@ self.addEventListener("fetch", (evt) => {
     })
   );
 });
+//new serviceworker avaialbel
+navigator.serviceWorker.addEventListener("controllerchange", function () {
+  console.log("updating");
+  window.location.reload();
+});
