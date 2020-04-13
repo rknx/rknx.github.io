@@ -1220,11 +1220,11 @@ section p a {
   }
 }
 
-.menu-open svg path:nth-child(2n + 1) {
+.menu-open svg path {
   --total-length: 126.64183044433594;
 }
 
-input#menu:checked ~ .menu-open svg path:nth-child(2n + 1) {
+input#menu:checked ~ .menu-open svg path {
   --length: 22.627416998;
   --offset: -94.1149185097;
 }
@@ -1236,31 +1236,4 @@ input#menu:checked ~ .menu-open svg path:nth-child(2n + 1) {
 input#menu:checked ~ .menu-open svg path:nth-child(2) {
   --length: 0;
   --offset: -50;
-}
-
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: local("Open Sans Light"), local("OpenSans-Light"),
-    url(fonts/Light.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Open Sans Regular"), local("OpenSans-Regular"),
-    url(fonts/Regular.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Open Sans Bold"), local("OpenSans-Bold"),
-    url(fonts/Bold.woff2) format("woff2");
 }
