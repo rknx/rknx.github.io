@@ -61,12 +61,18 @@
   --color2: #3862a2;
   --color3: #a7300b;
   --color4: #558b2f;
-  --transparency: 1;
+  --fontthemerev: #fafafa;
+  --fontwhite: #fafafa;
+  --fonttheme: #353535;
+  --fontdarktheme: #151515;
   --rgbdark: 25, 25, 25;
   --rgblight: 231, 231, 231;
   --rgbtheme: 231, 231, 231;
   --rgbthemerev: 25, 25, 25;
   --quoteback: 167, 48, 11;
+  --backdrop: blur(10px);
+  --radius: 5px;
+  --transparency: 1;
   --shadow: 0 0px 14.4px 0 rgba(0, 0, 0, 0.132),
     0 0 3.6px 0 rgba(0, 0, 0, 0.108);
   --hovershadow: 0 0 54.6px 0 rgba(0, 0, 0, 0.22),
@@ -74,35 +80,26 @@
   --btnshadow: 0 0px 3.2px 0 rgba(0, 0, 0, 0.3), 0 0px 1px 0 rgba(0, 0, 0, 0.2);
   --btnshadowhover: 0 0px 7px 0 rgba(0, 0, 0, 0.5),
     0 0px 3px 0 rgba(0, 0, 0, 0.3);
-  --backdrop: blur(10px);
-  --fontwhite: #fafafa;
-  --fontalwayswhite: #fafafa;
-  --fontblack: #353535;
-  --fontdarkblack: #151515;
-  --radius: 5px;
   --tlgradient: transparent calc(50% - 3px),
     var(--color1) calc(50% - 3px) calc(50% + 3px), transparent calc(50% + 3px);
-  --bggradient: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-  --invertfilter: none;
   --rem: 1rem;
-  --transb0: 0;
-  --transb1: 0.3;
-  --transf0: 0.1;
-  --transf1: 0.5;
+  --fluentborder: 0;
+  --fluentborderhover: 0.5;
+  --fluentback: 0.1;
+  --fluentbackhover: 0.5;
 }
 
 :root.dark {
-  --fontblack: #bbb;
-  --fontdarkblack: #ccc;
-  --fontalwayswhite: #ccc;
-  --fontwhite: #353535;
   --color1: #2e929c;
-  --color2: #4f83d2;
-  --color3: #9c4a30;
-  --color4: #4c7d2a;
+  --color2: #3293d8;
+  --color3: #92492b;
+  --color4: #138c33;
+  --fonttheme: #bbb;
+  --fontdarktheme: #ccc;
+  --fontwhite: #ccc;
+  --fontthemerev: #353535;
   --rgbtheme: 25, 25, 25;
   --rgbthemerev: 231, 231, 231;
-  --navback: 25, 25, 25;
   --quoteback: 156, 74, 48;
   --shadow: 0 0px 10.4px 0 rgba(255, 255, 255, 0.132),
     0 0 3.6px 0 rgba(255, 255, 255, 0.108);
@@ -112,8 +109,6 @@
     0 0px 1px 0 rgba(255, 255, 255, 0.2);
   --btnshadowhover: 0 0px 7px 0 rgba(255, 255, 255, 0.5),
     0 0px 3px 0 rgba(255, 255, 255, 0.3);
-  --bggradient: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  --invertfilter: invert(100%);
 }
 
 @supports (backdrop-filter: blur(10px)) {
@@ -140,15 +135,15 @@ html {
 }
 
 body {
-  color: var(--fontwhite);
+  color: var(--fontthemerev);
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   min-width: 360px;
   padding: 0px;
   margin: 0;
-  background: var(--bggradient), url("img/bg.svg#sp5v") fixed,
-    url("img/bg.svg#sp4v") fixed, url("img/bg.svg#sp3v") fixed,
-    url("img/bg.svg#sp2v") fixed, url("img/bg.svg#sp1v") fixed;
+  background: url("img/bg.svg#sp5v") fixed, url("img/bg.svg#sp4v") fixed,
+    url("img/bg.svg#sp3v") fixed, url("img/bg.svg#sp2v") fixed,
+    url("img/bg.svg#sp1v") fixed;
   background-size: calc(1280 / 720 * 100vh) 100vh;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
@@ -241,7 +236,7 @@ a:focus {
 
 .onlyPrint {
   display: none;
-  color: var(--fontblack);
+  color: var(--fonttheme);
   text-align: center;
   margin-bottom: 20px;
 }
@@ -289,7 +284,7 @@ a:focus {
   --length: 24;
   --offset: -38;
   fill: none;
-  stroke: var(--fontdarkblack);
+  stroke: var(--fontdarktheme);
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -403,25 +398,22 @@ input#menu:checked ~ .side-menu {
   align-items: center;
   padding: 4px 0 4px 10px !important;
   text-transform: uppercase;
-  color: var(--fontdarkblack);
+  color: var(--fontdarktheme);
   border-radius: var(--radius);
   margin: 4px 0px;
   font-size: 1rem;
   min-height: 1rem;
-  background-color: rgba(var(--rgbthemerev), var(--transf0));
-  border: 1.5px solid;
-  border-image-source: radial-gradient(
-    rgba(var(--rgbthemerev), var(--transb0)),
-    rgba(var(--rgbthemerev), var(--transb0))
-  );
+  background-color: rgba(var(--rgbthemerev), var(--fluentback));
+  border: 1px solid transparent;
+  border-image-source: none;
   border-image-slice: 1;
-  border-image-width: 1.5px;
+  border-image-width: 1px;
 }
 
 .side-menu > nav > a > svg {
   width: 1.2rem;
   height: 1.2rem;
-  fill: var(--fontblack);
+  fill: var(--fonttheme);
 }
 
 .side-menu > .buttons {
@@ -437,7 +429,7 @@ input#menu:checked ~ .side-menu {
 .side-menu > .buttons > a {
   width: 48%;
   margin: 5px 0px;
-  color: var(--fontdarkblack);
+  color: var(--fontdarktheme);
   font-weight: 700;
   padding: 5px 0;
   text-transform: uppercase;
@@ -448,20 +440,20 @@ input#menu:checked ~ .side-menu {
   align-items: center;
   justify-content: center;
   font-size: 0.5rem;
-  background-color: rgba(var(--rgbthemerev), var(--transf0));
-  border: 1.5px solid;
+  background-color: rgba(var(--rgbthemerev), var(--fluentback));
+  border: 1px solid transparent;
   border-image-source: radial-gradient(
-    rgba(var(--rgbthemerev), var(--transb0)),
-    rgba(var(--rgbthemerev), var(--transb0))
+    rgba(var(--rgbthemerev), var(--fluentborder)),
+    rgba(var(--rgbthemerev), var(--fluentborder))
   );
   border-image-slice: 1;
-  border-image-width: 1.5px;
+  border-image-width: 1px;
 }
 
 .side-menu > .buttons > a > svg {
   width: 1.2rem;
   height: 1.2rem;
-  fill: var(--fontblack);
+  fill: var(--fonttheme);
   display: flex;
   margin-bottom: 4px;
 }
@@ -483,14 +475,14 @@ input#menu:checked ~ .side-menu {
   min-width: 0;
   flex: 0 0 65%;
   border-radius: 11px;
-  background: rgba(var(--rgbthemerev), var(--transf0));
+  background: rgba(var(--rgbthemerev), var(--fluentback));
   appearance: none;
   -webkit-appearance: none;
   outline: none;
   padding: 3px;
   display: inline-flex;
   align-items: center;
-  color: var(--fontdarkblack);
+  color: var(--fontdarktheme);
 }
 
 .side-menu > .action > input#theme {
@@ -651,7 +643,7 @@ section h4 span {
 }
 
 section h5 {
-  color: var(--fontblack);
+  color: var(--fonttheme);
   font-size: 1rem;
   padding: 5px 0px;
   overflow: hidden;
@@ -664,7 +656,7 @@ section h5 span {
 
 section h5 a {
   text-decoration: none;
-  color: var(--fontblack);
+  color: var(--fonttheme);
   font-weight: 400;
 }
 
@@ -677,7 +669,7 @@ section p {
   font-size: 1rem;
   margin-bottom: 5px;
   line-height: 1.4rem;
-  color: var(--fontdarkblack);
+  color: var(--fontdarktheme);
 }
 
 section p.bull-ind {
@@ -692,7 +684,7 @@ section p.bull-ind:before {
 
 section p a {
   text-decoration: none;
-  color: var(--fontdarkblack);
+  color: var(--fontdarktheme);
 }
 
 /*--------------Profile intro------------*/
@@ -731,8 +723,13 @@ section p a {
     border-top-left-radius: var(--radius);
   }
   .header:after {
-    background: url(img/top-bg.png) no-repeat top left;
-    filter: var(--invertfilter);
+    background: linear-gradient(
+      135deg,
+      rgba(var(--rgbthemerev), 0.08) 0% 8%,
+      rgba(var(--rgbthemerev), 0.05) 8% 16%,
+      rgba(var(--rgbthemerev), 0.02) 16% 24%,
+      transparent 24%
+    );
     height: 100%;
   }
 }
@@ -764,7 +761,7 @@ section p a {
   height: 230px;
   font-size: 2.8rem;
   line-height: 2.5rem;
-  color: var(--fontwhite);
+  color: var(--fontthemerev);
   text-transform: uppercase;
 }
 
@@ -813,13 +810,13 @@ section p a {
 
 .header > .bio > h1:before {
   content: "Hi, I'm ";
-  color: var(--fontblack);
+  color: var(--fonttheme);
   font-weight: 200;
 }
 
 .header > .bio > h1:after {
   content: "!";
-  color: var(--fontblack);
+  color: var(--fonttheme);
   font-weight: 200;
 }
 
@@ -836,7 +833,7 @@ section p a {
 .header p {
   padding: 10px 0px;
   text-align: center;
-  color: var(--fontblack);
+  color: var(--fonttheme);
 }
 
 @media only screen and (min-width: 780px) {
@@ -976,7 +973,7 @@ section p a {
   padding: 2px 10px;
   margin: 5px;
   box-shadow: var(--btnshadow);
-  color: var(--fontalwayswhite);
+  color: var(--fontwhite);
   display: inline-flex;
   align-items: center;
   font-size: 1rem;
@@ -1059,7 +1056,7 @@ section p a {
 #contact > div > div > h5.phone > click:after {
   content: "+";
   border-radius: 50%;
-  border: 1px solid var(--fontblack);
+  border: 1px solid var(--fonttheme);
   width: 1rem;
   height: 1rem;
   font-size: 1rem;
@@ -1099,7 +1096,7 @@ section p a {
   margin: 5px;
   box-shadow: var(--btnshadow);
   align-items: center;
-  color: var(--fontwhite);
+  color: var(--fontthemerev);
 }
 
 #contact > div > div > h5.social:hover {
@@ -1107,7 +1104,7 @@ section p a {
 }
 
 #contact > div > div > h5.social > a {
-  color: var(--fontalwayswhite);
+  color: var(--fontwhite);
   display: flex;
   align-items: center;
 }
@@ -1137,7 +1134,7 @@ section p a {
 
 #quote {
   background: rgba(var(--quoteback), 0.65);
-  color: var(--fontwhite);
+  color: var(--fontthemerev);
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -1176,7 +1173,7 @@ section p a {
 }
 
 #quote p {
-  color: var(--fontalwayswhite);
+  color: var(--fontwhite);
   font-style: italic;
   letter-spacing: 0.1rem;
   font-size: 1rem;
@@ -1188,7 +1185,7 @@ section p a {
 
 #quote span {
   font-weight: 700;
-  color: var(--fontalwayswhite);
+  color: var(--fontwhite);
   margin-top: 8px;
   align-self: flex-end;
   font-size: 1rem;

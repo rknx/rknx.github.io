@@ -54,8 +54,8 @@
     "employer-logo": "/images/gators.png",
     "email": "anujsharma@ufl.edu",
     "bio": {
-      "html1": "<strong>Currently, I am PhD candidate at University of Florida.",
-      "html2": "I work in <a href='https://plantpath.ifas.ufl.edu/misc/jones_lab/'>Jones lab</a> in <a href='https://plantpath.ifas.ufl.edu'>Department of Plant Pathology</a>.</strong>",
+      "html1": "<strong>Currently, I am PhD candidate at <a href='https://ufl.edu/'>University of Florida</a>.",
+      "html2": "I work in <a href='https://plantpath.ifas.ufl.edu/misc/jones_lab/'>Jones lab</a> in <a href='https://plantpath.ifas.ufl.edu/'>Department of Plant Pathology</a>.</strong>",
       "html3": "My current research focuses on bacterial spot of tomato and pepper caused by several species of <i>Xanthomonas</i>.",
       "html4": "Among other things, I am working on mapping resistance genes, developing bacterial dispersal models and understanding mutation rate of bacterial effectors."
     },

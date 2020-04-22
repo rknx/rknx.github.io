@@ -48,15 +48,16 @@ window.resize = () => {
 //Run on scroll of the page
 window.onscroll = () => {
   let pageY = window.pageYOffset;
-  document.body.style.background = `var(--bggradient),url("img/bg.svg#sp5v") -${
+  dark = document.documentElement.classList.contains("dark") ? "d" : "";
+  document.body.style.background = `url("img/bg.svg#sp5v${dark}") -${
     pageY * 0.32
-  }px 0 repeat-x fixed, url("img/bg.svg#sp4v") -${
+  }px 0 repeat-x fixed, url("img/bg.svg#sp4v${dark}") -${
     pageY * 0.24
-  }px 0 repeat-x fixed, url("img/bg.svg#sp3v") -${
+  }px 0 repeat-x fixed, url("img/bg.svg#sp3v${dark}") -${
     pageY * 0.16
-  }px 0 repeat-x fixed, url("img/bg.svg#sp2v") -${
+  }px 0 repeat-x fixed, url("img/bg.svg#sp2v${dark}") -${
     pageY * 0.08
-  }px 0 repeat-x fixed, url("img/bg.svg#sp1v") 0 0 repeat-x fixed`;
+  }px 0 repeat-x fixed, url("img/bg.svg#sp1v${dark}") 0 0 repeat-x fixed`;
 };
 
 //Run on Window Load
@@ -87,6 +88,7 @@ window.onload = () => {
     toggle
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.remove("dark");
+    window.onscroll();
   };
 
   //theme toggle button
@@ -120,12 +122,12 @@ window.onload = () => {
         e.clientY -
         el.offsetTop +
         document.querySelector(".side-menu").scrollTop;
-      el.style.borderImageSource = `radial-gradient(circle 100px at ${x}px ${y}px, rgba(var(--rgbthemerev), var(--transb1)), rgba(var(--rgbthemerev), var(--transb0)))`;
+      el.style.borderImageSource = `radial-gradient(circle 100px at ${x}px ${y}px, rgba(var(--rgbthemerev), var(--fluentborderhover)), rgba(var(--rgbthemerev), var(--fluentborder)))`;
     });
   });
   document.querySelector(".side-menu").addEventListener("mouseleave", (e) => {
     document.querySelectorAll(".side-menu a").forEach((el) => {
-      el.style.borderImageSource = `radial-gradient(circle 100px at ${x}px ${y}px, rgba(var(--rgbthemerev), var(--transb0)), rgba(var(--rgbthemerev), var(--transb0)))`;
+      el.style.borderImageSource = `none`;
     });
   });
   document.querySelectorAll(".side-menu a").forEach((el) => {
@@ -135,10 +137,10 @@ window.onload = () => {
         e.clientY -
         el.offsetTop +
         document.querySelector(".side-menu").scrollTop;
-      el.style.background = `radial-gradient(circle 100px at ${x}px ${y}px, rgba(var(--rgblight), var(--transf1)), rgba(var(--rgbthemerev), var(--transf0)))`;
+      el.style.background = `radial-gradient(circle 100px at ${x}px ${y}px, rgba(var(--rgblight), var(--fluentbackhover)), rgba(var(--rgbthemerev), var(--fluentback)))`;
     });
     el.addEventListener("mouseleave", (e) => {
-      el.style.background = `rgba(var(--rgbthemerev), var(--transf0))`;
+      el.style.background = `rgba(var(--rgbthemerev), var(--fluentback))`;
     });
   });
 };
