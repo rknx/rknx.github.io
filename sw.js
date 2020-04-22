@@ -1,11 +1,12 @@
-const staticCacheName = "anujs.com.np_v1.2";
+const staticCacheName = "anujs.com.np_v1.3";
 const assets = [
   "/",
   "/index.html",
   "/styles.css",
   "/data.json",
+  "/vcard.html",
+  "/404.html",
   "/js/main.js",
-  "/js/tlfunctions.js",
   "/img/bg.svg",
   "/img/top-bg.png",
   "/img/avatar.jpg",

@@ -29,7 +29,7 @@ ready(() => {
       typeof tlFunc[data.quote["__tlFunc"]] === "function" &&
         tlFunc[data.quote["__tlFunc"]](data.quote);
     })
-    .catch((error) => console.log(error));
+    .catch((error) => alert(`Error rendering data: ${error}`));
 });
 
 //Run on Window Resize
