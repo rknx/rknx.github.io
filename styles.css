@@ -80,12 +80,8 @@
   --fontblack: #353535;
   --fontdarkblack: #151515;
   --radius: 5px;
-  --tlgradient: linear-gradient(
-    90deg,
-    transparent calc(50% - 3px),
-    var(--color1) calc(50% - 3px) calc(50% + 3px),
-    transparent calc(50% + 3px)
-  );
+  --tlgradient: transparent calc(50% - 3px),
+    var(--color1) calc(50% - 3px) calc(50% + 3px), transparent calc(50% + 3px);
   --bggradient: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
   --invertfilter: none;
   --rem: 1rem;
@@ -383,7 +379,7 @@ input#menu:checked ~ .side-menu {
 @media only screen and (max-width: 1279px) {
   input#menu:not(:checked) ~ .side-menu > * {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out 0.3s;
   }
 }
 
@@ -618,9 +614,9 @@ section h2 {
 section h3 {
   color: var(--color1);
   font-size: 2rem;
-  padding: 10px;
   text-align: center;
   text-transform: uppercase;
+  scroll-snap-align: start;
 }
 
 @media only screen and (min-width: 780px) {
@@ -645,6 +641,12 @@ section h4 {
   }
 }
 
+section h4 span {
+  float: right;
+  padding-left: 10px;
+  color: var(--color4);
+}
+
 section h5 {
   color: var(--fontblack);
   font-size: 1rem;
@@ -652,7 +654,6 @@ section h5 {
   overflow: hidden;
 }
 
-section h4 span,
 section h5 span {
   float: right;
   padding-left: 10px;
@@ -783,7 +784,7 @@ section p a {
 }
 
 .avatar:after {
-  background: var(--tlgradient);
+  background: linear-gradient(90deg, var(--tlgradient));
 }
 
 @media only screen and (min-width: 780px) {
@@ -856,7 +857,7 @@ section p a {
 @media (min-width: 780px) {
   .timeline:before,
   .timeline:after {
-    background: var(--tlgradient);
+    background: linear-gradient(90deg, var(--tlgradient));
     flex: 0 0 20px;
     /*margin: -5px 0px;*/
   }
@@ -882,61 +883,20 @@ section p a {
   }
 }
 
-.timeline > div:first-child > div:first-child {
-  flex-direction: row;
-  align-items: center;
-  background: var(--tlgradient);
-}
-
-.timeline > div:first-child > div:first-child > div {
-  height: 20px;
-  flex: 0 0 48px;
-  background: linear-gradient(
-    0deg,
-    transparent calc(50% - 3px),
-    var(--color1) calc(50% - 3px) calc(50% + 3px),
-    transparent calc(50% + 3px)
-  );
-  margin-left: 50%;
-  margin-top: 5px;
-  color: var(--color1);
-  display: flex;
-  justify-content: flex-end;
-}
-
-.timeline > div:first-child > div:first-child > div:after {
-  content: "";
-  height: 20px;
-  width: 20px;
-  background-color: var(--color1);
-  border-radius: 50%;
-}
-
-.timeline > div:first-child > h3 {
-  flex: 0 0 100%;
-}
-
-@media only screen and (min-width: 780px) {
-  .timeline > div:first-child > h3 {
-    flex: 0 0 76%;
-    margin-left: -8%;
-  }
-}
-
-.timeline > div:not(:first-child) > div:first-child {
+.timeline > div > div:first-child {
   flex-direction: column;
   align-self: normal;
 }
 
-.timeline > div:not(:first-child) > div:first-child:before,
-.timeline > div:not(:first-child) > div:first-child:after {
+.timeline > div > div:first-child:before,
+.timeline > div > div:first-child:after {
   content: "";
   width: 100%;
   flex: 1 0 auto;
-  background: var(--tlgradient);
+  background: linear-gradient(90deg, var(--tlgradient));
 }
 
-.timeline > div:not(:first-child) > div:first-child > div {
+.timeline > div > div:first-child > div {
   width: 64px;
   flex: 0 0 64px;
   border-radius: 50%;
@@ -946,24 +906,52 @@ section p a {
   justify-content: center;
 }
 
-.timeline > div:not(:first-child) > div:first-child > div > svg {
+.timeline > div > div:first-child > div > svg {
   width: 32px;
   height: 32px;
   fill: var(--color1);
   border-radius: 25%;
 }
 
-.timeline > div:not(:first-child) > div:not(:first-child) {
+.timeline > div > div:not(:first-child) {
   flex: 0 0 100%;
   padding: 10px;
 }
 
 @media only screen and (min-width: 780px) {
-  .timeline > div:not(:first-child) > div:not(:first-child) {
+  .timeline > div > div:not(:first-child) {
     flex: 0 0 76%;
     padding: 10px 40px 10px 10px;
     margin-left: -8%;
   }
+}
+
+.timeline > div:first-child > div:first-child {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, var(--tlgradient));
+}
+
+.timeline > div:first-child > div:first-child:before,
+.timeline > div:first-child > div:first-child:after {
+  content: "";
+  position: absolute;
+  height: 16px;
+  margin-top: 2px;
+}
+
+.timeline > div:first-child > div:first-child:before {
+  width: 48px;
+  background: linear-gradient(0deg, var(--tlgradient));
+  transform: translateX(50%);
+}
+
+.timeline > div:first-child > div:first-child:after {
+  width: 16px;
+  background-color: var(--color1);
+  transform: translateX(48px);
+  border-radius: 50%;
 }
 
 /*--------------Skills------------*/

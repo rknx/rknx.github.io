@@ -1,4 +1,9 @@
 {
+  "__comments": {
+    "__noPrint": "options:'noprint','onlyprint',''. noprint: displayed but not printed by print() method, onlyprint: hidden, shown in print only, '': default, never hidden.",
+    "__display": "options:true, false, ''. true: displayed on page, false, '': hidden on page",
+    "__tlFunc": "method name in main.js > tlFunc to render the elements"
+  },
   "buttons": {
     "__tlFunc": "buttons",
     "entries": {
@@ -49,14 +54,12 @@
     "employer-logo": "/images/gators.png",
     "email": "anujsharma@ufl.edu",
     "bio": {
-      "html1": "<strong>Currently, I am a PhD candidate at University of Florida. I work on Jones lab in plant pathology department.</strong>",
-      "html2": "Among other things, I am working on mapping resistance gene against bacterial spot of pepper and tomato. I also develop models to study dispersal of bacteria, and the role of bacterial effector in its spread."
+      "html1": "<strong>Currently, I am PhD candidate at University of Florida.",
+      "html2": "I work at <a href='https://plantpath.ifas.ufl.edu/misc/jones_lab/'>Jones lab</a> in <a href='https://plantpath.ifas.ufl.edu'>Department of Plant Pathology</a>.</strong>",
+      "html3": "My current research focuses on bacterial spot of tomato and pepper caused by several specis of Xanthomonas.",
+      "html4": "Among other things, I am working on mapping resistance genes, developing bacterial dispersal models and understaning mutation rate of bacterial effectors."
     },
     "__tlFunc": "intro"
-  },
-  "__comment for timeline": {
-    "__noPrint": "options:'noprint','onlyprint',''. noprint: displayed but not printed by print() method, onlyprint: hidden, shown in print only, '': default, never hidden.",
-    "__display": "options:true, false, ''. true: displayed on page, false, '': hidden on page"
   },
   "timeline": {
     "education": {
@@ -70,7 +73,7 @@
           "date": "2021",
           "completed": false,
           "institution": "University of Florida",
-          "subinstitution": "Department of Plant Pathology",
+          "department": "Department of Plant Pathology",
           "address": "Gainesville, FL 32611",
           "description": ""
         },
@@ -79,7 +82,7 @@
           "date": "2016",
           "expected": true,
           "institution": "Tribhuvan University",
-          "subinstitution": "Institute of Agriculture and Animal Science",
+          "department": "Institute of Agriculture and Animal Science",
           "address": "Chitwan, Nepal",
           "description": ""
         }
@@ -95,7 +98,7 @@
           "award": "PPGSO Travel Award",
           "date": "2019",
           "institution": "Plant Pathology Graduate Student Organization",
-          "subinstitution": "",
+          "department": "",
           "address": "Gainesville, FL 32611",
           "description": ""
         },
@@ -103,7 +106,7 @@
           "award": "Graduate School Preeminence Fellowship",
           "date": "2017",
           "institution": "University of Florida",
-          "subinstitution": "Department of Plant Pathology",
+          "department": "Department of Plant Pathology",
           "address": "Gainesville, FL 32611",
           "description": ""
         },
@@ -111,7 +114,7 @@
           "award": "Merit Scholarship",
           "date": "2013",
           "institution": "Tribhuvan University",
-          "subinstitution": "Institute of Agriculture and Animal Science",
+          "department": "Institute of Agriculture and Animal Science",
           "address": "Chitwan, Nepal",
           "description": ""
         }
@@ -335,7 +338,7 @@
         "florida": {
           "position": "Graduate Research Assistant",
           "institution": "University of Florida",
-          "subinstitution": "Department of Plant Pathology",
+          "department": "Department of Plant Pathology",
           "pi-term": "Advisor",
           "pi-name": "Dr. Jeffrey B. Jones",
           "address": "Gainesville, FL 32611",
@@ -351,7 +354,7 @@
         "narc": {
           "position": "Research Intern",
           "institution": "Nepal Agriculture Research Council",
-          "subinstitution": "Horticulture Research Station",
+          "department": "Horticulture Research Station",
           "pi-term": "Supervisor",
           "pi-name": "Tirtha R. Pokharel",
           "address": "Pokhara, Nepal",
@@ -366,7 +369,7 @@
         "rampur": {
           "position": "Undergrad Research Assistant",
           "institution": "Tribhuvan University",
-          "subinstitution": "Plant Pathology Department",
+          "department": "Plant Pathology Department",
           "pi-term": "Advisor",
           "pi-name": "Dr. Sundar M. Shrestha",
           "address": "Chitwan, Nepal",
@@ -631,7 +634,8 @@
           "email": "jbjones@ufl.edu",
           "phone": "(352) 273-4673",
           "position": "Distinguished professor",
-          "institution": "Department of Plant Pathology, University of Florida",
+          "institution": "University of Florida",
+          "department": "Department of Plant Pathology",
           "address": "2550 Hull Rd, Rm 2553 Fifield Hall, Gainesville, FL 32611"
         },
         "sam": {
@@ -639,7 +643,8 @@
           "email": "sfhutton@ufl.edu",
           "phone": "(813) 419-6610",
           "position": "Associate professor",
-          "institution": "Gulf Coast Research and Education Center, University of Florida",
+          "institution": "University of Florida",
+          "department": "Gulf Coast Research and Education Center",
           "address": "14625 CR 672, Rm 171 GCREC, Wimauma, FL 33598"
         },
         "gary": {
@@ -647,7 +652,8 @@
           "email": "gvallad@ufl.edu",
           "phone": "(813) 419-6577",
           "position": "Associate professor",
-          "institution": "Gulf Coast Research and Education Center, University of Florida",
+          "institution": "University of Florida",
+          "department": "Gulf Coast Research and Education Center",
           "address": "14625 CR 672, Rm 126 GCREC, Wimauma, FL 33598"
         },
         "erica": {
@@ -655,7 +661,8 @@
           "email": "emgoss@ufl.edu",
           "phone": "(352) 273-4650",
           "position": "Assistant professor",
-          "institution": "Department of Plant Pathology, University of Florida",
+          "institution": "University of Florida",
+          "department": "Department of Plant Pathology",
           "address": "2550 Hull Rd, Rm 2415 Fifield Hall, Gainesville, FL 32611"
         }
       }
@@ -672,7 +679,7 @@
           "list": {
             "work": {
               "prettyName": "Work",
-              "content": "2500 Hull Rd, Fifield Hall #2307, Gainesville, Fl 32611",
+              "content": "2500 Hull Rd, Fifield Hall #2307, Gainesville, FL 32611",
               "link": "",
               "icon": ""
             }
