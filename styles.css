@@ -146,7 +146,7 @@ body {
     url("img/bg.svg#sp1v") fixed;
   background-size: calc(1280 / 720 * 100vh) 100vh;
   overflow-x: hidden;
-  scroll-snap-type: y proximity;
+  /*scroll-snap-type: y proximity;*/
   overflow-y: scroll;
 }
 
