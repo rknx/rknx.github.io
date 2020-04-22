@@ -7,7 +7,7 @@
   <title>Anuj Sharma | CV</title>
   <meta name="Description" content="Online Curriculum Vitae of Anuj Sharma, anujsharma@ufl.edu">
   <link rel="stylesheet" rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
-  <link rel="preload" href="js/main.js" as="script">
+  <link rel="preload" href="main.js" as="script">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="preload" href="fonts/Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="data.json" as="fetch" type="application/json" crossorigin>
@@ -81,12 +81,9 @@
     </div>
   </div>
   <script>
-    for (src of ['tlfunctions', 'main']) {
-      srcdom = document.createElement('script');
-      srcdom.src = `js/${src}.js`;
-      document.body.appendChild(srcdom)
-    }
-    document.body.innerHTML += `<svg><use href='img/icons.svg#angle-right'></svg><svg><use href='img/icons.svg#angle-right'></svg>`;
+      jsEl = document.createElement('script');
+      jsEl.src = 'main.js';
+      document.body.appendChild(jsEl);
   </script>
 </body>
 
