@@ -395,7 +395,7 @@ input#menu:checked ~ .side-menu {
 .side-menu > nav > a {
   display: flex;
   flex-direction: row;
-  flex-shrink: 0;
+  flex: 1 0 auto;
   align-items: center;
   padding: 4px 10px !important;
   text-transform: uppercase;
