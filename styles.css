@@ -61,7 +61,7 @@
   --color2: #3862a2;
   --color3: #a7300b;
   --color4: #558b2f;
-  --transparency: 0.4;
+  --transparency: 0.8;
   --rgbdark: 25, 25, 25;
   --rgblight: 231, 231, 231;
   --rgbtheme: 231, 231, 231;
@@ -115,6 +115,18 @@
   --bggradient: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   --invertfilter: invert(100%);
 }
+
+@supports (backdrop-filter: blur(10px)) {
+  :root {
+    --transparency: 0.4;
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(10px)) {
+  :root {
+    --transparency: 0.4;
+  }
+}
 /*--------------CSS main------------*/
 *,
 *:before,
@@ -137,7 +149,7 @@ body {
   background: var(--bggradient), url("img/bg.svg#sp5v") fixed,
     url("img/bg.svg#sp4v") fixed, url("img/bg.svg#sp3v") fixed,
     url("img/bg.svg#sp2v") fixed, url("img/bg.svg#sp1v") fixed;
-  background-size: cover;
+  background-size: calc(1280 / 720 * 100vh) 100vh;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
@@ -327,7 +339,9 @@ input#menu:checked ~ .menu-open svg path:nth-child(2) {
   padding: 64px 50px 25px;
   z-index: 888;
   backdrop-filter: var(--backdrop);
+  -webkit-backdrop-filter: var(--backdrop);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   display: flex;
   align-items: stretch;
@@ -569,6 +583,7 @@ section {
     box-shadow: var(--shadow);
     background-color: rgba(var(--rgbtheme), var(--transparency));
     backdrop-filter: var(--backdrop);
+    -webkit-backdrop-filter: var(--backdrop);
   }
 
   section:hover,
@@ -1139,6 +1154,7 @@ section p a {
   display: flex;
   flex-direction: column;
   backdrop-filter: var(--backdrop);
+  -webkit-backdrop-filter: var(--backdrop);
 }
 
 @media only screen and (min-width: 480px) {
