@@ -14,12 +14,14 @@ ready(() => {
         tlFunc[data.intro["__tlFunc"]](data.intro);
 
       //Timeline rendering
-      Object.entries(data.timeline).forEach(
-        ([key, val]) =>
-          typeof tlFunc[val["__tlFunc"]] === "function" &&
-          val["__display"] &&
-          tlFunc[val["__tlFunc"]](key, val)
-      );
+      Object.entries(data.timeline)
+        .filter((entry) => entry.entries != "")
+        .forEach(
+          ([key, val]) =>
+            typeof tlFunc[val["__tlFunc"]] === "function" &&
+            val["__display"] &&
+            tlFunc[val["__tlFunc"]](key, val)
+        );
 
       //Navbar button rendering
       typeof tlFunc[data.buttons["__tlFunc"]] === "function" &&
@@ -176,7 +178,9 @@ var tlFunc = {
   },
 
   buttons: function ({ entries }) {
-    for (const { url, icon, text, size } of Object.values(entries)) {
+    for (const { url, icon, text, size } of Object.values(entries).filter(
+      (entry) => entry.url != ""
+    )) {
       document.querySelector(
         ".buttons"
       ).innerHTML += `<a role='button' aria-label='${text}' href='${url}' class='btn'>
@@ -194,7 +198,7 @@ var tlFunc = {
       completed,
       institution,
       department,
-    } of Object.values(entries)) {
+    } of Object.values(entries).filter((entry) => entry.degree != "")) {
       document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
         logo
       )}<div>
@@ -211,7 +215,7 @@ var tlFunc = {
     this.initial(key, prettyName, noPrint);
     for (const { award, date, institution, department } of Object.values(
       entries
-    )) {
+    ).filter((entry) => entry.award != "")) {
       document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
         logo
       )}<div>
@@ -224,9 +228,13 @@ var tlFunc = {
 
   skills: function (key, { prettyName, logo, noPrint, entries }) {
     this.initial(key, prettyName, noPrint);
-    for (const { prettyName, list } of Object.values(entries)) {
+    for (const { prettyName, list } of Object.values(entries).filter(
+      (entry) => entry.prettyName != ""
+    )) {
       var htmltext = "";
-      for (const { icon, text } of Object.values(list))
+      for (const { icon, text } of Object.values(list).filter(
+        (entry) => entry.text != ""
+      ))
         htmltext += `<span>${
           icon != ""
             ? `<svg><use xlink:href='/img/skills.svg#${icon}'/></svg>`
@@ -251,9 +259,11 @@ var tlFunc = {
       institution,
       department,
       projects,
-    } of Object.values(entries)) {
+    } of Object.values(entries).filter((entry) => entry.position != "")) {
       var htmltext = "";
-      for (const list of Object.values(projects))
+      for (const list of Object.values(projects).filter(
+        (entry) => entry.list != ""
+      ))
         htmltext += `<p class='bull-ind'>${list}</p>`;
       document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
         logo
@@ -269,9 +279,13 @@ var tlFunc = {
 
   teaching: function (key, { prettyName, logo, noPrint, entries }) {
     this.initial(key, prettyName, noPrint);
-    for (const { list, organization } of Object.values(entries)) {
+    for (const { list, organization } of Object.values(entries).filter(
+      (entry) => entry.organization != ""
+    )) {
       var htmltext = "";
-      for (const { position, title, course, date } of Object.values(list))
+      for (const { position, title, course, date } of Object.values(
+        list
+      ).filter((entry) => entry.position != ""))
         htmltext += `<h5>${position} ${
           title != "" ? `(${title}) in` : "for"
         } ${course}<span>${date}</span></h5>`;
@@ -283,9 +297,13 @@ var tlFunc = {
 
   affiliations: function (key, { prettyName, logo, noPrint, entries }) {
     this.initial(key, prettyName, noPrint);
-    for (const { organization, position } of Object.values(entries)) {
+    for (const { organization, position } of Object.values(entries).filter(
+      (entry) => entry.organization != ""
+    )) {
       var htmltext = "";
-      for (const { role, start, end } of Object.values(position))
+      for (const { role, start, end } of Object.values(position).filter(
+        (entry) => entry.role != ""
+      ))
         htmltext += `<h5>${role}<span>${[start, end]
           .filter(Boolean)
           .join(" – ")}</span></h5>`;
@@ -297,7 +315,9 @@ var tlFunc = {
 
   projects: function (key, { prettyName, logo, noPrint, entries }) {
     this.initial(key, prettyName, noPrint);
-    for (const { title, image, text } of Object.values(entries)) {
+    for (const { title, image, text } of Object.values(entries).filter(
+      (entry) => entry.title != ""
+    )) {
       document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
         logo
       )}<div><h4>${title}</h4><div>${
@@ -308,11 +328,17 @@ var tlFunc = {
 
   publications: function (key, { prettyName, logo, noPrint, entries }) {
     this.initial(key, prettyName, noPrint);
-    for (const { prettyName, list } of Object.values(entries)) {
+    for (const { prettyName, list } of Object.values(entries).filter(
+      (entry) => entry.list != ""
+    )) {
       var htmltext = "";
-      for (const { prettyName, items } of Object.values(list)) {
+      for (const { prettyName, items } of Object.values(list).filter(
+        (entry) => entry.items != ""
+      )) {
         var htmltext1 = "";
-        for (const { url, citationhtml } of Object.values(items))
+        for (const { url, citationhtml } of Object.values(items).filter(
+          (entry) => entry.citationhtml != ""
+        ))
           htmltext1 += `<p class='bull-ind'><a href='${url}'>${citationhtml}</a></p>`;
         htmltext += `<h5 class='noprint'>${prettyName}</h5>${htmltext1}`;
       }
@@ -324,7 +350,9 @@ var tlFunc = {
 
   presentation: function (key, { prettyName, logo, noPrint, entries }) {
     this.initial(key, prettyName, noPrint);
-    for (const { conference, date, titlehtml } of Object.values(entries))
+    for (const { conference, date, titlehtml } of Object.values(entries).filter(
+      (entry) => entry.title != ""
+    ))
       document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
         logo
       )}<div><h4>${conference}<span>${date}</span></h4><h5>${titlehtml}</h5></div></div>`;
@@ -342,7 +370,7 @@ var tlFunc = {
       position,
       institution,
       department,
-    } of Object.values(entries)) {
+    } of Object.values(entries).filter((entry) => entry.name != "")) {
       document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
         logo
       )}<div>
@@ -359,12 +387,13 @@ var tlFunc = {
     this.initial(key, prettyName, noPrint);
     for (const [ind, { prettyName, list }] of Object.entries(entries)) {
       var htmltext = "";
-      for (const { prettyName, content, icon, link } of Object.values(list)) {
+      for (const { prettyName, content, icon, link } of Object.values(
+        list
+      ).filter((entry) => entry.content != "")) {
         htmltext += `
           <h5 class='${ind}'> ${prettyName != "" ? prettyName + ":" : ""}
             <click tabindex='0'></click>
-            <a href='${link}'>
-              ${content != "" ? content + "&nbsp;" : ""}
+            <a href='${link}'>${content}
               ${
                 icon != ""
                   ? `<svg><use xlink:href='/img/icons.svg#${icon}'/></svg>`

@@ -146,7 +146,7 @@ body {
     url("img/bg.svg#sp1v") fixed;
   background-size: calc(1280 / 720 * 100vh) 100vh;
   overflow-x: hidden;
-  /*scroll-snap-type: y proximity;*/
+  /*scroll-snap-type: y proximity;*/ /*messes iOS scrolling*/
   overflow-y: scroll;
 }
 
@@ -554,7 +554,7 @@ section {
   flex: 0 0 100%;
   background-color: rgba(var(--rgbtheme), 0.8);
   /*scroll-snap-align: start;
-  scroll-snap-stop: always;*/
+  scroll-snap-stop: always;*/ /*messes iOS scrolling*/
 }
 
 @media only screen and (min-width: 480px) {
