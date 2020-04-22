@@ -343,16 +343,19 @@ input#menu:checked ~ .menu-open svg path:nth-child(2) {
   justify-content: flex-start;
   flex-direction: column;
   box-shadow: var(--shadow);
+  pointer-events: none;
 }
 
 input#menu:checked ~ .side-menu {
   clip-path: circle(150% at 0 0px);
   -webkit-clip-path: circle(150% at 0 0px);
+  pointer-events: visible;
 }
 
 .side-menu:focus-within {
   clip-path: circle(150% at 0 0px);
   -webkit-clip-path: circle(150% at 0 0px);
+  pointer-events: visible;
 }
 
 @media only screen and (min-width: 480px) {
@@ -370,6 +373,7 @@ input#menu:checked ~ .side-menu {
   .side-menu {
     clip-path: circle(150%);
     -webkit-clip-path: circle(150% at 0 0px);
+    pointer-events: visible;
     padding: 25px;
   }
 }
@@ -396,7 +400,6 @@ input#menu:checked ~ .side-menu {
 .side-menu > nav > a {
   display: flex;
   flex-direction: row;
-  flex: 1 0 auto;
   align-items: center;
   padding: 4px 10px !important;
   text-transform: uppercase;
@@ -460,7 +463,7 @@ input#menu:checked ~ .side-menu {
 .side-menu > .action {
   display: flex;
   flex-direction: row;
-  flex: 1 0 25px; /*for iphone!*/
+  flex: 0 0 45px; /*for iphone!*/
   width: 100%;
   justify-content: space-between;
   padding-bottom: 20px;

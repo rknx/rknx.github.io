@@ -33,15 +33,10 @@ ready(() => {
 });
 
 //Run on Window Resize
-window.resize = () => {
+window.onresize = () => {
   //Changes to side-menu
-  window.innerWidth >= 1280 &&
-    document.querySelector("#menu").removeAttribute("checked");
-  document.querySelector(".menu-open").style.display =
-    window.innerWidth >= 1280 ? "none" : "";
-  document.querySelector(".side-menu").style.clipPath =
-    window.innerWidth >= 1280 ? "circle(150% at 0 0px)" : "";
-
+  if (window.innerWidth >= 1280)
+    document.querySelector("#menu").checked = false;
   //Other to be added
 };
 
