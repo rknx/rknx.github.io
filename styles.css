@@ -66,9 +66,7 @@
   --rgblight: 231, 231, 231;
   --rgbtheme: 231, 231, 231;
   --rgbthemerev: 25, 25, 25;
-  --sliderback: rgba(var(--rgbthemerev), 0.25);
   --quoteback: 167, 48, 11;
-  --loaderback: var(--color2);
   --shadow: 0 0px 14.4px 0 rgba(0, 0, 0, 0.132),
     0 0 3.6px 0 rgba(0, 0, 0, 0.108);
   --hovershadow: 0 0 54.6px 0 rgba(0, 0, 0, 0.22),
@@ -81,7 +79,7 @@
   --fontalwayswhite: #fafafa;
   --fontblack: #353535;
   --fontdarkblack: #151515;
-  --radius: 6px;
+  --radius: 5px;
   --tlgradient: linear-gradient(
     90deg,
     transparent calc(50% - 3px),
@@ -108,7 +106,6 @@
   --color4: #4c7d2a;
   --rgbtheme: 25, 25, 25;
   --rgbthemerev: 231, 231, 231;
-  --sliderback: var(--color4);
   --navback: 25, 25, 25;
   --quoteback: 156, 74, 48;
   --shadow: 0 0px 10.4px 0 rgba(255, 255, 255, 0.132),
@@ -406,7 +403,7 @@ input#menu:checked ~ .side-menu {
   padding: 4px 0 4px 10px !important;
   text-transform: uppercase;
   color: var(--fontdarkblack);
-  border-radius: 3px;
+  border-radius: var(--radius);
   margin: 4px 0px;
   font-size: 1rem;
   min-height: 1rem;
@@ -444,7 +441,7 @@ input#menu:checked ~ .side-menu {
   padding: 5px 0;
   text-transform: uppercase;
   transition: clip-path 0.2s ease-in-out;
-  border-radius: 3px;
+  border-radius: var(--radius);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1038,7 +1035,7 @@ section p a {
 }
 
 #projects > div:not(:first-child) > div:not(:first-child) > div > img {
-  border-radius: 3px;
+  border-radius: var(--radius);
   box-shadow: var(--btnshadow);
   margin-top: 5px;
   width: 240px;
@@ -1251,7 +1248,7 @@ section p a {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
+  border-radius: var(--radius);
   background-color: var(--color1);
 }
 

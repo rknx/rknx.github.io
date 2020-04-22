@@ -22,7 +22,7 @@ var tlFunc = {
         <div class='bio'>
           <h1>${firstname} ${lastname}</h1>
           <h2>${profession}</h2>
-          <p>${Object.values(bio).join()} </p>
+          <p>${Object.values(bio).join(" ")} </p>
         </div>
         <h6 class='onlyPrint'>Email:${email}</h6>
       </section>`;
