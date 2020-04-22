@@ -76,10 +76,8 @@ window.onload = () => {
           .querySelector(el.hash) //jest just the #...... part from link url
           .scrollIntoView({ block: "start", behavior: "smooth" }); //scroll to the #..... section
       } catch (error) {
-        //fallback to prevent browser crashing
-        document
-          .querySelector(el.hash) //jest just the #...... part from link url
-          .scrollIntoView(false);
+        //fallback for iphone safari
+        document.querySelector(el.hash).scrollIntoView(false);
       }
     });
   });
