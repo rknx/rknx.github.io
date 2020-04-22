@@ -6,7 +6,7 @@ const assets = [
   "/data.json",
   "/vcard.html",
   "/404.html",
-  "/js/main.js",
+  "/main.js",
   "/img/bg.svg",
   "/img/avatar.jpg",
   "/img/icons.svg",
