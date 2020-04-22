@@ -71,9 +71,16 @@ window.onload = () => {
       e.preventDefault();
       document.querySelector("#menu").checked = false; //set checked status to false
       el.blur(); //lost focus on clicked element
-      document
-        .querySelector(el.hash) //jest just the #...... part from link url
-        .scrollIntoView({ block: "start", behavior: "smooth" }); //scroll to the #..... section
+      try {
+        document
+          .querySelector(el.hash) //jest just the #...... part from link url
+          .scrollIntoView({ block: "start", behavior: "smooth" }); //scroll to the #..... section
+      } catch (error) {
+        //fallback to prevent browser crashing
+        document
+          .querySelector(el.hash) //jest just the #...... part from link url
+          .scrollIntoView(false);
+      }
     });
   });
 
