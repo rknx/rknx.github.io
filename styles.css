@@ -407,6 +407,7 @@ input#menu:checked ~ .side-menu {
   border-image-source: none;
   border-image-slice: 1;
   border-image-width: 1px;
+  color: red;
 }
 
 .side-menu > nav > a > svg {
