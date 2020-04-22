@@ -365,7 +365,7 @@ input#menu:checked ~ .side-menu {
 .side-menu:focus-within {
   clip-path: circle(150% at 0 0px);
   -webkit-clip-path: circle(150% at 0 0px);
-  background-color: rgb(var(--rgbtheme));
+  background-color: rgba(var(--rgbtheme), var(--transparency));
 }
 
 @media only screen and (min-width: 480px) {
