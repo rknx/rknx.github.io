@@ -146,7 +146,7 @@ body {
     url("img/bg.svg#sp1v") fixed;
   background-size: calc(1280 / 720 * 100vh) 100vh;
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   overflow-y: scroll;
 }
 
@@ -396,13 +396,12 @@ input#menu:checked ~ .side-menu {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 4px 0 4px 10px !important;
+  padding: 4px 10px !important;
   text-transform: uppercase;
   color: var(--fontdarktheme);
   border-radius: var(--radius);
   margin: 4px 0px;
   font-size: 1rem;
-  min-height: 1rem;
   background-color: rgba(var(--rgbthemerev), var(--fluentback));
   border: 1px solid transparent;
   border-image-source: none;
@@ -428,12 +427,11 @@ input#menu:checked ~ .side-menu {
 
 .side-menu > .buttons > a {
   width: 48%;
-  margin: 5px 0px;
+  margin: 4px 0px;
   color: var(--fontdarktheme);
   font-weight: 700;
   padding: 5px 0;
   text-transform: uppercase;
-  transition: clip-path 0.2s ease-in-out;
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
@@ -442,10 +440,7 @@ input#menu:checked ~ .side-menu {
   font-size: 0.5rem;
   background-color: rgba(var(--rgbthemerev), var(--fluentback));
   border: 1px solid transparent;
-  border-image-source: radial-gradient(
-    rgba(var(--rgbthemerev), var(--fluentborder)),
-    rgba(var(--rgbthemerev), var(--fluentborder))
-  );
+  border-image-source: none;
   border-image-slice: 1;
   border-image-width: 1px;
 }
@@ -611,7 +606,6 @@ section h3 {
   font-size: 2rem;
   text-align: center;
   text-transform: uppercase;
-  scroll-snap-align: start;
 }
 
 @media only screen and (min-width: 780px) {
