@@ -386,7 +386,6 @@ input#menu:checked ~ .side-menu {
 .side-menu > nav {
   padding: 10px 0px;
   display: flex;
-  flex: 1 1 100%;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
