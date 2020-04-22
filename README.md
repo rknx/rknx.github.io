@@ -1,2 +1,2 @@
-![Anuj Sharma](3Dimg/logo48.png)
+![Anuj Sharma](img/logo48.png)
 # rknx.github.io
