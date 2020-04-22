@@ -8,7 +8,6 @@ const assets = [
   "/404.html",
   "/js/main.js",
   "/img/bg.svg",
-  "/img/top-bg.png",
   "/img/avatar.jpg",
   "/img/icons.svg",
   "/img/skills.svg",
@@ -61,7 +60,7 @@ self.addEventListener("fetch", (evt) => {
   );
 });
 //new serviceworker avaialbe
-navigator.serviceWorker.addEventListener("controllerchange", function () {
+self.addEventListener("controllerchange", function () {
   alert("New version available, please wait while refreshing.");
   setTimeout(function () {
     window.location.reload();
