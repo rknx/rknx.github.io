@@ -353,26 +353,16 @@ input#menu:checked ~ .menu-open svg path:nth-child(2) {
 input#menu:checked ~ .side-menu {
   clip-path: circle(150% at 0 0px);
   -webkit-clip-path: circle(150% at 0 0px);
-  background-color: rgb(var(--rgbtheme));
-}
-
-@media only screen and (min-width: 480px) {
-  input#menu:checked ~ .side-menu {
-    background-color: rgba(var(--rgbtheme), var(--transparency));
-  }
 }
 
 .side-menu:focus-within {
   clip-path: circle(150% at 0 0px);
   -webkit-clip-path: circle(150% at 0 0px);
-  background-color: rgba(var(--rgbtheme), var(--transparency));
 }
 
 @media only screen and (min-width: 480px) {
-  .side-menu,
-  .side-menu:focus-within {
+  .side-menu {
     width: 250px;
-    background-color: rgba(var(--rgbtheme), var(--transparency));
     padding: 64px 25px 25px;
   }
 }
@@ -382,8 +372,7 @@ input#menu:checked ~ .side-menu {
 }
 
 @media only screen and (min-width: 1280px) {
-  .side-menu,
-  .side-menu:focus-within {
+  .side-menu {
     clip-path: circle(150%);
     -webkit-clip-path: circle(150% at 0 0px);
     padding: 25px;
