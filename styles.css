@@ -390,6 +390,7 @@ input#menu:checked ~ .side-menu {
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
+  overflow: hidden;
 }
 
 .side-menu > nav > a {
