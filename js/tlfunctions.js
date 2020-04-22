@@ -18,7 +18,7 @@ var tlFunc = {
 
   intro: function ({ image, firstname, lastname, profession, bio, email }) {
     document.querySelector("body").innerHTML += `<section class='header'>
-        <div class='avatar'><object data='${image}' type='image/png' alt='${firstname} ${lastname}'>${firstname} ${lastname}</object></div>
+        <div class='avatar'><object data='${image}' type='image/png' alt='${firstname} ${lastname}'></object></div>
         <div class='bio'>
           <h1>${firstname} ${lastname}</h1>
           <h2>${profession}</h2>
@@ -29,7 +29,7 @@ var tlFunc = {
   },
 
   buttons: function ({ entries }) {
-    for (const { url, icon, text } of Object.values(entries)) {
+    for (const { url, icon, text, size } of Object.values(entries)) {
       document.querySelector(
         ".buttons"
       ).innerHTML += `<a role='button' aria-label='${text}' href='${url}' class='btn'>
@@ -37,10 +37,6 @@ var tlFunc = {
           <span>${text}</span>
         </a>`;
     }
-    document.querySelector(".side-menu").innerHTML += `<div class='hosts'>
-        <a href='https://www.netlify.com'><svg><use xlink:href='/img/icons.svg#netlify'></svg>Deploys by Netlify</a>
-        <a href='https://www.github.com'><svg><use xlink:href='/img/icons.svg#github'></svg>Hosted on Github</a>
-      </div>`;
   },
 
   education: function (key, { prettyName, logo, noPrint, entries }) {

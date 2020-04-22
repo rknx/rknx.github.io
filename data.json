@@ -4,28 +4,38 @@
     "entries": {
       "print": {
         "icon": "print",
-        "text": "Print this page",
+        "text": "Print CV",
         "url": "javascript:window.print()"
       },
       "cv": {
         "icon": "download",
-        "text": "Download the CV",
+        "text": "Download CV",
         "url": "/resources/Anuj_Sharma_Curriculum_Vitae.pdf"
       },
       "vcard": {
         "icon": "address-card",
-        "text": "View online vcard",
+        "text": "View vcard",
         "url": "/vcard.html"
       },
       "vcard2": {
         "icon": "download",
-        "text": "Download my vcard",
+        "text": "Download vcard",
         "url": "/resources/Anuj_Sharma_Business_Card.pdf"
       },
       "email": {
         "icon": "envelope",
-        "text": "Send me an email",
+        "text": "Send an email",
         "url": "mailto:rknx@outlook.com"
+      },
+      "github": {
+        "icon": "github",
+        "text": "Hosted on Github",
+        "url": "https://www.github.com"
+      },
+      "netlify": {
+        "icon": "netlify",
+        "text": "Deploys by Netlify",
+        "url": "https://www.netlify.com"
       }
     }
   },

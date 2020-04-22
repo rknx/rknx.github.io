@@ -9,17 +9,6 @@ ready(() => {
   fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
-      //Strings replace
-      document.querySelectorAll(".strName").forEach((el) => {
-        el.innerHTML = `${data.intro.firstname} <span>${data.intro.lastname}</span>`;
-      });
-      document.querySelectorAll(".strJob").forEach((el) => {
-        el.innerHTML = data.intro.profession;
-      });
-      document.querySelectorAll(".strEmail").forEach((el) => {
-        el.innerHTML = data.intro.email;
-      });
-
       //Intro section rendering
       if (typeof tlFunc[data.intro["__tlFunc"]] === "function")
         tlFunc[data.intro["__tlFunc"]](data.intro);
@@ -56,6 +45,20 @@ window.resize = () => {
   //Other to be added
 };
 
+//Run on scroll of the page
+window.onscroll = () => {
+  let pageY = window.pageYOffset;
+  document.body.style.background = `var(--bggradient),url("img/bg.svg#sp5v") -${
+    pageY * 0.32
+  }px 0 repeat-x fixed, url("img/bg.svg#sp4v") -${
+    pageY * 0.24
+  }px 0 repeat-x fixed, url("img/bg.svg#sp3v") -${
+    pageY * 0.16
+  }px 0 repeat-x fixed, url("img/bg.svg#sp2v") -${
+    pageY * 0.08
+  }px 0 repeat-x fixed, url("img/bg.svg#sp1v") 0 0 repeat-x fixed`;
+};
+
 //Run on Window Load
 window.onload = () => {
   //PWA Service worker
@@ -78,4 +81,65 @@ window.onload = () => {
   setTimeout(function () {
     document.querySelector("#page-loader").style.display = "none";
   }, 500);
+
+  //apply dark mode
+  darkmode = (toggle) => {
+    toggle
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  };
+
+  //theme toggle button
+  document.querySelector("#theme").addEventListener("input", (e) => {
+    document
+      .querySelector("#theme")
+      .setAttribute("value", document.querySelector("#theme").value);
+    document.querySelector("#theme").value == 1
+      ? darkmode(true)
+      : darkmode(false);
+  });
+
+  //theme toggle button
+  document.querySelector("#fontsize").addEventListener("input", (e) => {
+    font = `${16 + document.querySelector("#fontsize").value / 5}px`;
+    document.documentElement.style.fontSize = font;
+  });
+
+  //initial theme toggle
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.querySelector("#theme").value = 1;
+    document.querySelector("#theme").setAttribute("value", 1);
+    darkmode(true);
+  }
+
+  //Fluent design
+  document.querySelector(".side-menu").addEventListener("mousemove", (e) => {
+    document.querySelectorAll(".side-menu a").forEach((el) => {
+      x = e.clientX - el.offsetLeft;
+      y =
+        e.clientY -
+        el.offsetTop +
+        document.querySelector(".side-menu").scrollTop;
+      console.log(el.scrollTop);
+      el.style.borderImageSource = `radial-gradient(circle 100px at ${x}px ${y}px, rgba(var(--rgbthemerev), var(--transb1)), rgba(var(--rgbthemerev), var(--transb0)))`;
+    });
+  });
+  document.querySelector(".side-menu").addEventListener("mouseleave", (e) => {
+    document.querySelectorAll(".side-menu a").forEach((el) => {
+      el.style.borderImageSource = `radial-gradient(circle 100px at ${x}px ${y}px, rgba(var(--rgbthemerev), var(--transb0)), rgba(var(--rgbthemerev), var(--transb0)))`;
+    });
+  });
+  document.querySelectorAll(".side-menu a").forEach((el) => {
+    el.addEventListener("mousemove", (e) => {
+      x = e.clientX - el.offsetLeft;
+      y =
+        e.clientY -
+        el.offsetTop +
+        document.querySelector(".side-menu").scrollTop;
+      el.style.background = `radial-gradient(circle 100px at ${x}px ${y}px, rgba(var(--rgblight), var(--transf1)), rgba(var(--rgbthemerev), var(--transf0)))`;
+    });
+    el.addEventListener("mouseleave", (e) => {
+      el.style.background = `rgba(var(--rgbthemerev), var(--transf0))`;
+    });
+  });
 };
