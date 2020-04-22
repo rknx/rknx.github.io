@@ -395,6 +395,7 @@ input#menu:checked ~ .side-menu {
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 24px; //
   padding: 4px 10px !important;
   text-transform: uppercase;
   color: var(--fontdarktheme);
