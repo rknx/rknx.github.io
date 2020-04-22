@@ -386,6 +386,7 @@ input#menu:checked ~ .side-menu {
 .side-menu > nav {
   padding: 10px 0px;
   display: flex;
+  flex: 1 1 100%;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
@@ -394,8 +395,8 @@ input#menu:checked ~ .side-menu {
 .side-menu > nav > a {
   display: flex;
   flex-direction: row;
+  flex: 0 0;
   align-items: center;
-  height: 40px;
   padding: 4px 10px !important;
   text-transform: uppercase;
   color: var(--fontdarktheme);
