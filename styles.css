@@ -118,13 +118,13 @@
 
 @supports (backdrop-filter: blur(10px)) {
   :root {
-    --transparency: 0.4;
+    --transparency: 0.5;
   }
 }
 
 @supports (-webkit-backdrop-filter: blur(10px)) {
   :root {
-    --transparency: 0.4;
+    --transparency: 0.5;
   }
 }
 /*--------------CSS main------------*/
