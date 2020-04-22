@@ -6,6 +6,8 @@
     "background_color": "#FAFAFA",
     "theme_color": "#00838F", 
     "orientation": "portrait-primary",
+    "lang": "en-US",
+    "description": "Online version of curriculum vitae of Anuj Sharma.",
     "icons": [
       {
         "src": "img/logo16.png",
