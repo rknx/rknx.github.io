@@ -73,11 +73,11 @@ window.onload = () => {
       el.blur(); //lost focus on clicked element
       try {
         document
-          .querySelector(el.hash) //jest just the #...... part from link url
+          .querySelector(el.hash) //just just the #...... part from link url
           .scrollIntoView({ block: "start", behavior: "smooth" }); //scroll to the #..... section
       } catch (error) {
         //fallback for iphone safari
-        document.querySelector(el.hash).scrollIntoView(false);
+        document.querySelector(el.hash).scrollIntoView(true);
       }
     });
   });
