@@ -553,8 +553,8 @@ section {
   align-items: stretch;
   flex: 0 0 100%;
   background-color: rgba(var(--rgbtheme), 0.8);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  /*scroll-snap-align: start;
+  scroll-snap-stop: always;*/
 }
 
 @media only screen and (min-width: 480px) {
