@@ -395,7 +395,7 @@ input#menu:checked ~ .side-menu {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 24px;
+  height: 40px;
   padding: 4px 10px !important;
   text-transform: uppercase;
   color: var(--fontdarktheme);
@@ -407,7 +407,6 @@ input#menu:checked ~ .side-menu {
   border-image-source: none;
   border-image-slice: 1;
   border-image-width: 1px;
-  color: red;
 }
 
 .side-menu > nav > a > svg {
