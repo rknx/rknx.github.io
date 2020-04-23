@@ -12,8 +12,8 @@
         "text": "Print CV",
         "url": "javascript:window.print()"
       },
-      "cv": {
-        "icon": "download",
+      "cv-dl": {
+        "icon": "file-pdf",
         "text": "Download CV",
         "url": "/resources/Anuj_Sharma_Curriculum_Vitae.pdf"
       },
@@ -22,7 +22,7 @@
         "text": "View vcard",
         "url": "/vcard.html"
       },
-      "vcard2": {
+      "vcard-dl": {
         "icon": "download",
         "text": "Download vcard",
         "url": "/resources/Anuj_Sharma_Business_Card.pdf"

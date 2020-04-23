@@ -142,10 +142,11 @@ body {
   padding: 0px;
   margin: 0;
   background-image: url("img/bg.svg#sp5v"), url("img/bg.svg#sp4v"),
-    url("img/bg.svg#sp3v"), url("img/bg.svg#sp2v"),
-    url("img/bg.svg#sp1v");
+    url("img/bg.svg#sp3v"), url("img/bg.svg#sp2v"), url("img/bg.svg#sp1v");
   background-size: calc(1280 / 720 * 100vh) 100vh;
-  background-attachment:fixed;
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-repeat: repeat-x;
   overflow-x: hidden;
   /*scroll-snap-type: y proximity;*/ /*messes iOS scrolling*/
   overflow-y: scroll;

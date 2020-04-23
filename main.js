@@ -48,13 +48,13 @@ window.onscroll = () => {
   dark = document.documentElement.classList.contains("dark") ? "d" : "";
   document.body.style.background = `url("img/bg.svg#sp5v${dark}") -${
     pageY * 0.32
-  }px 0/calc(1280 / 720 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp4v${dark}") -${
+  }px 0/calc(16 / 9 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp4v${dark}") -${
     pageY * 0.24
-  }px 0/calc(1280 / 720 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp3v${dark}") -${
+  }px 0/calc(16 / 9 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp3v${dark}") -${
     pageY * 0.16
-  }px 0/calc(1280 / 720 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp2v${dark}") -${
+  }px 0/calc(16 / 9 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp2v${dark}") -${
     pageY * 0.08
-  }px 0/calc(1280 / 720 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp1v${dark}") 0 0/calc(1280 / 720 * 100vh) 100vh repeat-x fixed`;
+  }px 0/calc(16 / 9 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp1v${dark}") 0 0/calc(1280 / 720 * 100vh) 100vh repeat-x fixed`;
 };
 
 //Run on Window Load

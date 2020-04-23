@@ -1,50 +1,50 @@
 {
-    "name": "Anuj Sharma - Curriculum Vitae",
-    "short_name": "Anuj's CV",
-    "start_url": "/index.html",
-    "display": "standalone",
-    "background_color": "#FAFAFA",
-    "theme_color": "#00838F", 
-    "orientation": "portrait-primary",
-    "lang": "en-US",
-    "description": "Online version of curriculum vitae of Anuj Sharma.",
-    "icons": [
-      {
-        "src": "img/logo16.png",
-        "sizes": "16x16"
-      },
-      {
-        "src": "img/logo32.png",
-        "sizes": "32x32"
-      },
-      {
-        "src": "img/logo48.png",
-        "sizes": "48x48"
-      },
-      {
-        "src": "img/logo96.png",
-        "sizes": "96x96"
-      },
-      {
-        "src": "img/logo144.png",
-        "sizes": "144x144"
-      },
-      {
-        "src": "img/logomask.svg",
-        "sizes": "150x150",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "img/logo192.png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "img/logo256.png",
-        "sizes": "256x256"
-      },
-      {
-        "src": "img/logo512.png",
-        "sizes": "512x512"
-      }
-    ]
-  }
+  "name": "Anuj Sharma - Curriculum Vitae",
+  "short_name": "Anuj's CV",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#00838F",
+  "orientation": "portrait-primary",
+  "lang": "en-US",
+  "description": "Online version of curriculum vitae of Anuj Sharma.",
+  "icons": [
+    {
+      "src": "img/pwa/logo16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "img/pwa/logo32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "img/pwa/logo48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "img/pwa/logo96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "img/pwa/logo144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "img/pwa/logomask.svg",
+      "sizes": "150x150",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/pwa/logo192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/pwa/logo256.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "img/pwa/logo512.png",
+      "sizes": "512x512"
+    }
+  ]
+}
