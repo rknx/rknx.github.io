@@ -79,12 +79,6 @@ window.onload = () => {
     });
   });
 
-  //Page loader
-  document.querySelector("#page-loader").style.opacity = 0;
-  setTimeout(function () {
-    document.querySelector("#page-loader").style.display = "none";
-  }, 500);
-
   //apply dark mode
   darkmode = (toggle) => {
     toggle

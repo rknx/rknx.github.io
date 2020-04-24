@@ -70,6 +70,7 @@
   --rgbtheme: 231, 231, 231;
   --rgbthemerev: 25, 25, 25;
   --quoteback: 167, 48, 11;
+  --darkenoverlay: brightness(100%);
   --backdrop: blur(10px);
   --radius: 5px;
   --transparency: 1;
@@ -101,6 +102,7 @@
   --rgbtheme: 25, 25, 25;
   --rgbthemerev: 231, 231, 231;
   --quoteback: 156, 74, 48;
+  --darkenoverlay: brightness(50%);
   --shadow: 0 0px 10.4px 0 rgba(255, 255, 255, 0.132),
     0 0 3.6px 0 rgba(255, 255, 255, 0.108);
   --hovershadow: 0 0 25.6px 0 rgba(255, 255, 255, 0.22),
@@ -1024,23 +1026,24 @@ section p a {
   }
 }
 
-#projects > div:not(:first-child) > div:not(:first-child) > div > img {
+#projects img {
   border-radius: var(--radius);
   box-shadow: var(--btnshadow);
   margin-top: 5px;
   width: 240px;
   margin-bottom: 10px;
+  filter: var(--darkenoverlay);
 }
 
 @media only screen and (min-width: 480px) {
-  #projects > div:not(:first-child) > div:not(:first-child) > div > img {
-    width: 150px;
+  #projects img {
+    flex: 0 0 150px;
     margin-right: 10px;
     margin-bottom: 0px;
   }
 }
 
-#projects > div:not(:first-child) > div:not(:first-child) > div > img:hover {
+#projects img:hover {
   box-shadow: var(--btnshadowhover);
 }
 
