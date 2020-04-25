@@ -15,7 +15,7 @@
       "cv-dl": {
         "icon": "file-pdf",
         "text": "Download CV",
-        "url": "/resources/Anuj_Sharma_Curriculum_Vitae.pdf"
+        "url": "/res/Anuj_Sharma_Curriculum_Vitae.pdf"
       },
       "vcard": {
         "icon": "address-card",
@@ -25,7 +25,7 @@
       "vcard-dl": {
         "icon": "download",
         "text": "Download vcard",
-        "url": "/resources/Anuj_Sharma_Business_Card.pdf"
+        "url": "/res/Anuj_Sharma_Business_Card.pdf"
       },
       "email": {
         "icon": "envelope",
@@ -141,7 +141,7 @@
             },
             "qpcr": {
               "icon": "",
-              "text": "qPCR"
+              "text": "<abbr title='Quantitative Polymerase Chain Reaction'>qPCR</abbr>"
             },
             "topo": {
               "icon": "",

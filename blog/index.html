@@ -3,42 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anuj Sharma | CV</title>
+    <title>Anuj Sharma | Blog</title>
     <meta
       name="Description"
-      content="Online Curriculum Vitae of Anuj Sharma, anujsharma@ufl.edu"
+      content="Rant of Anuj Sharma, anujsharma@ufl.edu"
     />
     <link
       rel="preload"
-      href="styles.css"
+      href="blog.css"
       as="style"
       onload="this.rel='stylesheet';"
     />
-    <link rel="preload" href="main.js" as="script" />
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="preload" href="blog.js" as="script" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
     <link
       rel="shortcut icon"
-      href="img/favicon-dark.ico"
+      href="../img/favicon-dark.ico"
       type="image/x-icon"
       media="(prefers-color-scheme: dark)"
     />
     <link
       rel="preload"
-      href="fonts/Regular.woff2"
+      href="../fonts/Regular.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="data.json"
+      href="blog.json"
       as="fetch"
       type="application/json"
       crossorigin
     />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="../manifest.json" />
     <meta name="theme-color" content="#00838F" />
-    <link rel="apple-touch-icon" href="img/pwa/icon192.png" />
+    <link rel="apple-touch-icon" href="../img/pwa/icon192.png" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
@@ -84,7 +84,7 @@
   <body class="body">
     <!-- Page Loader -->
     <div class="loader noprint" id="page-loader">
-      <progress value="0" max="16"></progress>
+      <progress value="0" max="2"></progress>
       <div
         style="border: 2px solid #fff; padding: 5px 10px; margin: 20px 0 10px;"
       >
@@ -98,31 +98,50 @@
     </div>
 
     <!-- Side menu open-->
-    <input id="menu" type="checkbox" style="display: none;" />
+    <input type="checkbox" id="menu" style="display: none;" />
     <label class="menu-open noprint" for="menu">
-      <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 40h62c13 0 6 28-4 18L35 35"></path>
-        <path d="M0 50h70"></path>
-        <path d="M0 60h62c13 0 6-28-4-18L35 65"></path>
-      </svg>
+      <svg><use xlink:href="../img/icons.svg#home"></use></svg>
     </label>
 
-    <!-- Side Menu container -->
-    <div class="side-menu noprint">
+    <section class="blog">
       <div class="action">
         <input id="fontsize" type="range" min="-16" max="16" value="0" />
         <input id="theme" type="range" min="0" max="1" value="0" />
       </div>
-      <nav></nav>
-      <div class="buttons"></div>
-    </div>
+      <h1>
+        #######0##########
+      </h1>
+      <aside>###########1##########</aside>
+      <p>
+        ###########2##########
+        <a href="#####3#########">##########4############</a
+        >###########5#############<code>############6##############</code>
+      </p>
+      <h2>
+        #############7##############
+      </h2>
+      <pre lang="###########8##############">
+       <code>################9##############</code>
+      </pre>
+      <img src="###############10###############" />
+
+      <details><summary>visible text</summary>lorem20</details>
+
+      <details><summary>visible text</summary>lorem20</details>
+
+      <details><summary>visible text</summary>lorem20</details>
+
+      <details><summary>visible text</summary>lorem20</details>
+    </section>
+
+    <!-- Javascript Files -->
     <script>
       jsEl = document.createElement("script");
-      jsEl.src = "main.js";
+      jsEl.src = "blog.js";
       document.body.appendChild(jsEl);
 
       cssEl = document.createElement("link");
-      cssEl.href = "styles.css";
+      cssEl.href = "blog.css";
       cssEl.rel = "stylesheet";
       document.head.appendChild(cssEl);
 
