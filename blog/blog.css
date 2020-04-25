@@ -1,0 +1,508 @@
+/*--------------Fonts------------*/
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url(../fonts/Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"),
+    url(../fonts/Bold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Open Sans Italic"), local("OpenSans-Italic"),
+    url(../fonts/Italic.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Open Sans Bold Italic"), local("OpenSans-BoldItalic"),
+    url(../fonts/BoldItalic.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Source Code Pro"), url(../fonts/Code.woff2) format("woff2");
+}
+
+/*--------------Theme colors------------*/
+
+:root {
+  --color1: #00838f;
+  --color2: #3862a2;
+  --color3: #a7300b;
+  --color4: #558b2f;
+  --fontthemerev: #fafafa;
+  --fontwhite: #fafafa;
+  --fonttheme: #252525;
+  --fontdarktheme: #151515;
+  --rgbdark: 25, 25, 25;
+  --rgblight: 231, 231, 231;
+  --rgbtheme: 231, 231, 231;
+  --rgbthemerev: 25, 25, 25;
+  --quoteback: 167, 48, 11;
+  --darkenoverlay: brightness(100%);
+  --backdrop: blur(10px);
+  --radius: 5px;
+  --transparency: 1;
+  --shadow: 0 0px 14.4px 0 rgba(0, 0, 0, 0.132),
+    0 0 3.6px 0 rgba(0, 0, 0, 0.108);
+  --hovershadow: 0 0 54.6px 0 rgba(0, 0, 0, 0.22),
+    0 0 14.4px 0 rgba(0, 0, 0, 0.18);
+  --btnshadow: 0 0px 3.2px 0 rgba(0, 0, 0, 0.3), 0 0px 1px 0 rgba(0, 0, 0, 0.2);
+  --btnshadowhover: 0 0px 7px 0 rgba(0, 0, 0, 0.5),
+    0 0px 3px 0 rgba(0, 0, 0, 0.3);
+  --tlgradient: transparent calc(50% - 3px),
+    var(--color1) calc(50% - 3px) calc(50% + 3px), transparent calc(50% + 3px);
+  --rem: 1rem;
+  --fluentborder: 0;
+  --fluentborderhover: 0.5;
+  --fluentback: 0.1;
+  --fluentbackhover: 0.5;
+}
+
+:root.dark {
+  --color1: #2e929c;
+  --color2: #3293d8;
+  --color3: #92492b;
+  --color4: #138c33;
+  --fonttheme: #bbb;
+  --fontdarktheme: #ccc;
+  --fontwhite: #ccc;
+  --fontthemerev: #353535;
+  --rgbtheme: 25, 25, 25;
+  --rgbthemerev: 231, 231, 231;
+  --quoteback: 156, 74, 48;
+  --darkenoverlay: brightness(50%);
+  --shadow: 0 0px 10.4px 0 rgba(255, 255, 255, 0.132),
+    0 0 3.6px 0 rgba(255, 255, 255, 0.108);
+  --hovershadow: 0 0 25.6px 0 rgba(255, 255, 255, 0.22),
+    0 0 14.4px 0 rgba(255, 255, 255, 0.18);
+  --btnshadow: 0 0px 3.2px 0 rgba(255, 255, 255, 0.3),
+    0 0px 1px 0 rgba(255, 255, 255, 0.2);
+  --btnshadowhover: 0 0px 7px 0 rgba(255, 255, 255, 0.5),
+    0 0px 3px 0 rgba(255, 255, 255, 0.3);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  :root {
+    --transparency: 0.5;
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(10px)) {
+  :root {
+    --transparency: 0.5;
+  }
+}
+/*--------------CSS main------------*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--fontthemerev);
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  min-width: 360px;
+  padding: 0px;
+  margin: 0;
+  background-image: url("../img/bg.svg#sp5v"), url("../img/bg.svg#sp4v"),
+    url("../img/bg.svg#sp3v"), url("../img/bg.svg#sp2v"),
+    url("../img/bg.svg#sp1v");
+  background-size: calc(1280 / 720 * 100vh) 100vh;
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  overflow-x: hidden;
+  /*scroll-snap-type: y proximity;*/ /*messes iOS scrolling*/
+  overflow-y: scroll;
+}
+
+@media only screen and (min-width: 480px) {
+  body {
+    padding: 10px calc(50% - 240px);
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  body {
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  body {
+    padding: 40px calc(50% - 480px);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  body {
+    padding: 40px 160px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  body {
+    padding: 40px calc(50% - 640px);
+  }
+}
+
+/*-------------Menu open button------------*/
+
+.menu-open {
+  width: 10rem;
+  height: 10rem;
+  top: -5rem;
+  left: -5rem;
+  display: block;
+  cursor: pointer;
+  position: fixed;
+  border-radius: 50%;
+  z-index: 900;
+  background: rgba(var(--rgbthemerev), 0.2);
+}
+
+.menu-open svg {
+  height: 3rem;
+  width: 3rem;
+  margin: calc(50% + 5px) 0 0 calc(50% + 5px);
+  position: absolute;
+  fill: var(--fonttheme);
+}
+
+/*--------------Section------------*/
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  align-items: stretch;
+  flex: 0 0 100%;
+  background-color: rgba(var(--rgbtheme), 0.8);
+  /*scroll-snap-align: start;
+    scroll-snap-stop: always;*/ /*messes iOS scrolling*/
+}
+
+@media only screen and (min-width: 480px) {
+  section {
+    padding: 20px 40px;
+    border-radius: var(--radius);
+    margin: 10px auto;
+    box-shadow: var(--shadow);
+    background-color: rgba(var(--rgbtheme), var(--transparency));
+    backdrop-filter: var(--backdrop);
+    -webkit-backdrop-filter: var(--backdrop);
+  }
+
+  section:hover,
+  section:active {
+    box-shadow: var(--hovershadow);
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  section {
+    padding: 40px 80px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  section {
+    padding: 80px 160px;
+  }
+}
+
+/*---------Section fonts------------*/
+
+/*--------------Text elements------------*/
+
+h1,
+h2,
+p,
+aside {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  cursor: default;
+}
+
+p,
+span,
+pre,
+code,
+a,
+blockquote,
+aside,
+details {
+  color: var(--fonttheme);
+}
+
+h1,
+h2 {
+  color: var(--color1);
+}
+section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 780px) {
+  section h1 {
+    font-size: 3rem;
+  }
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin: 2rem 0px 1.5rem;
+}
+
+section p {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  line-height: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+section p a {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--fonttheme);
+}
+
+a:focus {
+  outline: var(--color1) dotted 2px;
+  outline-offset: 0.05rem;
+}
+
+section p a:hover,
+section p a:active {
+  color: var(--color1);
+  border-bottom: 1px solid var(--color1);
+}
+
+section p code {
+  font-family: "Source Code Pro", monospace;
+  background-color: rgba(var(--rgbtheme), 0.2);
+  padding: 0 2px;
+}
+
+section blockquote {
+  font-size: 1.4rem;
+  color: var(--color4);
+  font-weight: 700;
+}
+
+section blockquote:before {
+  font-size: 3rem;
+  line-height: 1.5rem;
+  content: '"';
+  transform: translateX(-2rem);
+  position: absolute;
+}
+
+section pre {
+  font-family: "Source Code Pro", monospace;
+  margin-left: 20px;
+  padding: 0.25rem 0.25rem 0.25rem 1.25rem;
+  border-left: 1rem var(--color3) solid;
+  border-radius: 2px;
+  white-space: nowrap;
+  line-height: 1.5rem;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(var(--rgbtheme), 0.4) 0.25rem 1.75rem,
+    rgba(var(--rgbtheme), 0.1) 1.75rem 3.25rem
+  );
+  overflow-x: auto;
+}
+
+section pre > code {
+  display: flex;
+}
+
+section pre:before {
+  content: "<" attr(lang) ">";
+  transform: translateX(-2.25rem) rotate(180deg);
+  writing-mode: vertical-rl;
+  line-height: 0.8rem;
+  position: absolute;
+  font-size: 0.8rem;
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: var(--fontwhite);
+}
+
+section img {
+  align-self: center;
+  max-width: 80%;
+  filter: var(--darkenoverlay);
+  border-radius: var(--radius);
+  box-shadow: var(--btnshadow);
+}
+
+section img:hover {
+  box-shadow: var(--btnshadowhover);
+}
+
+section aside {
+  /*for information like date and length*/
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+}
+
+section details {
+  padding: 5px 10px;
+  border: 1px solid rgba(var(--rgbthemerev), 0.5);
+  border-radius: var(--radius);
+}
+
+section details summary {
+  outline: none;
+  list-style: none;
+}
+
+section details[open] summary {
+  padding-bottom: 10px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/*--------------Tools------------*/
+
+.action {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 45px; /*for iphone!*/
+  width: 200px;
+  justify-content: space-between;
+  align-self: flex-end;
+  padding-bottom: 20px;
+}
+
+.action > input {
+  height: 22px;
+  display: inline-flex;
+  min-width: 0;
+  flex: 0 0 65%;
+  border-radius: 11px;
+  background: rgba(var(--rgbthemerev), var(--fluentback));
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--fontdarktheme);
+}
+
+.action > input#theme {
+  flex: 0 0 27%;
+  align-items: space-between;
+  justify-content: center;
+}
+
+.action > input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgb(var(--rgblight));
+}
+
+.action > #fontsize:before,
+.action > #fontsize:after {
+  content: "A";
+  padding: 2px;
+  line-height: 16px;
+}
+
+.action > #fontsize:before {
+  font-size: 8px;
+}
+
+.action > #fontsize:after {
+  font-size: 14px;
+}
+
+.action > #theme:before,
+.action > #theme:after {
+  padding: 2px;
+  line-height: 16px;
+  font-size: 10px;
+  position: absolute;
+  text-align: center;
+}
+
+.action > #theme:before {
+  content: "DARK";
+  transform: translateX(7px) translateY(-4px);
+}
+
+.action > #theme:after {
+  content: "OFF";
+  transform: translateX(7px) translateY(4px);
+}
+
+.action > #theme[value="1"]::after {
+  content: "ON";
+  transform: translateX(-7px) translateY(4px);
+}
+
+.action > #theme[value="1"]::before {
+  transform: translateX(-7px) translateY(-4px);
+}
+
+/*--------------Scrollbar------------*/
+:root {
+  scrollbar-color: var(--color1) rgba(var(--rgbtheme), 1);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+  background-color: rgb(var(--rgbtheme));
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 20px;
+  border-radius: var(--radius);
+  background-color: var(--color1);
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 20px;
+  border-radius: 2.5px;
+  background-color: var(--color3);
+}
