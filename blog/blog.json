@@ -1,0 +1,388 @@
+{
+    "buttons": {},
+    "blog": [
+        {
+            "tagName": "DETAILS",
+            "attributes": {
+                "id": "dfgdsfgfds",
+                "category": "dfsgsdfg, dfsgfdsgsdf sgdfg, dgfdsgfdsg"
+            },
+            "children": [
+                {
+                    "tagName": "SUMMARY",
+                    "attributes": {},
+                    "children": [
+                        {
+                            "tagName": "H1",
+                            "attributes": {},
+                            "children": [
+                                "sdfgsdf dsfgsdfgsd ",
+                                {
+                                    "tagName": "I",
+                                    "attributes": {},
+                                    "children": [
+                                        "fdsgsdfgsdg"
+                                    ]
+                                },
+                                " gsdg sdgfd"
+                            ]
+                        },
+                        {
+                            "tagName": "ASIDE",
+                            "attributes": {},
+                            "children": [
+                                {
+                                    "tagName": "SPAN",
+                                    "attributes": {},
+                                    "children": [
+                                        "Published on Dec 11, 1993"
+                                    ]
+                                },
+                                {
+                                    "tagName": "SPAN",
+                                    "attributes": {},
+                                    "children": [
+                                        "21 min long"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tagName": "P",
+                    "attributes": {},
+                    "children": [
+                        "dsfsafsadfsadfads"
+                    ]
+                },
+                {
+                    "tagName": "H2",
+                    "attributes": {},
+                    "children": [
+                        "sfadsfsadfasd"
+                    ]
+                },
+                {
+                    "tagName": "BLOCKQUOTE",
+                    "attributes": {},
+                    "children": [
+                        "dfsafdsafsad"
+                    ]
+                },
+                {
+                    "tagName": "PRE",
+                    "attributes": {
+                        "lang": "php",
+                        "title": "hello world"
+                    },
+                    "children": [
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        },
+                        {
+                            "tagName": "CODE",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafsadfasfdasf"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tagName": "P",
+                    "attributes": {},
+                    "children": [
+                        "afdsafsadfasf ",
+                        {
+                            "tagName": "B",
+                            "attributes": {},
+                            "children": [
+                                "fsadfsafdasfsa"
+                            ]
+                        },
+                        " asdfsafasfsadfs ",
+                        {
+                            "tagName": "I",
+                            "attributes": {},
+                            "children": [
+                                "sadfsadfdsafadsf "
+                            ]
+                        },
+                        "sadfsadfsdfsadf ",
+                        {
+                            "tagName": "U",
+                            "attributes": {},
+                            "children": [
+                                "safsadfasdfdsf "
+                            ]
+                        },
+                        "sdfsafsdfsdfsd ",
+                        {
+                            "tagName": "STRIKE",
+                            "attributes": {},
+                            "children": [
+                                "dfsadfasfsadf "
+                            ]
+                        },
+                        "sdfdsafsadf ",
+                        {
+                            "tagName": "FONT",
+                            "attributes": {
+                                "size": "2"
+                            },
+                            "children": [
+                                "asdfdsfdsfsa "
+                            ]
+                        },
+                        "fsdfsdfsafds fsdfsdfsafsdf sdgfsfsdsdfs ",
+                        {
+                            "tagName": "FONT",
+                            "attributes": {
+                                "size": "4"
+                            },
+                            "children": [
+                                "sdffafdsfsda"
+                            ]
+                        },
+                        " asdfsafasdfasd ",
+                        {
+                            "tagName": "SUB",
+                            "attributes": {},
+                            "children": [
+                                "sdfsafdasfd"
+                            ]
+                        },
+                        " sdafsdfsadfsdaf ",
+                        {
+                            "tagName": "SUP",
+                            "attributes": {},
+                            "children": [
+                                "dsfsafsdfsdafsd"
+                            ]
+                        },
+                        " dsafdsafsadfsdf ",
+                        {
+                            "tagName": "A",
+                            "attributes": {
+                                "href": "http://example.com/"
+                            },
+                            "children": [
+                                "sdfsdfasfasdds"
+                            ]
+                        },
+                        " sdfdsfsadfsafsd"
+                    ]
+                }
+            ]
+        },
+        {
+            "tagName": "details",
+            "attributes": {
+                "id": "blog1",
+                "category": [],
+                "display": ""
+            },
+            "children": [
+                {
+                    "tagName": "summary",
+                    "attributes": {},
+                    "children": [
+                        {
+                            "tagName": "h1",
+                            "__comment": "main title",
+                            "attributes": {},
+                            "children": "blog1"
+                        },
+                        {
+                            "tagName": "aside",
+                            "__comment": "meta",
+                            "attributes": {},
+                            "children": [
+                                {
+                                    "tagName": "span",
+                                    "__comment": "date",
+                                    "attributes": {},
+                                    "children": ""
+                                },
+                                {
+                                    "tagName": "span",
+                                    "__comment": "length",
+                                    "attributes": {},
+                                    "children": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tagName": "p",
+                    "attributes": {},
+                    "children": ""
+                },
+                {
+                    "tagName": "p",
+                    "attributes": {},
+                    "children": ""
+                },
+                {
+                    "tagName": "p",
+                    "attributes": {},
+                    "children": ""
+                },
+                {
+                    "tagName": "p",
+                    "attributes": {},
+                    "children": ""
+                }
+            ]
+        }
+    ],
+    "__empty": [
+        {
+            "tagName": "details",
+            "attributes": {
+                "id": "",
+                "category": [],
+                "display": ""
+            },
+            "children": []
+        },
+        {
+            "tagName": "summary",
+            "attributes": {},
+            "children": []
+        },
+        {
+            "tagName": "h1",
+            "__comment": "main title",
+            "attributes": {},
+            "children": []
+        },
+        {
+            "tagName": "aside",
+            "__comment": "meta",
+            "attributes": {},
+            "children": []
+        },
+        {
+            "tagName": "span",
+            "__comment": "date / length",
+            "attributes": {},
+            "children": []
+        },
+        {
+            "tagName": "p",
+            "attributes": {},
+            "children": []
+        },
+        {
+            "tagName": "a",
+            "attributes": {
+                "href": "",
+                "target": ""
+            },
+            "children": []
+        },
+        {
+            "tagName": "h2",
+            "attributes": {},
+            "children": []
+        },
+        {
+            "tagName": "img",
+            "attributes": {
+                "src": "",
+                "alt": ""
+            },
+            "children": []
+        },
+        {
+            "tagName": "pre",
+            "attributes": {
+                "lang": "",
+                "title": ""
+            },
+            "children": []
+        },
+        {
+            "tagName": "code",
+            "attributes": {},
+            "children": []
+        }
+    ]
+}

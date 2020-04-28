@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media only screen and (max-width: 720px) {
+            body {
+                flex-direction: column;
+            }
+        }
+
+        div#form {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        div [contenteditable="true"] {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        [contenteditable][placeholder]:empty:before {
+            content: attr(placeholder);
+            position: absolute;
+            color: gray;
+            background-color: transparent;
+        }
+
+        div#date {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        div#date>div {
+            flex: 0 0 24%;
+            display: flex;
+        }
+
+        div#date>div:first-child {
+            padding: 5px 10px;
+        }
+
+        select {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 200px;
+            margin-top: 10px;
+            align-self: center;
+        }
+
+        #editor {
+            height: 500px;
+            width: 100%;
+            border: 1px solid #ccc;
+            outline: none;
+            padding: 10px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        div#output {
+            flex: 0 0 40%;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        pre {
+            white-space: normal;
+        }
+
+        blockquote:before {
+            content: '|   ';
+            position: absolute;
+            transform: translateX(-20px);
+            font-weight: 700;
+        }
+
+        pre>code {
+            display: block;
+        }
+
+        #json {
+            flex-grow: 1;
+            border: 1px solid #666;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .toolbar {
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+            padding: 5px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .toolbar span {
+            margin: 0 1rem;
+        }
+
+        .toolbar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            height: 1.25rem;
+            width: 1.5rem;
+            padding: 0 5px;
+        }
+
+        .toolbar button svg {
+            height: 100%;
+        }
+
+        .toolbar button:focus {
+            outline: none;
+        }
+
+        .stroke {
+            fill: none;
+            stroke: #444;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 2;
+        }
+
+        .fill {
+            fill: #444;
+        }
+
+        .thin {
+            stroke-width: 1;
+        }
+
+        .toolbar button:hover .fill {
+            fill: #06c;
+        }
+
+        .toolbar button:hover .stroke {
+            stroke: #06c;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form">
+        <select id="prev">
+            <option value=""></option>
+        </select>
+        <div id="slug" contenteditable="true" placeholder="Url (must be unique)"></div>
+
+        <div id="category" contenteditable="true" placeholder="Categories (Separate by comma)"></div>
+        <div class="toolbar">
+            <span class="formats">
+                <button type="button" data-command='bold'>
+                    <svg viewBox="0 0 18 18">
+                        <path class="stroke"
+                            d="M5,4H9.5A2.5,2.5,0,0,1,12,6.5v0A2.5,2.5,0,0,1,9.5,9H5A0,0,0,0,1,5,9V4A0,0,0,0,1,5,4Z">
+                        </path>
+                        <path class="stroke"
+                            d="M5,9h5.5A2.5,2.5,0,0,1,13,11.5v0A2.5,2.5,0,0,1,10.5,14H5a0,0,0,0,1,0,0V9A0,0,0,0,1,5,9Z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='italic'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="7" x2="13" y1="4" y2="4"></line>
+                        <line class="stroke" x1="5" x2="11" y1="14" y2="14"></line>
+                        <line class="stroke" x1="8" x2="10" y1="14" y2="4"></line>
+                    </svg>
+                </button>
+                <button type="button" data-command='underline'>
+                    <svg viewBox="0 0 18 18">
+                        <path class="stroke" d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3">
+                        </path>
+                        <rect class="fill" height="1" rx="0.5" ry="0.5" width="12" x="3" y="15"></rect>
+                    </svg>
+                </button>
+                <button type="button" data-command='strikeThrough'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke thin" x1="15.5" x2="2.5" y1="8.5" y2="9.5"></line>
+                        <path class="fill"
+                            d="M9.007,8C6.542,7.791,6,7.519,6,6.5,6,5.792,7.283,5,9,5c1.571,0,2.765.679,2.969,1.309a1,1,0,0,0,1.9-.617C13.356,4.106,11.354,3,9,3,6.2,3,4,4.538,4,6.5a3.2,3.2,0,0,0,.5,1.843Z">
+                        </path>
+                        <path class="fill"
+                            d="M8.984,10C11.457,10.208,12,10.479,12,11.5c0,0.708-1.283,1.5-3,1.5-1.571,0-2.765-.679-2.969-1.309a1,1,0,1,0-1.9.617C4.644,13.894,6.646,15,9,15c2.8,0,5-1.538,5-3.5a3.2,3.2,0,0,0-.5-1.843Z">
+                        </path>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <div id="title" contenteditable="true" style="font-size: 2.5rem;font-weight: 700;"
+            placeholder="Title of the Post"></div>
+        <div id="date">
+            <div>Date of publication:</div>
+            <div id="year" contenteditable="true" placeholder="Year (YYYY)"></div>
+            <div id="month" contenteditable="true" placeholder="Month (MM)"></div>
+            <div id="day" contenteditable="true" placeholder="Date (DD)"></div>
+        </div>
+
+        <div class="toolbar">
+
+            <span class="formats">
+                <button type="button" data-command='undo'>
+                    <svg viewBox="-50 -50 612 612">
+                        <path class="fill"
+                            d="M212.333 224.333H12c-6.627 0-12-5.373-12-12V12C0 5.373 5.373 0 12 0h48c6.627 0 12 5.373 12 12v78.112C117.773 39.279 184.26 7.47 258.175 8.007c136.906.994 246.448 111.623 246.157 248.532C504.041 393.258 393.12 504 256.333 504c-64.089 0-122.496-24.313-166.51-64.215-5.099-4.622-5.334-12.554-.467-17.42l33.967-33.967c4.474-4.474 11.662-4.717 16.401-.525C170.76 415.336 211.58 432 256.333 432c97.268 0 176-78.716 176-176 0-97.267-78.716-176-176-176-58.496 0-110.28 28.476-142.274 72.333h98.274c6.627 0 12 5.373 12 12v48c0 6.627-5.373 12-12 12z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='redo'>
+                    <svg viewBox="-50 -50 612 612">
+                        <path class="fill"
+                            d="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z">
+                        </path>
+                    </svg>
+
+                </button>
+            </span>
+
+
+            <span class="formats">
+                <button type="button" data-command='bold'>
+                    <svg viewBox="0 0 18 18">
+                        <path class="stroke"
+                            d="M5,4H9.5A2.5,2.5,0,0,1,12,6.5v0A2.5,2.5,0,0,1,9.5,9H5A0,0,0,0,1,5,9V4A0,0,0,0,1,5,4Z">
+                        </path>
+                        <path class="stroke"
+                            d="M5,9h5.5A2.5,2.5,0,0,1,13,11.5v0A2.5,2.5,0,0,1,10.5,14H5a0,0,0,0,1,0,0V9A0,0,0,0,1,5,9Z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='italic'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="7" x2="13" y1="4" y2="4"></line>
+                        <line class="stroke" x1="5" x2="11" y1="14" y2="14"></line>
+                        <line class="stroke" x1="8" x2="10" y1="14" y2="4"></line>
+                    </svg>
+                </button>
+                <button type="button" data-command='underline'>
+                    <svg viewBox="0 0 18 18">
+                        <path class="stroke" d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3">
+                        </path>
+                        <rect class="fill" height="1" rx="0.5" ry="0.5" width="12" x="3" y="15"></rect>
+                    </svg>
+                </button>
+                <button type="button" data-command='strikeThrough'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke thin" x1="15.5" x2="2.5" y1="8.5" y2="9.5"></line>
+                        <path class="fill"
+                            d="M9.007,8C6.542,7.791,6,7.519,6,6.5,6,5.792,7.283,5,9,5c1.571,0,2.765.679,2.969,1.309a1,1,0,0,0,1.9-.617C13.356,4.106,11.354,3,9,3,6.2,3,4,4.538,4,6.5a3.2,3.2,0,0,0,.5,1.843Z">
+                        </path>
+                        <path class="fill"
+                            d="M8.984,10C11.457,10.208,12,10.479,12,11.5c0,0.708-1.283,1.5-3,1.5-1.571,0-2.765-.679-2.969-1.309a1,1,0,1,0-1.9.617C4.644,13.894,6.646,15,9,15c2.8,0,5-1.538,5-3.5a3.2,3.2,0,0,0-.5-1.843Z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command="code">
+                    <svg viewBox="0 0 18 18">
+                        <polyline class="even stroke" points="5 7 3 9 5 11"></polyline>
+                        <polyline class="even stroke" points="13 7 15 9 13 11"></polyline>
+                        <line class="stroke" x1="10" x2="8" y1="5" y2="13"></line>
+                    </svg>
+                </button>
+            </span>
+            <span class="formats">
+                <button type="button" data-command='fontSize' data-size="2">
+                    <svg viewBox="-87 -87 500 500">
+                        <path class="fill" transform="scale(0.7) translate(0 50)"
+                            d="m 317.884,12.818 c -0.062,-5.479 -4.521,-9.889 -10,-9.889 H 10 c -5.523,0 -10,4.479 -10,10 v 55 c 0,5.523 4.477,10 10,10 h 22.596 c 3.039,0 5.912,-1.381 7.809,-3.752 L 57.403,52.929 h 71.592 v 259.635 c 0,5.523 4.477,10 10,10 h 40 c 5.521,0 10,-4.477 10,-10 V 52.93 h 71.512 l 17.082,21.264 c 1.898,2.363 4.767,3.736 7.797,3.736 h 22.588 c 2.66,0 5.212,-1.061 7.089,-2.945 1.877,-1.887 2.926,-4.441 2.911,-7.102 z">
+                        </path>
+                        <path class="fill"
+                            d="m 322.29904,226.88802 c -4.0397,-5.24069 -10.98577,-7.31051 -17.2337,-5.13919 l -19.61568,6.82458 0.003,-59.54673 c 0,-4.07815 -1.61927,-7.99175 -4.50257,-10.87505 -2.8833,-2.88331 -6.79844,-4.50564 -10.87505,-4.50564 h -15.36531 c -8.48998,0 -15.37761,6.88763 -15.37761,15.37761 v 59.54981 l -19.61569,-6.82458 c -6.24946,-2.17747 -13.19092,-0.1015 -17.23061,5.13919 -4.0397,5.24377 -4.27344,12.48201 -0.57667,17.97336 l 47.72443,70.91079 c 2.85716,4.2473 7.64114,6.79383 12.75881,6.79383 5.11767,0 9.9001,-2.54653 12.75573,-6.79383 l 47.7275,-70.91079 c 3.6937,-5.49135 3.46304,-12.72959 -0.57666,-17.97336 z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='fontSize' data-size="3">
+                    <svg viewBox="-91 -87 500 500">
+                        <path class="fill" transform="scale(0.9) translate(0 20)"
+                            d="m 317.884,12.818 c -0.062,-5.479 -4.521,-9.889 -10,-9.889 H 10 c -5.523,0 -10,4.479 -10,10 v 55 c 0,5.523 4.477,10 10,10 h 22.596 c 3.039,0 5.912,-1.381 7.809,-3.752 L 57.403,52.929 h 71.592 v 259.635 c 0,5.523 4.477,10 10,10 h 40 c 5.521,0 10,-4.477 10,-10 V 52.93 h 71.512 l 17.082,21.264 c 1.898,2.363 4.767,3.736 7.797,3.736 h 22.588 c 2.66,0 5.212,-1.061 7.089,-2.945 1.877,-1.887 2.926,-4.441 2.911,-7.102 z">
+                        </path>
+                        <circle class="fill" r="55.858425" cy="262.08447" cx="259.98303" id="path107"></circle>
+                    </svg>
+                </button>
+                <button type="button" data-command='fontSize' data-size="4">
+                    <svg viewBox="-87 -87 500 500">
+                        <path class="fill" transform="scale(1.1) translate(-25 -10)"
+                            d="m 317.884,12.818 c -0.062,-5.479 -4.521,-9.889 -10,-9.889 H 10 c -5.523,0 -10,4.479 -10,10 v 55 c 0,5.523 4.477,10 10,10 h 22.596 c 3.039,0 5.912,-1.381 7.809,-3.752 L 57.403,52.929 h 71.592 v 259.635 c 0,5.523 4.477,10 10,10 h 40 c 5.521,0 10,-4.477 10,-10 V 52.93 h 71.512 l 17.082,21.264 c 1.898,2.363 4.767,3.736 7.797,3.736 h 22.588 c 2.66,0 5.212,-1.061 7.089,-2.945 1.877,-1.887 2.926,-4.441 2.911,-7.102 z">
+                        </path>
+                        <path class="fill" transform="translate(15 0)"
+                            d="m 322.29904,249.32397 c -4.0397,5.24069 -10.98577,7.31051 -17.2337,5.13919 l -19.61568,-6.82458 0.003,59.54673 c 0,4.07815 -1.61927,7.99175 -4.50257,10.87505 -2.8833,2.88331 -6.79844,4.50564 -10.87505,4.50564 h -15.36531 c -8.48998,0 -15.37761,-6.88763 -15.37761,-15.37761 v -59.54981 l -19.61569,6.82458 c -6.24946,2.17747 -13.19092,0.1015 -17.23061,-5.13919 -4.0397,-5.24377 -4.27344,-12.48201 -0.57667,-17.97336 l 47.72443,-70.91079 c 2.85716,-4.2473 7.64114,-6.79383 12.75881,-6.79383 5.11767,0 9.9001,2.54653 12.75573,6.79383 l 47.7275,70.91079 c 3.6937,5.49135 3.46304,12.72959 -0.57666,17.97336 z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='subscript'>
+                    <svg viewBox="0 0 18 18">
+                        <path class="fill"
+                            d="M15.5,15H13.861a3.858,3.858,0,0,0,1.914-2.975,1.8,1.8,0,0,0-1.6-1.751A1.921,1.921,0,0,0,12.021,11.7a0.50013,0.50013,0,1,0,.957.291h0a0.914,0.914,0,0,1,1.053-.725,0.81,0.81,0,0,1,.744.762c0,1.076-1.16971,1.86982-1.93971,2.43082A1.45639,1.45639,0,0,0,12,15.5a0.5,0.5,0,0,0,.5.5h3A0.5,0.5,0,0,0,15.5,15Z">
+                        </path>
+                        <path class="fill"
+                            d="M9.65,5.241a1,1,0,0,0-1.409.108L6,7.964,3.759,5.349A1,1,0,0,0,2.192,6.59178Q2.21541,6.6213,2.241,6.649L4.684,9.5,2.241,12.35A1,1,0,0,0,3.71,13.70722q0.02557-.02768.049-0.05722L6,11.036,8.241,13.65a1,1,0,1,0,1.567-1.24277Q9.78459,12.3777,9.759,12.35L7.316,9.5,9.759,6.651A1,1,0,0,0,9.65,5.241Z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='superscript'>
+                    <svg viewBox="0 0 18 18">
+                        <path class="fill"
+                            d="M15.5,7H13.861a4.015,4.015,0,0,0,1.914-2.975,1.8,1.8,0,0,0-1.6-1.751A1.922,1.922,0,0,0,12.021,3.7a0.5,0.5,0,1,0,.957.291,0.917,0.917,0,0,1,1.053-.725,0.81,0.81,0,0,1,.744.762c0,1.077-1.164,1.925-1.934,2.486A1.423,1.423,0,0,0,12,7.5a0.5,0.5,0,0,0,.5.5h3A0.5,0.5,0,0,0,15.5,7Z">
+                        </path>
+                        <path class="fill"
+                            d="M9.651,5.241a1,1,0,0,0-1.41.108L6,7.964,3.759,5.349a1,1,0,1,0-1.519,1.3L4.683,9.5,2.241,12.35a1,1,0,1,0,1.519,1.3L6,11.036,8.241,13.65a1,1,0,0,0,1.519-1.3L7.317,9.5,9.759,6.651A1,1,0,0,0,9.651,5.241Z">
+                        </path>
+                    </svg>
+                </button>
+            </span>
+            <span class="formats">
+                <button type="button" data-command='h2'>
+                    <svg viewBox="0 0 18 18">
+                        <path class="fill"
+                            d="M16.73975,13.81445v.43945a.54085.54085,0,0,1-.605.60547H11.855a.58392.58392,0,0,1-.64893-.60547V14.0127c0-2.90527,3.39941-3.42187,3.39941-4.55469a.77675.77675,0,0,0-.84717-.78125,1.17684,1.17684,0,0,0-.83594.38477c-.2749.26367-.561.374-.85791.13184l-.4292-.34082c-.30811-.24219-.38525-.51758-.1543-.81445a2.97155,2.97155,0,0,1,2.45361-1.17676,2.45393,2.45393,0,0,1,2.68408,2.40918c0,2.45312-3.1792,2.92676-3.27832,3.93848h2.79443A.54085.54085,0,0,1,16.73975,13.81445ZM9,3A.99974.99974,0,0,0,8,4V8H3V4A1,1,0,0,0,1,4V14a1,1,0,0,0,2,0V10H8v4a1,1,0,0,0,2,0V4A.99974.99974,0,0,0,9,3Z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='p'>
+                    <svg viewBox="0 0 18 18">
+                        <path class="stroke"
+                            d="M 5.5,4.5 H 10 A 2.5,2.5 0 0 1 12.5,7 V 7 A 2.5,2.5 0 0 1 10,9.5 H 5.5 Z"></path>
+                        <path class="stroke" d="m 5.5,9.5 v 5 z"></path>
+                    </svg>
+                </button>
+                <button type="button" data-command="blockquote">
+                    <svg viewBox="0 0 18 18">
+                        <rect class="fill stroke" height="3" width="3" x="4" y="5"></rect>
+                        <rect class="fill stroke" height="3" width="3" x="11" y="5"></rect>
+                        <path class="even fill stroke" d="M7,8c0,4.031-3,5-3,5"></path>
+                        <path class="even fill stroke" d="M14,8c0,4.031-3,5-3,5"></path>
+                    </svg>
+                </button>
+                <button type="button" data-command="pre">
+                    <svg viewBox="0 0 18 18">
+                        <rect class="stroke" height="12" rx="0.5" ry="0.5" width="14" x="2" y="3"></rect>
+                        <polyline class="even stroke" points="7 7 5 9 7 11"></polyline>
+                        <polyline class="even stroke" points="11 7 13 9 11 11"></polyline>
+                    </svg>
+                </button>
+            </span>
+            <span class="formats">
+                <button type="button" data-command='insertOrderedList'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="7" x2="15" y1="4" y2="4"></line>
+                        <line class="stroke" x1="7" x2="15" y1="9" y2="9"></line>
+                        <line class="stroke" x1="7" x2="15" y1="14" y2="14"></line>
+                        <line class="stroke thin" x1="2.5" x2="4.5" y1="5.5" y2="5.5"></line>
+                        <path class="fill"
+                            d="M3.5,6A0.5,0.5,0,0,1,3,5.5V3.085l-0.276.138A0.5,0.5,0,0,1,2.053,3c-0.124-.247-0.023-0.324.224-0.447l1-.5A0.5,0.5,0,0,1,4,2.5v3A0.5,0.5,0,0,1,3.5,6Z">
+                        </path>
+                        <path class="stroke thin"
+                            d="M4.5,10.5h-2c0-.234,1.85-1.076,1.85-2.234A0.959,0.959,0,0,0,2.5,8.156"></path>
+                        <path class="stroke thin"
+                            d="M2.5,14.846a0.959,0.959,0,0,0,1.85-.109A0.7,0.7,0,0,0,3.75,14a0.688,0.688,0,0,0,.6-0.736,0.959,0.959,0,0,0-1.85-.109">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='insertUnorderedList'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="6" x2="15" y1="4" y2="4"></line>
+                        <line class="stroke" x1="6" x2="15" y1="9" y2="9"></line>
+                        <line class="stroke" x1="6" x2="15" y1="14" y2="14"></line>
+                        <line class="stroke" x1="3" x2="3" y1="4" y2="4"></line>
+                        <line class="stroke" x1="3" x2="3" y1="9" y2="9"></line>
+                        <line class="stroke" x1="3" x2="3" y1="14" y2="14"></line>
+                    </svg>
+                </button>
+            </span>
+            <span class="formats">
+                <button type="button" data-command='indent'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="3" x2="15" y1="14" y2="14"></line>
+                        <line class="stroke" x1="3" x2="15" y1="4" y2="4"></line>
+                        <line class="stroke" x1="9" x2="15" y1="9" y2="9"></line>
+                        <polyline class="fill stroke" points="3 7 3 11 5 9 3 7"></polyline>
+                    </svg>
+                </button>
+                <button type="button" data-command='outdent'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="3" x2="15" y1="14" y2="14"></line>
+                        <line class="stroke" x1="3" x2="15" y1="4" y2="4"></line>
+                        <line class="stroke" x1="9" x2="15" y1="9" y2="9"></line>
+                        <polyline class="stroke" points="5 7 5 11 3 9 5 7"></polyline>
+                    </svg>
+                </button>
+            </span>
+
+            <span class="formats">
+                <button type="button" data-command='justifyLeft'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="3" x2="15" y1="9" y2="9"></line>
+                        <line class="stroke" x1="3" x2="13" y1="14" y2="14"></line>
+                        <line class="stroke" x1="3" x2="9" y1="4" y2="4"></line>
+                    </svg>
+                </button>
+                <button type="button" data-command='justifyCenter'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="15" x2="3" y1="9" y2="9"></line>
+                        <line class="stroke" x1="14" x2="4" y1="14" y2="14"></line>
+                        <line class="stroke" x1="12" x2="6" y1="4" y2="4"></line>
+                    </svg>
+                </button>
+                <button type="button" data-command='justifyRight'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="15" x2="3" y1="9" y2="9"></line>
+                        <line class="stroke" x1="15" x2="5" y1="14" y2="14"></line>
+                        <line class="stroke" x1="15" x2="9" y1="4" y2="4"></line>
+                    </svg>
+                </button>
+                <button type="button" data-command='justifyFull'>
+                    <svg viewBox="0 0 18 18">
+                        <line class="stroke" x1="15" x2="3" y1="9" y2="9"></line>
+                        <line class="stroke" x1="15" x2="3" y1="14" y2="14"></line>
+                        <line class="stroke" x1="15" x2="3" y1="4" y2="4"></line>
+                    </svg>
+                </button>
+            </span>
+
+            <span class="formats">
+                <button type="button" data-command='createlink'>
+                    <svg viewBox="-50 -50 612 612">
+                        <path class="fill"
+                            d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='unlink'>
+                    <svg viewBox="-50 -50 612 612">
+                        <path class="fill"
+                            d="M304.083 405.907c4.686 4.686 4.686 12.284 0 16.971l-44.674 44.674c-59.263 59.262-155.693 59.266-214.961 0-59.264-59.265-59.264-155.696 0-214.96l44.675-44.675c4.686-4.686 12.284-4.686 16.971 0l39.598 39.598c4.686 4.686 4.686 12.284 0 16.971l-44.675 44.674c-28.072 28.073-28.072 73.75 0 101.823 28.072 28.072 73.75 28.073 101.824 0l44.674-44.674c4.686-4.686 12.284-4.686 16.971 0l39.597 39.598zm-56.568-260.216c4.686 4.686 12.284 4.686 16.971 0l44.674-44.674c28.072-28.075 73.75-28.073 101.824 0 28.072 28.073 28.072 73.75 0 101.823l-44.675 44.674c-4.686 4.686-4.686 12.284 0 16.971l39.598 39.598c4.686 4.686 12.284 4.686 16.971 0l44.675-44.675c59.265-59.265 59.265-155.695 0-214.96-59.266-59.264-155.695-59.264-214.961 0l-44.674 44.674c-4.686 4.686-4.686 12.284 0 16.971l39.597 39.598zm234.828 359.28l22.627-22.627c9.373-9.373 9.373-24.569 0-33.941L63.598 7.029c-9.373-9.373-24.569-9.373-33.941 0L7.029 29.657c-9.373 9.373-9.373 24.569 0 33.941l441.373 441.373c9.373 9.372 24.569 9.372 33.941 0z">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" data-command='insertimage'>
+                    <svg viewBox="-50 -50 484 612">
+                        <path class="fill"
+                            d="M384 121.941V128H256V0h6.059a24 24 0 0 1 16.97 7.029l97.941 97.941a24.002 24.002 0 0 1 7.03 16.971zM248 160c-13.2 0-24-10.8-24-24V0H24C10.745 0 0 10.745 0 24v464c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V160H248zm-135.455 16c26.51 0 48 21.49 48 48s-21.49 48-48 48-48-21.49-48-48 21.491-48 48-48zm208 240h-256l.485-48.485L104.545 328c4.686-4.686 11.799-4.201 16.485.485L160.545 368 264.06 264.485c4.686-4.686 12.284-4.686 16.971 0L320.545 304v112z">
+                        </path>
+                    </svg>
+                </button>
+            </span>
+            <span class="formats">
+                <button type="button" data-command='removeFormat'>
+                    <svg class="" viewBox="0 0 18 18">
+                        <line class="stroke" x1="5" x2="13" y1="3" y2="3"></line>
+                        <line class="stroke" x1="6" x2="9.35" y1="12" y2="3"></line>
+                        <line class="stroke" x1="11" x2="15" y1="11" y2="15"></line>
+                        <line class="stroke" x1="15" x2="11" y1="11" y2="15"></line>
+                        <rect class="fill" height="1" rx="0.5" ry="0.5" width="7" x="2" y="14"></rect>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <div id='editor' contenteditable placeholder="Content"></div>
+
+        <button id="submit"> Parse it!</button>
+    </div>
+    <div id="output">
+        <textarea id="json"></textarea>
+        <button id="copy"> Copy</button>
+    </div>
+
+</body>
+<script>
+
+    document.querySelectorAll('#date div').forEach(el => {
+        el.addEventListener('keypress', e => {
+            if (isNaN(String.fromCharCode(e.which))) e.preventDefault()
+            if (document.querySelector('#year').textContent.length >= 4) e.preventDefault()
+            if (document.querySelector('#month').textContent.length >= 4) e.preventDefault()
+            if (document.querySelector('#day').textContent.length >= 4) e.preventDefault()
+        })
+    })
+
+    document.querySelectorAll('.toolbar button').forEach(el => {
+        el.addEventListener("click", e => {
+            var command = el.dataset.command;
+            if (command == 'h1' || command == 'h2' || command == 'p' || command == 'blockquote') {
+                document.execCommand('formatBlock', false, command);
+            }
+            if (command == 'pre') {
+                lang = prompt('Language of code black: ', '');
+                title = prompt('Title of code black: ', '');
+                document.execCommand('formatBlock', false, command);
+                preEl = window.getSelection().focusNode.parentNode;
+                preEl.setAttribute("lang", lang);
+                preEl.setAttribute("title", title);
+            }
+            if (command == 'code') {
+                html = '<code>' + window.getSelection().getRangeAt(0).extractContents().textContent + '</code>';
+                console.log(html);
+                document.execCommand('insertHTML', false, html)
+            }
+            if (command == 'fontSize') {
+                document.execCommand('FontSize', false, el.dataset.size)
+            }
+            if (command == 'createlink' || command == 'insertimage') {
+                url = prompt('Enter the link here: ', 'http:\/\/'); document.execCommand(el.dataset.command, false, url);
+            }
+            else document.execCommand(el.dataset.command, false, null);
+        })
+    })
+
+    const form2html = () => {
+        elH1 = document.createElement('h1');
+        elH1Child = document.createTextNode(document.querySelector('#title').innerHTML);
+        elH1.appendChild(elH1Child);
+
+        elDate = document.createElement('span');
+        realDate = new Date(document.querySelector('#year').textContent + "-" + document.querySelector('#month').textContent + "-" + document.querySelector('#day').textContent);
+        elDataChild = document.createTextNode('Published on ' + realDate.toLocaleString('en-us', { month: 'short', year: 'numeric', day: 'numeric' }));
+        elDate.appendChild(elDataChild);
+
+        elLen = document.createElement('span');
+        content = document.querySelector('#editor').textContent.replace(/&nbsp;/g, /\s/).replace(/\s{2}/, /\s/).split(" ").length;
+        elLenChild = document.createTextNode(Math.ceil(content) + ' min long');
+        elLen.appendChild(elLenChild);
+
+        elMeta = document.createElement('aside');
+        elMeta.appendChild(elDate);
+        elMeta.appendChild(elLen);
+
+        elSummary = document.createElement('summary');
+        elSummary.appendChild(elH1);
+        elSummary.appendChild(elMeta);
+
+        elDetails = document.createElement('details');
+        elDetails.id = document.querySelector('#slug').textContent;
+        elDetails.setAttribute('category', document.querySelector('#category').textContent)
+
+        elDetails.appendChild(elSummary);
+        elDetails.innerHTML += document.querySelector('#editor').innerHTML;
+
+        return elDetails;
+    }
+
+    const html2json = e => ({
+        toJSON: () => ({
+            tagName: e.tagName,
+            attributes: Object.fromEntries(Array.from(e.attributes, ({ name, value }) => [name, value])),
+            children: Array.from(e.childNodes, (e) => {
+                if (e.nodeType == 3) { return e.textContent; } else {
+                    return html2json(e);
+                }
+            })
+        })
+    })
+
+    window.onload = () => {
+        document.querySelector('#submit').addEventListener('click', (e) => {
+            console.log(Object.values(document.querySelector('pre').attributes)[0])
+            document.querySelector('#json').textContent = JSON.stringify(html2json(form2html()), null, '  ');
+        });
+        document.querySelector('#copy').addEventListener('click', (e) => {
+            document.querySelector("#json").select();
+            document.execCommand('copy');
+            alert('Copied to clipboard!')
+        });
+
+        var slugs;
+
+        fetch("blog.json")
+            .then((response) => response.json())
+            .then((data) => {
+                slugs = Array.from(data.blog, ({ attributes }) => attributes.id);
+                slugs.forEach(slug => {
+                    txt = document.createTextNode(slug);
+                    el = document.createElement('option');
+                    el.value = slug;
+                    el.appendChild(txt);
+                    document.querySelector('#prev').appendChild(el);
+                })
+            })
+
+        var blFunc = {
+
+            blog: function ({ tagName, attributes, children }, node) {
+
+                var el = document.createElement(tagName);
+
+                if (attributes) {
+                    Object.entries(attributes)
+                        .forEach(
+                            ([key, val]) =>
+                                el.setAttribute(key, val)
+                        );
+                }
+
+                if (Array.isArray(children)) {
+                    Object.values(children).forEach(val => {
+                        if (typeof (val) == "string") {
+                            el.innerHTML += val
+                        } else {
+                            this.blog(val, el)
+                        }
+                    })
+                }
+                else {
+                    el.innerHTML += children;
+                }
+                node.appendChild(el);
+
+            }
+        }
+
+        document.querySelector('#prev').addEventListener('change', (e) => {
+            fetch("blog.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    data.blog.forEach(blog => {
+                        if (blog.attributes.id == document.querySelector('#prev').value) {
+                            document.querySelector('#slug').textContent = blog.attributes.id;
+                            document.querySelector('#category').textContent = blog.attributes.category;
+                            document.querySelector('#date div').innerHTML += "<br>Old: (" + blog.children[0].children[1].children[0].children[0].split(" on ")[1] + ")";
+                            console.log(blog.children[0].children[0].children)
+                            blog.children[0].children[0].children.forEach(el => {
+                                if (typeof (el) == "string") {
+                                    document.querySelector('#title').innerHTML += el;
+                                } else {
+                                    blFunc.blog(el, document.querySelector('#title'))
+                                }
+                            })
+                            blog.children.filter((el, i) => {
+                                if (i != 0) {
+                                    if (typeof (el) == "string") {
+                                        document.querySelector('#editor').innerHTML += el;
+                                    } else {
+                                        blFunc.blog(el, document.querySelector('#editor'))
+                                    }
+                                }
+                            })
+
+
+                        }
+                    })
+                })
+        })
+
+    }
+
+</script>
+
+</html>

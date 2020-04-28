@@ -1,176 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anuj Sharma | Blog</title>
-    <meta
-      name="Description"
-      content="Rant of Anuj Sharma, anujsharma@ufl.edu"
-    />
-    <link
-      rel="preload"
-      href="blog.css"
-      as="style"
-      onload="this.rel='stylesheet';"
-    />
-    <link rel="preload" href="blog.js" as="script" />
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
-    <link
-      rel="shortcut icon"
-      href="../img/favicon-dark.ico"
-      type="image/x-icon"
-      media="(prefers-color-scheme: dark)"
-    />
-    <link
-      rel="preload"
-      href="../fonts/Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="blog.json"
-      as="fetch"
-      type="application/json"
-      crossorigin
-    />
-    <link rel="manifest" href="../manifest.json" />
-    <meta name="theme-color" content="#00838F" />
-    <link rel="apple-touch-icon" href="../img/pwa/icon192.png" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="”apple-mobile-web-app-capable”" content="”yes”" />
-    <style>
-      #page-loader {
-        width: 100%;
-        height: 100vh;
-        background: #1b3a69;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        font-size: 1.5rem;
-        transition: opacity 0.5s ease-in-out;
-      }
-      progress,
-      ::-webkit-progress-bar {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: 0;
-        height: 2px;
-        width: 150px;
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-      ::-moz-progress-bar {
-        background-color: #fff;
-      }
-      ::-webkit-progress-value {
-        background-color: #fff;
-      }
-    </style>
-  </head>
 
-  <body class="body">
-    <!-- Page Loader -->
-    <div class="loader noprint" id="page-loader">
-      <progress value="0" max="2"></progress>
-      <div
-        style="border: 2px solid #fff; padding: 5px 10px; margin: 20px 0 10px;"
-      >
-        ANUJ <strong>SHARMA</strong>
-      </div>
-      <small>PLANT PATHOLOGIST</small>
-      <noscript
-        >Javascript has been disabled. This page needs javascript to
-        load.</noscript
-      >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anuj Sharma | Blog</title>
+  <meta name="Description" content="Rant of Anuj Sharma, anujsharma@ufl.edu" />
+  <link rel="preload" href="blog.css" as="style" onload="this.rel='stylesheet';" />
+  <link rel="preload" href="blog.js" as="script" />
+  <link rel="icon" type="image/svg+xml" href="../img/logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="../img/logo-dark.svg" media="(prefers-color-scheme: dark)" />
+  <link rel="preload" href="../fonts/Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="blog.json" as="fetch" type="application/json" crossorigin />
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#00838F" />
+  <link rel="apple-touch-icon" href="../img/pwa/icon192.png" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="”apple-mobile-web-app-capable”" content="”yes”" />
+  <style>
+    #page-loader {
+      width: 100%;
+      height: 100vh;
+      background: #1b3a69;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 1.5rem;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    progress,
+    ::-webkit-progress-bar {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: 0;
+      height: 2px;
+      width: 150px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    ::-moz-progress-bar {
+      background-color: #fff;
+    }
+
+    ::-webkit-progress-value {
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body class="body">
+  <!-- Page Loader -->
+  <div class="loader noprint" id="page-loader">
+    <progress value="0" max="2"></progress>
+    <div style="border: 2px solid #fff; padding: 5px 10px; margin: 20px 0 10px;">
+      ANUJ <strong>SHARMA</strong>
+    </div>
+    <small>PLANT PATHOLOGIST</small>
+    <noscript>Javascript has been disabled. This page needs javascript to
+      load.</noscript>
+  </div>
+
+  <!-- Side menu open-->
+  <input type="checkbox" id="menu" style="display: none;" />
+  <label class="menu-open noprint" for="menu">
+    <svg>
+      <use xlink:href="../img/icons.svg#home"></use>
+    </svg>
+  </label>
+
+  <section class="blog">
+    <div class="action">
+      <input id="fontsize" type="range" min="-16" max="16" value="0" />
+      <input id="theme" type="range" min="0" max="1" value="0" />
     </div>
 
-    <!-- Side menu open-->
-    <input type="checkbox" id="menu" style="display: none;" />
-    <label class="menu-open noprint" for="menu">
-      <svg><use xlink:href="../img/icons.svg#home"></use></svg>
-    </label>
-
-    <section class="blog">
-      <div class="action">
-        <input id="fontsize" type="range" min="-16" max="16" value="0" />
-        <input id="theme" type="range" min="0" max="1" value="0" />
-      </div>
-      <h1>
-        #######0##########
-      </h1>
-      <aside>###########1##########</aside>
+    <details id="#########-1############" category="#########-2############">
+      <summary>
+        <h1>
+          #######0##########
+        </h1>
+        <aside>###########1-date##########.###########1-length##########</aside>
+      </summary>
       <p>
         ###########2##########
-        <a href="#####3#########">##########4############</a
-        >###########5#############<code>############6##############</code>
+        <a
+          href="#####3#########">##########4############</a>###########5#############<code>############6##############</code>
       </p>
       <h2>
         #############7##############
       </h2>
-      <pre lang="###########8##############">
-       <code>################9##############</code>
+      <pre lang="###########8##############" title="############9#################">
+       <code>################10##############</code>
       </pre>
-      <img src="###############10###############" />
+      <img src="###############11###############" />
+    </details>
+  </section>
 
-      <details><summary>visible text</summary>lorem20</details>
+  <!-- Javascript Files -->
+  <script>
+    jsEl = document.createElement("script");
+    jsEl.src = "blog.js";
+    document.body.appendChild(jsEl);
 
-      <details><summary>visible text</summary>lorem20</details>
+    cssEl = document.createElement("link");
+    cssEl.href = "blog.css";
+    cssEl.rel = "stylesheet";
+    document.head.appendChild(cssEl);
 
-      <details><summary>visible text</summary>lorem20</details>
+    var load = () => {
+      progress = document.querySelector("progress");
+      resLen = Array.from(
+        new Set(
+          window.performance
+            .getEntriesByType("resource")
+            .map((el) => el.name.split("#")[0])
+        )
+      ).length;
+      progress.setAttribute("value", resLen);
+      if (resLen >= progress.max) {
+        //Page loader
+        setTimeout(function () {
+          document.querySelector("#page-loader").style.opacity = 0;
+        }, 400);
+        setTimeout(function () {
+          document.querySelector("#page-loader").style.display = "none";
+        }, 900);
+      } else {
+        setTimeout(function () {
+          load();
+        }, 20);
+      }
+    };
 
-      <details><summary>visible text</summary>lorem20</details>
-    </section>
+    load();
+  </script>
+</body>
 
-    <!-- Javascript Files -->
-    <script>
-      jsEl = document.createElement("script");
-      jsEl.src = "blog.js";
-      document.body.appendChild(jsEl);
-
-      cssEl = document.createElement("link");
-      cssEl.href = "blog.css";
-      cssEl.rel = "stylesheet";
-      document.head.appendChild(cssEl);
-
-      var load = () => {
-        progress = document.querySelector("progress");
-        resLen = Array.from(
-          new Set(
-            window.performance
-              .getEntriesByType("resource")
-              .map((el) => el.name.split("#")[0])
-          )
-        ).length;
-        progress.setAttribute("value", resLen);
-        if (resLen >= progress.max) {
-          //Page loader
-          setTimeout(function () {
-            document.querySelector("#page-loader").style.opacity = 0;
-          }, 400);
-          setTimeout(function () {
-            document.querySelector("#page-loader").style.display = "none";
-          }, 900);
-        } else {
-          setTimeout(function () {
-            load();
-          }, 20);
-        }
-      };
-
-      load();
-    </script>
-  </body>
 </html>
