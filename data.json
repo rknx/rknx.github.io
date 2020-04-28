@@ -54,7 +54,7 @@
     "employer-logo": "/images/gators.png",
     "email": "anujsharma@ufl.edu",
     "bio": {
-      "html1": "<strong>Currently, I am PhD candidate at <a href='https://ufl.edu/'>University of Florida</a>.",
+      "html1": "<strong>Currently, I am <abbr title='Doctor of Philosophy'>PhD</abbr> candidate at <a href='https://ufl.edu/'>University of Florida</a>.",
       "html2": "I work in <a href='https://plantpath.ifas.ufl.edu/misc/jones_lab/'>Jones lab</a> in <a href='https://plantpath.ifas.ufl.edu/'>Department of Plant Pathology</a>.</strong>",
       "html3": "My current research focuses on bacterial spot of tomato and pepper caused by several species of <i>Xanthomonas</i>.",
       "html4": "Among other things, I am working on mapping resistance genes, developing bacterial dispersal models and understanding mutation rate of bacterial effectors."
@@ -161,11 +161,11 @@
             },
             "rnai": {
               "icon": "",
-              "text": "RNAi/Gene silencing"
+              "text": "<abbr title='RNA interference'>RNAi</abbr>/Gene silencing"
             },
             "crispr": {
               "icon": "",
-              "text": "CRISPR editing"
+              "text": "<abbr title='Clustered Regularly Interspaced Short Palindromic Repeats'>CRISPR</abbr> editing"
             },
             "snapgene": {
               "icon": "snapgene",
@@ -187,7 +187,7 @@
             },
             "bwa": {
               "icon": "",
-              "text": "BWA"
+              "text": "<abbr title='Burrows-Wheeler Aligner'>BWA</abbr>"
             },
             "spades": {
               "icon": "spades",
@@ -211,7 +211,7 @@
             },
             "gatk": {
               "icon": "gatk",
-              "text": "GATK"
+              "text": "<abbr title='Genomic Analysis Toolkit'>GATK</abbr>"
             },
             "samtools": {
               "icon": "",
@@ -223,11 +223,11 @@
             },
             "igv": {
               "icon": "",
-              "text": "IGV"
+              "text": "<abbr title='Integrative Genomics Viewer'>IGV</abbr>"
             },
             "mega": {
               "icon": "mega",
-              "text": "MEGA X"
+              "text": "<abbr title='Molecular Evolutionary Genetics Analysis'>MEGA</abbr> X"
             }
           }
         },
@@ -257,11 +257,11 @@
             },
             "html": {
               "icon": "html",
-              "text": "HTML"
+              "text": "<abbr title='HyperText Markup Language'>HTML</abbr>"
             },
             "css": {
               "icon": "css",
-              "text": "CSS"
+              "text": "<abbr title='Cascading Style Sheets'>CSS</abbr>"
             },
             "javascript": {
               "icon": "javascript",
@@ -431,7 +431,7 @@
             "jta": {
               "position": "Course supervisor",
               "title": "",
-              "course": "JTA work experience program",
+              "course": "<abbr title='Junior Technical Assistant'>JTA</abbr> work experience program",
               "date": "2017"
             }
           }
@@ -499,18 +499,18 @@
       "__display": "true",
       "entries": {
         "mutation": {
-          "title": "Mutation rate of TAL effectors",
+          "title": "Mutation rate of <abbr title='Transcription Activator-Like'>TAL</abbr> effectors",
           "text": "Contents are not disclosed yet.",
           "image": "img/project/mutation.jpg"
         },
         "dispersal": {
           "title": "Modeling dispersal of <i>Xanthomonas perforans</i>",
-          "text": "Models were developed to predict the movement of <i>Xanthomons perforans</i> in the field and in green house based on weather condition and other factors. Of special interest was a type-3 effector gene <i>XopJ2</i> which seemed to provide fitness for dispersal. Effect of the gene was accessed in field studies and the mechanism of fitness is being studies in green house.",
+          "text": "Models were developed to predict the movement of <i>Xanthomons perforans</i> in the field and in green house based on weather condition and other factors. Of special interest was a type-3 effector gene <i><abbr title='Xanthomonas Outer Protein J2'>XopJ2</abbr></i> which seemed to provide fitness for dispersal. Effect of the gene was accessed in field studies and the mechanism of fitness is being studies in green house.",
           "image": "img/project/dispersal.jpg"
         },
         "mapping": {
           "title": "Mapping of resistance genes in pepper",
-          "text": "Resistance genes against bacterial spot of pepper in PI163192 and UENF1381 were mapped. F2 population was developed by crossing with ECW variety. QTLs were mapped by bulked sequence analysis of whole genome sequences of resistance and susceptible bulks. HRM curve and CAPS marker were developed at target region and further fine-mapping was performed in backcross F2 populations.",
+          "text": "Resistance genes against bacterial spot of pepper in PI163192 and UENF1381 were mapped. <abbr title=''>F2</abbr> population was developed by crossing with <abbr title='Early CalWonder'>ECW</abbr> variety. <abbr title='Quantitative Trait Locus'>QTL</abbr>s were mapped by bulked sequence analysis of whole genome sequences of resistance and susceptible bulks. <abbr title='High Resolution Melting'>HRM</abbr> curve and <abbr title='Cleaved Amplified Polymorphic Sequence'>CAPS</abbr> marker were developed at target region and further fine-mapping was performed in backcross F2 populations.",
           "image": "img/project/mapping.jpg"
         },
         "coffeerust": {
@@ -520,12 +520,12 @@
         },
         "tomatoblight": {
           "title": "Breeding tomato for late blight tolerance",
-          "text": "NARC HRD breeding lines 'HRD-7' and 'HRD-20', which showed tolerance to late blight, were crossed with other breeding lines to develop hybrid lines with late blight tolerance. The lines were evaluated in field trials against commercial variety 'Shrijana'. Three hybrids (HRA-14 X HRD-7, HRA-20 X HRD-1, HRA-20 X HRD-2) showed high tolerance and were recommended for multi-location CVT.",
+          "text": "NARC HRD breeding lines 'HRD-7' and 'HRD-20', which showed tolerance to late blight, were crossed with other breeding lines to develop hybrid lines with late blight tolerance. The lines were evaluated in field trials against commercial variety 'Shrijana'. Three hybrids (HRA-14 X HRD-7, HRA-20 X HRD-1, HRA-20 X HRD-2) showed high tolerance and were recommended for multi-location <abbr title='Coordinated Varietal Trial'>CVT</abbr>.",
           "image": "img/project/lateblight.jpg"
         },
         "blast": {
           "title": "Screening finger millet for blast resistance",
-          "text": "50 finger millet accession from National Agriculture Genetic Resources Center were screened for resistance against blast cause by <i>Magnaporthe grisea</i>. Plants were scored for disease severity and AUDPC and DMRT was used for accessing level of resistance. 5 accessions showed moderate quantitative resistance and were recommended for further screening.",
+          "text": "50 finger millet accession from National Agriculture Genetic Resources Center were screened for resistance against blast cause by <i>Magnaporthe grisea</i>. Plants were scored for disease severity and <abbr title='Area Under Disease Progress Curve'>AUDPC</abbr> and <abbr title='Duncan's Multiple Range Test'>DMRT</abbr> was used for accessing level of resistance. 5 accessions showed moderate quantitative resistance and were recommended for further screening.",
           "image": "img/project/blast.jpg"
         }
       }
@@ -609,7 +609,7 @@
           "titlehtml": "Role of <i>AvrBsT</i> in dispersal of <i>Xanthomonas perforans</i> and severity of bacterial spot of tomato"
         },
         "fps19": {
-          "conference": "16th Biennial FPS Meeting",
+          "conference": "16th Biennial <abbr title='Florida Phytopathological Society'>FPS</abbr> Meeting",
           "date": "2019",
           "titlehtml": "Characterization of bacterial spot resistance gene against <i>Xanthomonas gardneri</i> in Hungarian pepper"
         }
@@ -679,7 +679,7 @@
           "list": {
             "work": {
               "prettyName": "Work",
-              "content": "2500 Hull Rd, Fifield Hall #2307, Gainesville, FL 32611",
+              "content": "<address>2500 Hull Rd, Fifield Hall #2307, Gainesville, FL 32611</address>",
               "link": "",
               "icon": ""
             }

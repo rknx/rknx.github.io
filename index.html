@@ -1,157 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anuj Sharma | CV</title>
-    <meta
-      name="Description"
-      content="Online Curriculum Vitae of Anuj Sharma, anujsharma@ufl.edu"
-    />
-    <link
-      rel="preload"
-      href="styles.css"
-      as="style"
-      onload="this.rel='stylesheet';"
-    />
-    <link rel="preload" href="main.js" as="script" />
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link
-      rel="shortcut icon"
-      href="img/favicon-dark.ico"
-      type="image/x-icon"
-      media="(prefers-color-scheme: dark)"
-    />
-    <link
-      rel="preload"
-      href="fonts/Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="data.json"
-      as="fetch"
-      type="application/json"
-      crossorigin
-    />
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#00838F" />
-    <link rel="apple-touch-icon" href="img/pwa/icon192.png" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="”apple-mobile-web-app-capable”" content="”yes”" />
-    <style>
-      #page-loader {
-        width: 100%;
-        height: 100vh;
-        background: #1b3a69;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        font-size: 1.5rem;
-        transition: opacity 0.5s ease-in-out;
-      }
-      progress,
-      ::-webkit-progress-bar {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: 0;
-        height: 2px;
-        width: 150px;
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-      ::-moz-progress-bar {
-        background-color: #fff;
-      }
-      ::-webkit-progress-value {
-        background-color: #fff;
-      }
-    </style>
-  </head>
 
-  <body class="body">
-    <!-- Page Loader -->
-    <div class="loader noprint" id="page-loader">
-      <progress value="0" max="16"></progress>
-      <div
-        style="border: 2px solid #fff; padding: 5px 10px; margin: 20px 0 10px;"
-      >
-        ANUJ <strong>SHARMA</strong>
-      </div>
-      <small>PLANT PATHOLOGIST</small>
-      <noscript
-        >Javascript has been disabled. This page needs javascript to
-        load.</noscript
-      >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anuj Sharma | CV</title>
+  <meta name="Description" content="Online Curriculum Vitae of Anuj Sharma, anujsharma@ufl.edu" />
+  <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet';" />
+  <link rel="preload" href="main.js" as="script" />
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="img/logo-dark.svg" media="(prefers-color-scheme: dark)" />
+  <link rel="preload" href="fonts/Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="data.json" as="fetch" type="application/json" crossorigin />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00838F" />
+  <link rel="apple-touch-icon" href="img/pwa/icon192.png" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="”apple-mobile-web-app-capable”" content="”yes”" />
+  <style>
+    #page-loader {
+      width: 100%;
+      height: 100vh;
+      background: #1b3a69;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 1.5rem;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    progress,
+    ::-webkit-progress-bar {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: 0;
+      height: 2px;
+      width: 150px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    ::-moz-progress-bar {
+      background-color: #fff;
+    }
+
+    ::-webkit-progress-value {
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body class="body">
+  <!-- Page Loader -->
+  <div class="loader noprint" id="page-loader">
+    <progress value="0" max="16"></progress>
+    <div style="border: 2px solid #fff; padding: 5px 10px; margin: 20px 0 10px;">
+      ANUJ <strong>SHARMA</strong>
     </div>
+    <small>PLANT PATHOLOGIST</small>
+    <noscript>Javascript has been disabled. This page needs javascript to
+      load.</noscript>
+  </div>
 
-    <!-- Side menu open-->
-    <input id="menu" type="checkbox" style="display: none;" />
-    <label class="menu-open noprint" for="menu">
-      <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 40h62c13 0 6 28-4 18L35 35"></path>
-        <path d="M0 50h70"></path>
-        <path d="M0 60h62c13 0 6-28-4-18L35 65"></path>
-      </svg>
-    </label>
+  <!-- Side menu open-->
+  <input id="menu" type="checkbox" style="display: none;" />
+  <label class="menu-open noprint" for="menu">
+    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 40h62c13 0 6 28-4 18L35 35"></path>
+      <path d="M0 50h70"></path>
+      <path d="M0 60h62c13 0 6-28-4-18L35 65"></path>
+    </svg>
+  </label>
 
-    <!-- Side Menu container -->
-    <div class="side-menu noprint">
-      <div class="action">
-        <input id="fontsize" type="range" min="-16" max="16" value="0" />
-        <input id="theme" type="range" min="0" max="1" value="0" />
-      </div>
-      <nav></nav>
-      <div class="buttons"></div>
+  <!-- Side Menu container -->
+  <div class="side-menu noprint">
+    <div class="action">
+      <input id="fontsize" type="range" min="-16" max="16" value="0" />
+      <input id="theme" type="range" min="0" max="1" value="0" />
     </div>
-    <script>
-      jsEl = document.createElement("script");
-      jsEl.src = "main.js";
-      document.body.appendChild(jsEl);
+    <nav></nav>
+    <div class="buttons"></div>
+  </div>
+  <script>
+    jsEl = document.createElement("script");
+    jsEl.src = "main.js";
+    document.body.appendChild(jsEl);
 
-      cssEl = document.createElement("link");
-      cssEl.href = "styles.css";
-      cssEl.rel = "stylesheet";
-      document.head.appendChild(cssEl);
+    cssEl = document.createElement("link");
+    cssEl.href = "styles.css";
+    cssEl.rel = "stylesheet";
+    document.head.appendChild(cssEl);
 
-      var load = () => {
-        progress = document.querySelector("progress");
-        resLen = Array.from(
-          new Set(
-            window.performance
-              .getEntriesByType("resource")
-              .map((el) => el.name.split("#")[0])
-          )
-        ).length;
-        progress.setAttribute("value", resLen);
-        if (resLen >= progress.max) {
-          //Page loader
-          setTimeout(function () {
-            document.querySelector("#page-loader").style.opacity = 0;
-          }, 400);
-          setTimeout(function () {
-            document.querySelector("#page-loader").style.display = "none";
-          }, 900);
-        } else {
-          setTimeout(function () {
-            load();
-          }, 20);
-        }
-      };
+    var load = () => {
+      progress = document.querySelector("progress");
+      resLen = Array.from(
+        new Set(
+          window.performance
+            .getEntriesByType("resource")
+            .map((el) => el.name.split("#")[0])
+        )
+      ).length;
+      progress.setAttribute("value", resLen);
+      if (resLen >= progress.max) {
+        //Page loader
+        setTimeout(function () {
+          document.querySelector("#page-loader").style.opacity = 0;
+        }, 400);
+        setTimeout(function () {
+          document.querySelector("#page-loader").style.display = "none";
+        }, 900);
+      } else {
+        setTimeout(function () {
+          load();
+        }, 20);
+      }
+    };
 
-      load();
-    </script>
-  </body>
+    load();
+  </script>
+</body>
+
 </html>

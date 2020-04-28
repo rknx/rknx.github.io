@@ -15,7 +15,6 @@ ready(() => {
 
       //Timeline rendering
       Object.entries(data.timeline)
-        .filter((entry) => entry.entries != "")
         .forEach(
           ([key, val]) =>
             typeof tlFunc[val["__tlFunc"]] === "function" &&
@@ -44,17 +43,9 @@ window.onresize = () => {
 
 //Run on scroll of the page
 window.onscroll = () => {
-  let pageY = window.pageYOffset;
-  dark = document.documentElement.classList.contains("dark") ? "d" : "";
-  document.body.style.background = `url("img/bg.svg#sp5v${dark}") -${
-    pageY * 0.32
-  }px 0/calc(16 / 9 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp4v${dark}") -${
-    pageY * 0.24
-  }px 0/calc(16 / 9 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp3v${dark}") -${
-    pageY * 0.16
-  }px 0/calc(16 / 9 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp2v${dark}") -${
-    pageY * 0.08
-  }px 0/calc(16 / 9 * 100vh) 100vh repeat-x fixed, url("img/bg.svg#sp1v${dark}") 0 0/calc(1280 / 720 * 100vh) 100vh repeat-x fixed`;
+  //dark = document.documentElement.classList.contains("dark") ? "d" : "";
+  //Controll background parallax scroll
+  document.body.style.setProperty('--page-scroll', window.pageYOffset);
 };
 
 //Run on Window Load
@@ -147,7 +138,7 @@ var tlFunc = {
       "nav"
     ).innerHTML += `<a href='#${id}'> <svg><use xlink:href='img/icons.svg#angle-right'></svg>${
       name.split(" ")[0]
-    }</a>`;
+      }</a>`;
     document.querySelector(
       "body"
     ).innerHTML += `<section class='timeline ${print}' id='${id}'>
@@ -198,7 +189,7 @@ var tlFunc = {
       )}<div>
             <h4>${degree} <span> ${date} ${
         completed == false ? "(expected)" : ""
-      }</span></h4>
+        }</span></h4>
             <h5>${[institution, department].filter(Boolean).join(", ")}</h5>
           </div>
         </div>`;
@@ -233,7 +224,7 @@ var tlFunc = {
           icon != ""
             ? `<svg><use xlink:href='/img/skills.svg#${icon}'/></svg>`
             : ""
-        } ${text}</span>`;
+          } ${text}</span>`;
       document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
         logo
       )}<div>
@@ -264,8 +255,8 @@ var tlFunc = {
       )}<div>
             <h4>${position} <span>${start} – ${end} </span></h4>
             <h5>${[institution, department]
-              .filter(Boolean)
-              .join(", ")}</h5> ${htmltext}
+          .filter(Boolean)
+          .join(", ")}</h5> ${htmltext}
           </div>
         </div>`;
     }
@@ -282,7 +273,7 @@ var tlFunc = {
       ).filter((entry) => entry.position != ""))
         htmltext += `<h5>${position} ${
           title != "" ? `(${title}) in` : "for"
-        } ${course}<span>${date}</span></h5>`;
+          } ${course}<span>${date}</span></h5>`;
       document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
         logo
       )}<div><h4>${organization}</h4>${htmltext}</div></div>`;
@@ -316,7 +307,7 @@ var tlFunc = {
         logo
       )}<div><h4>${title}</h4><div>${
         image && `<img src='${image}' alt='' onerror='this.style.display=none'>`
-      }<p>${text}</p></div></div></div>`;
+        }<p>${text}</p></div></div></div>`;
     }
   },
 
@@ -370,8 +361,8 @@ var tlFunc = {
       )}<div>
             <h4>${name}<span><small>${email}</small></span></h4>
             <h5>${[position, department, institution]
-              .filter(Boolean)
-              .join(", ")}</h5>
+          .filter(Boolean)
+          .join(", ")}</h5>
           </div>
         </div>`;
     }
@@ -387,12 +378,12 @@ var tlFunc = {
         htmltext += `
           <h5 class='${ind}'> ${prettyName != "" ? prettyName + ":" : ""}
             <click tabindex='0'></click>
-            <a href='${link}'>${content}
+            <a ${link != "" ? "href='" + link + "'" : ""}>${content}
               ${
-                icon != ""
-                  ? `<svg><use xlink:href='/img/icons.svg#${icon}'/></svg>`
-                  : ""
-              }
+          icon != ""
+            ? `<svg><use xlink:href='/img/icons.svg#${icon}'/></svg>`
+            : ""
+          }
             </a>
           </h5>`;
       }

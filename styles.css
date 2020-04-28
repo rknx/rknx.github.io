@@ -143,15 +143,22 @@ body {
   min-width: 360px;
   padding: 0px;
   margin: 0;
-  background-image: url("img/bg.svg#sp5v"), url("img/bg.svg#sp4v"),
-    url("img/bg.svg#sp3v"), url("img/bg.svg#sp2v"), url("img/bg.svg#sp1v");
-  background-size: calc(1280 / 720 * 100vh) 100vh;
-  background-attachment: fixed;
-  background-position: 0 0;
-  background-repeat: repeat-x;
   overflow-x: hidden;
   /*scroll-snap-type: y proximity;*/ /*messes iOS scrolling*/
   overflow-y: scroll;
+  --page-scroll:0;
+  background: url("../img/bg.svg#sp5v") calc(var(--page-scroll) * -0.32px) 0, url("../img/bg.svg#sp4v") calc(var(--page-scroll) * -0.24px) 0, url("../img/bg.svg#sp3v") calc(var(--page-scroll) * -0.16px) 0, url("../img/bg.svg#sp2v") calc(var(--page-scroll) * -0.08px) 0, url("../img/bg.svg#sp1v") 0 0;
+  background-size: calc(1280 / 720 * 100vh) 100vh;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  transition: background-position 0.2s ease;
+}
+
+.dark body {
+  background: url("../img/bg.svg#sp5vd") calc(var(--page-scroll) * -0.32px) 0, url("../img/bg.svg#sp4vd") calc(var(--page-scroll) * -0.24px) 0, url("../img/bg.svg#sp3vd") calc(var(--page-scroll) * -0.16px) 0, url("../img/bg.svg#sp2vd") calc(var(--page-scroll) * -0.08px) 0, url("../img/bg.svg#sp1vd") 0 0;
+  background-size: calc(1280 / 720 * 100vh) 100vh;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
 }
 
 @media only screen and (min-width: 480px) {
@@ -689,6 +696,15 @@ section p.bull-ind:before {
 section p a {
   text-decoration: none;
   color: var(--fontdarktheme);
+}
+
+section abbr {
+  text-decoration: underline dotted;
+  text-decoration-color: rgba(var(--rgbthemerev),0.3)
+}
+
+section address {
+  display: inline-flex;
 }
 
 /*--------------Profile intro------------*/
