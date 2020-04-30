@@ -43,6 +43,10 @@
             background-color: transparent;
         }
 
+        [contenteditable]:empty {
+            border: 2px red solid;
+        }
+
         div#date {
             display: flex;
             flex-direction: row;
@@ -500,10 +504,14 @@
     document.querySelectorAll('#date div').forEach(el => {
         el.addEventListener('keypress', e => {
             if (isNaN(String.fromCharCode(e.which))) e.preventDefault()
-            if (document.querySelector('#year').textContent.length >= 4) e.preventDefault()
-            if (document.querySelector('#month').textContent.length >= 4) e.preventDefault()
-            if (document.querySelector('#day').textContent.length >= 4) e.preventDefault()
+            if (document.querySelector('#year').textContent.length > 4) e.preventDefault()
+            if (document.querySelector('#month').textContent.length > 2) e.preventDefault()
+            if (document.querySelector('#day').textContent.length > 2) e.preventDefault()
         })
+    })
+
+    document.querySelector('#slug').addEventListener('keypress', e => {
+        if (String.fromCharCode(e.which).match(/[^\w+$]/)) e.preventDefault();
     })
 
     document.querySelectorAll('.toolbar button').forEach(el => {
@@ -522,7 +530,6 @@
             }
             if (command == 'code') {
                 html = '<code>' + window.getSelection().getRangeAt(0).extractContents().textContent + '</code>';
-                console.log(html);
                 document.execCommand('insertHTML', false, html)
             }
             if (command == 'fontSize') {
@@ -540,32 +547,50 @@
         elH1Child = document.createTextNode(document.querySelector('#title').innerHTML);
         elH1.appendChild(elH1Child);
 
-        elDate = document.createElement('span');
-        realDate = new Date(document.querySelector('#year').textContent + "-" + document.querySelector('#month').textContent + "-" + document.querySelector('#day').textContent);
+        elDate = document.createElement('time');
+        date = document.querySelector('#year').textContent + "-" + document.querySelector('#month').textContent + "-" + document.querySelector('#day').textContent;
+        elDate.setAttribute('datetime', date);
+        realDate = new Date(date);
         elDataChild = document.createTextNode('Published on ' + realDate.toLocaleString('en-us', { month: 'short', year: 'numeric', day: 'numeric' }));
         elDate.appendChild(elDataChild);
 
         elLen = document.createElement('span');
         content = document.querySelector('#editor').textContent.replace(/&nbsp;/g, /\s/).replace(/\s{2}/, /\s/).split(" ").length;
-        elLenChild = document.createTextNode(Math.ceil(content) + ' min long');
+        elLenChild = document.createTextNode(Math.ceil(content / 200) + ' min long');
         elLen.appendChild(elLenChild);
 
         elMeta = document.createElement('aside');
         elMeta.appendChild(elDate);
         elMeta.appendChild(elLen);
 
+        document.querySelector('#category').textContent.split(',').forEach(el => {
+            elCat = document.createElement('span');
+            elCat.textContent = el;
+            elCat.setAttribute('class', 'category');
+            elMeta.appendChild(elCat);
+        })
+
         elSummary = document.createElement('summary');
         elSummary.appendChild(elH1);
         elSummary.appendChild(elMeta);
 
-        elDetails = document.createElement('details');
-        elDetails.id = document.querySelector('#slug').textContent;
-        elDetails.setAttribute('category', document.querySelector('#category').textContent)
+        elShare = document.createElement('div');
+        link = 'http://' + window.location.hostname + '/blog#' + document.querySelector('#slug').textContent;
+        elShareChild = document.createTextNode(link);
+        elShare.setAttribute('class', 'share')
+        elShare.setAttribute('onclick', 'clipBoard("' + link + '")');
+        elShare.appendChild(elShareChild);
 
+        elDetails = document.createElement('details');
         elDetails.appendChild(elSummary);
         elDetails.innerHTML += document.querySelector('#editor').innerHTML;
+        elDetails.appendChild(elShare);
 
-        return elDetails;
+        elArticle = document.createElement('article');
+        elArticle.id = document.querySelector('#slug').textContent;
+        elArticle.appendChild(elDetails);
+
+        return elArticle;
     }
 
     const html2json = e => ({
@@ -582,7 +607,6 @@
 
     window.onload = () => {
         document.querySelector('#submit').addEventListener('click', (e) => {
-            console.log(Object.values(document.querySelector('pre').attributes)[0])
             document.querySelector('#json').textContent = JSON.stringify(html2json(form2html()), null, '  ');
         });
         document.querySelector('#copy').addEventListener('click', (e) => {
@@ -644,24 +668,23 @@
                     data.blog.forEach(blog => {
                         if (blog.attributes.id == document.querySelector('#prev').value) {
                             document.querySelector('#slug').textContent = blog.attributes.id;
-                            document.querySelector('#category').textContent = blog.attributes.category;
-                            document.querySelector('#date div').innerHTML += "<br>Old: (" + blog.children[0].children[1].children[0].children[0].split(" on ")[1] + ")";
-                            console.log(blog.children[0].children[0].children)
-                            blog.children[0].children[0].children.forEach(el => {
-                                if (typeof (el) == "string") {
-                                    document.querySelector('#title').innerHTML += el;
-                                } else {
-                                    blFunc.blog(el, document.querySelector('#title'))
-                                }
+
+                            cat = new Array();
+                            blog.children[0].children[0].children[1].children.forEach(el => {
+                                if (el.attributes.class == "category") cat.push(el.children[0]);
                             })
-                            blog.children.filter((el, i) => {
-                                if (i != 0) {
-                                    if (typeof (el) == "string") {
-                                        document.querySelector('#editor').innerHTML += el;
-                                    } else {
-                                        blFunc.blog(el, document.querySelector('#editor'))
-                                    }
-                                }
+                            document.querySelector('#category').textContent = cat.join(", ");
+
+                            document.querySelector('#year').textContent = blog.children[0].children[0].children[1].children[0].attributes.datetime.split("-")[0];
+                            document.querySelector('#month').textContent = blog.children[0].children[0].children[1].children[0].attributes.datetime.split("-")[1];
+                            document.querySelector('#day').textContent = blog.children[0].children[0].children[1].children[0].attributes.datetime.split("-")[2];
+                            blog.children[0].children[0].children[0].children.forEach(el => {
+                                node = document.querySelector('#title')
+                                if (typeof (el) == "string") { node.innerHTML += el; } else { blFunc.blog(el, node) }
+                            })
+                            blog.children[0].children.filter((el, i) => {
+                                node = document.querySelector('#editor')
+                                if (i != 0 && el.attributes.class != 'share') if (typeof (el) == "string") { node.innerHTML += el; } else { blFunc.blog(el, node) }
                             })
 
 

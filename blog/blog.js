@@ -11,21 +11,16 @@ ready(() => {
     .then((data) => {
 
       //Blog content rendering
-      data.blog
-        .forEach(
-          (val) =>
-            blFunc.blog(val, document.querySelector('section'))
-        );
-
-      /*//Navbar button rendering
-      typeof blFunc[data.buttons["__blFunc"]] === "function" &&
-        blFunc[data.buttons["__blFunc"]](data.buttons);
-
-      //Quote rendering
-      typeof blFunc[data.quote["__blFunc"]] === "function" &&
-        blFunc[data.quote["__blFunc"]](data.quote);*/
+      slugs = Array.from(data.blog, ({ attributes }) => attributes.id);
+      ind = slugs.indexOf(window.location.hash.split("#")[1]);
+      if (window.location.hash && ind > -1) {
+        blFunc.blog(data.blog[ind], document.querySelector('main'));
+        document.querySelector('details').setAttribute('open', '')
+      } else {
+        data.blog.forEach((val) => blFunc.blog(val, document.querySelector('main')));
+      }
     })
-  //.catch((error) => console.log(`Error rendering data: ${error}`));
+    .catch((error) => console.log(`Error rendering data: ${error}`));
 });
 
 //Run on scroll of the page
@@ -78,13 +73,20 @@ window.onload = () => {
   }
 }
 
+function clipBoard(text) {
+  el = document.createElement('textarea');
+  el.textContent = text;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  window.getSelection().removeAllRanges();
+  el.remove();
+  alert('Share link has been copied to clipboard.')
+}
+
 var blFunc = {
 
   blog: function ({ tagName, attributes, children }, node) {
-
-    console.log(tagName);
-    console.log(attributes);
-    console.log(children);
 
     var el = document.createElement(tagName);
 
@@ -109,17 +111,4 @@ var blFunc = {
     node.appendChild(el);
 
   }
-  /*
-    buttons: function ({ entries }) {
-      for (const { url, icon, text, size } of Object.values(entries).filter(
-        (entry) => entry.url != ""
-      )) {
-        document.querySelector(
-          ".buttons"
-        ).innerHTML += `<a role='button' aria-label='${text}' href='${url}' class='btn'>
-            <svg><use xlink:href='/img/icons.svg#${icon}'></svg>
-            <span>${text}</span>
-          </a>`;
-      }
-    },*/
 }

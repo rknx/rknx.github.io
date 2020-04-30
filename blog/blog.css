@@ -48,7 +48,7 @@
 
 :root {
   --color1: #00838f;
-  --col1rgb: 0,131,143;
+  --color1rgb: 0,131,143;
   --color2: #3862a2;
   --color3: #a7300b;
   --color4: #558b2f;
@@ -83,7 +83,7 @@
 
 :root.dark {
   --color1: #2e929c;
-  --col1rgb: 46,146,156;
+  --color1rgb: 46,146,156;
   --color2: #3293d8;
   --color3: #92492b;
   --color4: #138c33;
@@ -143,6 +143,10 @@ body {
   overflow-x: hidden;
   /*scroll-snap-type: y proximity;*/ /*messes iOS scrolling*/
   overflow-y: scroll;
+}
+
+::selection {
+  background-color: rgba(var(--color1rgb),0.5);
 }
 
 .dark body {
@@ -205,9 +209,9 @@ body {
   fill: var(--fonttheme);
 }
 
-/*--------------Section------------*/
+/*--------------main------------*/
 
-section {
+main {
   display: flex;
   flex-direction: column;
   padding: 20px 10px;
@@ -219,7 +223,7 @@ section {
 }
 
 @media only screen and (min-width: 480px) {
-  section {
+  main {
     padding: 20px 40px;
     border-radius: var(--radius);
     margin: 10px auto;
@@ -229,25 +233,25 @@ section {
     -webkit-backdrop-filter: var(--backdrop);
   }
 
-  section:hover,
-  section:active {
+  main:hover,
+  main:active {
     box-shadow: var(--hovershadow);
   }
 }
 
 @media only screen and (min-width: 980px) {
-  section {
+  main {
     padding: 40px 80px;
   }
 }
 
 @media only screen and (min-width: 1600px) {
-  section {
+  main {
     padding: 80px 160px;
   }
 }
 
-/*---------Section fonts------------*/
+/*---------main fonts------------*/
 
 /*--------------Text elements------------*/
 
@@ -258,6 +262,14 @@ aside {
   margin-block-start: 0;
   margin-block-end: 0;
   cursor: default;
+}
+
+h1,
+h2,
+aside {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 p,
@@ -275,23 +287,23 @@ h1,
 h2 {
   color: var(--color1);
 }
-section h1 {
+main h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 780px) {
-  section h1 {
+  main h1 {
     font-size: 3rem;
   }
 }
 
-section h2 {
+main h2 {
   font-size: 1.8rem;
   margin: 2rem 0px 1.5rem;
 }
 
-section p {
+main p {
   font-weight: 400;
   font-size: 1rem;
   margin-bottom: 5px;
@@ -299,7 +311,7 @@ section p {
   letter-spacing: 0.5px;
 }
 
-section p a {
+main p a {
   text-decoration: none;
   border-bottom: 1px dotted var(--fonttheme);
 }
@@ -309,25 +321,25 @@ a:focus {
   outline-offset: 0.05rem;
 }
 
-section p a:hover,
-section p a:active {
+main p a:hover,
+main p a:active {
   color: var(--color1);
   border-bottom: 1px solid var(--color1);
 }
 
-section p code {
+main p code {
   font-family: "Source Code Pro", monospace;
   background-color: rgba(var(--rgbtheme), 0.2);
   padding: 0 2px;
 }
 
-section blockquote {
+main blockquote {
   font-size: 1.4rem;
   color: var(--color4);
   font-weight: 700;
 }
 
-section blockquote:before {
+main blockquote:before {
   font-size: 3rem;
   line-height: 1.5rem;
   content: '"';
@@ -335,7 +347,7 @@ section blockquote:before {
   position: absolute;
 }
 
-section pre {
+main pre {
   font-family: "Source Code Pro", monospace;
   border-radius: 5px;
   white-space: normal;
@@ -347,39 +359,45 @@ section pre {
   );
   overflow-x: auto;
   background-clip: content-box;
-  padding-top: 34px;
-  border: 1px rgba(var(--col1rgb),0.7) solid;
+  padding-top: 30px;
+  border: 1px rgba(var(--color1rgb),0.7) solid;
   counter-reset: lineno;
+  display: flex;
+  flex-direction: column;
 }
 
-section pre > code {
+main pre > code {
   display: flex;
   padding: 0px 20px 0px 50px;
   white-space:pre-wrap;
   text-indent: -20px;
 }
 
-section pre > code:before {
+main pre > code:before {
   counter-increment: lineno;
   content: counter(lineno) ". ";
   position: absolute;
   transform: translateX(-100%);
 }
 
-section pre:before {
+main pre:before {
   content:"<" attr(lang) "> " attr(title);
   display:flex;
   align-items: center;
   justify-content: center;
-  background: rgba(var(--col1rgb),0.7);
-  background-image: radial-gradient(circle 8px at 25px 18px, #ff5f56 10px, transparent), radial-gradient(circle 8px at 50px 18px, #ffbd2e 10px, transparent), radial-gradient(circle 8px at 75px 18px, #27c93f 10px, transparent);
-  height: 34px;
-  margin-top: -34px;
-  margin-bottom: calc(2.5rem - 34px);
+  padding-left: 100px;
+  background: rgba(var(--color1rgb),0.7);
+  background-image: 
+    radial-gradient(circle 8px at 20px 15px, #ff5f56 10px, transparent), 
+    radial-gradient(circle 8px at 45px 15px, #ffbd2e 10px, transparent), 
+    radial-gradient(circle 8px at 70px 15px, #27c93f 10px, transparent);
+  height: 30px;
+  margin-top: -30px;
+  margin-bottom: calc(2.5rem - 30px);
   line-height: 0.8rem;
 }
 
-section img {
+main img {
   align-self: center;
   max-width: 80%;
   filter: var(--darkenoverlay);
@@ -387,33 +405,64 @@ section img {
   box-shadow: var(--btnshadow);
 }
 
-section img:hover {
+main img:hover {
   box-shadow: var(--btnshadowhover);
 }
 
-section aside {
+main aside {
   /*for information like date and length*/
   margin-bottom: 20px;
   letter-spacing: 1px;
+  font-size: 0.8rem;
 }
 
-section details {
-  padding: 3rem 0px;
-  border-bottom: 1px solid rgba(var(--rgbthemerev), 0.5);
+main aside span:not(:empty):before {
+  content: '\2002\2022\2002'
+}
+
+main aside span.category:not(:empty):before {
+  content: '\2002\2022\2002In\2002'
+}
+
+main aside .category ~ .category:not(:empty):before {
+  content: ', '
+}
+
+main aside .category ~ .category:not(:empty):last-child:before {
+  content: ' and '
+}
+
+main details {
+  padding: 2rem 0px;
   overflow: hidden;
 }
 
-section details summary {
+main article:not(:last-child) {
+  border-bottom: 1px solid rgba(var(--rgbthemerev), 0.5);
+}
+
+main details summary {
   outline: none;
   list-style: none;
 }
 
-section details[open] summary {
+main details[open] summary {
   padding-bottom: 10px;
 }
 
-summary::-webkit-details-marker {
+main summary::-webkit-details-marker {
   display: none;
+}
+
+main div.share {
+  margin-top: 2rem;
+  padding: 5px 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main div.share:before {
+  content:'\27A4\2002Share link: '
 }
 
 /*--------------Tools------------*/
