@@ -61,6 +61,7 @@
   --color2: #3862a2;
   --color3: #a7300b;
   --color4: #558b2f;
+  --color1rgb: 0,131,143;
   --fontthemerev: #fafafa;
   --fontwhite: #fafafa;
   --fonttheme: #353535;
@@ -95,6 +96,7 @@
   --color2: #3293d8;
   --color3: #92492b;
   --color4: #138c33;
+  --color1rgb: 46,146,156;
   --fonttheme: #bbb;
   --fontdarktheme: #ccc;
   --fontwhite: #ccc;
@@ -152,6 +154,10 @@ body {
   background-attachment: fixed;
   background-repeat: repeat-x;
   transition: background-position 0.2s ease;
+}
+
+::selection {
+  background-color: var(--color3);
 }
 
 .dark body {
@@ -355,6 +361,9 @@ input#menu:checked ~ .menu-open svg path:nth-child(2) {
   flex-direction: column;
   box-shadow: var(--shadow);
   pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 input#menu:checked ~ .side-menu {
@@ -783,6 +792,9 @@ section address {
   line-height: 2.5rem;
   color: var(--fontthemerev);
   text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 .avatar object:after {
@@ -997,6 +1009,9 @@ section address {
   display: inline-flex;
   align-items: center;
   font-size: 1rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 .skills svg {
@@ -1128,6 +1143,9 @@ section address {
   color: var(--fontwhite);
   display: flex;
   align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 #contact > div > div > h5.social:nth-child(4n + 1) {

@@ -32,6 +32,11 @@
         "text": "Send an email",
         "url": "mailto:rknx@outlook.com"
       },
+      "copyright": {
+        "icon": "copyright",
+        "text": "Anuj Sharma 2020",
+        "url": "#"
+      },
       "github": {
         "icon": "github",
         "text": "Hosted on Github",
