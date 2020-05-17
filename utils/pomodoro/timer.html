@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" type="image/png" href="icon.png" />
-    <link rel="icon" type="image/png" href="img/icon.svg" />
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="icon.svg" />
+    <title>Timer</title>
     <style>
         * {
             margin: 0;
@@ -131,7 +131,8 @@
         <h4><span id="repeat"></span> of 4 sets</h4>
         <div id="controls">
             <button id="minus1">−</button>
-            <button id="play">▷ǁ</button>
+            <button style="display:none;" id="play">▷</button>
+            <button id="pause">ǁ</button>
             <button id="plus1">+</button>
         </div>
     </div>
@@ -144,6 +145,7 @@
         let time;
         let mins;
         let reps;
+        let play;
 
         document.querySelector('#short').addEventListener('click', e => initialize(25))
 
@@ -161,9 +163,24 @@
             document.querySelector('#min').textContent = zero(time.min);
         })
 
+        document.querySelector('#play').addEventListener('click', e => {
+            document.querySelector('#play').style.display = "none";
+            document.querySelector('#pause').style.display = "inline";
+            play = 1;
+
+        })
+
+        document.querySelector('#pause').addEventListener('click', e => {
+            document.querySelector('#play').style.display = "inline";
+            document.querySelector('#pause').style.display = "none";
+            play = 0;
+
+        })
+
         initialize = (min) => {
             mins = min;
             reps = 0;
+            play = 1;
             document.querySelector('#initial').style.display = 'none';
             activeSession();
         }
@@ -189,14 +206,19 @@
         }
 
         minusOne = (session) => {
-            if (time.sec == 0) {
-                time.sec = 60;
-                time.min--;
-                document.querySelector('#min').textContent = zero(time.min);
-            }
 
-            time.sec--;
-            document.querySelector('#sec').textContent = zero(time.sec);
+            if (play == 1) {
+
+                if (time.sec == 0) {
+                    time.sec = 60;
+                    time.min--;
+                    document.querySelector('#min').textContent = zero(time.min);
+                }
+
+                time.sec--;
+                document.querySelector('#sec').textContent = zero(time.sec);
+
+            }
 
             setTimeout(() => {
                 if (time.min > 0 || time.sec > 0) {
