@@ -60,6 +60,8 @@
   --rgblight: 231, 231, 231;
   --rgbtheme: 231, 231, 231;
   --rgbthemerev: 25, 25, 25;
+  --pageback: #1ba0db;
+  --bgdarkfilter: ;
   --quoteback: 167, 48, 11;
   --darkenoverlay: brightness(100%);
   --backdrop: blur(10px);
@@ -91,6 +93,8 @@
   --fontdarktheme: #ccc;
   --fontwhite: #ccc;
   --fontthemerev: #353535;
+  --pageback: #005fa6;
+  --bgdarkfilter: brightness(0.65) saturate(1.8) contrast(1.2);
   --rgbtheme: 25, 25, 25;
   --rgbthemerev: 231, 231, 231;
   --quoteback: 156, 74, 48;
@@ -136,24 +140,14 @@ body {
   padding: 0px;
   margin: 0;
   --page-scroll:0;
-  background: url("../img/bg.svg#sp5v") calc(var(--page-scroll) * -0.32px) 0, url("../img/bg.svg#sp4v") calc(var(--page-scroll) * -0.24px) 0, url("../img/bg.svg#sp3v") calc(var(--page-scroll) * -0.16px) 0, url("../img/bg.svg#sp2v") calc(var(--page-scroll) * -0.08px) 0, url("../img/bg.svg#sp1v") 0 0;
-  background-size: calc(1280 / 720 * 100vh) 100vh;
-  background-attachment: fixed;
-  background-repeat: repeat-x;
   overflow-x: hidden;
+  transition: background-position 0.2s ease;
   /*scroll-snap-type: y proximity;*/ /*messes iOS scrolling*/
   overflow-y: scroll;
 }
 
 ::selection {
   background-color: rgba(var(--color1rgb),0.5);
-}
-
-.dark body {
-  background: url("../img/bg.svg#sp5vd") calc(var(--page-scroll) * -0.32px) 0, url("../img/bg.svg#sp4vd") calc(var(--page-scroll) * -0.24px) 0, url("../img/bg.svg#sp3vd") calc(var(--page-scroll) * -0.16px) 0, url("../img/bg.svg#sp2vd") calc(var(--page-scroll) * -0.08px) 0, url("../img/bg.svg#sp1vd") 0 0;
-  background-size: calc(1280 / 720 * 100vh) 100vh;
-  background-attachment: fixed;
-  background-repeat: repeat-x;
 }
 
 @media only screen and (min-width: 480px) {
@@ -184,6 +178,27 @@ body {
   body {
     padding: 40px calc(50% - 640px);
   }
+}
+
+body:before{
+  content:'';
+  position: fixed;
+  height:100%;
+  width:100%;
+  top: 0;
+  left:0;
+  background: 
+    url("../img/bg.svg#sp5v") calc(var(--page-scroll) * -0.4px) 0, 
+    url("../img/bg.svg#sp4v") calc(var(--page-scroll) * -0.3px) 0, 
+    url("../img/bg.svg#sp3v") calc(var(--page-scroll) * -0.2px) 0, 
+    url("../img/bg.svg#sp2v") calc(var(--page-scroll) * -0.1px) 0, 
+    var(--pageback);
+  background-size: calc(1280 / 720 * 100vh) 100vh;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  transition: background-position 0.2s ease;
+  --colorspace: ;
+  filter:var(--bgdarkfilter) var(--colorspace);
 }
 
 /*-------------Menu open button------------*/
@@ -349,52 +364,47 @@ main blockquote:before {
 
 main pre {
   font-family: "Source Code Pro", monospace;
-  border-radius: 5px;
+  border-radius: var(--radius);
   white-space: normal;
   line-height: 1.5rem;
-  background: repeating-linear-gradient(
+  background: 
+  radial-gradient(circle 8px at 20px 15px, #ff5f56 10px, transparent), 
+  radial-gradient(circle 8px at 45px 15px, #ffbd2e 10px, transparent), 
+  radial-gradient(circle 8px at 70px 15px, #27c93f 10px, transparent),
+  linear-gradient(180deg, rgba(var(--color1rgb),0.7) 30px, transparent 30px),
+  repeating-linear-gradient(
     180deg,
     rgba(var(--rgbtheme), 0.4) 2.5rem 4rem,
     rgba(var(--rgbtheme), 0.3) 4rem 5.5rem
   );
   overflow-x: auto;
-  background-clip: content-box;
-  padding-top: 30px;
+  padding-top: 2.5rem;
   border: 1px rgba(var(--color1rgb),0.7) solid;
   counter-reset: lineno;
   display: flex;
   flex-direction: column;
 }
 
+main pre:before {
+  content:"<" attr(lang) "> " attr(title);
+  padding-left: 100px;
+  margin-top: -2.5rem;
+  line-height: 30px;
+  text-align: center;
+  position: fixed;
+}
+
 main pre > code {
-  display: flex;
-  padding: 0px 20px 0px 50px;
-  white-space:pre-wrap;
-  text-indent: -20px;
+  padding: 0px 20px 0px;
+  white-space:pre;
 }
 
 main pre > code:before {
   counter-increment: lineno;
   content: counter(lineno) ". ";
-  position: absolute;
-  transform: translateX(-100%);
-}
-
-main pre:before {
-  content:"<" attr(lang) "> " attr(title);
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 100px;
-  background: rgba(var(--color1rgb),0.7);
-  background-image: 
-    radial-gradient(circle 8px at 20px 15px, #ff5f56 10px, transparent), 
-    radial-gradient(circle 8px at 45px 15px, #ffbd2e 10px, transparent), 
-    radial-gradient(circle 8px at 70px 15px, #27c93f 10px, transparent);
-  height: 30px;
-  margin-top: -30px;
-  margin-bottom: calc(2.5rem - 30px);
-  line-height: 0.8rem;
+  display: inline-block;
+  width: 2.5rem;
+  text-align: right;
 }
 
 main img {
@@ -559,8 +569,9 @@ main div.share:before {
 
 ::-webkit-scrollbar {
   width: 10px;
-  height: 5px;
+  height: 10px;
   background-color: rgb(var(--rgbtheme));
+  border-radius: var(--radius);
 }
 
 ::-webkit-scrollbar-thumb:vertical {
@@ -571,6 +582,6 @@ main div.share:before {
 
 ::-webkit-scrollbar-thumb:horizontal {
   width: 20px;
-  border-radius: 2.5px;
+  border-radius: var(--radius);
   background-color: var(--color3);
 }
