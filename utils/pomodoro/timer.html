@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: black;
+            font-family: "Cascadia Code", "Fire Code", "Inconsolata", "Courier New", Courier, monospace;
+        }
+
+
+        button:focus {
+            outline: none;
+        }
+
+        button {
+            font-size: 1.2rem;
+            font-family: "Cascadia Code", "Fire Code", "Inconsolata", "Courier New", Courier, monospace;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            height: 3rem;
+            line-height: 3rem;
+            text-align: center;
+            border: none;
+            background-size: 300% 100%;
+            background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+            box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+            -moz-transition: background-color .4s ease-in-out;
+            -webkit-transition: background-color .4s ease-in-out;
+            transition: background-color .4s ease-in-out;
+        }
+
+        button:hover {
+            background-position: 100% 0;
+        }
+
+        #initial {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #eee;
+        }
+
+        #initial button {
+            width: 12rem;
+            border-radius: 1.5rem;
+            margin: 1rem;
+        }
+
+        @media only screen and (min-width: 40rem) {
+            #initial {
+                flex-direction: row;
+            }
+        }
+
+        #counter {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #ccc, #ddd);
+        }
+
+        #counter.break {
+            background: #f54037;
+        }
+
+        #counter button {
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+            margin: min(5vmin, 1rem) min(1.2vmin, 0.2rem);
+            width: min(18vmin, 3.2rem);
+            height: min(16vmin, 3rem);
+            font-size: min(8vmin, 1.5rem);
+        }
+
+        #counter button:first-child {
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+            padding-left: 0.2rem;
+        }
+
+        #counter button:last-child {
+            border-top-right-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            padding-right: 0.2rem;
+        }
+
+        #counter h1 {
+            font-size: min(25vmin, 10rem);
+        }
+
+        #counter h4 {
+            font-size: min(10vmin, 4rem);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="initial">
+        <button id="short">4 × 25 min</button>
+        <button id="long">4 × 55 min</button>
+    </div>
+    <div id="counter">
+        <h1><span id="min"></span>:<span id="sec"></span></h1>
+        <h4><span id="repeat"></span> of 4 sets</h4>
+        <div id="controls">
+            <button id="minus1">−</button>
+            <button id="play">▷ǁ</button>
+            <button id="plus1">+</button>
+        </div>
+    </div>
+    <audio id="beepbeep" style="display:none;" preload="auto" autobuffer="">
+        <source src="beepbeep.mp3" type="audio/mpeg">
+        <source src="beepbeep.ogg" type="audio/ogg">
+    </audio>
+    <script>
+
+        let time;
+        let mins;
+        let reps;
+
+        document.querySelector('#short').addEventListener('click', e => initialize(25))
+
+        document.querySelector('#long').addEventListener('click', e => initialize(55))
+
+        zero = (n) => ('0' + n).slice(-2);
+
+        document.querySelector('#plus1').addEventListener('click', e => {
+            if (time.min < 99) time.min++;
+            document.querySelector('#min').textContent = zero(time.min);
+        })
+
+        document.querySelector('#minus1').addEventListener('click', e => {
+            if (time.min > 0) time.min--;
+            document.querySelector('#min').textContent = zero(time.min);
+        })
+
+        initialize = (min) => {
+            mins = min;
+            reps = 0;
+            document.querySelector('#initial').style.display = 'none';
+            activeSession();
+        }
+
+        activeSession = () => {
+            reps++;
+            if (reps > 4) {
+                reps = 0;
+                alert('times up');
+                location.reload();
+            }
+            document.querySelector('#repeat').textContent = reps;
+            time = { min: mins, sec: 0, }
+            document.querySelector('#counter').className = 'active';
+            minusOne("active");
+        }
+
+        breakSession = () => {
+            time = { min: 5, sec: 0, }
+            document.querySelector('#repeat').textContent = '✓ ' + reps;
+            document.querySelector('#counter').className = 'break';
+            minusOne("break");
+        }
+
+        minusOne = (session) => {
+            if (time.sec == 0) {
+                time.sec = 60;
+                time.min--;
+                document.querySelector('#min').textContent = zero(time.min);
+            }
+
+            time.sec--;
+            document.querySelector('#sec').textContent = zero(time.sec);
+
+            setTimeout(() => {
+                if (time.min > 0 || time.sec > 0) {
+                    minusOne(session);
+                } else {
+                    document.querySelector('#beepbeep').play();
+                    if (session == "active" && reps < 4) {
+                        breakSession();
+                    } else {
+                        activeSession();
+                    }
+                };
+            }, 1000);
+        }
+
+    </script>
+</body>
+
+</html>
