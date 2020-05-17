@@ -129,14 +129,16 @@
 
         document.querySelector('#long').addEventListener('click', e => initialize(55))
 
+        zero = (n) => ('0' + n).slice(-2);
+
         document.querySelector('#plus1').addEventListener('click', e => {
-            time.min++;
-            document.querySelector('#min').textContent = time.min;
+            if (time.min < 99) time.min++;
+            document.querySelector('#min').textContent = zero(time.min);
         })
 
         document.querySelector('#minus1').addEventListener('click', e => {
             if (time.min > 0) time.min--;
-            document.querySelector('#min').textContent = time.min;
+            document.querySelector('#min').textContent = zero(time.min);
         })
 
         initialize = (min) => {
@@ -171,11 +173,11 @@
             if (time.sec == 0) {
                 time.sec = 60;
                 time.min--;
-                document.querySelector('#min').textContent = time.min;
+                document.querySelector('#min').textContent = zero(time.min);
             }
 
             time.sec--;
-            document.querySelector('#sec').textContent = time.sec;
+            document.querySelector('#sec').textContent = zero(time.sec);
 
             setTimeout(() => {
                 if (time.min > 0 || time.sec > 0) {
