@@ -75,7 +75,6 @@ window.onload = () => {
     toggle
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.remove("dark");
-    window.onscroll();
   };
 
   //theme toggle button
@@ -88,7 +87,7 @@ window.onload = () => {
       : darkmode(false);
   });
 
-  //theme toggle button
+  //font size toggle button
   document.querySelector("#fontsize").addEventListener("input", (e) => {
     font = `${16 + document.querySelector("#fontsize").value / 5}px`;
     document.documentElement.style.fontSize = font;
