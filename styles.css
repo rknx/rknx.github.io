@@ -64,20 +64,21 @@
   --color1rgb: 0,131,143;
   --fontthemerev: #fafafa;
   --fontwhite: #fafafa;
-  --fonttheme: #353535;
-  --fontdarktheme: #151515;
+  --fonttheme: #333;
   --rgbdark: 25, 25, 25;
   --rgblight: 231, 231, 231;
   --rgbtheme: 231, 231, 231;
   --rgbthemerev: 25, 25, 25;
+  --pageback: #1ba0db;
+  --bgdarkfilter: ;
   --quoteback: 167, 48, 11;
   --darkenoverlay: brightness(100%);
   --backdrop: blur(10px);
   --radius: 5px;
   --transparency: 1;
-  --shadow: 0 0px 14.4px 0 rgba(0, 0, 0, 0.132),
+  --shadow: 0 0px 10.4px 0 rgba(0, 0, 0, 0.132),
     0 0 3.6px 0 rgba(0, 0, 0, 0.108);
-  --hovershadow: 0 0 54.6px 0 rgba(0, 0, 0, 0.22),
+  --hovershadow: 0 4px 25.6px 0 rgba(0, 0, 0, 0.22),
     0 0 14.4px 0 rgba(0, 0, 0, 0.18);
   --btnshadow: 0 0px 3.2px 0 rgba(0, 0, 0, 0.3), 0 0px 1px 0 rgba(0, 0, 0, 0.2);
   --btnshadowhover: 0 0px 7px 0 rgba(0, 0, 0, 0.5),
@@ -97,17 +98,18 @@
   --color3: #92492b;
   --color4: #138c33;
   --color1rgb: 46,146,156;
-  --fonttheme: #bbb;
-  --fontdarktheme: #ccc;
+  --fonttheme: #ccc;
   --fontwhite: #ccc;
   --fontthemerev: #353535;
+  --pageback: #005fa6;
+  --bgdarkfilter: brightness(0.65) saturate(1.8) contrast(1.2);
   --rgbtheme: 25, 25, 25;
   --rgbthemerev: 231, 231, 231;
   --quoteback: 156, 74, 48;
   --darkenoverlay: brightness(50%);
   --shadow: 0 0px 10.4px 0 rgba(255, 255, 255, 0.132),
     0 0 3.6px 0 rgba(255, 255, 255, 0.108);
-  --hovershadow: 0 0 25.6px 0 rgba(255, 255, 255, 0.22),
+  --hovershadow: 0 4px 25.6px 0 rgba(255, 255, 255, 0.22),
     0 0 14.4px 0 rgba(255, 255, 255, 0.18);
   --btnshadow: 0 0px 3.2px 0 rgba(255, 255, 255, 0.3),
     0 0px 1px 0 rgba(255, 255, 255, 0.2);
@@ -117,13 +119,13 @@
 
 @supports (backdrop-filter: blur(10px)) {
   :root {
-    --transparency: 0.5;
+    --transparency: 0.45;
   }
 }
 
 @supports (-webkit-backdrop-filter: blur(10px)) {
   :root {
-    --transparency: 0.5;
+    --transparency: 0.45;
   }
 }
 /*--------------CSS main------------*/
@@ -149,22 +151,7 @@ body {
   /*scroll-snap-type: y proximity;*/ /*messes iOS scrolling*/
   overflow-y: scroll;
   --page-scroll:0;
-  background: url("../img/bg.svg#sp5v") calc(var(--page-scroll) * -0.32px) 0, url("../img/bg.svg#sp4v") calc(var(--page-scroll) * -0.24px) 0, url("../img/bg.svg#sp3v") calc(var(--page-scroll) * -0.16px) 0, url("../img/bg.svg#sp2v") calc(var(--page-scroll) * -0.08px) 0, url("../img/bg.svg#sp1v") 0 0;
-  background-size: calc(1280 / 720 * 100vh) 100vh;
-  background-attachment: fixed;
-  background-repeat: repeat-x;
-  transition: background-position 0.2s ease;
-}
-
-::selection {
-  background-color: var(--color3);
-}
-
-.dark body {
-  background: url("../img/bg.svg#sp5vd") calc(var(--page-scroll) * -0.32px) 0, url("../img/bg.svg#sp4vd") calc(var(--page-scroll) * -0.24px) 0, url("../img/bg.svg#sp3vd") calc(var(--page-scroll) * -0.16px) 0, url("../img/bg.svg#sp2vd") calc(var(--page-scroll) * -0.08px) 0, url("../img/bg.svg#sp1vd") 0 0;
-  background-size: calc(1280 / 720 * 100vh) 100vh;
-  background-attachment: fixed;
-  background-repeat: repeat-x;
+  
 }
 
 @media only screen and (min-width: 480px) {
@@ -206,9 +193,44 @@ body {
   }
 }
 
-body > svg {
-  display: none;
+body:before{
+  content:'';
+  position: fixed;
+  height:100%;
+  width:100%;
+  top: 0;
+  left:0;
+  background: 
+    url("../img/bg.svg#sp5v") calc(var(--page-scroll) * -0.4px) 0, 
+    url("../img/bg.svg#sp4v") calc(var(--page-scroll) * -0.3px) 0, 
+    url("../img/bg.svg#sp3v") calc(var(--page-scroll) * -0.2px) 0, 
+    url("../img/bg.svg#sp2v") calc(var(--page-scroll) * -0.1px) 0, 
+    var(--pageback);
+  background-size: calc(1280 / 720 * 100vh) 100vh;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  transition: background-position 0.2s ease;
+  --colorspace: ;
+  filter:var(--bgdarkfilter) var(--colorspace);
 }
+
+/*  Old background
+body {
+  --page-scroll:0;
+  background: url("../img/bg.svg#sp5v") calc(var(--page-scroll) * -0.32px) 0, url("../img/bg.svg#sp4v") calc(var(--page-scroll) * -0.24px) 0, url("../img/bg.svg#sp3v") calc(var(--page-scroll) * -0.16px) 0, url("../img/bg.svg#sp2v") calc(var(--page-scroll) * -0.08px) 0, url("../img/bg.svg#sp1v") 0 0;
+  background-size: calc(1280 / 720 * 100vh) 100vh;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  transition: background-position 0.2s ease;
+}
+
+.dark body {
+  background: url("../img/bg.svg#sp5vd") calc(var(--page-scroll) * -0.32px) 0, url("../img/bg.svg#sp4vd") calc(var(--page-scroll) * -0.24px) 0, url("../img/bg.svg#sp3vd") calc(var(--page-scroll) * -0.16px) 0, url("../img/bg.svg#sp2vd") calc(var(--page-scroll) * -0.08px) 0, url("../img/bg.svg#sp1vd") 0 0;
+  background-size: calc(1280 / 720 * 100vh) 100vh;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+}
+*/
 
 /*--------------Text elements------------*/
 
@@ -301,7 +323,7 @@ a:focus {
   --length: 24;
   --offset: -38;
   fill: none;
-  stroke: var(--fontdarktheme);
+  stroke: var(--fonttheme);
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -423,7 +445,7 @@ input#menu:checked ~ .side-menu {
   align-items: center;
   padding: 4px 10px !important;
   text-transform: uppercase;
-  color: var(--fontdarktheme);
+  color: var(--fonttheme);
   border-radius: var(--radius);
   margin: 4px 0px;
   font-size: 1rem;
@@ -453,7 +475,7 @@ input#menu:checked ~ .side-menu {
 .side-menu > .buttons > a {
   width: 48%;
   margin: 4px 0px;
-  color: var(--fontdarktheme);
+  color: var(--fonttheme);
   font-weight: 700;
   padding: 5px 0;
   text-transform: uppercase;
@@ -503,7 +525,7 @@ input#menu:checked ~ .side-menu {
   padding: 3px;
   display: inline-flex;
   align-items: center;
-  color: var(--fontdarktheme);
+  color: var(--fonttheme);
 }
 
 .side-menu > .action > input#theme {
@@ -658,8 +680,7 @@ section h4 {
 
 section h4 span {
   float: right;
-  padding-left: 10px;
-  color: var(--color4);
+  padding-left: 15px;
 }
 
 section h5 {
@@ -689,7 +710,7 @@ section p {
   font-size: 1rem;
   margin-bottom: 5px;
   line-height: 1.4rem;
-  color: var(--fontdarktheme);
+  color: var(--fonttheme);
 }
 
 section p.bull-ind {
@@ -704,7 +725,7 @@ section p.bull-ind:before {
 
 section p a {
   text-decoration: none;
-  color: var(--fontdarktheme);
+  color: var(--fonttheme);
 }
 
 section abbr {
@@ -1282,4 +1303,11 @@ section address {
 
 ::-webkit-scrollbar-thumb:vertical {
   height: 20px;
+}
+
+
+/*--------------Selection------------*/
+
+::selection {
+  background-color: var(--color3);
 }
