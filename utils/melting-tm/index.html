@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Melting Tm Calculator | Jones lab resources</title>
+    <link rel="shortcut icon" href="app_icon.png">
+    <style>
+        body {
+            min-width: 360px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        div {
+            min-width: 30%;
+            padding: 10px;
+        }
+
+        vl {
+            display: inline-block;
+            float: left;
+            height: 2px;
+            width: calc(100% - 10px);
+            background: black;
+            margin: 5px;
+        }
+
+        @media screen and (min-width: 640px) {
+            vl {
+                height: calc(100% - 10px);
+                width: 2px;
+            }
+
+
+            div {
+                float: left;
+                padding: 20px;
+            }
+        }
+
+        input,
+        select {
+            width: 200px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border: 1px black solid;
+            border-radius: 3px;
+            background: white;
+            padding: 5px;
+        }
+
+        input {
+            padding-left: 8px;
+        }
+
+        label span:first-child {
+            width: 6rem;
+            display: inline-block;
+        }
+
+        label span:last-child {
+            width: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label>
+            <span>GC content:</span>
+            <input type="number" name="gc" min="25" max="75" value="50" placeholder="1 to 100" />
+            <span>%</span>
+        </label>
+        <label>
+            <span>Length:</span>
+            <select name="num"></select>
+            <span>bp</span>
+        </label>
+        <label for="seq">
+            <span>Sequence:</span>
+            <input type="text" name="seq" disabled />
+            <span></span>
+        </label>
+    </div>
+    <vl></vl>
+    <div>
+        <p>Melting Tm: <span id="tm">...</span>&nbsp;&nbsp;°C</p>
+    </div>
+    <script>
+
+        gc = document.querySelector('input[name="gc"]');
+        num = document.querySelector('select[name="num"]');
+        seq = document.querySelector('input[name="seq"]');
+
+        for (var i = 18; i <= 50; i++) num.innerHTML += "<option value=" + i + ">" + i + "</option>";
+        num.value = 20;
+
+        document.querySelectorAll('select, input').forEach(el => {
+            el.addEventListener("input", e => {
+                tm = (gc.value / 100 * 41 + 81.5 - 21.6 - 500 / num.value).toPrecision(4);
+                document.querySelector('#tm').textContent = (gc.value >= 1 && gc.value <= 100) ? tm : "...";
+            });
+        })
+    </script>
+</body>
+
+</html>

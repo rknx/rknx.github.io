@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Retriction Master Mix | Jones lab resources</title>
+    <link rel="shortcut icon" href="app_icon.png">
+    <style>
+        body {
+            min-width: 360px;
+            margin: 0px;
+        }
+
+        .mag:checked~.magc {
+            display: inline-block;
+        }
+
+        .magc {
+            display: none;
+            margin-top: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+
+        sublabel {
+            display: inline-block;
+            width: 100px;
+            margin-left: 50px;
+        }
+
+        div {
+            min-width: 30%;
+            padding: 10px;
+        }
+
+        vl {
+            display: inline-block;
+            float: left;
+            height: 2px;
+            width: calc(100% - 10px);
+            background: black;
+            margin: 5px;
+        }
+
+        @media screen and (min-width: 640px) {
+            vl {
+                height: calc(100% - 10px);
+                width: 2px;
+            }
+
+
+            div {
+                float: left;
+                padding: 20px;
+            }
+        }
+
+        input {
+            margin-left: 20px;
+        }
+
+        select {
+            width: 80px;
+            margin-left: 20px;
+            margin-right: 10px;
+            border: 1px black solid;
+            border-radius: 3px;
+            background: white;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form>
+            <p>
+                <label>Number of samples:</label>
+                <select name="num"></select>
+            </p>
+            <p>
+                <label>Volume of mixture:
+                    <select name="vol"></select> μl
+                </label>
+            </p>
+        </form>
+    </div>
+    <vl></vl>
+    <div>
+        <p><label>Water :</label><span id="h2o"></span></p>
+        <p><label>10X Buffer :</label><span id="buf"></span></p>
+        <p><label>Enzyme:</label><span id="enz"></span></p>
+        <p><label>DNA:</label><span id="dna"></span></p>
+    </div>
+    <script>
+
+        num = document.querySelector('select[name="num"]')
+        vol = document.querySelector('select[name="vol"]')
+
+        for (var i = 1; i <= 200; i++) num.innerHTML += "<option value=" + i + ">" + i + "</option>";
+        for (var i = 10; i <= 50; i = i + 10) vol.innerHTML += "<option value=" + i + ">" + i + "</option>";
+
+        document.querySelectorAll('select').forEach(el => {
+            el.addEventListener("input", e => {
+                document.querySelector('#buf').textContent = vol.value / 10 * num.value * 1 + "&#160&#160 &#956;l";
+                document.querySelector('#enz').textContent = vol.value / 10 * num.value * 0.5 + "&#160&#160 &#956;l";
+                document.querySelector('#h2o').textContent = vol.value / 10 * num.value * 3.5 + "&#160&#160 &#956;l";
+                document.querySelector('#dna').textContent = vol.value / 10 * 5 + " &#215; " + num.value + "&#160&#160 &#956;l";
+            });
+        })
+    </script>
+</body>
+
+</html>
