@@ -251,6 +251,7 @@
         document.querySelector('#more').addEventListener('click', e => {
             document.querySelector('#stats').style.top =
                 (document.querySelector('#stats').style.top == "-12rem") ? "0" : "-12rem";
+            buildStats();
         })
 
         initialize = (min) => {
@@ -258,6 +259,7 @@
             reps = 0;
             play = 1;
             document.querySelector('#initial').style.display = 'none';
+            document.querySelector('#stats').style.top == "-12rem"
             activeSession();
         }
 
