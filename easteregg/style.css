@@ -1,0 +1,207 @@
+@charset "utf-8";
+html { padding:0; margin:0; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+.clr { clear: both; font-size; 0; overflow: hidden; height: 0; }
+
+body { margin:0; padding:0; margin-left:auto; margin-right:auto; width:100%; background:url(images/Background.jpg) top center repeat; }
+
+#page {
+  width: 930px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#Footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 156px;
+  z-index: -2;
+}
+
+#Header {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 156px;
+  z-index: -2;
+  width: 100%;
+}
+
+#tCopyright {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  z-index: -1;
+  font-family: 'Amarante';
+  font-size: 20px;
+  color: #000000;
+  text-wrap: -2px;
+}
+
+#box{
+  position: fixed;
+  width:180px;
+  height:50px;
+  background-color:#ecd672;
+  opacity:0.6;
+  right: 8px;
+  top: 30px;
+  border: 1px solid #5c5c5c;
+  border-radius: 10px;
+  display: inline-block;
+  font-family:'Amarante';
+  font-size:18px;
+  text-align:center;
+  color: #000000;
+}
+
+#boxclose{
+    position: fixed;
+    top:25px;
+    right:1px;
+	width:20px;
+	height:20px;
+    cursor:pointer;
+    color: #ffe985;
+	text-align: center;
+    border: 1px solid #AEAEAE;
+    border-radius: 30px;
+    background: #5c5c5c;
+    display: inline-block;
+    line-height: 20px;
+    font-size: 10px;
+	font-family: 'Iceberg';
+	opacity: 0.8;
+	z-index:-1;
+}
+
+#tRknX {
+  float: left;
+  margin-left: 0px;
+  margin-top: -7px;
+  height: 250px;
+  font-family: 'Amarante';
+  font-size: 180px;
+  z-index: 4;
+  -webkit-text-stroke: 2px #000000;
+  background-image: -webkit-linear-gradient(white, white, #ffe178, #ffc600, #ffc600);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
+
+#Facebook {
+  float: right;
+  margin-right: 25px;
+  margin-top: 100px;
+  height: 72px;
+  z-index: 5;
+  width: 72px;
+}
+
+#Twitter {
+  float: right;
+  margin-right: 25px;
+  margin-top: 100px;
+  height: 72px;
+  z-index: 6;
+  width: 72px;
+}
+
+#Instagram {
+  float: right;
+  margin-right: 25px;
+  margin-top: 100px;
+  height: 72px;
+  z-index: 7;
+  width: 72px;
+}
+
+#Email {
+  float: right;
+  margin-right: 25px;
+  margin-top: 100px;
+  height: 72px;
+  z-index: 8;
+  width: 72px;
+}
+
+#Download {
+  float: right;
+  margin-right: 0px;
+  margin-top: 100px;
+  height: 72px;
+  z-index: 9;
+  width: 72px;
+}
+
+#Home {
+  float: right;
+  margin-right: 0px;
+  margin-top: 100px;
+  height: 72px;
+  z-index: 9;
+  width: 72px;
+}
+
+#King {
+  float: left;
+  margin-left: 25px;
+  margin-top: -10px;
+  height: 508px;
+  z-index: 10;
+  width: 460px;
+}
+
+#tBTYKB {
+  float: right;
+  margin-right: 25px;
+  margin-top: -34px;
+  z-index: 11;
+  text-shadow:4px 3px 2px #000000;
+  -webkit-text-stroke: 1px #000000;
+  font-family: 'Iceberg';
+  color: #fccf36;
+  line-height: 0.3;
+  font-size: 40px;
+}
+
+#tOFMEF {
+  float: right;
+  margin-right: 25px;
+  margin-top: -50px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);   
+  -o-transform: rotate(180deg);
+  z-index: 12;
+  text-shadow:-4px -3px 2px #000000;
+  -webkit-text-stroke: 1px #000000;
+  font-family: 'Iceberg';
+  color: #df0020;
+  line-height: 0.3;
+  font-size: 40px;
+}
+
+#tAbout {
+  float: left;
+  margin-left: 10px;
+  margin-top: -10px;
+  z-index: 13;
+  width: 910px;
+  font-family: 'Yellowtail';
+  color: #fff001;
+  font-size: 40px;
+  text-align: justify;
+  -webkit-text-stroke: 1px #000000;
+}
+
+#tFiles {
+  float:left;
+  margin-left: 100px;
+  margin-top: -20px;
+  z-index: 10;
+  font-family: 'Amarante';
+  color: #fff001;
+  font-size: 30px;
