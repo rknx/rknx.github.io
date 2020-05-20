@@ -4,10 +4,17 @@ a { text-decoration:none; }
 a:hover { text-decoration:underline; }
 .clr { clear: both; font-size; 0; overflow: hidden; height: 0; }
 
-body { margin:0; padding:0; margin-left:auto; margin-right:auto; width:100%; background:url(images/Background.jpg) top center repeat; }
+body {
+  margin:0;
+  padding:0;
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+  background:url(images/Background.jpg) top center repeat;
+}
 
 #page {
-  width: 930px;
+  width: 940px;
   margin-left:auto;
   margin-right:auto;
 }
@@ -84,7 +91,7 @@ body { margin:0; padding:0; margin-left:auto; margin-right:auto; width:100%; bac
   margin-top: -7px;
   height: 250px;
   font-family: 'Amarante';
-  font-size: 180px;
+  font-size: 170px;
   z-index: 4;
   -webkit-text-stroke: 2px #000000;
   background-image: -webkit-linear-gradient(white, white, #ffe178, #ffc600, #ffc600);
@@ -168,6 +175,7 @@ body { margin:0; padding:0; margin-left:auto; margin-right:auto; width:100%; bac
   font-size: 40px;
 }
 
+
 #tOFMEF {
   float: right;
   margin-right: 25px;
@@ -205,3 +213,82 @@ body { margin:0; padding:0; margin-left:auto; margin-right:auto; width:100%; bac
   font-family: 'Amarante';
   color: #fff001;
   font-size: 30px;
+}
+
+
+@media only screen and (max-width: 960px){
+    
+  #page {
+    width: 460px;
+  }
+
+  #tCopyright {
+    right: 10px;
+  }
+
+  #tRknX {
+    margin-left: 15px;
+  }
+
+  #Facebook {
+    margin-top: -20px;
+  }
+
+  #Twitter {
+    margin-top: -20px;
+  }
+
+  #Instagram {
+    margin-top: -20px;
+  }
+
+  #Email {
+    margin-top: -20px;
+  }
+
+  #Download {
+    margin-top: -20px;
+  }
+
+  #Home {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -20px;
+  }
+
+  #King {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+
+  #tBTYKB {
+    float: left;
+    margin-left: 35px;
+    margin-top: 0px;
+    line-height: 0.2;
+  }
+
+  #tOFMEF {
+    margin-right: 35px;
+    margin-top: -16px;
+    line-height: 0.2;
+  }
+
+  #tAbout {
+    float: right;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    font-size: 36px;
+  }
+
+  #tFiles {
+    margin-top: 100px;
+    margin-left: 0px;
+    text-align: center;
+    font-size: 30px;
+  }
+}

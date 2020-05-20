@@ -1,103 +1,111 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<title>Downloads</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="shortcut icon" href="images/favicon.png"/>
+    <title>Downloads</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" href="images/favicon.png" />
 
-<meta name="author" content="RknX" />
+    <meta name="author" content="RknX" />
 
-<link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
-<link href='http://fonts.googleapis.com/css?family=Iceberg|Amarante' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Iceberg|Amarante' rel='stylesheet' type='text/css'>
 
+    <!-- Saved for legacy purpose, this is not used anymore*/
 <script type="text/javascript">
-var mobile_domain="http://rknx.gweb.io/mdl.html";
+var mobile_domain="https://rknx.gweb.io/mdl.html";
 document.write(unescape("%3Cscript
 src='"+location.protocol+"//s3.amazonaws.com/me.static/js/me.redirect.min.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
+</script>-->
 
-<style>
-.shakeimage{
-position:relative
-}
-</style>
+    <style>
+        .shakeimage {
+            position: relative
+        }
+    </style>
 
-<script language="JavaScript1.2">
+    <script language="JavaScript1.2">
 
-//configure shake degree (where larger # equals greater shake)
-var rector=3
+        //configure shake degree (where larger # equals greater shake)
+        var rector = 3
 
-///////DONE EDITTING///////////
-var stopit=0 
-var a=1
+        ///////DONE EDITTING///////////
+        var stopit = 0
+        var a = 1
 
-function init(which){
-stopit=0
-shake=which
-shake.style.left=0
-shake.style.top=0
-}
+        function init(which) {
+            stopit = 0
+            shake = which
+            shake.style.left = 0
+            shake.style.top = 0
+        }
 
-function rattleimage(){
-if ((!document.all&&!document.getElementById)||stopit==1)
-return
-if (a==1){
-shake.style.top=parseInt(shake.style.top)+rector+"px"
-}
-else if (a==2){
-shake.style.left=parseInt(shake.style.left)+rector+"px"
-}
-else if (a==3){
-shake.style.top=parseInt(shake.style.top)-rector+"px"
-}
-else{
-shake.style.left=parseInt(shake.style.left)-rector+"px"
-}
-if (a<4)
-a++
-else
-a=1
-setTimeout("rattleimage()",50)
-}
+        function rattleimage() {
+            if ((!document.all && !document.getElementById) || stopit == 1)
+                return
+            if (a == 1) {
+                shake.style.top = parseInt(shake.style.top) + rector + "px"
+            }
+            else if (a == 2) {
+                shake.style.left = parseInt(shake.style.left) + rector + "px"
+            }
+            else if (a == 3) {
+                shake.style.top = parseInt(shake.style.top) - rector + "px"
+            }
+            else {
+                shake.style.left = parseInt(shake.style.left) - rector + "px"
+            }
+            if (a < 4)
+                a++
+            else
+                a = 1
+            setTimeout("rattleimage()", 50)
+        }
 
-function stoprattle(which){
-stopit=1
-which.style.left=0
-which.style.top=0
-}
-</script>
+        function stoprattle(which) {
+            stopit = 1
+            which.style.left = 0
+            which.style.top = 0
+        }
+    </script>
 
 </head>
+
 <body>
 
-<div id="Footer">
-<img src="images/Footer.png" width="100%" height="156" /></div>
+    <div id="Footer">
+        <img src="images/Footer.png" width="100%" height="156" /></div>
 
-<div id="Header">
-<img src="images/Header.png" width="100%" height="156" /></div>
+    <div id="Header">
+        <img src="images/Header.png" width="100%" height="156" /></div>
 
-<div id="tCopyright">
-<b> Copyright©|<a href="http://www.facebook.com/evilarcanex">RknX</a>|All rights reserved</b></div>
+    <div id="tCopyright">
+        <b> Copyright©|<a href="https://www.facebook.com/evilarcanex">RknX</a>|All rights reserved</b></div>
 
-<div id="page">
+    <div id="page">
 
-<div id="tRknX">
-<b>Rkn<i>X</i></b><font size="6" style="opacity: 0.0;">___</font></div>
+        <div id="tRknX">
+            <b>Rkn<i>X</i></b>
+            <font size="6" style="opacity: 0.0;">___</font>
+        </div>
 
-<div id="Home">
-<a href="index.html"> <img src="images/Home.png" class="shakeimage" onMouseover="init(this);rattleimage()" onMouseout="stoprattle(this);top.focus()" onClick="top.focus()" width="72" height="72" /></a></div>
+        <div id="Home">
+            <a href="index.html"> <img src="images/Home.png" class="shakeimage" onMouseover="init(this);rattleimage()"
+                    onMouseout="stoprattle(this);top.focus()" onClick="top.focus()" width="72" height="72" /></a></div>
 
 
-<br style="clear:both" />
+        <br style="clear:both" />
 
 
-<div id="tFiles">
-<a href="removed.html" style="color: #fff001" > Talking Script </a>
-<p></p>
-<a href="removed.html" style="color: #fff001" > B**** Secret Stash (Password protected!) </a>
-</div>
+        <div id="tFiles">
+            <a href="removed.html" style="color: #fff001"> Talking Script </a>
+            <p></p>
+            <a href="removed.html" style="color: #fff001"> B**** Secret Stash (Password protected!) </a>
+        </div>
 
-</div>
+    </div>
 </body>
+
 </html>
