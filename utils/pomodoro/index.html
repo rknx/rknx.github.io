@@ -334,7 +334,7 @@
             Object.keys(history).reverse().forEach(function (key) {
                 bar = document.createElement('bar');
                 bar.setAttribute('data-min', history[key]);
-                bar.setAttribute('data-date', key);
+                bar.setAttribute('data-date', key.split('/')[1]);
 
                 barInner = document.createElement('div');
                 barInner.style.height = (history[key] / 240 * 8) + "rem";
