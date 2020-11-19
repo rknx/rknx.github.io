@@ -1,6 +1,6 @@
-const staticCacheName = "anujs.com.np_v1.4";
+const staticCacheName = "anujs.com.np_v1.4.1";
 const assets = [
-  "/",
+  // "/",
   "/index.html",
   "/styles.css",
   "/data.json",
