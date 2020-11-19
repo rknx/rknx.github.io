@@ -212,6 +212,7 @@ body:before{
   transition: background-position 0.2s ease;
   --colorspace: ;
   filter:var(--bgdarkfilter) var(--colorspace);
+  z-index: -9999;
 }
 
 /*  Old background
