@@ -9,7 +9,7 @@ ready(() => {
   fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
-      //Intro section rendering
+      // Intro section rendering
       if (typeof tlFunc[data.intro["__tlFunc"]] === "function")
         tlFunc[data.intro["__tlFunc"]](data.intro);
 
@@ -75,10 +75,10 @@ window.onload = () => {
     toggle
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.remove("dark");
-  };
+  }
 
   //theme toggle button
-  document.querySelector("#theme").addEventListener("input", (e) => {
+  document.querySelector("#theme").addEventListener("input", e => {
     document
       .querySelector("#theme")
       .setAttribute("value", document.querySelector("#theme").value);
@@ -86,6 +86,8 @@ window.onload = () => {
       ? darkmode(true)
       : darkmode(false);
   });
+
+
 
   //font size toggle button
   document.querySelector("#fontsize").addEventListener("input", (e) => {
@@ -138,11 +140,11 @@ var tlFunc = {
     ).innerHTML += `<a href='#${id}'> <svg><use xlink:href='img/icons.svg#angle-right'></svg>${
       name.split(" ")[0]
       }</a>`;
-    document.querySelector(
-      "body"
-    ).innerHTML += `<section class='timeline ${print}' id='${id}'>
+    sec = document.createElement("div");
+    sec.innerHTML = `<section class='timeline ${print}' id='${id}'>
         <div class='title'><div></div><div><h3>${name}</h3></div></div>
       </section>`;
+      document.querySelector("body").appendChild(sec);
   },
 
   tlImage(logo) {
@@ -150,7 +152,8 @@ var tlFunc = {
   },
 
   intro: function ({ image, firstname, lastname, profession, bio, email }) {
-    document.querySelector("body").innerHTML += `<section class='header'>
+    introSec = document.createElement("div");
+    introSec.innerHTML =  `<section class='header'>
         <div class='avatar'><object data='${image}' type='image/png' alt='${firstname} ${lastname}'></object></div>
         <div class='bio'>
           <h1>${firstname} ${lastname}</h1>
@@ -159,6 +162,7 @@ var tlFunc = {
         </div>
         <h6 class='onlyPrint'>Email:${email}</h6>
       </section>`;
+    document.querySelector("body").appendChild(introSec)
   },
 
   buttons: function ({ entries }) {
@@ -297,106 +301,112 @@ var tlFunc = {
     }
   },
 
-  projects: function (key, { prettyName, logo, noPrint, entries }) {
-    this.initial(key, prettyName, noPrint);
-    for (const { title, image, text } of Object.values(entries).filter(
-      (entry) => entry.title != ""
-    )) {
-      document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
-        logo
-      )}<div><h4>${title}</h4><div>${
-        image && `<img src='${image}' alt='' onerror='this.style.display=none'>`
-        }<p>${text}</p></div></div></div>`;
-    }
-  },
+  // projects: function (key, { prettyName, logo, noPrint, entries }) {
+  //   this.initial(key, prettyName, noPrint);
+  //   for (const { title, image, text } of Object.values(entries).filter(
+  //     (entry) => entry.title != ""
+  //   )) {
+  //     document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
+  //       logo
+  //     )}<div><h4>${title}</h4><div>${
+  //       image && `<img src='${image}' alt='' onerror='this.style.display=none'>`
+  //       }<p>${text}</p></div></div></div>`;
+  //   }
+  // },
 
-  publications: function (key, { prettyName, logo, noPrint, entries }) {
-    this.initial(key, prettyName, noPrint);
-    for (const { prettyName, list } of Object.values(entries).filter(
-      (entry) => entry.list != ""
-    )) {
-      var htmltext = "";
-      for (const { prettyName, items } of Object.values(list).filter(
-        (entry) => entry.items != ""
-      )) {
-        var htmltext1 = "";
-        for (const { url, citationhtml } of Object.values(items).filter(
-          (entry) => entry.citationhtml != ""
-        ))
-          htmltext1 += `<p class='bull-ind'><a href='${url}'>${citationhtml}</a></p>`;
-        htmltext += `<h5 class='noprint'>${prettyName}</h5>${htmltext1}`;
-      }
-      document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
-        logo
-      )}<div><h4>${prettyName}</h4>${htmltext}</div></div>`;
-    }
-  },
+  // publications: function (key, { prettyName, logo, noPrint, entries }) {
+  //   this.initial(key, prettyName, noPrint);
+  //   for (const { prettyName, list } of Object.values(entries).filter(
+  //     (entry) => entry.list != ""
+  //   )) {
+  //     var htmltext = "";
+  //     for (const { prettyName, items } of Object.values(list).filter(
+  //       (entry) => entry.items != ""
+  //     )) {
+  //       var htmltext1 = "";
+  //       for (const { url, citationhtml } of Object.values(items).filter(
+  //         (entry) => entry.citationhtml != ""
+  //       ))
+  //         htmltext1 += `<p class='bull-ind'><a href='${url}'>${citationhtml}</a></p>`;
+  //       htmltext += `<h5 class='noprint'>${prettyName}</h5>${htmltext1}`;
+  //     }
+  //     document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
+  //       logo
+  //     )}<div><h4>${prettyName}</h4>${htmltext}</div></div>`;
+  //   }
+  // },
 
-  presentation: function (key, { prettyName, logo, noPrint, entries }) {
-    this.initial(key, prettyName, noPrint);
-    for (const { conference, date, titlehtml } of Object.values(entries).filter(
-      (entry) => entry.title != ""
-    ))
-      document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
-        logo
-      )}<div><h4>${conference}<span>${date}</span></h4><h5>${titlehtml}</h5></div></div>`;
-  },
+  // presentation: function (key, { prettyName, logo, noPrint, entries }) {
+  //   this.initial(key, prettyName, noPrint);
+  //   for (const { conference, date, titlehtml } of Object.values(entries).filter(
+  //     (entry) => entry.title != ""
+  //   ))
+  //     document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
+  //       logo
+  //     )}<div><h4>${conference}<span>${date}</span></h4><h5>${titlehtml}</h5></div></div>`;
+  // },
 
-  posters: function (key, { prettyName, logo, noPrint, entries }) {
-    this.initial(key, prettyName, noPrint);
-  },
+  // posters: function (key, { prettyName, logo, noPrint, entries }) {
+  //   this.initial(key, prettyName, noPrint);
+  //   for (const { conference, date, titlehtml } of Object.values(entries).filter(
+  //     (entry) => entry.title != ""
+  //   ))
+  //     document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
+  //       logo
+  //     )}<div><h4>${conference}<span>${date}</span></h4><h5>${titlehtml}</h5></div></div>`;
+  // },
 
-  references: function (key, { prettyName, logo, noPrint, entries }) {
-    this.initial(key, prettyName, noPrint);
-    for (const {
-      name,
-      email,
-      position,
-      institution,
-      department,
-    } of Object.values(entries).filter((entry) => entry.name != "")) {
-      document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
-        logo
-      )}<div>
-            <h4>${name}<span><small>${email}</small></span></h4>
-            <h5>${[position, department, institution]
-          .filter(Boolean)
-          .join(", ")}</h5>
-          </div>
-        </div>`;
-    }
-  },
+  // references: function (key, { prettyName, logo, noPrint, entries }) {
+  //   this.initial(key, prettyName, noPrint);
+  //   for (const {
+  //     name,
+  //     email,
+  //     position,
+  //     institution,
+  //     department,
+  //   } of Object.values(entries).filter((entry) => entry.name != "")) {
+  //     document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
+  //       logo
+  //     )}<div>
+  //           <h4>${name}<span><small>${email}</small></span></h4>
+  //           <h5>${[position, department, institution]
+  //         .filter(Boolean)
+  //         .join(", ")}</h5>
+  //         </div>
+  //       </div>`;
+  //   }
+  // },
 
-  contact: function (key, { prettyName, logo, noPrint, entries }) {
-    this.initial(key, prettyName, noPrint);
-    for (const [ind, { prettyName, list }] of Object.entries(entries)) {
-      var htmltext = "";
-      for (const { prettyName, content, icon, link } of Object.values(
-        list
-      ).filter((entry) => entry.content != "")) {
-        htmltext += `
-          <h5 class='${ind}'> ${prettyName != "" ? prettyName + ":" : ""}
-            <click tabindex='0'></click>
-            <a ${link != "" ? "href='" + link + "'" : ""}>${content}
-              ${
-          icon != ""
-            ? `<svg><use xlink:href='/img/icons.svg#${icon}'/></svg>`
-            : ""
-          }
-            </a>
-          </h5>`;
-      }
-      document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
-        logo
-      )}<div><h4>${prettyName}</h4>${htmltext}</div></div></div>`;
-    }
-  },
+  // contact: function (key, { prettyName, logo, noPrint, entries }) {
+  //   this.initial(key, prettyName, noPrint);
+  //   for (const [ind, { prettyName, list }] of Object.entries(entries)) {
+  //     var htmltext = "";
+  //     for (const { prettyName, content, icon, link } of Object.values(
+  //       list
+  //     ).filter((entry) => entry.content != "")) {
+  //       htmltext += `
+  //         <h5 class='${ind}'> ${prettyName != "" ? prettyName + ":" : ""}
+  //           <click tabindex='0'></click>
+  //           <a ${link != "" ? "href='" + link + "'" : ""}>${content}
+  //             ${
+  //         icon != ""
+  //           ? `<svg><use xlink:href='/img/icons.svg#${icon}'/></svg>`
+  //           : ""
+  //         }
+  //           </a>
+  //         </h5>`;
+  //     }
+  //     document.querySelector(`#${key}`).innerHTML += `<div>${this.tlImage(
+  //       logo
+  //     )}<div><h4>${prettyName}</h4>${htmltext}</div></div></div>`;
+  //   }
+  // },
 
-  quote: function ({ noPrint, logo, text, speaker }) {
-    document.querySelector("body").innerHTML += `
-      <div id='quote' class='${noPrint}'>
-        <svg><use xlink:href='/img/icons.svg#${logo}'></use></svg>
-        <p>${text}</p><span>${speaker}</span>
-      </div>`;
-  },
+  // quote: function ({ noPrint, logo, text, speaker }) {
+  //   document.querySelector("body").innerHTML += `
+  //     <div id='quote' class='${noPrint}'>
+  //       <svg><use xlink:href='/img/icons.svg#${logo}'></use></svg>
+  //       <p>${text}</p><span>${speaker}</span>
+  //     </div>`;
+  // },
 };

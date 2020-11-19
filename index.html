@@ -83,8 +83,9 @@
   <!-- Side Menu container -->
   <div class="side-menu noprint">
     <div class="action">
-      <input id="fontsize" type="range" min="-16" max="16" value="0" />
+      <input id="fontsize" type="range" min="-16" max="16" value="0" onclick = "document.documentElement.style.fontSize = `${16 + this.value / 5}px`"/>
       <input id="theme" type="range" min="0" max="1" value="0" />
+      <!-- onclick = "this.value == 1 ? darkmode(true) : darkmode(false);" -->
     </div>
     <nav></nav>
     <div class="buttons"></div>
@@ -100,7 +101,7 @@
     document.head.appendChild(cssEl);
 
     var load = () => {
-      progress = document.querySelector("progress");
+      progress = document.querySelectorAll("progress")[0];
       resLen = Array.from(
         new Set(
           window.performance
@@ -109,7 +110,7 @@
         )
       ).length;
       progress.setAttribute("value", resLen);
-      if (resLen >= progress.max) {
+      if (resLen >= progress.max - 2) {
         //Page loader
         setTimeout(function () {
           document.querySelector("#page-loader").style.opacity = 0;
@@ -125,6 +126,7 @@
     };
 
     load();
+
   </script>
 </body>
 

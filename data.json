@@ -74,21 +74,21 @@
       "__display": "true",
       "entries": {
         "phd": {
-          "degree": "PhD in Plant Pathology",
+          "degree": "<abbr title='Doctor of Philosophy'>PhD</abbr> in Plant Pathology",
           "date": "2021",
           "completed": false,
           "institution": "University of Florida",
           "department": "Department of Plant Pathology",
-          "address": "Gainesville, FL 32611",
+          "address": "Gainesville, FL 32611, USA",
           "description": ""
         },
         "bachelors": {
-          "degree": "BS in Agriculture",
+          "degree": "<abbr title='Bachelor of Science'>BS</abbr> in Agriculture",
           "date": "2016",
           "expected": true,
           "institution": "Tribhuvan University",
           "department": "Institute of Agriculture and Animal Science",
-          "address": "Chitwan, Nepal",
+          "address": "Chitwan, Bagmati, Nepal",
           "description": ""
         }
       }
@@ -99,13 +99,29 @@
       "__tlFunc": "awards",
       "__display": "true",
       "entries": {
-        "ppgsotravel": {
-          "award": "PPGSO Travel Award",
-          "date": "2019",
-          "institution": "Plant Pathology Graduate Student Organization",
+        "apstravel": {
+          "award": "<abbr title='American Phytopathological Society'>APS</abbr> Foundation Student Travel Award",
+          "date": "2020",
+          "institution": "American Phytopathology Society",
           "department": "",
           "address": "Gainesville, FL 32611",
-          "description": ""
+          "description": "Plant Health 2020"
+        },
+        "ifastravel": {
+          "award": "<abbr title='Institute of Food and Agricultural Sciences'>IFAS</abbr> Travel Award",
+          "date": "2020",
+          "institution": "University of Florida",
+          "department": "Institute of Food and Agricultural Sciences",
+          "address": "Gainesville, FL 32611",
+          "description": "Plant Health 2020"
+        },
+        "ppgsotravel": {
+          "award": "<abbr title='Plant Pathology Graduate Student Organization'>PPGSO</abbr> Travel Award",
+          "date": "2019",
+          "institution": "Plant Pathology Graduate Student Organization @ UF",
+          "department": "",
+          "address": "Gainesville, FL 32611",
+          "description": "Plant Health 2019"
         },
         "phdfellow": {
           "award": "Graduate School Preeminence Fellowship",
@@ -136,10 +152,6 @@
           "prettyName": "Molecular",
           "icon": "",
           "list": {
-            "marker": {
-              "icon": "",
-              "text": "Marker development"
-            },
             "hrm": {
               "icon": "",
               "text": "High Resolution Melting curve"
@@ -166,11 +178,11 @@
             },
             "rnai": {
               "icon": "",
-              "text": "<abbr title='RNA interference'>RNAi</abbr>/Gene silencing"
+              "text": "<abbr title='RNA interference'>RNAi</abbr>&nbsp;gene silencing"
             },
             "crispr": {
               "icon": "",
-              "text": "<abbr title='Clustered Regularly Interspaced Short Palindromic Repeats'>CRISPR</abbr> editing"
+              "text": "<abbr title='Clustered Regularly Interspaced Short Palindromic Repeats'>CRISPR</abbr>&nbsp;editing"
             },
             "snapgene": {
               "icon": "snapgene",
@@ -186,53 +198,53 @@
           "prettyName": "Bioinformatics",
           "icon": "",
           "list": {
-            "bowtie": {
+            "align": {
               "icon": "",
-              "text": "Bowtie2"
+              "text": "Sequence alignment"
             },
-            "bwa": {
+            "assem": {
               "icon": "",
-              "text": "<abbr title='Burrows-Wheeler Aligner'>BWA</abbr>"
+              "text": "De novo assembly"
             },
-            "spades": {
-              "icon": "spades",
-              "text": "SPAdes"
-            },
-            "lastz": {
+            "annot": {
               "icon": "",
-              "text": "LastZ"
+              "text": "Genome annotation"
             },
-            "tophat": {
+            "bsa": {
               "icon": "",
-              "text": "Tophat"
+              "text": "Bulk segregant analysis"
             },
-            "cuff": {
+            "svd": {
               "icon": "",
-              "text": "Cufflinks"
+              "text": "<abbr title='Structural variant'>SV </abbr>&nbsp;discovery"
+            },
+            "cnv": {
+              "icon": "",
+              "text": "<abbr title='Copy number variant'>CNV </abbr>&nbsp;discovery"
+            },
+            "marker": {
+              "icon": "",
+              "text": "Biomarker discovery"
+            },
+            "genomics": {
+              "icon": "",
+              "text": "Comparative Genomics"
+            },
+            "deseq": {
+              "icon": "",
+              "text": "<abbr title='Diffrential Expression'>DE</abbr>&nbsp;analysis"
+            },
+            "enpath": {
+              "icon": "",
+              "text": "<abbr title='Pathway Enrichment'>PE</abbr>&nbsp;analysis"
+            },
+            "phylo": {
+              "icon": "",
+              "text": "Phylogenetics"
             },
             "biopython": {
               "icon": "biopython",
               "text": "BioPython"
-            },
-            "gatk": {
-              "icon": "gatk",
-              "text": "<abbr title='Genomic Analysis Toolkit'>GATK</abbr>"
-            },
-            "samtools": {
-              "icon": "",
-              "text": "Samtools"
-            },
-            "jbrowse": {
-              "icon": "",
-              "text": "JBrowse"
-            },
-            "igv": {
-              "icon": "",
-              "text": "<abbr title='Integrative Genomics Viewer'>IGV</abbr>"
-            },
-            "mega": {
-              "icon": "mega",
-              "text": "<abbr title='Molecular Evolutionary Genetics Analysis'>MEGA</abbr> X"
             }
           }
         },
@@ -244,9 +256,9 @@
               "icon": "r",
               "text": "R"
             },
-            "tidyr/ggplot": {
-              "icon": "ggplot2",
-              "text": "TidyR/Ggplot"
+            "julia": {
+              "icon": "julia",
+              "text": "Julia"
             },
             "python": {
               "icon": "python",
@@ -272,9 +284,9 @@
               "icon": "javascript",
               "text": "Javascript"
             },
-            "php": {
-              "icon": "php",
-              "text": "PHP"
+            "md": {
+              "icon": "markdown",
+              "text": "Markdown"
             },
             "react": {
               "icon": "react",
@@ -287,7 +299,7 @@
           }
         },
         "softwares": {
-          "prettyName": "Softwares",
+          "prettyName": "Other softwares",
           "icon": "",
           "list": {
             "office": {
@@ -314,17 +326,25 @@
               "icon": "github",
               "text": "Git/Github"
             },
-            "netlify": {
-              "icon": "netlify",
-              "text": "Netlify"
+            "docker": {
+              "icon": "docker",
+              "text": "Docker"
             },
             "vscode": {
               "icon": "vscode",
               "text": "VS Code"
             },
+            "jupyter": {
+              "icon": "jupyter",
+              "text": "Jupyter"
+            },
             "fusion360": {
               "icon": "fusion360",
               "text": "Fusion360"
+            },
+            "netlify": {
+              "icon": "netlify",
+              "text": "Netlify"
             },
             "arcgis": {
               "icon": "arcgis",
@@ -350,6 +370,8 @@
           "start": "2017",
           "end": "Present",
           "projects": {
+            "engrss": "Effect of <i>XopJ2</i> in <i>Xanthomonas perforans</i> ingress and egress.",
+            "pnenyl": "Understanding transcriptomic changes in citrus due to <i>Xanthomonas citri</i> infection.",
             "mutation": "Study of mutation rate of <i>Xanthomonas</i> TAL effectors.",
             "avrbst": "Modelling the dispersal of <i>Xanthomonas perforans</i> in field and greenhouse.",
             "mapping": "Understanding the role effector <i>XopJ2</i> in spread of <i>Xanthomonas perforans</i>.",
@@ -544,6 +566,15 @@
         "journal": {
           "prettyName": "Research papers",
           "list": {
+            "2020": {
+              "prettyName": "2020",
+              "items": {
+                "nursery": {
+                  "citationhtml": "Abrahamian P, <b>Sharma A</b>, Jones JB, and Vallad GE. 2020. Dynamics and spread of bacterial spot epidemics in tomato transplants grown for field production. Plant Disease. <a href='https://doi.org/10.1094/PDIS-05-20-0945-RE'>0.1094/PDIS-05-20-0945-RE</a>.",
+                  "url": ""
+                }
+              }
+            },
             "2017": {
               "prettyName": "2017",
               "items": {
@@ -556,12 +587,8 @@
             "unpublished": {
               "prettyName": "In preparation",
               "items": {
-                "nursery": {
-                  "citationhtml": "Abrahamian P, <b>Sharma A</b>, Jones JB, and Vallad GE. Dynamics and spread of bacterial spot epidemics in tomato transplants produced for field production. Plant Disease. ",
-                  "url": ""
-                },
                 "avrbst": {
-                  "citationhtml": "<b>Sharma A</b>, Timilsina S, Abrahamian P, Minsavage GV, Colee J, Ojiambo PS, Goss E, Vallad GE and Jones JB. Role of XopJ2 in dispersal of <i>Xanthomonas perforans</b>. ",
+                  "citationhtml": "<b>Sharma A</b>, Timilsina S, Abrahamian P, Minsavage GV, Colee J, Ojiambo PS, Goss E, Vallad GE and Jones JB. Need for speed: Bacterial effector XopJ2 is associated with increased rate of dispersal of <i>Xanthomonas perforans</b>. ",
                   "url": ""
                 }
               }
@@ -604,12 +631,12 @@
     },
     "presentation": {
       "prettyName": "Conference presentations",
-      "logo": "chart-bar",
+      "logo": "user-chart",
       "__tlFunc": "presentation",
       "__display": "true",
       "entries": {
         "aps19": {
-          "conference": "Plant Health 2019",
+          "conference": "<abbr title='American Phytopathological Society'>APS</abbr> Plant Health 2019",
           "date": "2019",
           "titlehtml": "Role of <i>AvrBsT</i> in dispersal of <i>Xanthomonas perforans</i> and severity of bacterial spot of tomato"
         },
@@ -621,11 +648,17 @@
       }
     },
     "posters": {
-      "__display": false,
+      "__display": true,
       "prettyName": "Posters",
-      "logo": "",
+      "logo": "chart-bar",
       "__tlFunc": "posters",
-      "entries": {}
+      "entries": {
+        "aps20": {
+          "conference": "<abbr title='American Phytopathological Society'>APS</abbr> Plant Health 2020",
+          "date": "2020",
+          "titlehtml": "Genetic mapping of bacterial spot resistance gene against <i>Xanthomonas gardneri</i> in Hungarian pepper"
+        }
+      }
     },
     "references": {
       "noPrint": "noprint",
