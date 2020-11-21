@@ -75,7 +75,7 @@
   --darkenoverlay: brightness(100%);
   --backdrop: blur(10px);
   --radius: 5px;
-  --transparency: 1;
+  --transparency: 0.8;
   --shadow: 0 0px 10.4px 0 rgba(0, 0, 0, 0.132),
     0 0 3.6px 0 rgba(0, 0, 0, 0.108);
   --hovershadow: 0 4px 25.6px 0 rgba(0, 0, 0, 0.22),
@@ -1109,6 +1109,8 @@ section address {
 
 #contact > div > div > h5.phone > a {
   display: none;
+  direction: rtl;
+  unicode-bidi: bidi-override
 }
 
 #contact > div > div > h5.phone > click:after {
