@@ -1,1 +1,0 @@
-CreateObject("SAPI.SpVoice").Speak"Suck My Deeck, Beeyotch"
