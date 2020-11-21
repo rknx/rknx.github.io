@@ -322,7 +322,7 @@ var tlFunc = {
       var htmltext = "";
       for (const { prettyName, items } of Object.values(list).filter(
         (entry) => entry.items != ""
-      )) {
+      ).sort().reverse()) {
         var htmltext1 = "";
         for (const { url, citationhtml } of Object.values(items).filter(
           (entry) => entry.citationhtml != ""
@@ -403,10 +403,13 @@ var tlFunc = {
   },
 
   quote: function ({ noPrint, logo, text, speaker }) {
-    document.querySelector("body").innerHTML += `
-      <div id='quote' class='${noPrint}'>
-        <svg><use xlink:href='/img/icons.svg#${logo}'></use></svg>
-        <p>${text}</p><span>${speaker}</span>
-      </div>`;
+    quoteSec = document.createElement("div");
+    quoteSec.innerHTML =  `
+    <div id='quote' class='${noPrint}'>
+      <svg><use xlink:href='/img/icons.svg#${logo}'></use></svg>
+      <p>${text}</p><span>${speaker}</span>
+    </div>`;
+    document.querySelector("body").appendChild(quoteSec)
   },
 };
+
