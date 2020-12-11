@@ -1,0 +1,4 @@
+/avrbst-model  https://anujs.shinyapps.io/PredictionModel/   200
+/avrbst-3d  https://anujs.shinyapps.io/PredictionModel/   200
+/avrbst-anim  https://raw.githubusercontent.com/rknx/AvrBsT/snapshot/Out/Animation.gif   200
+/avrbst/* https://rknx.netlify.app/AvrBsT/:splat 200
