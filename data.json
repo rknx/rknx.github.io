@@ -8,9 +8,9 @@
     "__tlFunc": "buttons",
     "entries": {
       "print": {
-        "icon": "print",
-        "text": "Print CV",
-        "url": "javascript:window.print()"
+        "icon": "file-user",
+        "text": "Download resume",
+        "url": "/res/Anuj_Sharma_Resume.pdf"
       },
       "cv-dl": {
         "icon": "file-pdf",
