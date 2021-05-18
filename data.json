@@ -54,7 +54,7 @@
     "lastname": "Sharma",
     "profession": "Plant Pathologist",
     "image": "/img/avatar.jpg",
-    "position": "Postodoctoral Research Associate",
+    "position": "Postdoctoral Research Associate",
     "employer": "University of Florida",
     "employer-logo": "/images/gators.png",
     "email": "anujsharma@ufl.edu",
@@ -361,7 +361,7 @@
       "__display": "true",
       "entries": {
         "postdoc": {
-          "position": "Postodoctoral Reserarch Associate",
+          "position": "Postdoctoral Research Associate",
           "institution": "University of Florida",
           "department": "Department of Plant Pathology",
           "pi-term": "Supervisor",
@@ -581,7 +581,7 @@
               "prettyName": "2021",
               "items": {
                 "avrbst": {
-                  "citationhtml": "<b>Sharma A</b>, Timilsina S, Abrahamian P, Minsavage GV, Colee J, Ojiambo PS, Goss E, Vallad GE and Jones JB. Need for speed: Bacterial effector XopJ2 is associated with increased dispersal velocity of <i>Xanthomonas perforans</i>. Environmental Microbiology. <a href='https://doi.org/10.1111/1462-2920.15541'>10.1111/1462-2920.15541</a>",
+                  "citationhtml": "<b>Sharma A</b>, Timilsina S, Abrahamian P, Minsavage GV, Colee J, Ojiambo PS, Goss E, Vallad GE and Jones JB. Need for speed: Bacterial effector XopJ2 is associated with increased dispersal velocity of <i>Xanthomonas perforans</i>. Environmental Microbiology. <a href='https://doi.org/10.1111/1462-2920.15541'>doi.org/10.1111/1462-2920.15541</a>",
                   "url": "https://doi.org/10.1111/1462-2920.15541"
                 }
               }
