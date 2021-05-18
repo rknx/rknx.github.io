@@ -54,13 +54,13 @@
     "lastname": "Sharma",
     "profession": "Plant Pathologist",
     "image": "/img/avatar.jpg",
-    "position": "PhD Candidate",
+    "position": "Postodoctoral Research Associate",
     "employer": "University of Florida",
     "employer-logo": "/images/gators.png",
     "email": "anujsharma@ufl.edu",
     "bio": {
-      "html1": "<strong>Currently, I am <abbr title='Doctor of Philosophy'>PhD</abbr> candidate at <a href='https://ufl.edu/'>University of Florida</a>.",
-      "html2": "I work in <a href='https://plantpath.ifas.ufl.edu/misc/jones_lab/'>Jones lab</a> in <a href='https://plantpath.ifas.ufl.edu/'>Department of Plant Pathology</a>.</strong>",
+      "html1": "<strong>Currently, I am a Postdoctoral Research Associate at <a href='https://ufl.edu/'>University of Florida</a>.",
+      "html2": "I work with <a href='https://plantpath.ifas.ufl.edu/misc/jones_lab/'>Jones Jones</a> and Erica Goss in <a href='https://plantpath.ifas.ufl.edu/'>Department of Plant Pathology</a>.</strong>",
       "html3": "My current research focuses on bacterial spot of tomato and pepper caused by several species of <i>Xanthomonas</i>.",
       "html4": "Among other things, I am working on mapping resistance genes, developing bacterial dispersal models and understanding mutation rate of bacterial effectors."
     },
@@ -76,7 +76,7 @@
         "phd": {
           "degree": "<abbr title='Doctor of Philosophy'>PhD</abbr> in Plant Pathology",
           "date": "2021",
-          "completed": false,
+          "completed": true,
           "institution": "University of Florida",
           "department": "Department of Plant Pathology",
           "address": "Gainesville, FL 32611, USA",
@@ -85,7 +85,7 @@
         "bachelors": {
           "degree": "<abbr title='Bachelor of Science'>BS</abbr> in Agriculture",
           "date": "2016",
-          "expected": true,
+          "completed": true,
           "institution": "Tribhuvan University",
           "department": "Institute of Agriculture and Animal Science",
           "address": "Chitwan, Bagmati, Nepal",
@@ -360,7 +360,18 @@
       "__tlFunc": "research",
       "__display": "true",
       "entries": {
-        "florida": {
+        "postdoc": {
+          "position": "Postodoctoral Reserarch Associate",
+          "institution": "University of Florida",
+          "department": "Department of Plant Pathology",
+          "pi-term": "Supervisor",
+          "pi-name": "Dr. Jeffrey B. Jones and Dr. Erica M. Goss",
+          "address": "Gainesville, FL 32611",
+          "start": "2021",
+          "end": "Present",
+          "projects": {}
+        },
+        "gradassistant": {
           "position": "Graduate Research Assistant",
           "institution": "University of Florida",
           "department": "Department of Plant Pathology",
@@ -368,7 +379,7 @@
           "pi-name": "Dr. Jeffrey B. Jones",
           "address": "Gainesville, FL 32611",
           "start": "2017",
-          "end": "Present",
+          "end": "2021",
           "projects": {
             "engrss": "Effect of <i>XopJ2</i> in <i>Xanthomonas perforans</i> ingress and egress.",
             "pnenyl": "Understanding transcriptomic changes in citrus due to <i>Xanthomonas citri</i> infection.",
@@ -497,12 +508,12 @@
             "outreach": {
               "role": "Member, Outreach committee",
               "start": "2017",
-              "end": "Present"
+              "end": "2021"
             },
             "member": {
               "role": "Member",
               "start": "2017",
-              "end": "Present"
+              "end": "2021"
             }
           }
         },
@@ -566,12 +577,21 @@
         "journal": {
           "prettyName": "Research papers",
           "list": {
+            "2021": {
+              "prettyName": "2021",
+              "items": {
+                "avrbst": {
+                  "citationhtml": "<b>Sharma A</b>, Timilsina S, Abrahamian P, Minsavage GV, Colee J, Ojiambo PS, Goss E, Vallad GE and Jones JB. Need for speed: Bacterial effector XopJ2 is associated with increased dispersal velocity of <i>Xanthomonas perforans</i>. Environmental Microbiology. <a href='https://doi.org/10.1111/1462-2920.15541'>10.1111/1462-2920.15541</a>",
+                  "url": "https://doi.org/10.1111/1462-2920.15541"
+                }
+              }
+            },
             "2020": {
               "prettyName": "2020",
               "items": {
                 "nursery": {
-                  "citationhtml": "Abrahamian P, <b>Sharma A</b>, Jones JB, and Vallad GE. 2020. Dynamics and spread of bacterial spot epidemics in tomato transplants grown for field production. Plant Disease. <a href='https://doi.org/10.1094/PDIS-05-20-0945-RE'>0.1094/PDIS-05-20-0945-RE</a>.",
-                  "url": ""
+                  "citationhtml": "Abrahamian P, <b>Sharma A</b>, Jones JB, and Vallad GE. 2020. Dynamics and spread of bacterial spot epidemics in tomato transplants grown for field production. Plant Disease 105(3):566-575.",
+                  "url": "https://doi.org/10.1094/PDIS-05-20-0945-RE"
                 }
               }
             },
@@ -579,16 +599,16 @@
               "prettyName": "2017",
               "items": {
                 "blast": {
-                  "citationhtml": "Bhatta A, <b>Sharma A</b>, et al. 2017. Resistant and susceptible response of finger millet to seedling blast (<i>Pyricularia grisea</i> SACC.). The International Journal of Information Research and Review. 4(12):4804-4809.",
+                  "citationhtml": "Bhatta A, <b>Sharma A</b>, et al. 2017. Resistant and susceptible response of finger millet to seedling blast (<i>Pyricularia grisea</i> SACC.). The International Journal of Information Research and Review 4(12):4804-4809.",
                   "url": ""
                 }
               }
             },
             "2010": {
-              "prettyName": "In preparation",
+              "prettyName": "In Preparation",
               "items": {
                 "avrbst": {
-                  "citationhtml": "<b>Sharma A</b>, Timilsina S, Abrahamian P, Minsavage GV, Colee J, Ojiambo PS, Goss E, Vallad GE and Jones JB. Need for speed: Bacterial effector XopJ2 is associated with increased rate of dispersal of <i>Xanthomonas perforans</i>. ",
+                  "citationhtml": "<b>Sharma A</b>, Ference CF, Shantharaj D, Baldwin EA and Jones JB. Transcriptomic analysis of changes in <i>Citrus × microcarpa</i> gene expression post <i>Xanthomonas citri</i> subsp. <i>citri</i> infection. ",
                   "url": ""
                 }
               }
@@ -598,12 +618,21 @@
         "review": {
           "prettyName": "Review papers",
           "list": {
-            "2019": {
+            "2021": {
               "prettyName": "2019",
               "items": {
                 "review1": {
                   "citationhtml": "<b>Sharma A</b>, Jones JB and White FF. Recent advances in developing disease resistance in plants. F1000Research 2019, 8(F1000 Faculty Rev):1934.",
                   "url": "https://doi.org/10.12688/f1000research.20179.1"
+                }
+              }
+            },
+            "2010": {
+              "prettyName": "In Preparation",
+              "items": {
+                "review1": {
+                  "citationhtml": "Osdaghi E, <b>Sharma A</b>, ..., Jones JB. A Centenary for Bacterial Spot of Tomato and Pepper. Molecular Plant Pathology.",
+                  "url": ""
                 }
               }
             }
@@ -621,6 +650,10 @@
                 },
                 "lab-manual-burkholderia": {
                   "citationhtml": "Ham JH, <b>Sharma A</b>, Jones JB and Chun W. <i>Burkholderia</i> and <i>Robbsia</i>. In <i>Laboratory Guide for Identification of Plant Pathogenic Bacteria, 4th Edition</i>. American Phytopathological Society (APS Press).",
+                  "url": ""
+                },
+                "pepper-compendium": {
+                  "citationhtml": "<b>Sharma A</b> and Jones JB. Bacterial Spot. In <i>Compendium of Pepper Diseases, 2nd Edition</i>. American Phytopathological Society (APS Press).",
                   "url": ""
                 }
               }
