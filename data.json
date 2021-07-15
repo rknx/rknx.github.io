@@ -34,7 +34,7 @@
       },
       "copyright": {
         "icon": "copyright",
-        "text": "Anuj Sharma 2020",
+        "text": "Anuj Sharma 2021",
         "url": "#"
       },
       "github": {
@@ -430,6 +430,24 @@
           "organization": "University of Florida",
           "address": "Gainesville, FL",
           "list": {
+            "lectureai": {
+              "position": "Guest Lecture",
+              "title": "Spatio-temporal Dispersal Modeling",
+              "course": "Leveraging AI in Plant Pathology",
+              "date": "2021"
+            },
+            "lecturebacteria3": {
+              "position": "Guest Lecture",
+              "title": "Epidemiology",
+              "course": "Bacterial Plant Pathogens",
+              "date": "2021"
+            },
+            "lecturebacteria2": {
+              "position": "Guest Lecture",
+              "title": "Dissemination, Survival and Ingress",
+              "course": "Bacterial Plant Pathogens",
+              "date": "2021"
+            },
             "lecturefungal": {
               "position": "Guest Lecture",
               "title": "Stramenopiles",
