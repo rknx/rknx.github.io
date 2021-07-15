@@ -365,11 +365,15 @@
           "institution": "University of Florida",
           "department": "Department of Plant Pathology",
           "pi-term": "Supervisor",
-          "pi-name": "Dr. Jeffrey B. Jones and Dr. Erica M. Goss",
+          "pi-name": "Dr. Erica M. Goss and Dr. Jeffrey B. Jones ",
           "address": "Gainesville, FL 32611",
           "start": "2021",
           "end": "Present",
-          "projects": {}
+          "projects": {
+            "mapping": "Fine-mapping of <i>bs8</i> resistance in pepper.",
+            "evolution": "Estimating bacterial mutation rate over host growing season.",
+            "fitness": "Understanding fitness cost of bacteriocin gene."
+          }
         },
         "gradassistant": {
           "position": "Graduate Research Assistant",
@@ -381,12 +385,12 @@
           "start": "2017",
           "end": "2021",
           "projects": {
-            "engrss": "Effect of <i>XopJ2</i> in <i>Xanthomonas perforans</i> ingress and egress.",
+            "engress": "Effect of <i>XopJ2</i> in <i>Xanthomonas perforans</i> ingress and egress.",
             "pnenyl": "Understanding transcriptomic changes in citrus due to <i>Xanthomonas citri</i> infection.",
             "mutation": "Study of mutation rate of <i>Xanthomonas</i> TAL effectors.",
-            "avrbst": "Modelling the dispersal of <i>Xanthomonas perforans</i> in field and greenhouse.",
-            "mapping": "Understanding the role effector <i>XopJ2</i> in spread of <i>Xanthomonas perforans</i>.",
-            "dispersal": "Mapping of novel bacterial spot resistance genes in pepper."
+            "avrbst": "Modeling the dispersal of <i>Xanthomonas perforans</i> in field and greenhouse.",
+            "dispersal": "Understanding the role effector <i>XopJ2</i> in spread of <i>Xanthomonas perforans</i>.",
+            "mapping": "Mapping of novel bacterial spot resistance genes in pepper."
           }
         },
         "narc": {
@@ -433,7 +437,7 @@
             "lectureai": {
               "position": "Guest Lecture",
               "title": "Spatio-temporal Dispersal Modeling",
-              "course": "Leveraging AI in Plant Pathology",
+              "course": "Leveraging <abbr title='Artificial Intelligence'>AI</abbr> in Plant Pathology",
               "date": "2021"
             },
             "lecturebacteria3": {
