@@ -372,7 +372,7 @@
           "projects": {
             "mapping": "Fine-mapping of <i>bs8</i> resistance in pepper.",
             "evolution": "Estimating bacterial mutation rate over host growing season.",
-            "fitness": "Understanding fitness cost of bacteriocin gene."
+            "fitness": "Understanding fitness cost of a bacteriocin gene."
           }
         },
         "gradassistant": {
@@ -602,8 +602,12 @@
             "2021": {
               "prettyName": "2021",
               "items": {
+                "phenylpropanoid": {
+                  "citationhtml": "<b>Sharma A</b>, Ference CF, Shantharaj D, Baldwin EA, Manthey JA, and Jones JB. Transcriptomic analysis of changes in <i>Citrus × microcarpa</i> gene expression post <i>Xanthomonas citri</i> subsp. <i>citri</i> infection. European Journal of Plant Pathology 162:163–181.",
+                  "url": "https://doi.org/10.1007/s10658-021-02394-6"
+                },
                 "avrbst": {
-                  "citationhtml": "<b>Sharma A</b>, Timilsina S, Abrahamian P, Minsavage GV, Colee J, Ojiambo PS, Goss E, Vallad GE and Jones JB. Need for speed: Bacterial effector XopJ2 is associated with increased dispersal velocity of <i>Xanthomonas perforans</i>. Environmental Microbiology. <a href='https://doi.org/10.1111/1462-2920.15541'>doi.org/10.1111/1462-2920.15541</a>",
+                  "citationhtml": "<b>Sharma A</b>, Timilsina S, Abrahamian P, Minsavage GV, Colee J, Ojiambo PS, Goss E, Vallad GE, and Jones JB. Need for speed: Bacterial effector XopJ2 is associated with increased dispersal velocity of <i>Xanthomonas perforans</i>. Environmental Microbiology 23:5850-5865.",
                   "url": "https://doi.org/10.1111/1462-2920.15541"
                 }
               }
@@ -629,8 +633,12 @@
             "2010": {
               "prettyName": "In Preparation",
               "items": {
-                "avrbst": {
-                  "citationhtml": "<b>Sharma A</b>, Ference CF, Shantharaj D, Baldwin EA and Jones JB. Transcriptomic analysis of changes in <i>Citrus × microcarpa</i> gene expression post <i>Xanthomonas citri</i> subsp. <i>citri</i> infection. ",
+                "bs8": {
+                  "citationhtml": "<b>Sharma A</b>, Minsavage GV, Gill US, Hutton SF, and Jones JB. Identification and mapping of <i>bs8</i>, a novel locus conferring resistance to bacterial spot caused by <i>Xanthomonas gardneri</i>. Phytopathology.",
+                  "url": ""
+                },
+                "evolution": {
+                  "citationhtml": "Jibrin MO, <b>Sharma A</b>, Goss EM et al. Intercontinental dissemination of tomato pathogen <i>Xanthomonas gardneri</i> during the expansion of global trade in hybrid seeds.",
                   "url": ""
                 }
               }
@@ -641,10 +649,19 @@
           "prettyName": "Review papers",
           "list": {
             "2021": {
+              "prettyName": "2021",
+              "items": {
+                "centenary": {
+                  "citationhtml": "Osdaghi E, Jones JB, <b>Sharma A</b>, et al. A Centenary for Bacterial Spot of Tomato and Pepper. Molecular Plant Pathology. 22(12):1500-1519.",
+                  "url": "https://dx.doi.org/10.1111/mpp.13125"
+                }
+              }
+            },
+            "2019": {
               "prettyName": "2019",
               "items": {
-                "review1": {
-                  "citationhtml": "<b>Sharma A</b>, Jones JB and White FF. Recent advances in developing disease resistance in plants. F1000Research 2019, 8(F1000 Faculty Rev):1934.",
+                "advances": {
+                  "citationhtml": "<b>Sharma A</b>, Jones JB, and White FF. Recent advances in developing disease resistance in plants. F1000Research 2019, 8(F1000 Faculty Rev):1934.",
                   "url": "https://doi.org/10.12688/f1000research.20179.1"
                 }
               }
@@ -652,8 +669,12 @@
             "2010": {
               "prettyName": "In Preparation",
               "items": {
-                "review1": {
-                  "citationhtml": "Osdaghi E, <b>Sharma A</b>, ..., Jones JB. A Centenary for Bacterial Spot of Tomato and Pepper. Molecular Plant Pathology.",
+                "future": {
+                  "citationhtml": "<b>Sharma A</b>, Abrahamian P, Carvalho R, Choudhary M, Paret ML, Vallad GE, and Jones JB. Future of Bacterial Disease Management in Crop Production. Annual Review of Phytopathology.",
+                  "url": ""
+                },
+                "ralstonia": {
+                  "citationhtml": "Dickstein ER, <b>Sharma A</b>, Jones JB, et al. Recovery Plan for <i>Ralstonia solanacearum</i> Race 3 Biovar 2.",
                   "url": ""
                 }
               }
