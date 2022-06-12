@@ -25,7 +25,7 @@
       "vcard-dl": {
         "icon": "download",
         "text": "Download vcard",
-        "url": "/res/Anuj_Sharma_Business_Card.pdf"
+        "url": "/res/Anuj_Sharma_Vcard.vcf"
       },
       "email": {
         "icon": "envelope",
