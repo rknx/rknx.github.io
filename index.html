@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <!-- Basic things -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site information -->
+    <title>Anuj Sharma | CV</title>
+    <meta name="Description" content="Online Curriculum Vitae of Anuj Sharma" />
+
+    <!--Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo-dark.svg" media="(prefers-color-scheme: dark)" />
+    
+    <!-- Main font preload -->
+    <link rel="preload" href="/assets/fonts/regu.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/main.css">
+    
+</head><body>
+
+    
+<main>
+
+
+<style>
+.switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: flex-end;
+    align-self: flex-end;
+    gap: 1rem;
+}
+
+nav > .switch {
+    flex-direction: row;
+    align-self: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+}
+    
+.theme-switch {
+  display: flex;
+  padding: 4px;
+  flex: 0 0 50px;
+  flex-direction: column;
+  border: solid 2px var(--text_color);
+  border-radius: 24px;
+  background-color: #555;
+}
+    
+.switch:before {
+  content:'Light';
+}
+    
+.switch:after {
+  content:'Dark';
+}
+
+.theme-switch > input#theme {
+  display:none;
+}
+
+.theme-switch > .slider {
+  /* background-color: var(--text_color);*/
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .3s;
+  align-self: flex-start;
+}
+
+input#theme:checked + .slider {
+  align-self: flex-end;
+}
+
+input#theme + .slider {
+  background-color: #fffba9;
+  border: 2px solid #f6eb72;
+}
+
+input#theme:checked + .slider {
+  background-color: #ffffff;
+  border: 2px solid #e8e8ea;
+}
+
+</style>
+<div class="switch">
+    <label class="theme-switch" for="theme">
+        <input type="checkbox" id="theme" />
+        <div class="slider"></div>
+    </label>
+</div>
+<script>
+    // initial theme toggle
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.querySelector(':root').classList.add("dark");
+        document.querySelector('#theme').checked = true;
+    };
+    // toggle by button
+    document.querySelector('#theme').addEventListener('change', (e) => {
+        if (e.currentTarget.checked) {
+            document.querySelector(':root').classList.add("dark");
+        } else {
+            document.querySelector(':root').classList.remove("dark");
+        }
+    })
+</script>
+
+
+
+<style>
+    img.avatar {
+        border-radius: 50%;
+        width: 280px;
+        max-width: 80%;
+        aspect-ratio: 1/1;
+        outline: 10px solid #007572;
+        margin-top: 20px;
+    }
+
+    h1 > strong, h2 > strong, p > strong {
+        font-weight: 700;
+        font-variation-settings: 'wght' 700;
+    }
+</style>
+
+<img class="avatar" src="/assets/img/intro/avatar.png" />
+
+<h1> 
+Hi, I'm Anuj Sharma!
+</h1> 
+
+<h2>
+I'm a <strong>Tomato Geneticist</strong>.
+</h2>
+
+<p>
+    I am an
+    <strong>Assistant Professor</strong> 
+    at the
+    <strong><a href="//ufl.edu/" target="_self">University of Florida</a></strong>
+    <strong><a href="//hos.ifas.ufl.edu/" target="_self">Horticultural Sciences department</a></strong>
+    and my lab is positioned at the
+    <strong><a href="//gcrec.ifas.ufl.edu/" target="_self">Gulf Coast Research and Education Center</a></strong>. 
+    My research focuses on genetic and genomic strategies for improvement of tomato crop. 
+    Among other things, I am working on 
+    identification and genetic mapping of disease resistance, and development of genomic tools and pipelines.
+
+</p>
+
+
+
+<style>
+
+    .pages{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .pg-links {
+        display: flex;
+        margin-top: auto;
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 1px;
+    }
+
+    .pg-links > div {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+        margin:0;
+        padding: 10px 10px;
+        border: 1px solid var(--text_color);
+    }
+
+    .pg-links > div:first-child {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .pg-links > div:last-child {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .pg-links > div:not(:first-child) {
+        pointer: auto
+    }
+
+    .pg-links > div > span {
+        font-weight: 700;
+        font-variation-settings: 'wght' 700;
+        font-optical-sizing: auto;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .pg-links > div > svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        fill: var(--text_color);
+        margin-bottom: 2px;
+    }
+
+    .pg-links > div:not(:first-child):hover > svg {
+        fill: var(--select);
+    }
+
+    .pg-label {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+    }
+</style>
+
+<div class="pages">
+
+    <div class="pg-links">
+    <div class="pg-label"><svg><use xlink:href="/assets/img/icons.svg#file-user"></use></svg><span>Resume</span>
+    </div><div class="pg-view" onclick="location.href='resume'">
+        <svg><use xlink:href="/assets/img/icons.svg#view"></use></svg>
+    </div><div class="pg-dl" onclick="location.href='/files/Anuj_Sharma_Resume.pdf'">
+        <svg><use xlink:href="/assets/img/icons.svg#download"></use></svg>
+    </div></div>
+
+    <div class="pg-links">
+    <div class="pg-label"><svg><use xlink:href="/assets/img/icons.svg#file-pdf"></use></svg><span>Vitae</span>
+    </div><div class="pg-view" onclick="location.href='vitae'">
+        <svg><use xlink:href="/assets/img/icons.svg#view"></use></svg>
+    </div><div class="pg-dl" onclick="location.href='/files/Anuj_Sharma_Curriculum_Vitae.pdf'">
+        <svg><use xlink:href="/assets/img/icons.svg#download"></use></svg>
+    </div></div>
+
+    <div class="pg-links">
+    <div class="pg-label"><svg><use xlink:href="/assets/img/icons.svg#address-card"></use></svg><span>Contact</span>
+    </div><div class="pg-view" onclick="location.href='vcard'">
+        <svg><use xlink:href="/assets/img/icons.svg#view"></use></svg>
+    </div><div class="pg-dl" onclick="location.href='/files/Anuj_Sharma_Vcard.vcf'">
+        <svg><use xlink:href="/assets/img/icons.svg#download"></use></svg>
+    </div></div>
+
+    <div class="pg-links">
+    <div class="pg-label"><svg><use xlink:href="/assets/img/icons.svg#github"></use></svg><span>Github</span>
+    </div><div class="pg-view" onclick="window.open('//github.com/rknx')">
+        <svg><use xlink:href="/assets/img/icons.svg#linkout"></use></svg>
+    </div></div>
+
+    <div class="pg-links">
+    <div class="pg-label"><svg><use xlink:href="/assets/img/icons.svg#linkedin"></use></svg><span>LinkedIn</span>
+    </div><div class="pg-view" onclick="window.open('//linkedin.com/in/sharmaan')">
+        <svg><use xlink:href="/assets/img/icons.svg#linkout"></use></svg>
+    </div></div>
+
+    <div class="pg-links">
+    <div class="pg-label"><svg><use xlink:href="/assets/img/icons.svg#orcid"></use></svg><span>OrcID</span>
+    </div><div class="pg-view" onclick="window.open('//orcid.org/0000-0003-2915-3142')">
+        <svg><use xlink:href="/assets/img/icons.svg#linkout"></use></svg>
+    </div></div>
+
+    <div class="pg-links">
+    <div class="pg-label"><svg><use xlink:href="/assets/img/icons.svg#gscholar"></use></svg><span>GScholar</span>
+    </div><div class="pg-view" onclick="window.open('//scholar.google.com/citations?user=R9Ry2RQAAAAJ')">
+        <svg><use xlink:href="/assets/img/icons.svg#linkout"></use></svg>
+    </div></div>
+
+  </div>
+
+</main>
+
+  
+    <script src="/assets/js/main.js"></script>
+  
+  </body>
+
+</html>

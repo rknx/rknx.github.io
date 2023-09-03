@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Vcard | Anuj Sharma</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo-dark.svg" media="(prefers-color-scheme: dark)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root{
+            --theme:rgb(0, 85, 150);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Open Sans', sans-serif;
+            margin:0;
+            padding: 20px;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--theme) 50%, #fafafa 50%) fixed no-repeat;
+            min-width: 360px;
+        }
+
+        .vcard {
+            width:100%;
+            max-width: 500px;
+            flex: 0 0 calc(100vh - 40px);
+            display:flex;
+            flex-direction: column;
+            align-items: space-around;
+            justify-content: stretch;
+            box-shadow: 0 -5px 40px 7px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        @media  only screen and (min-height:800px) {
+            .vcard {
+                flex: 0 0 80vh;
+            }
+        }
+
+        .vcard > div {
+            width:100%;
+            display:flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        .vcard > div:first-child {
+            flex: 0 0 calc(50vh - 50px);
+            margin-top: 30px;
+        }
+
+        .vcard > div:last-child {
+            flex: 0 0 calc(50vh - 20px);
+        }
+
+        .vcard > div:first-child > div {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media  only screen and (min-height:800px) {
+            .vcard > div:first-child {
+                flex: 0 0 calc(40vh - 50px);
+                margin-top: 50px;
+            }
+            .vcard > div:last-child {
+                flex: 0 0 40vh;
+            }
+        }
+
+        .vcard > div:first-child > div.buttons {
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex: 0 0 80px;
+        }
+
+        .vcard h1, .vcard h2 {
+            white-space: nowrap;
+        }
+        
+        .buttons > a {
+            display:inline-flex;
+            flex: 1 1 33.3333%;
+            height:80px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            border-top: 1px solid rgba(255,255,255,0.6);
+            border-right: 1px solid rgba(255,255,255,0.6);
+            border-bottom: none;
+        }
+
+        .buttons > a:hover,
+        .buttons > a:active {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .buttons > a:last-child {
+            border-right: none;
+        }
+        
+        .buttons > a > svg {
+            fill: white;
+            width: 1.5em;
+            height:1.5em;
+            padding-bottom: 5px;
+        }
+
+        .buttons > a > span {
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+
+        .vcard > div:last-child > div {
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            flex: 1 1 100%;
+            border-bottom: rgba(0,0,0,0.2) solid 1px;
+        }
+
+        .vcard > div:last-child > div:last-child {
+            border-bottom: none;
+        }
+
+        .vcard > div:last-child > div > svg {
+            display:flex;
+            flex: 0 0 33.33%;
+        }
+
+        .vcard > div:last-child > div > p {
+            display:flex;
+            flex-direction: column;
+            flex: 0 0 66.66%;
+        }
+
+        h1, h2 {
+            color:white;
+            margin-block-end:0;
+            margin-block-start:0;
+            display:inline;
+        }
+        
+        h1 {
+            font-size: 2em;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+
+        p {
+            margin-block-end:0;
+            margin-block-start:0;
+            color: black;
+            font-size: 1em;
+            font-weight: 700;
+        }
+
+        p span {
+            font-weight: 400;
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+        
+        .vcard div:first-child div:first-child svg{
+            height: 70px;
+            width: 200px;
+        }
+
+        #logo{
+            width: 60%;
+        }
+
+        svg {
+            width: 1.2em;
+            height:1.2em;
+            display: inline-flex;
+        }
+
+        #print {
+            display:none;
+        }
+
+        #print > img {
+            width: 7in;
+            height: 4in;
+        }
+
+        @media print {
+            @page{
+                size: 7in 4in;
+                margin: 0in 0in;
+            }
+
+            *, body {
+                margin: 0;
+                padding: 0
+            }
+
+            body {
+                height: 100%;
+            }
+            
+            .vcard {
+                display:none;
+            }
+
+            #print {
+                display: flex;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="whiteTheme">
+    <div class="vcard">
+        <div>
+            <div><img id="logo" src="assets/img/icons/sharmalab.svg"/></div>
+            <div>
+                <h1>Anuj Sharma, PhD</h1>
+                <h2>Assistant Professor</h2>
+                <h2>Gulf Coast Research and Education Center</h2>
+                <h2>University of Florida</h2>
+            </div>
+            <div class="buttons noprint">
+                <a href="tel:+13522137190">
+                    <svg><use xlink:href='assets/img/icons.svg#phone'/></svg> <span>Call</span>
+                </a>
+                <a href="mailto:anujsharma@ufl.edu">
+                    <svg><use xlink:href='assets/img/icons.svg#envelope'/></svg> <span>Email</span>
+                </a>
+                <a onclick="window.print();">
+                    <svg><use xlink:href='assets/img/icons.svg#print'/></svg> <span>Print</span>
+                </a>
+            </div>
+        </div>
+        <div>
+            <div>
+                <svg><use xlink:href='assets/img/icons.svg#phone'/></svg>
+                <p>&#x202e;0917-312 (253)<span>&#x202d;Cellphone</span></p>
+            </div>
+            <div>
+                <svg><use xlink:href='assets/img/icons.svg#envelope'/></svg>
+                <p>anujsharma@ufl.edu<span>E-mail</span></p>
+            </div>
+            <div>
+                <svg><use xlink:href='assets/img/icons.svg#globe'/></svg>
+                <p>anujs.com.np<span>Website</span></p>
+            </div>
+            <div>
+                <svg><use xlink:href='assets/img/icons.svg#briefcase'/></svg>
+                <p>Univesity of Florida<span>Employer</span></p>
+            </div>
+            <div>
+                <svg><use xlink:href='assets/img/icons.svg#map-marker-alt'/></svg>
+                <p>14625 CR 672, Wimauma, FL<span>Address</span></p>
+            </div>
+        </div>
+    </div>
+    <div id="print"><img src="assets/img/vcard.svg"></svg></div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <!-- Basic things -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site information -->
+    <title>Anuj Sharma | CV</title>
+    <meta name="Description" content="Online Curriculum Vitae of Anuj Sharma" />
+
+    <!--Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo-dark.svg" media="(prefers-color-scheme: dark)" />
+    
+    <!-- Main font preload -->
+    <link rel="preload" href="/assets/fonts/regu.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/main.css">
+    
+</head><body>
+
+    <div>Number is <span id="count"></span></div>
+
+<script>
+    // fetch("https://scholar.google.com/citations?user=R9Ry2RQAAAAJ&hl=en")
+    //     .then(response => {
+    //     // Do something with the response here
+    //     console.log(response)
+    //     });
+
+    var req = new XMLHttpRequest();
+
+    req.open('GET', 'https://scholar.google.com/citations?user=R9Ry2RQAAAAJ&hl=en', false);
+    req.send(null);
+
+    if(req.status == 200) {
+        alert(req.responseText);
+    }
+
+</script>
+  
+    <script src="/assets/js/main.js"></script>
+  
+  </body>
+
+</html>

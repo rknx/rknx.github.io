@@ -1,0 +1,46 @@
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+	<path d="M256 1C64.75 1 1 64.75 1 256 1 447.25 64.75 511 256 511 447.25 511 511 447.25 511 256 511 64.75 447.25 1 256 1Z" fill="#00A99D" />
+	<use href="#I" x="48" y="48" opacity=".009"/>
+	<use href="#I" x="46" y="46" opacity=".01"/>
+	<use href="#I" x="44" y="44" opacity=".011"/>
+	<use href="#I" x="42" y="42" opacity=".012"/>
+	<use href="#I" x="40" y="40" opacity=".013"/>
+	<use href="#I" x="38" y="38" opacity=".014"/>
+	<use href="#I" x="36" y="36" opacity=".015"/>
+	<use href="#I" x="34" y="34" opacity=".016"/>
+	<use href="#I" x="32" y="32" opacity=".017"/>
+	<use href="#I" x="30" y="30" opacity=".018"/>
+	<use href="#I" x="28" y="28" opacity=".019"/>
+	<use href="#I" x="26" y="26" opacity=".02"/>
+	<use href="#I" x="24" y="24" opacity=".021"/>
+	<use href="#I" x="22" y="22" opacity=".022"/>
+	<use href="#I" x="20" y="20" opacity=".023"/>
+	<use href="#I" x="18" y="18" opacity=".024"/>
+	<use href="#I" x="16" y="16" opacity=".025"/>
+	<use href="#I" x="14" y="14" opacity=".026"/>
+	<use href="#I" x="12" y="12" opacity=".027"/>
+	<use href="#I" x="10" y="10" opacity=".028"/>
+	<use href="#I" x="8" y="8" opacity=".029"/>
+	<use href="#I" x="6" y="6" opacity=".03"/>
+	<use href="#I" x="4" y="4" opacity=".031"/>
+	<use href="#I" x="2" y="2" opacity=".032"/>
+	<use href="#A" fill="#bbb"/>
+	<use href="#B" fill="#fff"/>
+	<use href="#C" fill="#bbb"/>
+	<use href="#D" fill="#fff"/>
+	<use href="#E" fill="#fff"/>
+	<use href="#F" fill="#bbb"/>
+	<use href="#G" fill="#fff"/>
+	<use href="#H" fill="#bbb"/>
+	<defs>
+		<path id="A" d="M1.914 41.507C-3.977 25.421 4.203 7.691 20.389 1.838h0C36.575-4.019 54.309 4.337 60.2 20.422h0l98.805 268.492-66.418.053z" transform="matrix(1 0 0 -1 54 364)"/>
+		<path id="B" d="M.005 30.945C.005 13.768 13.901-.027 31.042-.027h0 90.963c-21.202 36.486-44.004 61.159-87.3 62h0C18.149 61.319.005 47.7.005 30.945" transform="matrix(1 0 0 -1 99 285)"/>
+		<path id="C" d="M123.761-.02l50.246 41.466c-19.155 52.819-76.561 99.534-174 99.534h0c69.666 0 97.205-68.238 123.754-141" transform="matrix(1 0 0 -1 129 364)"/>
+		<path id="D" d="M.007 288.915L105.726-.033l50.281 41.381-90.043 247.62z" transform="matrix(1 0 0 -1 147 364)"/>
+		<path id="E" d="M.556 128.691c-.022-.177-.113-.444-.113-.622h0L0 0c42.605 4.52 75 29.98 75 50.287h0V172C33.026 167.52 3.128 148.643.556 128.691" transform="matrix(1 0 0 -1 332 385)"/>
+		<path id="F" d="M114.073 108c-51.425-.516-80.078-26.252-101.093-62.265h0C4.885 31.859.242 16.39 0 0h0c1.494 23.406 42.041 46.68 132 46.349L114.073 108z" transform="matrix(1 0 0 -1 333 258)"/>
+		<path id="G" d="M31.273 62.004C14.004 62.004.009 48.346.009 31.078h0C.009 13.805 14.004.067 31.273.067h0L197.108.004l-18.299 62z" transform="matrix(1 0 0 -1 268 212)"/>
+		<path id="H" d="M81.637 62.016l-44.436-.005C16.665 62.012.009 48.091.009 31.022h0C.009 13.962 16.665.042 37.201.042h0 8.096c51.572.519 96.019 25.639 117.094 61.89h0c8.118 13.957 12.619 29.78 12.619 46.111h0c0-23.445-39.865-46.026-93.373-46.026" transform="matrix(1 0 0 -1 232 440)"/>
+		<g id="I" fill="#000"><use href="#A"/><use href="#B"/><use href="#C"/><use href="#D"/><use href="#E"/><use href="#F"/><use href="#G"/><use href="#H"/></g>
+	</defs>
+</svg>
