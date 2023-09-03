@@ -1,0 +1,24 @@
+---
+layout: base
+title: CV
+---
+
+<div>Number is <span id="count"></span></div>
+
+<script>
+    // fetch("https://scholar.google.com/citations?user=R9Ry2RQAAAAJ&hl=en")
+    //     .then(response => {
+    //     // Do something with the response here
+    //     console.log(response)
+    //     });
+
+    var req = new XMLHttpRequest();
+
+    req.open('GET', 'https://scholar.google.com/citations?user=R9Ry2RQAAAAJ&hl=en', false);
+    req.send(null);
+
+    if(req.status == 200) {
+        alert(req.responseText);
+    }
+
+</script>

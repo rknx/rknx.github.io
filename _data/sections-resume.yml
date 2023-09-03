@@ -1,0 +1,27 @@
+- id: intro
+  name: Introduction
+  nav: false
+- id: motivation
+  name: Motivation
+  nav: true
+- id: research
+  name: Work Experience
+  nav: true
+- id: skills
+  name: Skills
+  nav: true
+- id: education
+  name: Education
+  nav: true
+- id: language
+  name: Languages
+  nav: true
+- id: publications
+  name: Publications
+  nav: true
+- id: references
+  name: References
+  nav: true
+- id: contact
+  name: Contact
+  nav: true

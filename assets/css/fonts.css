@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "Main";
+    src: url("/assets/fonts/regu.ttf") format("truetype-variations");
+    src: url("/assets/fonts/regu.woff2") format("woff2-variations");
+    font-weight: 400 700; 
+}
+
+@font-face {
+    font-family: "Main";
+    src: url("/assets/fonts/ital.ttf") format("truetype-variations");
+    src: url("/assets/fonts/ital.woff2") format("woff2-variations");
+    font-weight: 400 700;
+    font-style: italic; 
+}
+
+@font-face {
+    font-family: "Code";
+    src: url("/assets/fonts/code.ttf") format("truetype-variations");
+    src: url("/assets/fonts/code.woff2") format("woff2-variations");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Brands";
+    src: url("/assets/fonts/fabrands.svg") format("svg");
+    font-weight: 400;
+}
+
+body {
+    font-family: "Main", OpenSans, Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
+}
+
+
+h3, h4, h5 {
+    font-family: "Main";
+    font-weight: 700;
+    font-variation-settings: 'wght' 700;
+}
+
+h1, h2, h6 {
+    font-family: "Main";
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 2.25rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.125rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+pre, code {
+    font-family: "Code", Consolas, 'Courier New', monospace;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+}
+
+p {
+    margin: 10px 0;
+}
+
+
+

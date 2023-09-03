@@ -1,0 +1,46 @@
+title: A centenary for bacterial spot of tomato and pepper
+type: Review paper
+authors:
+  - Osdaghi E
+  - Jones JB
+  - Sharma A
+  - Goss EM
+  - Abrahamian P
+  - Newberry EA
+  - Potnis N
+  - Carvalho R
+  - Choudhary M
+  - Paret ML
+  - Timilsina S
+  - Vallad GE
+published: true
+journal: Molecular Plant Pathology
+book:
+thumb: centenary.png
+year: 2021
+volume: 22
+issue: 12
+pages: 1500-1519
+links:
+  - name: Journal
+    link: bsppjournals.onlinelibrary.wiley.com/doi/10.1111/mpp.13125
+  - name: Crossref
+    link: 10.1111/mpp.13125
+  - name: Pubmed
+    link: 4472193
+  - name: GScholar
+    link: 25852030639357372
+  - name: ResearchGate
+    link: 353706759
+summary: 
+citebib: |
+  @article{10.1111/mpp.13125,
+    AUTHOR =  {Osdaghi, Ebrahim and Jones, Jeffrey B. and Sharma, Anuj and Goss, Erica M. and Abrahamian, Peter and Newberry, Eric A. and Potnis, Neha and Carvalho, Renato and Choudhary, Manoj and Paret, Mathews L. and Timilsina, Sujan and Vallad, Gary E.},
+    TITLE =   {A centenary for bacterial spot of tomato and pepper},
+    JOURNAL = {Molecular Plant Pathology},
+    VOLUME =  {22},
+    NUMBER =  {12},
+    PAGES =   {1500-1519},
+    DOI =     {10.1111/mpp.13125},
+    YEAR =    {2021}
+  }

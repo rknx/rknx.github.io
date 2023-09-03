@@ -1,0 +1,39 @@
+title: Identification and mapping of *bs8*, a novel locus conferring resistance to bacterial spot caused by *Xanthomonas gardneri*
+type: Research article
+authors:
+  - Sharma A
+  - Minsavage GV
+  - Gill US
+  - Hutton SF
+  - Jones JB
+published: yes
+journal: Phytopathology
+book:
+thumb: bs8.png
+year: 2022
+volume: 112
+issue: 8
+pages: 1640-1650
+links:
+  - name: Journal
+    link: apsjournals.apsnet.org/doi/abs/10.1094/PHYTO-08-21-0339-R
+  - name: Crossref
+    link: 10.1094/phyto-08-21-0339-r
+  - name: Pubmed
+    link: 35133857
+  - name: GScholar
+    link: 14316638652857924858
+  - name: ResearchGate
+    link: 358449096
+summary: 
+citebib: |
+  @article{10.1094/phyto-08-21-0339-r,
+    AUTHOR =  {Sharma, Anuj and Minsavage, Gerald V. and Gill, Upinder S. and Hutton, Samuel F. and Jones, Jeffrey B.},
+    TITLE =   {Identification and mapping of \textit{bs8}, a novel locus conferring resistance to bacterial spot caused by \textit{Xanthomonas gardneri}},
+    JOURNAL = {Phytopathology},
+    VOLUME =  {112},
+    NUMBER =  {8},
+    PAGES =   {1640-1650},
+    YEAR =    {2022}, 
+    DOI =     {10.1094/phyto-08-21-0339-r},
+  }

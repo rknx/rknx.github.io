@@ -1,0 +1,38 @@
+- label: Resume
+  icon: file-user
+  link: resume
+  dl: Anuj_Sharma_Resume.pdf
+- label: Vitae
+  icon: file-pdf
+  link: vitae
+  dl: Anuj_Sharma_Curriculum_Vitae.pdf
+- label: Contact
+  icon: address-card
+  link: vcard
+  dl: Anuj_Sharma_Vcard.vcf
+# - label: Blog
+#   icon: blog
+#   link: blog
+#   dl: 
+- label: Github
+  icon: github
+  link: 
+  dl: 
+  extlink: //github.com/rknx
+- label: LinkedIn
+  icon: linkedin
+  link: 
+  dl: 
+  extlink: //linkedin.com/in/sharmaan
+- label: OrcID
+  icon: orcid
+  link: 
+  dl: 
+  extlink: //orcid.org/0000-0003-2915-3142
+- label: GScholar
+  icon: gscholar
+  link: 
+  dl: 
+  extlink: //scholar.google.com/citations?user=R9Ry2RQAAAAJ
+
+

@@ -1,0 +1,44 @@
+title: "Need for speed: Bacterial effector XopJ2 is associated with increased dispersal velocity of *Xanthomonas perforans*."
+type: Research article
+authors: 
+  - "**Sharma A**"
+  - Timilsina S
+  - Abrahamian P
+  - Minsavage GV
+  - Colee J
+  - Ojiambo PS
+  - Goss E
+  - Vallad GE
+  - Jones JB
+published: yes
+journal: Environmental Microbiology
+book:
+thumb: xopj2.png
+year: 2021
+volume: 23
+issue: 10
+pages: 5850-5865
+links:
+  - name: Journal
+    link: sfamjournals.onlinelibrary.wiley.com/doi/10.1111/1462-2920.15541
+  - name: Crossref
+    link: 10.1111/1462-2920.15541
+  - name: Pubmed
+    link: 33891376
+  - name: GScholar
+    link: 11794661915918664657
+  - name: ResearchGate
+    link: 351085115
+summary: 
+citebib: |
+  @article{10.1111/1462-2920.15541,
+    AUTHOR =  {Sharma, Anuj and Timilsina, Sujan and Abrahamian, Peter and Minsavage, Gerald V. and Colee, James and Ojiambo, Peter S. and Goss, Erica M. and Vallad, Gary E. and Jones, Jeffrey B.},
+    TITLE =   {Need for speed: bacterial effector XopJ2 is associated with increased dispersal velocity of \textit{Xanthomonas perforans}},
+    JOURNAL = {Environmental Microbiology},
+    VOLUME =  {23},
+    NUMBER =  {10},
+    PAGES =   {5850-5865},
+    DOI =     {10.1111/1462-2920.15541},
+    YEAR =    {2021}
+  }
+

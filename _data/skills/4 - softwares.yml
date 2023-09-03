@@ -1,0 +1,22 @@
+title: Other softwares
+list:
+- name: Microsoft Office
+  icon: office
+- name: Microsoft Teams
+  icon: teams
+- name: Adobe Photoshop
+  icon: photoshop
+- name: Inkscape
+  icon: inkscape
+- name: Git(hub)
+  icon: github
+- name: Docker/Singularity
+  icon: docker
+- name: Visual Studio Code
+  icon: vscode
+- name: Jupyter notebook
+  icon: jupyter
+- name: Figma
+  icon: figma
+- name: Snapgene
+  icon: snapgene

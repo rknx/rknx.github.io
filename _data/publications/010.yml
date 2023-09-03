@@ -1,0 +1,41 @@
+title: Resistant and susceptible response of finger millet to seedling blast (*Pyricularia grisea* SACC.).
+type: Research paper
+authors: 
+  - Bhatta A
+  - "**Sharma A**"
+  - Gautam P
+  - Subedi B
+  - Poudel M
+  - Pariyar K
+  - Mishra S
+published: true
+journal: International Journal of Information Research and Review
+book:
+thumb: millet.png
+year: 2017
+volume: 4
+issue: 12
+pages: 4804-4809
+links:
+  - name: Journal
+    link: zenodo.org/record/6970365
+  - name: Crossref
+    link: 10.5281/zenodo.6970364
+  - name: Pubmed
+    link: 
+  - name: GScholar
+    link: 3468814484327847000
+  - name: ResearchGate
+    link: 325670109
+summary: lorem *ipsum*
+citebib: |
+  @article{10.5281/zenodo.6970365,
+    AUTHOR =  {Bhatta, Anjan and Sharma, Anuj and Gautam, Puja and Subedi, Bishal and Poudel, Manoj and Pariyar, Kiran and Mishra, Sujan},
+    TITLE =   {Resistant and susceptible response of finger millet to seedling blast (\textit{Pyricularia grisea} sacc.)},
+    JOURNAL = {International Journal of Information Research and Review},
+    YEAR =    {2017},
+    VOLUME =  {4},
+    NUMBER =  {12},
+    PAGES =   {4804-4809},
+    DOI =     {10.5281/zenodo.6970365}
+  }

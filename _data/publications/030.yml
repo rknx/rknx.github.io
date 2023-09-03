@@ -1,0 +1,38 @@
+title: Dynamics and spread of bacterial spot epidemics in tomato transplants grown for field production.
+type: Research paper
+authors:
+  - Abrahamian P
+  - "**Sharma A**"
+  - Jones JB
+  - Vallad GE
+published: true
+journal: Plant Disease
+book: 
+thumb: transplant.png
+year: 2020
+volume: 105
+issue: 3
+pages: 566-575
+links:
+  - name: Journal
+    link: apsjournals.apsnet.org/doi/10.1094/PDIS-05-20-0945-RE
+  - name: Crossref
+    link: 10.1094/PDIS-05-20-0945-RE
+  - name: Pubmed
+    link: 32865478
+  - name: GScholar
+    link: 16372853981314918327
+  - name: ResearchGate
+    link: 344004795
+summary: 
+citebib: |
+  @article{10.1094/PDIS-05-20-0945-RE,
+    AUTHOR =  {Abrahamian, Peter and Sharma, Anuj and Jones, Jeffrey B. and Vallad, Gary E.},
+    TITLE =   {Dynamics and spread of bacterial spot epidemics in tomato transplants grown for field production},
+    JOURNAL = {Plant Disease},
+    VOLUME =  {105},
+    NUMBER =  {3},
+    PAGES =   {566-575},
+    YEAR =    {2021},
+    DOI =     {10.1094/PDIS-05-20-0945-RE}      
+  }

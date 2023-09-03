@@ -1,0 +1,38 @@
+# Main options
+title: Anuj Sharma | CV
+email: rknx@outlook.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Online Curriculum Vitae of Anuj Sharma
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://anujs.com.np" # the base hostname & protocol for your site, e.g. http://example.com
+fname: Anuj
+lname: Sharma
+job: Plant pathologist
+
+vcard:
+f04:
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+port: 4001
+
+# Kramdown settings
+kramdown:
+  auto_ids: false
+
+sass:
+    sass_dir: assets/css
+load_paths:
+    - _sass
+
+exclude:
+  - res
+
+collections:
+  post:
+    output: true
+  slides:
+    output: true

@@ -1,0 +1,20 @@
+title: Molecular
+list:
+- name: Cell culture
+  icon:
+- name: Mini/micro prep
+  icon:
+- name: Recombinant DNA
+  icon:
+- name: Mutagenesis
+  icon:
+- name: Gene expression
+  icon:
+- name: Protein fusion
+  icon:
+- name: RNA inferference
+  icon:
+- name: Genotyping/Phenotyping
+  icon:
+- name: Protocol development
+  icon:

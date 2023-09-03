@@ -1,0 +1,30 @@
+:root {
+    --back_color: #f0f0f0;
+    --text_color: #222;
+    --back_color_rev: #222;
+    --back_color_fmt_rev: 34,34,34;
+    --text_color_rev: #f0f0f0;
+    --transparency: 0.2;
+    --backdrop: blur(10px);
+    --select: #00a8a4;
+    
+  }
+  
+:root.dark {
+    --back_color: #222;
+    --text_color: #e6e6e6;
+    --back_color_rev: #f0f0f0;
+    --back_color_fmt_rev: 0,0,0;
+    --text_color_rev: #222;
+
+}
+
+
+body {
+    background-color: var(--back_color);
+    color: var(--text_color);
+}
+
+a, a:visited {
+    color: var(--text_color);
+}

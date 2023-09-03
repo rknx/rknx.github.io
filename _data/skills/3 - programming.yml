@@ -1,0 +1,16 @@
+title: Programming languages
+list:
+- name: Shell/Bash + AWK
+  icon: bash
+- name: R + ggplot + Shiny
+  icon: r
+- name: Python + numpy + scipy 
+  icon: python
+- name: HTML + CSS + Javascript
+  icon: html
+- name: Markdown + Jykell/Liquid
+  icon: markdown
+- name: Julia + Gadfly.jl
+  icon: julia
+- name: Powershell
+  icon: powershell
