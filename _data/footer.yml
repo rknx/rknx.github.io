@@ -1,0 +1,9 @@
+- label: 2022 Anuj Sharma
+  link: "#"
+  icon: copyright
+- label: Hosted on Github
+  link: //www.github.com/rknx/rknx.github.io
+  icon: github
+- label: Deploys by Netlify
+  link: //www.netlify.com
+  icon: netlify

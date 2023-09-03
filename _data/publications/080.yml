@@ -1,0 +1,41 @@
+title: Future of bacterial disease management in crop production
+type: Review paper
+authors: 
+  - Sharma A
+  - Abrahamian P
+  - Carvalho R
+  - Choudhary M
+  - Paret ML
+  - Vallad GE
+  - Jones JB
+published: yes
+journal: Annual Review of Phytopathology
+book:
+thumb: annualreview.png
+year: 2022 
+volume: 60
+issue: 12
+pages: 1-16
+links:
+  - name: Journal
+    link: annualreviews.org/doi/abs/10.1146/annurev-phyto-021621-121806
+  - name: Crossref
+    link: 10.1146/annurev-phyto-021621-121806
+  - name: Pubmed
+    link: 35790244
+  - name: GScholar
+    link: 6505983602200480882
+  - name: ResearchGate
+    link: 61824352
+summary: 
+citebib: |
+  @article{doi:10.1146/annurev-phyto-021621-121806,
+    author =  {Sharma, Anuj and Abrahamian, Peter and Carvalho, Renato and Choudhary, Manoj and Paret, Mathews L. and Vallad, Gary E. and Jones, Jeffrey B.},
+    title =   {Future of bacterial disease management in crop production},
+    journal = {Annual Review of Phytopathology},
+    volume =  {60},
+    number =  {1},
+    pages =   {null},
+    year =    {2022},
+    doi =     {10.1146/annurev-phyto-021621-121806}
+  }

@@ -1,0 +1,28 @@
+title: Bioinformatics
+list:
+- name: Genome assembly
+  icon:
+- name: Genome annotation
+  icon:
+- name: Bulked segregant analysis
+  icon:
+- name: Variant discovery
+  icon:
+- name: Marker discovery
+  icon:
+- name: Comparative genomics
+  icon:
+- name: Evolutionary genomics
+  icon:
+- name: Structural genomics
+  icon:
+- name: Pathogenomics
+  icon: 
+- name: Transcriptomics
+  icon: 
+- name: Phylogenetics
+  icon: 
+- name: Protein modeling
+  icon: 
+- name: Genomic data management
+  icon: 

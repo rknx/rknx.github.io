@@ -1,0 +1,24 @@
+- name: Dr. Jeffrey B. Jones
+  email: jbjones@ufl.edu
+  title: Distinguished professor
+  dept: University of Florida
+  univ: Department of Plant Pathology
+  profile: //plantpath.ifas.ufl.edu/people/faculty-pages/jeff-jones/
+- name: Dr. Erica M. Goss
+  email: emgoss@ufl.edu
+  title: Associate professor
+  dept: Department of Plant Pathology
+  univ: University of Florida
+  profile: //plantpath.ifas.ufl.edu/people/faculty-pages/erica-goss/
+- name: Dr. Samuel F. Hutton
+  email: sfhutton@ufl.edu
+  title: Associate professor
+  dept: Gulf Coast Research and Education Center
+  univ: University of Florida
+  profile: //gcrec.ifas.ufl.edu/gcrec-facultystaff-directory/samuel-hutton/
+- name: Dr. Gary Vallad
+  email: gvallad@ufl.edu
+  title: Professor
+  dept: Gulf Coast Research and Education Center
+  univ: University of Florida
+  profile: //gcrec.ifas.ufl.edu/gcrec-facultystaff-directory/gary-vallad/

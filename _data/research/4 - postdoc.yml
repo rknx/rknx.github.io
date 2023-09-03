@@ -1,0 +1,17 @@
+position: Postdoctoral Research Associate
+startyear: 2021
+endyear: 2023
+address: Gainesville, FL 32611, USA
+org: University of Florida
+orglink: https://ufl.edu/
+dept: Department of Plant Pathology
+deptlink: https://plantpath.ifas.ufl.edu/
+pi-term: Supervisor
+pi: Dr. Erica M. Goss and Dr. Jeffrey B. Jones
+projects:
+  - title: Fine-mapping of recessive bacterial spot resistances in pepper.
+  - title: Estimating bacterial mutation rate over host growing season.
+  - title: Understanding fitness cost of a bacteriocin gene.
+  - title: Estimation of bacterial recombination rate over host growing season.
+  - title: Characterization of novel *Xanthomonas* effectors, XopJ2b and XopAZ.
+  - title: Intercontinental dissemination and diversification of *Xanthomonas*.

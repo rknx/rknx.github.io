@@ -1,0 +1,40 @@
+title: Transcriptomic analysis of changes in *Citrus × microcarpa* gene expression post *Xanthomonas citri* subsp. *citri* infection
+type: Research article
+authors:
+  - Sharma A
+  - Ference CM
+  - Shantharaj D
+  - Baldwin EA
+  - Manthey JA
+  - Jones JB
+published: yes
+journal: European Journal of Plant Pathology
+book:
+thumb: citrus.png
+year: 2022
+volume: 162
+issue: 1
+pages: 163-181
+links:
+  - name: Journal
+    link: link.springer.com/article/10.1007/s10658-021-02394-6
+  - name: Crossref
+    link: 10.1007/s10658-021-02394-6
+  - name: Pubmed
+    link:
+  - name: GScholar
+    link: 413970498405773641
+  - name: ResearchGate
+    link: 355147854
+summary: 
+citebib: |
+  @article{10.1007/s10658-021-02394-6,
+    TITLE =   {Transcriptomic analysis of changes in \textit{Citrus}$\times$ \textit{microcarpa} gene expression post \textit{Xanthomonas citri} subsp. \textit{citri} infection},
+    AUTHOR =  {Sharma, Anuj and Ference, Christopher M. and Shantharaj, Deepak and Baldwin, Elizabeth A. and Manthey, John A. and Jones, Jeffrey B.}
+    JOURNAL = {European Journal of Plant Pathology}
+    VOLUME =  {162}
+    NUMBER =  {1}
+    PAGES =   {163--181}
+    YEAR =    {2022}
+    DOI =     {10.1007/s10658-021-02394-6}
+  }

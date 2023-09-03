@@ -1,0 +1,37 @@
+---
+layout: base
+---
+
+<style>
+    .page-img{
+        width: 100%;
+        aspect-ratio: 2/1;
+        background-size: cover;
+    }
+
+    aside{
+        margin-bottom: 36px;
+    }
+</style>
+
+{% include sidebar.md %}
+
+{%- if page.thumb -%}
+<div class="page-img" style="{{ page.thumb | prepend:'background-image: url(/assets/img/blog/' | append: ');' }}"></div>
+{%- endif -%}
+
+<main>
+
+    <article class="post-one">
+
+        <h3>{{page.title}}</h3>
+
+        <aside>{{page.date | date: "%B %-d, %Y"}} • {{ page.tag | capitalize }}</aside>
+        
+        {{ content }}
+
+    </article>
+    
+</main>
+
+{% include footer.md %}

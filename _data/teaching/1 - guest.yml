@@ -1,0 +1,32 @@
+id: Guest lectures
+list:
+  - title: Intro to linux, sequence alignment and phylogenetics
+    course: Applied Population Genetic Analysis of Microbes
+    year: 2021-2022
+    org: University of Florida
+    location: Gainesville, FL 32611, USA
+  - title: Epidemiology
+    course: Bacterial Plant Pathogens
+    year: 2021-2022
+    org: University of Florida
+    location: Gainesville, FL 32611, USA
+  - title: Dissemination, Survival, and Ingress
+    course: Bacterial Plant Pathogens
+    year: 2021-2022
+    org: University of Florida
+    location: Gainesville, FL 32611, USA
+  - title: Spatio-temporal Dispersal Modeling
+    course: Leveraging AI in Plant Pathology
+    year: 2021
+    org: University of Florida
+    location: Gainesville, FL 32611, USA
+  - title: Stramenopiles
+    course: Fungal Plant Pathogens
+    year: 2021
+    org: University of Florida
+    location: Gainesville, FL 32611, USA
+  - title: Identification of Bacteria
+    course: Bacterial Plant Pathogens
+    year: 2021
+    org: University of Florida
+    location: Gainesville, FL 32611, USA

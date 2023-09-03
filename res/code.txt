@@ -1,0 +1,2 @@
+mkdir -p resized
+composite -gravity southeast -geometry +3+3 \( sign3.png -resize 81x60 \) \(figure.png -resize 640x320\> \) resized/figure.png

@@ -1,0 +1,42 @@
+fname: Anuj
+lname: Sharma
+avatar: avatar.png
+job: Tomato Geneticist
+position: Assistant Professor
+dept: Horticultural Sciences department
+dept_url: "//hos.ifas.ufl.edu/"
+inst: Gulf Coast Research and Education Center
+inst_url: "//gcrec.ifas.ufl.edu/"
+org: University of Florida
+org_url: "//ufl.edu/"
+research: genetic and genomic strategies for improvement of tomato crop
+researchlist:
+  - identification and genetic mapping of disease resistance
+  - development of genomic tools and pipelines
+motivation: ""
+jobplus:
+  - Agroculturist
+  - Phytopathologist
+  - Bioinformatician
+  - Epidemiologist
+links:
+  - icon: phone
+    text: +1 352-213-7190
+    link: "tel:+13522137190"
+  - icon: website
+    text: anujs.com.np
+    link: "//anujs.com.np"
+  - icon: email
+    text: rknx@outlook.com
+    link: "mailto:rknx@outlook.com"
+  - icon: linkedin
+    text: sharmaan
+    link: //www.linkedin.com/in/sharmaan/
+  - icon: location
+    text: Gainesville, FL
+    link: 
+  - icon: relocate
+    text: relocate globally✓
+    link:
+
+  

@@ -1,0 +1,48 @@
+title: "Mapping of the *bs5* and *bs6* non-race-specific recessive resistances against bacterial spot of pepper"
+type: Research article
+authors: 
+  - Sharma A
+  - Li J
+  - Wente R
+  - Minsavage GV
+  - Gill US
+  - Ortega A
+  - Eduardo C
+  - Hart JP
+  - Staskawicz B
+  - Mazourek M
+  - Stall RE
+  - Jones JB
+  - Hutton SF
+published: yes
+journal: Frontiers in Plant Science
+book:
+thumb: frontiers.png
+year: 2023
+volume: 14
+issue: 1061803
+pages:
+links:
+  - name: Journal
+    link: frontiersin.org/articles/10.3389/fpls.2023.1061803
+  - name: Crossref
+    link: 10.3389/fpls.2023.1061803
+  - name: Pubmed
+    link: 37275256
+  - name: GScholar
+    link: 9566704955807809514
+  - name: ResearchGate
+    link: 363906406
+summary: 
+citebib: |
+  @article{doi:10.3389/fpls.2023.1061803,
+    author =  {Sharma, Anuj and Li, Jian and Wente, Rebecca and Minsavage, Gerald V. and Gill, Upinder S. and Ortega, Arturo and Vallejos, C. Eduardo and Hart, John P. and Staskawicz, 
+    Brian J. and Mazourek, Michael R. and Stall, Robert E. and Jones, Jeffrey B. and Hutton, Samuel F.},
+    title =   {Mapping of the bs5 and bs6 non-race-specific recessive resistances against bacterial spot of pepper},
+    journal = {Frontiers in Plant Science},
+    volume =  {14},
+    number =  {1061803},
+    pages =   {null},
+    year =    {2023},
+    doi =     {10.3389/fpls.2023.1061803}
+  }

@@ -1,0 +1,39 @@
+- id: intro
+  name: Introduction
+  nav: false
+- id: education
+  name: Education
+  nav: true
+- id: awards
+  name: Awards
+  nav: true
+# - id: skills
+#   name: Skills
+#   nav: true
+- id: research
+  name: Research Experience
+  nav: true
+- id: teaching
+  name: Teaching Experience
+  nav: true
+- id: affiliations
+  name: Affiliations
+  nav: true
+- id: projects
+  name: Projects
+  nav: true
+- id: publications
+  name: Publications
+  nav: true
+- id: conference
+  name: Conference Presentations
+  nav: true
+- id: posters
+  name: Conference posters
+  nav: true
+# - id: references
+#   name: References
+#   nav: true
+# - id: contact
+#   name: Contact
+#   nav: true

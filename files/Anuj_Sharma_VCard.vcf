@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:4.0
+PRODID:-//Anuj Sharma//anujs.com.np//EN
+N:Sharma;Anuj;;Dr.;
+FN:Dr. Anuj Sharma
+NICKNAME:AJ
+EMAIL:anujsharma@ufl.edu
+ORG:University of Florida
+TITLE:Postdoctoral Associate
+TEL:TYPE=cell:+1 (352) 213-7190
+TZ:America/New_York
+URL;type=pref:https://anujs.com.np/
+ADR:;2550 Hull Rd;;Gainesville;FL;32611;USA
+URL:https://www.linkedin.com/in/sharmaan/
+URL:https://twitter.com/Rknx
+URL:https://scholar.google.com/citations?user=R9Ry2RQAAAAJ
+END:VCARD

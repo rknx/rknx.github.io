@@ -1,0 +1,38 @@
+title: Recent advances in developing disease resistance in plants.
+type: Review paper
+authors:
+  - "**Sharma A**"
+  - Jones JB
+  - White FF
+published: yes
+journal: F1000Research
+book:
+thumb: advances.png
+year: 2019
+volume: 8
+issue:
+pages: 1934
+links:
+  - name: Journal
+    link: f1000research.com/articles/8-1934/v1
+  - name: Crossref
+    link: 10.12688/f1000research.20179.1
+  - name: Pubmed
+    link: 31807281
+  - name: GScholar
+    link: 2585639250438679023
+  - name: ResearchGate
+    link: 337378582
+summary: 
+citebib: |
+  @article{10.12688/f1000research.20179.1,
+    AUTHOR =  {Sharma, Anuj and Jones, Jeffrey B. and White, Frank F.},
+    TITLE =   {Recent advances in developing disease resistance in plants [version 1; peer review: 2 approved]},
+    JOURNAL = {F1000Research},
+    VOLUME =  {8},
+    YEAR =    {2019},
+    NUMBER =  {1934},
+    PAGES =   {1-8},
+    DOI =     {10.12688/f1000research.20179.1}
+  }
+
