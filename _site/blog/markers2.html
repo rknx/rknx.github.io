@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <!-- Basic things -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site information -->
+    <title>Anuj Sharma | Find CAPS sites for genotyping with marker.sh</title>
+    <meta name="Description" content="Online Curriculum Vitae of Anuj Sharma" />
+
+    <!--Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo-dark.svg" media="(prefers-color-scheme: dark)" />
+    
+    <!-- Main font preload -->
+    <link rel="preload" href="/assets/fonts/regu.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/main.css">
+    
+</head><body>
+
+    <style>
+    .page-img{
+        width: 100%;
+        aspect-ratio: 2/1;
+        background-size: cover;
+    }
+
+    aside{
+        margin-bottom: 36px;
+    }
+</style>
+
+<style>
+    nav {
+        padding: 10px 10px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+        gap: 10px;
+        border-bottom: 2px solid var(--text_color);
+    }
+    nav > div {
+        display: flex;
+        flex: 1 0 50px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+    nav > div > p {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 4px 10px !important;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 600;
+        font-variation-settings: 'wght' 600;
+        cursor: pointer;
+        margin: 0;
+        gap: 4px;
+    }
+    nav > div > p > svg {
+        width: 1rem;
+        height: 1.2rem;
+        fill: var(--text_color);
+    }
+    nav > div > p:hover > svg {
+        fill: var(--select);
+    }
+
+</style>
+
+
+<nav markdown=1>
+
+
+<style>
+.switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: flex-end;
+    align-self: flex-end;
+    gap: 1rem;
+}
+
+nav > .switch {
+    flex-direction: row;
+    align-self: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+}
+    
+.theme-switch {
+  display: flex;
+  padding: 4px;
+  flex: 0 0 50px;
+  flex-direction: column;
+  border: solid 2px var(--text_color);
+  border-radius: 24px;
+  background-color: #555;
+}
+    
+.switch:before {
+  content:'Light';
+}
+    
+.switch:after {
+  content:'Dark';
+}
+
+.theme-switch > input#theme {
+  display:none;
+}
+
+.theme-switch > .slider {
+  /* background-color: var(--text_color);*/
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .3s;
+  align-self: flex-start;
+}
+
+input#theme:checked + .slider {
+  align-self: flex-end;
+}
+
+input#theme + .slider {
+  background-color: #fffba9;
+  border: 2px solid #f6eb72;
+}
+
+input#theme:checked + .slider {
+  background-color: #ffffff;
+  border: 2px solid #e8e8ea;
+}
+
+</style>
+<div class="switch">
+    <label class="theme-switch" for="theme">
+        <input type="checkbox" id="theme" />
+        <div class="slider"></div>
+    </label>
+</div>
+<script>
+    // initial theme toggle
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.querySelector(':root').classList.add("dark");
+        document.querySelector('#theme').checked = true;
+    };
+    // toggle by button
+    document.querySelector('#theme').addEventListener('change', (e) => {
+        if (e.currentTarget.checked) {
+            document.querySelector(':root').classList.add("dark");
+        } else {
+            document.querySelector(':root').classList.remove("dark");
+        }
+    })
+</script>
+
+<div>
+
+<p onclick="location.href = '/'"><svg><use xlink:href="/assets/img/icons.svg#angle-right"></use></svg>Home</p>
+
+<p onclick="location.href = '/blog'"><svg><use xlink:href="/assets/img/icons.svg#angle-right"></use></svg>Blog</p>
+
+</div>
+
+</nav><div class="page-img" style="background-image: url(/assets/img/blog/restriction.png);"></div><main>
+
+    <article class="post-one">
+
+        <h3>Find CAPS sites for genotyping with marker.sh</h3>
+
+        <aside>August 14, 2022 • Genomics</aside>
+        
+        <p>Jekyll also offers powerful support for code snippets2:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"hi"</span>
+</code></pre></div></div>
+
+
+    </article>
+    
+</main>
+
+<style>
+    #footer{
+        display: flex;
+        flex-direction: row;
+        margin-top: 3em;
+        border-top: 2px solid var(--text_color);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap:10px;
+    }
+
+    #footer > p {
+        cursor:pointer;
+    }
+
+    #footer > p > svg {
+        width: 1rem;
+        height: 1rem;
+        fill: var(--text_color);
+    }
+
+</style>
+
+<section id="footer" markdown="1">
+
+
+
+<p onclick="window.open('#')">
+    <svg><use xlink:href="/assets/img/icons.svg#copyright"></use></svg>
+    <span>2022 Anuj Sharma</span>
+</p>
+
+
+
+<p onclick="window.open('//www.github.com/rknx/rknx.github.io')">
+    <svg><use xlink:href="/assets/img/icons.svg#github"></use></svg>
+    <span>Hosted on Github</span>
+</p>
+
+
+
+<p onclick="window.open('//www.netlify.com')">
+    <svg><use xlink:href="/assets/img/icons.svg#netlify"></use></svg>
+    <span>Deploys by Netlify</span>
+</p>
+
+
+
+</section>
+
+  
+    <script src="/assets/js/main.js"></script>
+  
+  </body>
+
+</html>

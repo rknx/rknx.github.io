@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <!-- Basic things -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site information -->
+    <title>Anuj Sharma | CV</title>
+    <meta name="Description" content="Online Curriculum Vitae of Anuj Sharma" />
+
+    <!--Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icons/logo-dark.svg" media="(prefers-color-scheme: dark)" />
+    
+    <!-- Main font preload -->
+    <link rel="preload" href="/assets/fonts/regu.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/main.css">
+    
+</head><body>
+
+    <style>
+    .menu-open {
+    width: 10rem;
+    height: 10rem;
+    top: -5rem;
+    left: -5rem;
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 900;
+    transition: all 0.5s ease;
+  }
+  
+  @media only screen and (min-width: 1280px) {
+    .menu-open {
+      display: none;
+    }
+  }
+  
+  @media (hover: hover) {
+    .menu-open:hover {
+      background-color:rgba(var(--back_color_fmt_rev), var(--transparency));
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  
+  .menu-open svg {
+    height: 3rem;
+    width: 3rem;
+    margin: calc(50% + 5px) 0 0 calc(50% + 5px);
+    position: absolute;
+  }
+  
+  .menu-open svg path {
+    --length: 24;
+    --offset: -38;
+    fill: none;
+    stroke: var(--text_color);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: var(--length) var(--total-length);
+    stroke-dashoffset: var(--offset);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  /* -- setting for bezier animation --*/
+  
+  @media (hover: hover) {
+    .menu-open:hover svg path {
+      /*stroke: var(--text_color_rev);*/
+    }
+  }
+  
+  .menu-open svg path {
+    --total-length: 126.64183044433594;
+  }
+  
+  input#menu:checked ~ .menu-open svg path {
+    --length: 22.627416998;
+    --offset: -94.1149185097;
+  }
+  
+  .menu-open svg path:nth-child(2) {
+    --total-length: 70;
+  }
+  
+  input#menu:checked ~ .menu-open svg path:nth-child(2) {
+    --length: 0;
+    --offset: -50;
+  }
+</style>
+
+<input id="menu" type="checkbox" style="display: none;">
+
+<label class="menu-open noprint" for="menu">
+    <svg viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M0 40h62c13 0 6 28-4 18L35 35"/><path d="M0 50h70"/><path d="M0 60h62c13 0 6-28-4-18L35 65"/></svg>
+</label>
+<style>
+    .side-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 90%;
+        min-width: 280px;
+        overflow: hidden;
+        clip-path: circle(5rem at 0 0px);
+        -webkit-clip-path: circle(5rem at 0 0px);
+        transition: clip-path 0.5s ease-in-out;
+        background-color: rgba(var(--back_color_fmt_rev), var(--transparency));
+        padding: 64px 50px 25px;
+        z-index: 888;
+        backdrop-filter: var(--backdrop);
+        -webkit-backdrop-filter: var(--backdrop);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: var(--shadow);
+        pointer-events: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+    }
+    
+    input#menu:checked ~ .side-menu {
+        clip-path: circle(150% at 0 0px);
+        -webkit-clip-path: circle(150% at 0 0px);
+        pointer-events: visible;
+    }
+    
+    .side-menu:focus-within {
+        clip-path: circle(150% at 0 0px);
+        -webkit-clip-path: circle(150% at 0 0px);
+        pointer-events: visible;
+    }
+    
+    @media only screen and (min-width: 480px) {
+        .side-menu {
+        width: 250px;
+        padding: 64px 25px 25px;
+        }
+    }
+    
+    .side-menu::-webkit-scrollbar {
+        display: none;
+    }
+    
+    @media only screen and (min-width: 1280px) {
+        .side-menu {
+        clip-path: circle(150%);
+        -webkit-clip-path: circle(150% at 0 0px);
+        pointer-events: visible;
+        padding: 25px;
+        }
+    }
+    
+    @media only screen and (max-width: 1279px) {
+        input#menu:not(:checked) ~ .side-menu > * {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out 0.3s;
+        }
+    }
+
+</style>
+
+<div class="side-menu">
+
+  <style>
+.switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: flex-end;
+    align-self: flex-end;
+    gap: 1rem;
+}
+
+nav > .switch {
+    flex-direction: row;
+    align-self: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+}
+    
+.theme-switch {
+  display: flex;
+  padding: 4px;
+  flex: 0 0 50px;
+  flex-direction: column;
+  border: solid 2px var(--text_color);
+  border-radius: 24px;
+  background-color: #555;
+}
+    
+.switch:before {
+  content:'Light';
+}
+    
+.switch:after {
+  content:'Dark';
+}
+
+.theme-switch > input#theme {
+  display:none;
+}
+
+.theme-switch > .slider {
+  /* background-color: var(--text_color);*/
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .3s;
+  align-self: flex-start;
+}
+
+input#theme:checked + .slider {
+  align-self: flex-end;
+}
+
+input#theme + .slider {
+  background-color: #fffba9;
+  border: 2px solid #f6eb72;
+}
+
+input#theme:checked + .slider {
+  background-color: #ffffff;
+  border: 2px solid #e8e8ea;
+}
+
+</style>
+
+  <div class="switch">
+    <label class="theme-switch" for="theme">
+        <input type="checkbox" id="theme" />
+        <div class="slider"></div>
+    </label>
+</div>
+  <script>
+    // initial theme toggle
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.querySelector(':root').classList.add("dark");
+        document.querySelector('#theme').checked = true;
+    };
+    // toggle by button
+    document.querySelector('#theme').addEventListener('change', (e) => {
+        if (e.currentTarget.checked) {
+            document.querySelector(':root').classList.add("dark");
+        } else {
+            document.querySelector(':root').classList.remove("dark");
+        }
+    })
+</script>
+
+  <style>
+    .side-menu > nav {
+        padding: 10px 0px;
+        display: flex;
+        flex: 1 0 500px; /*for iphone!*/
+        flex: 1 0 50%;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        overflow: hidden;
+        gap: 4px;
+    }
+    .side-menu > nav > p {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 4px 10px !important;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 600;
+        font-variation-settings: 'wght' 600;
+        cursor: pointer;
+        margin: 0;
+        box-shadow: 0 0 1px 0;
+        gap: 4px;
+    }
+    .side-menu > nav > p > svg {
+        width: 1rem;
+        height: 1.2rem;
+        fill: var(--text_color);
+    }
+    .side-menu > nav > p:hover > svg {
+        fill: var(--select);
+    }
+
+</style>
+
+  <nav>
+
+    <p onclick="scrollSmoothTo('education')"><svg><use xlink:href="assets/img/icons.svg#angle-right"></use></svg>Education</p>
+
+    <p onclick="scrollSmoothTo('awards')"><svg><use xlink:href="assets/img/icons.svg#angle-right"></use></svg>Awards</p>
+
+    <p onclick="scrollSmoothTo('research')"><svg><use xlink:href="assets/img/icons.svg#angle-right"></use></svg>Research Experience</p>
+
+    <p onclick="scrollSmoothTo('teaching')"><svg><use xlink:href="assets/img/icons.svg#angle-right"></use></svg>Teaching Experience</p>
+
+    <p onclick="scrollSmoothTo('affiliations')"><svg><use xlink:href="assets/img/icons.svg#angle-right"></use></svg>Affiliations</p>
+
+    <p onclick="scrollSmoothTo('projects')"><svg><use xlink:href="assets/img/icons.svg#angle-right"></use></svg>Projects</p>
+
+    <p onclick="scrollSmoothTo('publications')"><svg><use xlink:href="assets/img/icons.svg#angle-right"></use></svg>Publications</p>
+
+    <p onclick="scrollSmoothTo('conference')"><svg><use xlink:href="assets/img/icons.svg#angle-right"></use></svg>Conference Presentations</p>
+
+    <p onclick="scrollSmoothTo('posters')"><svg><use xlink:href="assets/img/icons.svg#angle-right"></use></svg>Conference posters</p>
+
+  </nav>
+
+  <script>
+    function scrollSmoothTo(elementId) {
+        document.getElementById(elementId).scrollIntoView({
+            block: 'start',
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+  <style>
+
+    .res-buttons {
+        display: flex;
+        margin-top: auto;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .res-buttons > p {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+        margin:0;
+        padding: 8px 1px;
+        border: 1px solid var(--text_color);
+        border-radius: 5px;
+    }
+
+    .side-menu > .res-buttons {
+        padding-top: 20px;
+    }
+
+    .side-menu > .res-buttons > p {
+        width: 48%;
+    }
+
+    .res-buttons > p > span {
+        font-weight: 700;
+        font-variation-settings: 'wght' 700;
+        font-optical-sizing: auto;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .side-menu > .res-buttons > p > span {
+        font-size: 0.6rem;
+    }
+
+    .res-buttons > p > svg {
+        width: 1.3rem;
+        height: 1.3rem;
+        fill: var(--text_color);
+        margin-bottom: 4px;
+    }
+
+    .res-buttons > p:hover > svg {
+        fill: var(--select);
+    }
+</style>
+
+  <div class="res-buttons">
+
+    <p onclick="window.open('/files/Anuj_Sharma_Curriculum_Vitae.pdf')">
+    <svg><use xlink:href="/assets/img/icons.svg#file-pdf"></use></svg>
+    <span>Download CV</span>
+</p>
+
+    <p onclick="window.open('/files/mailto:rknx@outlook.com')">
+    <svg><use xlink:href="/assets/img/icons.svg#envelope"></use></svg>
+    <span>Send an email</span>
+</p>
+
+  </div>
+
+</div>
+
+<main>
+
+
+
+
+
+
+
+<style>
+    img.avatar {
+        border-radius: 50%;
+        width: 280px;
+        max-width: 80%;
+        aspect-ratio: 1/1;
+        outline: 10px solid #007572;
+        margin-top: 20px;
+    }
+
+    h1 > strong, h2 > strong, p > strong {
+        font-weight: 700;
+        font-variation-settings: 'wght' 700;
+    }
+</style>
+
+<img class="avatar" src="/assets/img/intro/avatar.png" />
+
+<h1> 
+Hi, I'm Anuj Sharma!
+</h1> 
+
+<h2>
+I'm a <strong><strong>Tomato Geneticist</strong></strong>.
+</h2>
+
+<p>
+    I am an
+    <strong><strong>Assistant Professor</strong></strong> 
+    at the
+    <strong><a href="//ufl.edu/" target="_self"><strong><a href="//ufl.edu/" target="_self">University of Florida</a></strong></a></strong>
+    <strong><a href="//hos.ifas.ufl.edu/" target="_self"><strong><a href="//hos.ifas.ufl.edu/" target="_self">Horticultural Sciences department</a></strong></a></strong>
+    and my lab is positioned at the
+    <strong><a href="//gcrec.ifas.ufl.edu/" target="_self"><strong><a href="//gcrec.ifas.ufl.edu/" target="_self">Gulf Coast Research and Education Center</a></strong></a></strong>. 
+    My research focuses on genetic and genomic strategies for improvement of tomato crop. 
+    Among other things, I am working on 
+    identification and genetic mapping of disease resistance, and development of genomic tools and pipelines.
+
+</p>
+
+
+
+
+
+
+
+<section id="education">
+
+    <h3> Education </h3>
+
+    <h4>
+
+    <span>PhD in Plant Pathology</span>
+    <span>2021</span>
+
+</h4>
+
+    <h5> 
+
+    <span>
+        <a href="//ufl.edu" target="_self">University of Florida</a>, 
+        <a href="//plantpath.ifas.ufl.edu" target="_self">Department of Plant Pathology</a>
+    </span>
+
+</h5>
+
+    <h4>
+
+    <span>BS in Agriculture</span>
+    <span>2016</span>
+
+</h4>
+
+    <h5> 
+
+    <span>
+        <a href="//tu.edu.np" target="_self">Tribhuvan University</a>, 
+        <a href="//www.iaas.edu.np" target="_self">Institute of Agriculture and Animal Science</a>
+    </span>
+
+</h5>
+
+  </section>
+
+
+
+
+
+
+
+<section id="awards">
+
+<h3> Awards </h3>
+
+
+
+<h4>
+    <span>Early career award</span>
+    <span>2022</span>
+</h4>
+
+
+
+<h5>
+<span>
+7th <em>Xanthomonas</em> Genomics Conference
+
+</span>
+</h5>
+
+
+
+
+
+<h4>
+    <span>Graduate school preeminenece fellowship</span>
+    <span>2017</span>
+</h4>
+
+
+
+<h5>University of Florida, Department of Plant Pathology
+</h5>
+
+
+
+
+
+<h4>
+    <span>Merit scholarship</span>
+    <span>2013</span>
+</h4>
+
+
+
+<h5>Tribhuvan University, Institute of Agriculture and Animal Science
+</h5>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<style>
+    ul.research-projects > li {
+        list-style-type: '→ ';
+    }
+    ul.research-projects > li::marker {
+        font-family: Code;
+        font-variant-ligatures: common-ligatures;
+    }
+    #research > h5 > span > a > svg {
+        width: 1rem;
+        height: 1rem;
+        margin-left: 0.3rem;
+        fill: var(--text_color);
+    }
+</style>
+
+<section id="research">
+
+    <h3>
+    Research Experience
+</h3>
+
+    <h4>
+
+    <span>Assistant Professor</span>
+
+    <span>2023-Present</span>
+
+</h4>
+
+    <h5>
+
+<span>
+
+University of Florida<a href="https://ufl.edu/" target="_blank"><svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg></a>, Gulf Coast Research and Education Center<a href="https://gcrec.ifas.ufl.edu/" target="_blank"><svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg></a>
+
+</span>
+
+</h5>
+
+    <ul class="research-projects">
+
+
+
+<li> <p>Mapping of <em>bs9</em> resistance against <em>Xanthomonas gardneri</em>.</p>
+ </li>
+
+
+
+</ul>
+
+    <h4>
+
+    <span>Postdoctoral Research Associate</span>
+
+    <span>2021-2023</span>
+
+</h4>
+
+    <h5>
+
+<span>
+
+University of Florida<a href="https://ufl.edu/" target="_blank"><svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg></a>, Department of Plant Pathology<a href="https://plantpath.ifas.ufl.edu/" target="_blank"><svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg></a>
+
+</span>
+
+</h5>
+
+    <ul class="research-projects">
+
+
+
+<li> <p>Fine-mapping of recessive bacterial spot resistances in pepper.</p>
+ </li>
+
+
+
+<li> <p>Estimating bacterial mutation rate over host growing season.</p>
+ </li>
+
+
+
+<li> <p>Understanding fitness cost of a bacteriocin gene.</p>
+ </li>
+
+
+
+<li> <p>Estimation of bacterial recombination rate over host growing season.</p>
+ </li>
+
+
+
+<li> <p>Characterization of novel <em>Xanthomonas</em> effectors, XopJ2b and XopAZ.</p>
+ </li>
+
+
+
+<li> <p>Intercontinental dissemination and diversification of <em>Xanthomonas</em>.</p>
+ </li>
+
+
+
+</ul>
+
+    <h4>
+
+    <span>Graduate Research Assistant</span>
+
+    <span>2017-2021</span>
+
+</h4>
+
+    <h5>
+
+<span>
+
+University of Florida<a href="https://ufl.edu/" target="_blank"><svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg></a>, Department of Plant Pathology<a href="https://plantpath.ifas.ufl.edu/" target="_blank"><svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg></a>
+
+</span>
+
+</h5>
+
+    <ul class="research-projects">
+
+
+
+<li> <p>Effect of <em>XopJ2</em> in <em>Xanthomonas perforans</em> ingress and egress.</p>
+ </li>
+
+
+
+<li> <p>Understanding transcriptomic changes in citrus due to <em>Xanthomonas citri</em> infection.</p>
+ </li>
+
+
+
+<li> <p>Study of mutation rate of <em>Xanthomonas</em> TAL effectors.</p>
+ </li>
+
+
+
+<li> <p>Modeling the dispersal of <em>Xanthomonas perforans</em> in field and greenhouse.</p>
+ </li>
+
+
+
+<li> <p>Understanding the role effector <em>XopJ2</em> in spread of <em>Xanthomonas perforans</em>.</p>
+ </li>
+
+
+
+<li> <p>Mapping of novel bacterial spot resistance genes in pepper.</p>
+ </li>
+
+
+
+</ul>
+
+    <h4>
+
+    <span>Research Intern</span>
+
+    <span>2016-2017</span>
+
+</h4>
+
+    <h5>
+
+<span>
+
+Nepal Agriculture Research Council<a href="https://narc.gov.np/" target="_blank"><svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg></a>, Horticulture Research Station<a href="https://narc.gov.np/horticulture-research-station-malepatan-kaski/" target="_blank"><svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg></a>
+
+</span>
+
+</h5>
+
+    <ul class="research-projects">
+
+
+
+<li> <p>National coordinated varietal trials of several vegetable crops.</p>
+ </li>
+
+
+
+<li> <p>Evaluation of various coffee rust biocontrol strategies.</p>
+ </li>
+
+
+
+<li> <p>Resistance breeding against late blight resistance in tomato.</p>
+ </li>
+
+
+
+</ul>
+
+    <h4>
+
+    <span>Undergrad Research Assistant</span>
+
+    <span>2015-2016</span>
+
+</h4>
+
+    <h5>
+
+<span>
+
+Tribhuvan University, Plant Pathology Department
+
+</span>
+
+</h5>
+
+    <ul class="research-projects">
+
+
+
+<li> <p>Screening finger millet accessions for blast resistance.</p>
+ </li>
+
+
+
+<li> <p>Disease diagnosis for plant diagnostic clinic.</p>
+ </li>
+
+
+
+</ul>
+
+  </section>
+
+
+
+
+
+
+
+
+<style>
+    
+</style>
+
+<section id="teaching">
+
+    <h3>
+    Teaching Experience
+</h3>
+
+    <h4>
+
+Guest lectures
+
+</h4>
+
+    <h5>
+
+Intro to linux, sequence alignment and phylogenetics
+
+<span> 2021-2022 </span>
+
+</h5>
+
+    <h6>In: Applied Population Genetic Analysis of Microbes</h6>
+
+    <h5>
+
+Epidemiology
+
+<span> 2021-2022 </span>
+
+</h5>
+
+    <h6>In: Bacterial Plant Pathogens</h6>
+
+    <h5>
+
+Dissemination, Survival, and Ingress
+
+<span> 2021-2022 </span>
+
+</h5>
+
+    <h6>In: Bacterial Plant Pathogens</h6>
+
+    <h5>
+
+Spatio-temporal Dispersal Modeling
+
+<span> 2021 </span>
+
+</h5>
+
+    <h6>In: Leveraging AI in Plant Pathology</h6>
+
+    <h5>
+
+Stramenopiles
+
+<span> 2021 </span>
+
+</h5>
+
+    <h6>In: Fungal Plant Pathogens</h6>
+
+    <h5>
+
+Identification of Bacteria
+
+<span> 2021 </span>
+
+</h5>
+
+    <h6>In: Bacterial Plant Pathogens</h6>
+
+    <h4>
+
+Teaching assistant
+
+</h4>
+
+    <h5>
+
+Fungal Plant Pathogens
+
+<span> 2021 </span>
+
+</h5>
+
+    <h5>
+
+Bacterial Plant Pathogens
+
+<span> 2021 </span>
+
+</h5>
+
+    <h5>
+
+General Plant Pathology
+
+<span> 2019 </span>
+
+</h5>
+
+    <h4>
+
+Workshops
+
+</h4>
+
+    <h5>
+
+Basic Bioinformatics in Plant Pathology
+
+<span> 2020-2021 </span>
+
+</h5>
+
+    <h6>In: Plant Health meeting</h6>
+
+    <h5>
+
+Web design for Agribusiness
+
+<span> 2017 </span>
+
+</h5>
+
+    <h6>In: USAID Youth in Agriculture Bootcamp</h6>
+
+    <h4>
+
+Training of trainers
+
+</h4>
+
+    <h5>
+
+JTA work experience program
+
+<span> 2017 </span>
+
+</h5>
+
+  </section>
+
+
+
+
+
+
+
+
+<style>
+
+</style>
+
+<section id="affiliations">
+
+    <h3> Affiliations </h3>
+
+    <h4> American Society for Advancement of Science </h4>
+
+    <h5>
+    <span> Member </span>
+    <span>
+        2020-Present
+    </span>
+</h5>
+
+    <h4> American Phytopathological Society </h4>
+
+    <h5>
+    <span> Member </span>
+    <span>
+        2017-Present
+    </span>
+</h5>
+
+    <h5>
+    <span> Designer, Graduate Student Arts committee </span>
+    <span>
+        2019-2020
+    </span>
+</h5>
+
+    <h4> Florida Phytopathological Society </h4>
+
+    <h5>
+    <span> Member </span>
+    <span>
+        2017-Present
+    </span>
+</h5>
+
+    <h4> UF Plant Pathology Graduate Student Society </h4>
+
+    <h5>
+    <span> Treasurer </span>
+    <span>
+        2019-2020
+    </span>
+</h5>
+
+    <h5>
+    <span> Member, Outreach committee </span>
+    <span>
+        2017-2021
+    </span>
+</h5>
+
+    <h4> Agri-Youth Nepal </h4>
+
+    <h5>
+    <span> Founding member </span>
+    <span>
+        2014-2016
+    </span>
+</h5>
+
+  </section>
+
+
+
+
+
+
+
+<style>
+
+    .projects {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0 5px;
+    }
+
+    .projects > img {
+        align-self: center;
+        height: 240px;
+    }
+
+    /*
+        .projects {
+            display: block;
+        }
+        
+        .projects > img {
+            float: left;
+        }
+        
+        .parent + div {
+            clear: both;
+        }
+    */
+
+</style>
+
+<section id="projects">
+
+    <h3>Projects</h3>
+
+    <h4><span>Characterization of a volatile-induced bacteriocin<span></span></span></h4>
+
+    <div class="projects" markdowm="1">
+
+
+
+</div>
+
+    <h4><span>Phylogeography of <em>Xanthomonas perforans</em> and <em>X. gardneri</em><span></span></span></h4>
+
+    <div class="projects" markdowm="1">
+
+
+
+</div>
+
+    <h4><span>Characterizaton of novel <em>Xanthomonas</em> type III effectors<span></span></span></h4>
+
+    <div class="projects" markdowm="1">
+
+
+
+</div>
+
+    <h4><span>Mutation rate of TAL effectors<span></span></span></h4>
+
+    <div class="projects" markdowm="1">
+
+<img src="assets/img/projects/citrusmut.png" alt="" onerror="this.style.display=none" />
+
+
+
+</div>
+
+    <h4><span>Modeling dispersal of <em>Xanthomonas perforans</em><span></span></span></h4>
+
+    <div class="projects" markdowm="1">
+
+<img src="assets/img/projects/dispersal.png" alt="" onerror="this.style.display=none" />
+
+<p>Models were developed to predict the movement of <em>Xanthomons perforans</em> in the field and in green house based on weather condition and other factors. Of special interest was a type-3 effector gene <em>XopJ2</em> which seemed to provide fitness for dispersal. Effect of the gene was accessed in field studies and the mechanism of fitness is being studies in green house.</p>
+
+</div>
+
+    <h4><span>Mapping of resistance genes in pepper<span></span></span></h4>
+
+    <div class="projects" markdowm="1">
+
+<img src="assets/img/projects/mapping.png" alt="" onerror="this.style.display=none" />
+
+<p>Resistance genes against bacterial spot of pepper in PI163192 and UENF1381 were mapped. F2 population was developed by crossing with Early CalWonder variety. QTLs were mapped by bulked sequence analysis of whole genome sequences of resistance and susceptible bulks. HRM and CAPS markers were developed at target region and further fine-mapping was performed in backcross F2 populations.</p>
+
+</div>
+
+    <h4><span>Rust management strategy in organic coffee<span></span></span></h4>
+
+    <div class="projects" markdowm="1">
+
+<img src="assets/img/projects/coffeerust.png" alt="" onerror="this.style.display=none" />
+
+<p>23 coffee varieties from previous year’s multi-season trial were scored for incidence and severity of coffee leaf rust. Three varieties <strong>Catimor</strong>, <strong>Ketisic</strong> and <strong>San Roman</strong> performed best against coffee rust. Increased shading, increased spacing and removal of crop debris reduced incidence. Triadimefon was effective as control agent whereas the effect of <i>Verticillium lecanii</i> was inconsistent.</p>
+
+</div>
+
+    <h4><span>Breeding tomato for late blight tolerance<span></span></span></h4>
+
+    <div class="projects" markdowm="1">
+
+<img src="assets/img/projects/tombreed.png" alt="" onerror="this.style.display=none" />
+
+<p>NARC HRD breeding lines <strong>HRD-7</strong> and <strong>HRD-20</strong>, which showed tolerance to late blight, were crossed with other breeding lines to develop hybrid lines with late blight tolerance. The lines were evaluated in field trials against commercial variety <strong>Shrijana</strong>. Three hybrids (HRA-14 X HRD-7, HRA-20 X HRD-1, HRA-20 X HRD-2) showed high tolerance and were recommended for multi-location coordinated varietal trial.</p>
+
+</div>
+
+    <h4><span>Screening finger millet for blast resistance<span></span></span></h4>
+
+    <div class="projects" markdowm="1">
+
+<img src="assets/img/projects/blast.png" alt="" onerror="this.style.display=none" />
+
+<p>50 finger millet accession from National Agriculture Genetic Resources Center were screened for resistance against blast cause by <i>Magnaporthe grisea</i>. Plants were scored for disease severity, and AUDPC and DMRT was used for accessing level of resistance. 5 accessions showed moderate quantitative resistance and were recommended for further screening.</p>
+
+</div>
+
+  </section>
+
+
+
+
+
+
+
+<style>
+    .publications > div {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .publications > div > p {
+        font-family:'Code';
+        border: 1.25px solid;
+        border-radius: calc(1rem + 4px);
+        padding: 2px 5px;
+        cursor: pointer;
+        flex-direction:row;
+        margin:0;
+        align-items: center;
+    }
+    .publications > div > p > svg {
+        height: 1rem;
+        width: 1rem;
+        margin-left: 5px;
+        fill: var(--text_color);
+    }
+    
+    .publications > div > p > svg:nth-child(1) {
+        display: inline
+    }
+    
+    .publications > div > p > svg:nth-child(2) {
+        display: none
+    }
+
+    .publications > div > p.clicked {
+        background-color: #9952f6;
+    }
+    
+    .publications > div > p.clicked > svg:nth-child(1) {
+        display: none
+    }
+    
+    .publications > div > p.clicked > svg:nth-child(2) {
+        display: inline
+    }
+
+    .publications {
+        display:flex;
+        flex-direction: column;
+    }
+
+    .publications > img {
+        align-self: center;
+        height: 240px;
+    }
+
+    /*
+        .publications {
+            display: block;
+        }
+        
+        .publications > img {
+            float: left;
+        }
+        
+        .parent + div {
+            clear: both;
+        }
+    */
+
+
+</style>
+
+
+
+<section id="publications">
+
+    <h3>Publications</h3>
+
+    <h4><p>Mapping of the <em>bs5</em> and <em>bs6</em> non-race-specific recessive resistances against bacterial spot of pepper</p>
+</h4>
+
+    <div class="publications">
+
+<img src="assets/img/papers/frontiers.png" alt="" onerror="this.style.display=none" />
+      <p>
+Research article published in volume 14 of Frontiers in Plant Science in 2023.
+</p>
+
+      <div>
+
+        <p class="bt-pub" onclick="window.open('//frontiersin.org/articles/10.3389/fpls.2023.1061803')">
+Journal<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//doi.org/10.3389/fpls.2023.1061803')">
+Crossref<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//pubmed.ncbi.nlm.nih.gov/37275256')">
+Pubmed<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//scholar.google.com/scholar?cluster=9566704955807809514')">
+GScholar<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//www.researchgate.net/publication/363906406')">
+ResearchGate<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p data-bib="@article{doi:10.3389/fpls.2023.1061803,
+  author =  {Sharma, Anuj and Li, Jian and Wente, Rebecca and Minsavage, Gerald V. and Gill, Upinder S. and Ortega, Arturo and Vallejos, C. Eduardo and Hart, John P. and Staskawicz, 
+  Brian J. and Mazourek, Michael R. and Stall, Robert E. and Jones, Jeffrey B. and Hutton, Samuel F.},
+  title =   {Mapping of the bs5 and bs6 non-race-specific recessive resistances against bacterial spot of pepper},
+  journal = {Frontiers in Plant Science},
+  volume =  {14},
+  number =  {1061803},
+  pages =   {null},
+  year =    {2023},
+  doi =     {10.3389/fpls.2023.1061803}
+}
+" class="bib bt-pub">
+Bibtex<svg><use xlink:href="assets/img/icons.svg#copy"></use></svg><svg><use xlink:href="assets/img/icons.svg#done"></use></svg>
+</p>
+
+      </div>
+
+    </div>
+
+    <h4><p>Future of bacterial disease management in crop production</p>
+</h4>
+
+    <div class="publications">
+
+<img src="assets/img/papers/annualreview.png" alt="" onerror="this.style.display=none" />
+      <p>
+Review paper published in volume 60 of Annual Review of Phytopathology in 2022.
+</p>
+
+      <div>
+
+        <p class="bt-pub" onclick="window.open('//annualreviews.org/doi/abs/10.1146/annurev-phyto-021621-121806')">
+Journal<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//doi.org/10.1146/annurev-phyto-021621-121806')">
+Crossref<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//pubmed.ncbi.nlm.nih.gov/35790244')">
+Pubmed<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//scholar.google.com/scholar?cluster=6505983602200480882')">
+GScholar<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//www.researchgate.net/publication/61824352')">
+ResearchGate<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p data-bib="@article{doi:10.1146/annurev-phyto-021621-121806,
+  author =  {Sharma, Anuj and Abrahamian, Peter and Carvalho, Renato and Choudhary, Manoj and Paret, Mathews L. and Vallad, Gary E. and Jones, Jeffrey B.},
+  title =   {Future of bacterial disease management in crop production},
+  journal = {Annual Review of Phytopathology},
+  volume =  {60},
+  number =  {1},
+  pages =   {null},
+  year =    {2022},
+  doi =     {10.1146/annurev-phyto-021621-121806}
+}
+" class="bib bt-pub">
+Bibtex<svg><use xlink:href="assets/img/icons.svg#copy"></use></svg><svg><use xlink:href="assets/img/icons.svg#done"></use></svg>
+</p>
+
+      </div>
+
+    </div>
+
+    <h4><p>Identification and mapping of <em>bs8</em>, a novel locus conferring resistance to bacterial spot caused by <em>Xanthomonas gardneri</em></p>
+</h4>
+
+    <div class="publications">
+
+<img src="assets/img/papers/bs8.png" alt="" onerror="this.style.display=none" />
+      <p>
+Research article published in volume 112 of Phytopathology in 2022.
+</p>
+
+      <div>
+
+        <p class="bt-pub" onclick="window.open('//apsjournals.apsnet.org/doi/abs/10.1094/PHYTO-08-21-0339-R')">
+Journal<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//doi.org/10.1094/phyto-08-21-0339-r')">
+Crossref<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//pubmed.ncbi.nlm.nih.gov/35133857')">
+Pubmed<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//scholar.google.com/scholar?cluster=14316638652857924858')">
+GScholar<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//www.researchgate.net/publication/358449096')">
+ResearchGate<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p data-bib="@article{10.1094/phyto-08-21-0339-r,
+  AUTHOR =  {Sharma, Anuj and Minsavage, Gerald V. and Gill, Upinder S. and Hutton, Samuel F. and Jones, Jeffrey B.},
+  TITLE =   {Identification and mapping of \textit{bs8}, a novel locus conferring resistance to bacterial spot caused by \textit{Xanthomonas gardneri}},
+  JOURNAL = {Phytopathology},
+  VOLUME =  {112},
+  NUMBER =  {8},
+  PAGES =   {1640-1650},
+  YEAR =    {2022}, 
+  DOI =     {10.1094/phyto-08-21-0339-r},
+}
+" class="bib bt-pub">
+Bibtex<svg><use xlink:href="assets/img/icons.svg#copy"></use></svg><svg><use xlink:href="assets/img/icons.svg#done"></use></svg>
+</p>
+
+      </div>
+
+    </div>
+
+    <h4><p>Transcriptomic analysis of changes in <em>Citrus × microcarpa</em> gene expression post <em>Xanthomonas citri</em> subsp. <em>citri</em> infection</p>
+</h4>
+
+    <div class="publications">
+
+<img src="assets/img/papers/citrus.png" alt="" onerror="this.style.display=none" />
+      <p>
+Research article published in volume 162 of European Journal of Plant Pathology in 2022.
+</p>
+
+      <div>
+
+        <p class="bt-pub" onclick="window.open('//link.springer.com/article/10.1007/s10658-021-02394-6')">
+Journal<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//doi.org/10.1007/s10658-021-02394-6')">
+Crossref<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//scholar.google.com/scholar?cluster=413970498405773641')">
+GScholar<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//www.researchgate.net/publication/355147854')">
+ResearchGate<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p data-bib="@article{10.1007/s10658-021-02394-6,
+  TITLE =   {Transcriptomic analysis of changes in \textit{Citrus}$\times$ \textit{microcarpa} gene expression post \textit{Xanthomonas citri} subsp. \textit{citri} infection},
+  AUTHOR =  {Sharma, Anuj and Ference, Christopher M. and Shantharaj, Deepak and Baldwin, Elizabeth A. and Manthey, John A. and Jones, Jeffrey B.}
+  JOURNAL = {European Journal of Plant Pathology}
+  VOLUME =  {162}
+  NUMBER =  {1}
+  PAGES =   {163--181}
+  YEAR =    {2022}
+  DOI =     {10.1007/s10658-021-02394-6}
+}
+" class="bib bt-pub">
+Bibtex<svg><use xlink:href="assets/img/icons.svg#copy"></use></svg><svg><use xlink:href="assets/img/icons.svg#done"></use></svg>
+</p>
+
+      </div>
+
+    </div>
+
+    <h4><p>A centenary for bacterial spot of tomato and pepper</p>
+</h4>
+
+    <div class="publications">
+
+<img src="assets/img/papers/centenary.png" alt="" onerror="this.style.display=none" />
+      <p>
+Review paper published in volume 22 of Molecular Plant Pathology in 2021.
+</p>
+
+      <div>
+
+        <p class="bt-pub" onclick="window.open('//bsppjournals.onlinelibrary.wiley.com/doi/10.1111/mpp.13125')">
+Journal<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//doi.org/10.1111/mpp.13125')">
+Crossref<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//pubmed.ncbi.nlm.nih.gov/4472193')">
+Pubmed<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//scholar.google.com/scholar?cluster=25852030639357372')">
+GScholar<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//www.researchgate.net/publication/353706759')">
+ResearchGate<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p data-bib="@article{10.1111/mpp.13125,
+  AUTHOR =  {Osdaghi, Ebrahim and Jones, Jeffrey B. and Sharma, Anuj and Goss, Erica M. and Abrahamian, Peter and Newberry, Eric A. and Potnis, Neha and Carvalho, Renato and Choudhary, Manoj and Paret, Mathews L. and Timilsina, Sujan and Vallad, Gary E.},
+  TITLE =   {A centenary for bacterial spot of tomato and pepper},
+  JOURNAL = {Molecular Plant Pathology},
+  VOLUME =  {22},
+  NUMBER =  {12},
+  PAGES =   {1500-1519},
+  DOI =     {10.1111/mpp.13125},
+  YEAR =    {2021}
+}
+" class="bib bt-pub">
+Bibtex<svg><use xlink:href="assets/img/icons.svg#copy"></use></svg><svg><use xlink:href="assets/img/icons.svg#done"></use></svg>
+</p>
+
+      </div>
+
+    </div>
+
+    <h4><p>Need for speed: Bacterial effector XopJ2 is associated with increased dispersal velocity of <em>Xanthomonas perforans</em>.</p>
+</h4>
+
+    <div class="publications">
+
+<img src="assets/img/papers/xopj2.png" alt="" onerror="this.style.display=none" />
+      <p>
+Research article published in volume 23 of Environmental Microbiology in 2021.
+</p>
+
+      <div>
+
+        <p class="bt-pub" onclick="window.open('//sfamjournals.onlinelibrary.wiley.com/doi/10.1111/1462-2920.15541')">
+Journal<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//doi.org/10.1111/1462-2920.15541')">
+Crossref<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//pubmed.ncbi.nlm.nih.gov/33891376')">
+Pubmed<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//scholar.google.com/scholar?cluster=11794661915918664657')">
+GScholar<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//www.researchgate.net/publication/351085115')">
+ResearchGate<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p data-bib="@article{10.1111/1462-2920.15541,
+  AUTHOR =  {Sharma, Anuj and Timilsina, Sujan and Abrahamian, Peter and Minsavage, Gerald V. and Colee, James and Ojiambo, Peter S. and Goss, Erica M. and Vallad, Gary E. and Jones, Jeffrey B.},
+  TITLE =   {Need for speed: bacterial effector XopJ2 is associated with increased dispersal velocity of \textit{Xanthomonas perforans}},
+  JOURNAL = {Environmental Microbiology},
+  VOLUME =  {23},
+  NUMBER =  {10},
+  PAGES =   {5850-5865},
+  DOI =     {10.1111/1462-2920.15541},
+  YEAR =    {2021}
+}
+" class="bib bt-pub">
+Bibtex<svg><use xlink:href="assets/img/icons.svg#copy"></use></svg><svg><use xlink:href="assets/img/icons.svg#done"></use></svg>
+</p>
+
+      </div>
+
+    </div>
+
+    <h4><p>Dynamics and spread of bacterial spot epidemics in tomato transplants grown for field production.</p>
+</h4>
+
+    <div class="publications">
+
+<img src="assets/img/papers/transplant.png" alt="" onerror="this.style.display=none" />
+      <p>
+Research paper published in volume 105 of Plant Disease in 2020.
+</p>
+
+      <div>
+
+        <p class="bt-pub" onclick="window.open('//apsjournals.apsnet.org/doi/10.1094/PDIS-05-20-0945-RE')">
+Journal<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//doi.org/10.1094/PDIS-05-20-0945-RE')">
+Crossref<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//pubmed.ncbi.nlm.nih.gov/32865478')">
+Pubmed<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//scholar.google.com/scholar?cluster=16372853981314918327')">
+GScholar<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//www.researchgate.net/publication/344004795')">
+ResearchGate<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p data-bib="@article{10.1094/PDIS-05-20-0945-RE,
+  AUTHOR =  {Abrahamian, Peter and Sharma, Anuj and Jones, Jeffrey B. and Vallad, Gary E.},
+  TITLE =   {Dynamics and spread of bacterial spot epidemics in tomato transplants grown for field production},
+  JOURNAL = {Plant Disease},
+  VOLUME =  {105},
+  NUMBER =  {3},
+  PAGES =   {566-575},
+  YEAR =    {2021},
+  DOI =     {10.1094/PDIS-05-20-0945-RE}      
+}
+" class="bib bt-pub">
+Bibtex<svg><use xlink:href="assets/img/icons.svg#copy"></use></svg><svg><use xlink:href="assets/img/icons.svg#done"></use></svg>
+</p>
+
+      </div>
+
+    </div>
+
+    <h4><p>Recent advances in developing disease resistance in plants.</p>
+</h4>
+
+    <div class="publications">
+
+<img src="assets/img/papers/advances.png" alt="" onerror="this.style.display=none" />
+      <p>
+Review paper published in volume 8 of F1000Research in 2019.
+</p>
+
+      <div>
+
+        <p class="bt-pub" onclick="window.open('//f1000research.com/articles/8-1934/v1')">
+Journal<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//doi.org/10.12688/f1000research.20179.1')">
+Crossref<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//pubmed.ncbi.nlm.nih.gov/31807281')">
+Pubmed<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//scholar.google.com/scholar?cluster=2585639250438679023')">
+GScholar<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//www.researchgate.net/publication/337378582')">
+ResearchGate<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p data-bib="@article{10.12688/f1000research.20179.1,
+  AUTHOR =  {Sharma, Anuj and Jones, Jeffrey B. and White, Frank F.},
+  TITLE =   {Recent advances in developing disease resistance in plants [version 1; peer review: 2 approved]},
+  JOURNAL = {F1000Research},
+  VOLUME =  {8},
+  YEAR =    {2019},
+  NUMBER =  {1934},
+  PAGES =   {1-8},
+  DOI =     {10.12688/f1000research.20179.1}
+}
+" class="bib bt-pub">
+Bibtex<svg><use xlink:href="assets/img/icons.svg#copy"></use></svg><svg><use xlink:href="assets/img/icons.svg#done"></use></svg>
+</p>
+
+      </div>
+
+    </div>
+
+    <h4><p>Resistant and susceptible response of finger millet to seedling blast (<em>Pyricularia grisea</em> SACC.).</p>
+</h4>
+
+    <div class="publications">
+
+<img src="assets/img/papers/millet.png" alt="" onerror="this.style.display=none" />
+      <p>
+Research paper published in volume 4 of International Journal of Information Research and Review in 2017.
+</p>
+
+      <p><strong>Summary</strong>: lorem <em>ipsum</em></p>
+
+      <div>
+
+        <p class="bt-pub" onclick="window.open('//zenodo.org/record/6970365')">
+Journal<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//doi.org/10.5281/zenodo.6970364')">
+Crossref<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//scholar.google.com/scholar?cluster=3468814484327847000')">
+GScholar<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p class="bt-pub" onclick="window.open('//www.researchgate.net/publication/325670109')">
+ResearchGate<svg><use xlink:href="assets/img/icons.svg#linkout"></use></svg>
+</p>
+
+        <p data-bib="@article{10.5281/zenodo.6970365,
+  AUTHOR =  {Bhatta, Anjan and Sharma, Anuj and Gautam, Puja and Subedi, Bishal and Poudel, Manoj and Pariyar, Kiran and Mishra, Sujan},
+  TITLE =   {Resistant and susceptible response of finger millet to seedling blast (\textit{Pyricularia grisea} sacc.)},
+  JOURNAL = {International Journal of Information Research and Review},
+  YEAR =    {2017},
+  VOLUME =  {4},
+  NUMBER =  {12},
+  PAGES =   {4804-4809},
+  DOI =     {10.5281/zenodo.6970365}
+}" class="bib bt-pub">
+Bibtex<svg><use xlink:href="assets/img/icons.svg#copy"></use></svg><svg><use xlink:href="assets/img/icons.svg#done"></use></svg>
+</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+<script>
+    document.querySelectorAll('.bib').forEach((button) => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(button.getAttribute('data-bib'));
+                button.classList.add('clicked');
+                setTimeout(() => button.classList.remove('clicked'), 1000);
+            };
+        });
+    });
+</script>
+
+
+
+
+
+
+
+<style>
+.conference {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0 5px;
+    }
+
+    .conference > img {
+        align-self: center;
+        height: 240px;
+    }
+
+    /*
+        .conference {
+            display: block;
+        }
+        
+        .conference > img {
+            float: left;
+        }
+        
+        .parent + div {
+            clear: both;
+        }
+    */
+</style>
+
+<section id="conference">
+
+    <h3>
+Conference Presentations
+</h3>
+
+    <h4>
+    <span>12th US-Japan seminar in plant pathology
+</span>
+    <span>2022</span>
+</h4>
+
+    <div class="conference" markdowm="1">
+<img src="assets/img/conference/usj22.png" alt="" onerror="this.style.display=none" />
+<p>Mutations in <em>Xanthomonas</em> transcription activator-like (TAL) effectors contribute to host adaptation</p>
+
+</div>
+
+    <h4>
+    <span>7th <em>Xanthomonas</em> genomics conference
+</span>
+    <span>2022</span>
+</h4>
+
+    <div class="conference" markdowm="1">
+<img src="assets/img/conference/xgc22.png" alt="" onerror="this.style.display=none" />
+<p>Estimation of mutation rates in two <em>Xanthomonas perforans</em> strains over the course of a growing season</p>
+
+</div>
+
+    <h4>
+    <span>APS plant health 2021
+</span>
+    <span>2021</span>
+</h4>
+
+    <div class="conference" markdowm="1">
+<img src="assets/img/conference/aps21.png" alt="" onerror="this.style.display=none" />
+<p>Transcriptomic analysis of changes in <em>Citrus × microcarpa</em> gene expression post <em>Xanthomonas citri</em> subsp. <em>citri</em> infection</p>
+
+</div>
+
+    <h4>
+    <span>APS plant health 2019
+</span>
+    <span>2019</span>
+</h4>
+
+    <div class="conference" markdowm="1">
+<img src="assets/img/conference/aps19.png" alt="" onerror="this.style.display=none" />
+<p>Role of <em>AvrBsT</em> in dispersal of <em>Xanthomonas perforans</em> and severity of bacterial spot of tomato</p>
+
+</div>
+
+    <h4>
+    <span>16th Biennial FPS meeting
+</span>
+    <span>2019</span>
+</h4>
+
+    <div class="conference" markdowm="1">
+<img src="assets/img/conference/fps19.png" alt="" onerror="this.style.display=none" />
+<p>Characterization of bacterial spot resistance gene against <em>Xanthomonas gardneri</em> in Hungarian pepper</p>
+
+</div>
+
+  </section>
+
+
+
+
+
+
+
+<style>
+.posters {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0 5px;
+    }
+
+    .posters > img {
+        align-self: center;
+        height: 240px;
+    }
+
+    /*
+        .posters {
+            display: block;
+        }
+        
+        .posters > img {
+            float: left;
+        }
+        
+        .parent + div {
+            clear: both;
+        }
+    */
+</style>
+
+<section id="posters">
+
+    <h3>Conference posters</h3>
+
+    <h4>APS plant health 2020</h4>
+    <p><span>2020</span></p>
+
+    <div class="posters" markdowm="1">
+<img src="assets/img/conference/aps20.png" alt="" onerror="this.style.display=none" />
+<p>Genetic mapping of bacterial spot resistance gene against <em>Xanthomonas gardneri</em> in Hungarian pepper</p>
+
+</div>
+
+  </section>
+
+
+
+</main>
+
+<style>
+    #footer{
+        display: flex;
+        flex-direction: row;
+        margin-top: 3em;
+        border-top: 2px solid var(--text_color);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap:10px;
+    }
+
+    #footer > p {
+        cursor:pointer;
+    }
+
+    #footer > p > svg {
+        width: 1rem;
+        height: 1rem;
+        fill: var(--text_color);
+    }
+
+</style>
+
+<section id="footer">
+
+  <p onclick="window.open('#')">
+    <svg><use xlink:href="/assets/img/icons.svg#copyright"></use></svg>
+    <span>2022 Anuj Sharma</span>
+</p>
+
+  <p onclick="window.open('//www.github.com/rknx/rknx.github.io')">
+    <svg><use xlink:href="/assets/img/icons.svg#github"></use></svg>
+    <span>Hosted on Github</span>
+</p>
+
+  <p onclick="window.open('//www.netlify.com')">
+    <svg><use xlink:href="/assets/img/icons.svg#netlify"></use></svg>
+    <span>Deploys by Netlify</span>
+</p>
+
+</section>
+
+
+  
+    <script src="/assets/js/main.js"></script>
+  
+  </body>
+
+</html>
