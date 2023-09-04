@@ -2,11 +2,12 @@
 layout: base
 ---
 
-<style>
+<style markdown="1">
     .page-img{
         width: 100%;
         aspect-ratio: 2/1;
         background-size: cover;
+        background-image: url( {{ page.thumb | prepend: "/assets/img/blog/" }} );
     }
 
     aside{
@@ -16,17 +17,21 @@ layout: base
 
 {% include sidebar.md %}
 
-{%- if page.thumb -%}
-<div class="page-img" style="{{ page.thumb | prepend:'background-image: url(/assets/img/blog/' | append: ');' }}"></div>
-{%- endif -%}
-
 <main>
+
+    {%- if page.thumb -%}<div class="page-img"></div>{%- endif -%}
 
     <article class="post-one">
 
         <h3>{{page.title}}</h3>
 
-        <aside>{{page.date | date: "%B %-d, %Y"}} • {{ page.tag | capitalize }}</aside>
+        <aside>
+
+            {{page.date | date: "%B %-d, %Y"}}
+            {% for tag in page.tags %}
+                {{ tag | capitalize | prepend: " • " }}
+            {% endfor %}
+        </aside>
         
         {{ content }}
 

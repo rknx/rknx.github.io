@@ -1,0 +1,33 @@
+---
+layout: base
+---
+
+<style>
+    .post-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:10px;
+        justify-content: space-between;
+    }
+
+    .post-list > h2{
+        flex: 1 0 100%;
+    }
+</style>
+
+{% include sidebar.md %}
+
+<main class="post-list">
+
+{% if page.tag %}<h2>{{ page.tag | upcase }}</h2>{% endif %}
+
+{% for post in site.post reversed %}
+    {% if page.tag == null or post.tags contains page.tag %}
+        {% include blog-thumb.md post=post %}
+    {% endif %}
+{% endfor %}
+
+</main>
+
+{% include footer.md %}

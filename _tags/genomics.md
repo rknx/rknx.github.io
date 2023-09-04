@@ -1,4 +1,4 @@
 ---
 layout: postlist
-title: Blog
+tag: genomics
 ---

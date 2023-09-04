@@ -36,3 +36,7 @@ collections:
     output: true
   slides:
     output: true
+  tags:
+    output: true
+    permalink: /blog/tag/:name
+

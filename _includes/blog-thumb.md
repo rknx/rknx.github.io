@@ -1,14 +1,8 @@
 <style>
-    .post-list{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap:10px;
-        justify-content: space-between;
-    }
     .post-card {
         display:flex;
-        flex: 1 0 320px;
+        flex: 0 0 320px;
+        margin:auto;
         flex-direction: column;
         min-height: 300px;
         background-size: cover;
@@ -27,8 +21,10 @@
     .post-img {
         width: 100%;
         aspect-ratio: 2/1;
-        background-size: cover;
+        /*background-size: cover;*/
         border-radius: 5px 5px 0 0;
+        /*background-image: var(--bgi);*/
+        object-fit: cover;
     }
     .post-content {
         flex-grow: 1;
@@ -51,34 +47,20 @@
     }
 </style>
 
-<main class="post-list">
-
-{%- for post in site.post reversed -%}
-
 <article class="post-card" onclick="location.href='{{ post.permalink | relative_url }}'">
 
-<!-- background image -->
 {%- if post.thumb -%}
-<div class="post-img" style="{{ post.thumb | prepend:'background-image: url(/assets/img/blog/' | append: ');' }}"></div>
+    <img class="post-img" src="/assets/img/blog/{{- post.thumb -}}"></img>
 {%- endif -%}
 
 <div class="post-content">
 
-<!-- category? -->
-<span class="post-tag">{{ post.tag }}</span>
-
-<!-- title -->        
+<span class="post-tag">{{ post.tags }}</span>
+       
 <h2 class="post-title">{{ post.title }}</h2>
 
-<!-- excerpt -->
 {{ post.excerpt }}
 
 </div>
 
 </article>
-
-{%- endfor -%}
-
-</main>
-
-{% include footer.md %}
