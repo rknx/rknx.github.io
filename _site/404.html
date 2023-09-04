@@ -40,11 +40,12 @@
   <style>
 .switch {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
     justify-self: flex-end;
     align-self: flex-end;
     gap: 1rem;
+    padding-right: 25px;
 }
 
 nav > .switch {
@@ -66,10 +67,12 @@ nav > .switch {
     
 .switch:before {
   content:'Light';
+  disply: inline-block;
 }
     
 .switch:after {
   content:'Dark';
+  disply: inline-block;
 }
 
 .theme-switch > input#theme {
