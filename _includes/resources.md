@@ -60,7 +60,10 @@
 
 {% for entry in site.data.resources %}
 
-<p onclick="window.open('{{ entry.link | prepend: "/files/" }}')">
+{% if entry.link %}{% assign link = entry.link | prepend: '/files/' %}{% endif %}
+{% if entry.extlink %}{% assign link = entry.extlink %}{% endif %}
+
+<p onclick="window.open('{{ link }}')">
     <svg><use xlink:href="/assets/img/icons.svg#{{ entry.icon }}"></use></svg>
     <span>{{ entry.label }}</span>
 </p>

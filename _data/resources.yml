@@ -2,5 +2,5 @@
   link: Anuj_Sharma_Curriculum_Vitae.pdf
   icon: file-pdf
 - label: Send an email
-  link: mailto:rknx@outlook.com
+  extlink: mailto:rknx@outlook.com
   icon: envelope
