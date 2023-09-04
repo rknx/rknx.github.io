@@ -2,3 +2,5 @@
 .jekyll-metadata
 _site/feed.xml
 .vscode
+ssl
+_site/ssl
